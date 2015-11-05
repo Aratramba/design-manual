@@ -1,0 +1,55 @@
+extends base
+
+block params
+    - var body_class = 'components-page'
+
+block footer_js
+
+  //- include components in html
+  script.
+      window.CONTENTS_ID = '#{contentsId}';
+      window.COMPONENTS = !{componentsJSON};
+
+
+  //- js-template table of contents mustache
+  script#table-of-contents-template(type="text/template")
+    ul.table-of-contents__list
+      | {{#items}}
+      li.table-of-contents__list__item 
+        a.table-of-contents__list__item__link(href="{{href}}") {{label}}
+      | {{/items}}
+
+
+  //- js-template component
+  script#component-template(type="text/template")
+
+    | {{#meta.name.length}}
+    h2.component__title {{meta.name}}
+    | {{/meta.name.length}}
+
+    | {{#meta.description.length}}
+    p.component__description {{meta.description}}
+    | {{/meta.description.length}}
+    
+    input.hide(type='checkbox' name='source' id='toggle-{{slug}}' class="component__toggle")
+
+    .component__meta
+
+      label.component__meta__toggle(for="toggle-{{slug}}") code
+      span.component__meta__file {{file}}
+
+    .component__code
+      div.component__code__output
+        h3.component__code__title HTML
+        pre
+          code.language-markup
+            | {{output}}
+
+      div.component__code__source
+        h3.component__code__title Source
+        pre
+          code.language-jade
+            | {{source}}
+
+
+    iframe.component__iframe(srcdoc="<!DOCTYPE html><html><head><script src='https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/3.5.0/iframeResizer.contentWindow.min.js'></script><style>#{includeCSS}</style></head><body>{{output}}</body></html>" frameborder="0" scrolling="no")

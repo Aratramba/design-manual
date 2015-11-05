@@ -1,0 +1,40 @@
+[
+  {
+    "meta": {
+      "name": "extends"
+    },
+    "file": "test/fixtures/extends.jade",
+    "source": "extends tag.jade",
+    "output": "<div class=\"some-tag\">this is some tag</div><div class=\"some-other-tag\">this is some other tag</div>"
+  },
+  {
+    "meta": {
+      "name": "mixin",
+      "description": "this is jade mixin documentation",
+      "arguments": {
+        "arg1": "foo",
+        "arg2": "faa"
+      }
+    },
+    "file": "test/fixtures/mixins.jade",
+    "source": "mixin mixin2(arg1, arg2)\n  div this is a mixin #{arg1}\n  div this is the same mixin #{arg2}",
+    "output": "<div>this is a mixin foo</div><div>this is the same mixin faa</div>"
+  },
+  {
+    "meta": {
+      "name": "some-tag"
+    },
+    "file": "test/fixtures/tag.jade",
+    "source": "div.some-tag\n  | this is some tag",
+    "output": "<div class=\"some-tag\">this is some tag</div>"
+  },
+  {
+    "meta": {
+      "name": "inclusion tag",
+      "description": "this is an inclusion tag"
+    },
+    "file": "test/fixtures/include.jade",
+    "source": "div\n  include mixins.jade\n  +mixin2('foo', 'faa')",
+    "output": "<div><div>this is a mixin foo</div><div>this is the same mixin faa</div></div>"
+  }
+]

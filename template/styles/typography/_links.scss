@@ -1,0 +1,18 @@
+a {
+    text-decoration: none;
+}
+
+@mixin link {
+    text-decoration: none;
+    color: $primary;
+    margin-right: 30px;
+
+    &:hover {
+        text-decoration: underline;
+        color: $primary-dark;
+    }
+}
+
+.link {
+    @include link;
+}

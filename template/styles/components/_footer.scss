@@ -1,0 +1,32 @@
+.footer {
+    position: relative;
+    width: 100%;
+    bottom:0;
+    background-color: $primary;
+    margin-top: 50px;
+    font-weight: $weight-bold;
+}
+
+.footer__link {
+    color: $white;
+    padding: 20px 15px;
+    display: inline-block;
+    border-width: 0 1px 0 1px;
+    border-style: solid;
+    border-color: rgba($black, .1);
+}
+
+.footer__link--previous {
+    &:before {
+        content: '<';
+        margin-right: 10px;
+    }
+}
+
+.footer__link--next {
+    float: right;
+    &:after {
+        margin-left: 10px;
+        content: '>';
+    }
+}

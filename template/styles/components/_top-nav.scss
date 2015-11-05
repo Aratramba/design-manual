@@ -1,0 +1,22 @@
+.header__link {
+    color: $white;
+    padding: 20px;
+    height: 60px;
+    text-decoration: none;
+    border-right: 1px solid rgba($black, .1);
+    font-weight: $weight-bold;
+
+    &.active,
+    &:hover {
+        color: rgba($white, .8);
+    }
+}
+
+.header__nav {
+    float: left;
+    display: none;
+
+    @include breakpoint($breakpoint-l) {
+        display: block;
+    }
+}

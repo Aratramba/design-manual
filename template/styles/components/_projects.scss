@@ -1,0 +1,91 @@
+// Project link
+
+.header__projects {
+    display: inline-block;
+    color: $white;
+    cursor: pointer;
+    border-left: 1px solid rgba($black, .1);
+    padding-top: 8px;
+    float: right;
+    position: absolute;
+    right:0;
+    bottom:0;
+    top:0;
+}
+
+.header__project__info {
+    float: left;
+    padding: 6px 20px 0 20px;
+    text-align: right;
+    font-size: $size-xs;
+}
+
+.header__project__title {
+    font-weight: $weight-bold;
+    margin-bottom: 5px;
+}
+
+.header__project__subtitle {
+    color: rgba($white, .8);
+}
+
+
+.header__project__avatar {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+}
+
+.header__project__icon {
+    display: inline-block;
+    float: right;
+    padding: 5px 10px 0 10px;
+    font-size: 200%;
+}
+
+
+
+// Project list
+
+.project-toggle:checked ~ .project__list {
+    display: block;
+}
+
+.project-toggle:checked ~ .close-sidebar {
+    opacity: 1;
+}
+
+.project__list {
+    display: none;
+    position: absolute;
+    background-color: $menu-color;
+    right: 0;
+    top: 60px;
+    width: 250px;
+    box-shadow: 0 2px 4px rgba($black, .2);
+}
+
+.project__link {
+    @include clearfix;
+    display: block;
+    padding: 14px;
+    border-bottom: 1px solid $border-color;
+
+    &:last-of-type {
+        border: 0;
+    }
+}
+
+.project__avatar {
+    margin-right: 10px;
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    border-radius: 10px;
+}
+
+.project__info {
+    display: inline-block;
+    margin-bottom: 0;
+}

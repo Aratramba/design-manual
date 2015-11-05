@@ -1,0 +1,104 @@
+block params
+    - var body_class = ''
+
+doctype html
+html(lang="nl")
+    head
+        title #{pageTitle}
+
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=Edge")
+        meta(name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1")
+        meta(http-equiv="cleartype", content="on")
+        meta(name="author", content="Eight Media")
+        link(href='https://fonts.googleapis.com/css?family=Open+Sans:400,600' rel='stylesheet' type='text/css')
+        link(rel="stylesheet", type="text/css", href="all.min.css")
+
+        | !{headHtml}
+
+    body(class="#{body_class}")
+        input(type='checkbox' id='hamburger' class='hamburger-toggle').hide
+        label(for='hamburger').close-sidebar
+
+
+        //- offcanvas navigation
+        aside.sidebar.offcanvas
+            each item in navItems                
+                .offcanvas__link-wrapper(class="#{currentPage === item.label ? 'is-active' : ''}")
+                    a.offcanvas__link(class="current", href=item.link) #{item.label}
+                    span.offcanvas__toggle(class=".js-toggle") ^
+                    
+                    if currentPage === item.label
+                        div.sidebar__list-wrapper(class="js-sidebar")
+            
+        .wrapper.push
+            #top
+            //- Header items
+            header.header.clearfix
+                
+                label(for='hamburger').header__link.header__hamburger ☰
+                ul.header__nav.inline
+                    each item in navItems
+                        li
+                            a.header__link(class="#{currentPage === item.label ? 'active' : ''}", href="#{item.link}") #{item.label}
+
+                h1.header__title.title--m.xhide Filter Selecties
+
+
+                //- breadcrumbs
+                ul.breadcrumbs
+                    each item in navItems
+                        if currentPage === item.label
+                            li
+                                a.breadcrumbs__section(href='#{item.link}') #{item.label}
+                            li.breadcrumbs__seperator
+                    li.js-breadcrumb
+
+
+                input(type='checkbox' class='project-toggle' id='projects').hide
+                label(for='projects').close-sidebar
+                
+
+                //- header
+                label(for='projects').header__projects
+                    .header__project__info
+                        .header__project__title #{meta.domain}
+                        .header__project__subtitle #{meta.title}
+                    img(src='#{meta.avatar}').header__project__avatar
+                    .header__project__icon ⌄
+
+
+                //- sub projects
+                .project__list
+                    each item in subnav
+                        a(href='#{item.href}').project__link
+                            img(src='#{item.avatar}').project__avatar
+                            .project__info.text--s
+                                .project__title.text--bold #{item.domain}
+                                .project__subtitle #{item.title}
+
+
+            //- content
+            .container(class="space content") !{content}
+
+
+            //- //- footer
+            //- footer.footer
+            //-     .container
+            //-         a(href='').footer__link.footer__link--previous Wells en Highlight area’s
+            //-         a(href='').footer__link.footer__link--next Tooltips
+
+            //- js-template for sidebar list
+            script#sidebar-link-template(type="text/template")
+                | {{#items.length}}
+                ul.sidebar__list(class="current is-open")
+                    | {{#items}}
+                    li.sidebar__item
+                        a.sidebar__item__link(href='\#{{id}}') {{label}}
+                    | {{/items}}
+                | {{/items.length}}
+
+            block footer_js
+            script(src='app.min.js')
+
+            | !{footerHtml}

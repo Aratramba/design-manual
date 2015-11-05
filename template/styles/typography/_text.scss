@@ -1,0 +1,40 @@
+%text-base {
+    font: {
+        family: $base-fam;
+        size: $size-m;
+        weight: 300;
+    }
+    color: $base-color;
+    line-height: 1.5;
+    margin-bottom: 30px;
+}
+
+// Base text
+@mixin text-base {
+    @extend %text-base;
+}
+p,
+.text--m { @include text-base; }
+
+// Small text
+@mixin text-small {
+    @extend %text-base;
+    font: {
+        size: $size-s;
+        weight: 300;
+    }
+}
+.text--s { @include text-small; }
+
+// Large text
+@mixin text-large {
+    @extend %text-base;
+    font: {
+        size: $size-l;
+        weight: 300;
+    }
+}
+.text--l { @include text-large; }
+
+
+.text--bold { font-weight: $weight-bold; }

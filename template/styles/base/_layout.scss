@@ -1,0 +1,34 @@
+%wrapper {
+  padding: 0;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.wrapper {
+  @extend %wrapper;
+}
+
+.push {
+  @include breakpoint(1300px) {
+    // transform: translate3d($sidebar-width, 0, 0);
+    margin-left: $sidebar-width;
+  }
+}
+
+@mixin container {
+  @extend %wrapper;
+  position: relative;
+  width: 100%;
+  max-width: $wrapper;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-top: 75px;
+}
+
+.container {
+  @include container;
+}
+
+.space {
+  padding-top: 20px;
+}
