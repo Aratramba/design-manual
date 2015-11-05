@@ -46,7 +46,7 @@ function DesignLanguage(options){
   options.pages = path.resolve(options.pages);
   options.components = path.resolve(options.components);
   
-  assets(options);
+  assets.generate(options);
   pages(options);
 }
 

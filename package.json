@@ -6,7 +6,9 @@
   "directories": {
     "test": "test"
   },
-  "bin": "cli.js",
+  "bin": {
+    "design-manual": "cli.js"
+  },
   "scripts": {
     "template-js-browserify": "browserify template/scripts/index -t uglifyify",
     "template-css-sass": "node-sass template/styles/all.scss | cleancss",
@@ -16,7 +18,7 @@
     "watch-js": "watchify template/scripts/**/*.js -o httpdocs/app.min.js",
     "test": "tape test/*.js | faucet"
   },
-  "author": "",
+  "author": "Eight Media",
   "license": "ISC",
   "dependencies": {
     "array-move": "^1.0.0",
@@ -42,6 +44,21 @@
     "validate": "^3.0.1"
   },
   "devDependencies": {
+    "is-there": "^4.1.0",
+    "rimraf": "^2.4.3",
     "watchify": "^3.4.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EightMedia/design-manual.git"
+  },
+  "keywords": [
+    "styleguide",
+    "design",
+    "manual"
+  ],
+  "bugs": {
+    "url": "https://github.com/EightMedia/design-manual/issues"
+  },
+  "homepage": "https://github.com/EightMedia/design-manual#readme"
 }
