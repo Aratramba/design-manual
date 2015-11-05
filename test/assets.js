@@ -9,7 +9,7 @@ const DIR = __dirname +'/tmp/';
 
 
 /**
- * generate CSS
+ * generate js/CSS
  */
 
 rimraf(DIR, function(){
@@ -25,14 +25,7 @@ rimraf(DIR, function(){
       assert.end();
     });
   });
-});
 
-
-/**
- * generate JS
- */
-
-rimraf(DIR, function(){
   test('js', function(assert){
     assert.plan(1);
 
