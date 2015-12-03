@@ -30,7 +30,7 @@ rimraf(DIR, function(){
     };
 
     var pages = require('../lib/pages');
-    pages.createPage(PAGES_DIR +'Home.md', 'Home', {}, options, function(){
+    pages.createPage(PAGES_DIR +'Home.md', 'Home', {}, options, [], function(){
 
       var actual = isThere(__dirname +'/tmp/home.html');
       var expected = true;
