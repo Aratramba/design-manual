@@ -67,12 +67,15 @@ html(lang="nl")
                     .header__project__info
                         .header__project__title #{meta.domain}
                         .header__project__subtitle #{meta.title}
-                    img(src='#{meta.avatar}').header__project__avatar
-                    .header__project__icon ⌄
+                    if meta.avatar
+                        img(src='#{meta.avatar}').header__project__avatar
+
+                    if subnav.length
+                        .header__project__icon ⌄
 
 
                 //- sub projects
-                if subnav
+                if subnav.length
                     .project__list
                         each item in subnav
                             a(href='#{item.href}').project__link

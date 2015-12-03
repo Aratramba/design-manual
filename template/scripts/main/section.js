@@ -21,7 +21,6 @@ function scroll(){
   var rect;
   var h = window.innerHeight;
 
-
   for(; i<l; i++){
     rect = $sections[i].getBoundingClientRect();
 

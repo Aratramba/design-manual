@@ -1,5 +1,5 @@
 # Components
-This is the components page.sdfsdfsd
+This is the components page.
 
 ---
 

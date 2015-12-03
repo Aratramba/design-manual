@@ -4,7 +4,6 @@
 var assign = require('object-assign');
 var path = require('path');
 
-
 var pages = require('./lib/pages');
 var assets = require('./lib/assets');
 var schema = require('./lib/validate');
@@ -18,9 +17,9 @@ function DesignLanguage(options){
   
   // options
   options = assign({
-    output: '',
-    pages: '',
-    components: '',
+    output: null,
+    pages: null,
+    components: null,
     includeCss: [],
     meta: {
       domain: '',

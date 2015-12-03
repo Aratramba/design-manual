@@ -54,6 +54,16 @@
     @include text-large;
   }
 
+  .component__404{
+    background-color: lightyellow;
+    border: 1px solid $border-color;
+    margin: 0 0 -150px;
+    padding: 10px;
+    display: inline-block;
+    border-radius: 3px;
+    color: #333;
+  }
+
 
   /**
    * Meta (buttons)

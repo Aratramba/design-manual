@@ -45,11 +45,18 @@ block footer_js
           code.language-markup
             | {{output}}
 
+      
+      | {{#source}}
       div.component__code__source
         h3.component__code__title Source
         pre
           code.language-jade
             | {{source}}
+      | {{/source}}
 
 
     iframe.component__iframe(srcdoc="<!DOCTYPE html><html><head><script src='https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/3.5.0/iframeResizer.contentWindow.min.js'></script><style>#{includeCSS}</style></head><body>{{output}}</body></html>" frameborder="0" scrolling="no")
+
+  //- js-template component
+  script#component-empty-template(type="text/template")
+    p.component__404 Component `{{key}}` not found.

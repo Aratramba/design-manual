@@ -15,9 +15,13 @@ var prev = require('../libs/previous-selector');
 
 // parse template
 var $template = document.getElementById('component-template');
+var $emptyTemplate = document.getElementById('component-empty-template');
+
 if($template){
   var TEMPLATE = $template.innerHTML;
+  var EMPTY_TEMPLATE = $emptyTemplate.innerHTML;
   Mustache.parse(TEMPLATE);
+  Mustache.parse(EMPTY_TEMPLATE);
 
 
   // create lookup
@@ -42,17 +46,23 @@ function Component($el){
   // append div with rendered mustache component
   keys.forEach(function(key){
 
+    // create container
+    var slug = prev($el, 'h2').id +'-'+ slugify(key);
+    var section = document.createElement('section');
+    section.id = slug;
+    section.className = 'js-section component';
+
+    if(!components[key]){
+      section.innerHTML = Mustache.render(EMPTY_TEMPLATE, { key: key });
+      sectionWrapper.appendChild(section);
+      return;
+    }
+
     // make html look pretty with indents and all that
     components[key].output = pretty(components[key].output);
 
     // create slug from key
-    var slug = prev($el, 'h2').id +'-'+ slugify(key);
     components[key].slug = slug;
-
-    // create container
-    var section = document.createElement('section');
-    section.id = slug;
-    section.className = 'js-section component';
 
     // render template
     section.innerHTML = Mustache.render(TEMPLATE, components[key]);
