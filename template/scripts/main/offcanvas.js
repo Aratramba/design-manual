@@ -1,11 +1,9 @@
+'use strict';
+
 var toggle = document.querySelectorAll('.js-toggle');
 
-var toggleClass = function(e) {
-  var $el = e.target;
-
-  var parent = $el.parentNode;
-  var sibling =  parent.nextElementSibling;
-
+function toggleClass(e){
+  var sibling =  e.target.parentNode.nextElementSibling;
   sibling.classList.toggle('is-open');
 }
 

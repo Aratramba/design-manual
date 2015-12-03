@@ -1,96 +1,94 @@
 .sidebar {
-    position: fixed;
-    width: $sidebar-width;
-    bottom: 0;
-    top: 0;
-    left: -$sidebar-width;
-    background-color: $menu-color;
-    z-index: 3;
-    transform: translate3d(0, 0, 0);
-    overflow-y: auto;
+  position: fixed;
+  width: $sidebar-width;
+  bottom: 0;
+  top: 0;
+  left: -$sidebar-width;
+  background-color: $menu-color;
+  z-index: 3;
+  transform: translate3d(0, 0, 0);
+  overflow-y: auto;
 
-    @include breakpoint(1300px) {
-        left: 0;
-        box-shadow: 0 2px 4px rgba($black, .5);
-    }
+  @include breakpoint(1300px) {
+    left: 0;
+    box-shadow: 0 2px 4px rgba($black, .5);
+  }
 }
 
 
 /**
- * Sidebar list
- */
+* Sidebar list
+*/
 
 .sidebar__list-wrapper{}
 
 .sidebar__list {
-    padding: 0 20px;
-    overflow: hidden;
-    line-height: 33px;
-    transition: all .5s ease;
-    max-height: 0;
+  padding: 0 20px;
+  overflow: hidden;
+  line-height: 33px;
+  transition: all .5s ease;
+  max-height: 0;
 
-    @include breakpoint($breakpoint-l) {
-        max-height: none;
-        padding: 20px;
-        &:not(.current) { display: none }
-    }
+  @include breakpoint($breakpoint-l) {
+    max-height: none;
+    padding: 20px;
+    &:not(.current) { display: none }
+  }
 
-    
-    &.is-open {
-        max-height: 1000px;
-        transform: scale(0, 100%);
-        padding: 20px;
-    }
+  
+  &.is-open {
+    max-height: 1000px;
+    transform: scale(0, 100%);
+    padding: 20px;
+  }
 
-    &:last-of-type {
-        border: 0;
-    }
+  &:last-of-type {
+    border: 0;
+  }
 }
 
-.sidebar__item{
 
+
+.sidebar__item.is-active .sidebar__item__link{
+  font-weight: $weight-bold;
+  color: $primary-dark;
 }
 
 .sidebar__item__link{
-    display: block;
-    text-decoration: none;
-    color: $base-color;
-    font-size: $size-s;
+  display: block;
+  text-decoration: none;
+  color: $base-color;
+  font-size: $size-s;
 
-    &:hover {
-        color: $primary-dark;
-    }
-
-    &.active {
-        font-weight: $weight-bold;
-        color: $primary-dark;
-    }
+  &:hover {
+    color: $primary-dark;
+  }
 }
 
 
 // Triggers sidebar for medium screens
 .hamburger-toggle:checked ~ .sidebar {
-    @include breakpoint($breakpoint-m) {
-        transform: translate3d($sidebar-width, 0, 0);
-        transition: .1s transform .2s;
-    }
+  @include breakpoint($breakpoint-m) {
+    transform: translate3d($sidebar-width, 0, 0);
+    transition: .1s transform .2s;
+  }
 }
 
 .close-sidebar {
-    position: fixed;
-    bottom: 0;
-    top: 0;
-    right: 0;
-    left: 0;
-    background-color: black;
-    opacity: 0;
-    visibility: hidden;
-    z-index: 2;
-    cursor: pointer;
+  position: fixed;
+  bottom: 0;
+  top: 0;
+  right: 0;
+  left: 0;
+  background-color: black;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 2;
+  cursor: pointer;
 }
 
 .hamburger-toggle:checked ~ .close-sidebar {
-    visibility: visible;
-    opacity: .5;
-    transition: opacity .2s ease;
+  visibility: visible;
+  opacity: .5;
+  transition: opacity .2s ease;
 }

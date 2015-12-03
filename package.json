@@ -16,7 +16,7 @@
     "template-css": "npm run template-css-sass -- -o httpdocs/all.min.css",
     "template-html": "jade template/templates/components.jade -o httpdocs",
     "watch-js": "watchify template/scripts/**/*.js -o httpdocs/app.min.js",
-    "test": "tape test/*.js | faucet",
+    "test": "tape test/-*.js | faucet",
     "test-pages": "tape test/pages.js | faucet || true",
     "test-assets": "tape test/assets.js | faucet || true"
   },
@@ -46,7 +46,9 @@
     "validate": "^3.0.1"
   },
   "devDependencies": {
+    "events": "^1.1.0",
     "is-there": "^4.1.0",
+    "object-assign": "^4.0.1",
     "rimraf": "^2.4.3",
     "watchify": "^3.4.0"
   },

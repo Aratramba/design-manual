@@ -51,9 +51,8 @@ function Component($el){
 
     // create container
     var section = document.createElement('section');
-    section.className = 'js-section';
     section.id = slug;
-    section.className = 'component';
+    section.className = 'js-section component';
 
     // render template
     section.innerHTML = Mustache.render(TEMPLATE, components[key]);

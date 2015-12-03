@@ -3,7 +3,7 @@ This is the components page.sdfsdfsd
 
 ---
 
-## Typografie
+## Section 1
 This is the description of section number 1.
 
 ### Contents
@@ -12,7 +12,7 @@ This is the description of section number 1.
 
 ---
 
-## Buttons
+## Section 2
 This is the description of section number 2.
 
 ### Contents
@@ -21,7 +21,7 @@ This is the description of section number 2.
 
 ---
 
-## Grafieken
+## Section 3
 This is the description of section number 3.
 
 ### Contents
@@ -31,5 +31,5 @@ This is the description of section number 3.
 
 ---
 
-## Misc
+## Section 4
 This is the rest

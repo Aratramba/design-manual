@@ -19,20 +19,12 @@
 }
 
 .breadcrumbs__section {
-
     color: $white;
 
     &:hover {
         text-decoration: underline;
     }
 }
-
-// .breadcrumbs__section:hover ~ .breadcrumbs__seperator:after {
-//     // position: relative;
-//     display: inline-block;
-//     transition: transform .3s;
-//     transform: rotate(-90deg);
-// }
 
 .breadcrumbs__seperator {
 
