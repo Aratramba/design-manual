@@ -42,12 +42,13 @@ function DesignLanguage(options){
     return;
   }
 
+
   options.output = path.resolve(options.output);
   options.pages = path.resolve(options.pages);
   options.components = path.resolve(options.components);
   
   assets.generate(options);
-  pages(options);
+  pages.generate(options);
 }
 
 

@@ -22,14 +22,15 @@ html(lang="nl")
 
 
         //- offcanvas navigation
-        aside.sidebar.offcanvas
-            each item in navItems                
-                .offcanvas__link-wrapper(class="#{currentPage === item.label ? 'is-active' : ''}")
-                    a.offcanvas__link(class="current", href=item.link) #{item.label}
-                    span.offcanvas__toggle(class=".js-toggle") ^
-                    
-                    if currentPage === item.label
-                        div.sidebar__list-wrapper(class="js-sidebar")
+        if navItems
+            aside.sidebar.offcanvas
+                each item in navItems                
+                    .offcanvas__link-wrapper(class="#{currentPage === item.label ? 'is-active' : ''}")
+                        a.offcanvas__link(class="current", href=item.link) #{item.label}
+                        span.offcanvas__toggle(class=".js-toggle") ^
+                        
+                        if currentPage === item.label
+                            div.sidebar__list-wrapper(class="js-sidebar")
             
         .wrapper.push
             #top
@@ -37,22 +38,24 @@ html(lang="nl")
             header.header.clearfix
                 
                 label(for='hamburger').header__link.header__hamburger ☰
-                ul.header__nav.inline
-                    each item in navItems
-                        li
-                            a.header__link(class="#{currentPage === item.label ? 'active' : ''}", href="#{item.link}") #{item.label}
+                if navItems
+                    ul.header__nav.inline
+                        each item in navItems
+                            li
+                                a.header__link(class="#{currentPage === item.label ? 'active' : ''}", href="#{item.link}") #{item.label}
 
                 h1.header__title.title--m.xhide Filter Selecties
 
 
                 //- breadcrumbs
-                ul.breadcrumbs
-                    each item in navItems
-                        if currentPage === item.label
-                            li
-                                a.breadcrumbs__section(href='#{item.link}') #{item.label}
-                            li.breadcrumbs__seperator
-                    li.js-breadcrumb
+                if navItems
+                    ul.breadcrumbs
+                        each item in navItems
+                            if currentPage === item.label
+                                li
+                                    a.breadcrumbs__section(href='#{item.link}') #{item.label}
+                                li.breadcrumbs__seperator
+                        li.js-breadcrumb
 
 
                 input(type='checkbox' class='project-toggle' id='projects').hide
@@ -69,13 +72,14 @@ html(lang="nl")
 
 
                 //- sub projects
-                .project__list
-                    each item in subnav
-                        a(href='#{item.href}').project__link
-                            img(src='#{item.avatar}').project__avatar
-                            .project__info.text--s
-                                .project__title.text--bold #{item.domain}
-                                .project__subtitle #{item.title}
+                if subnav
+                    .project__list
+                        each item in subnav
+                            a(href='#{item.href}').project__link
+                                img(src='#{item.avatar}').project__avatar
+                                .project__info.text--s
+                                    .project__title.text--bold #{item.domain}
+                                    .project__subtitle #{item.title}
 
 
             //- content

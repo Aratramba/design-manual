@@ -9,7 +9,7 @@ const DIR = __dirname +'/tmp/';
 
 
 /**
- * generate js/CSS
+ * check if assets are being generated
  */
 
 rimraf(DIR, function(){
