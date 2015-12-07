@@ -55,7 +55,7 @@ block footer_js
       | {{/source}}
 
 
-    iframe.component__iframe(srcdoc="<!DOCTYPE html><html><head><script src='https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/3.5.0/iframeResizer.contentWindow.min.js'></script><style>#{includeCSS}</style></head><body>{{output}}</body></html>" frameborder="0" scrolling="no")
+    iframe.component__iframe(srcdoc="<!DOCTYPE html><html><head><script src='https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/3.5.0/iframeResizer.contentWindow.min.js'></script><style>#{websiteCss}</style></head><body>{{output}}</body></html>" frameborder="0" scrolling="no")
 
   //- js-template component
   script#component-empty-template(type="text/template")

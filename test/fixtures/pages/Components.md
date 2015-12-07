@@ -28,6 +28,7 @@ This is the description of section number 3.
 * some-tag
 * mixin
 * extends
+* missing component
 
 ---
 

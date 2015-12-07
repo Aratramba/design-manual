@@ -70,12 +70,12 @@ html(lang="nl")
                     if meta.avatar
                         img(src='#{meta.avatar}').header__project__avatar
 
-                    if subnav.length
+                    if subnav
                         .header__project__icon ⌄
 
 
                 //- sub projects
-                if subnav.length
+                if subnav
                     .project__list
                         each item in subnav
                             a(href='#{item.href}').project__link

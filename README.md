@@ -1,5 +1,5 @@
 # Design Manual (not finished)
-Create a living, breathing design manual (or styleguide if you will). This package combines your Markdown files with generated json and creates a beautiful design manual.
+Create a living, breathing design manual (or styleguide if you will). This package combines your Markdown files with JSON containing your html snippets and creates a beautiful design manual. Each html snippet will be placed in an iframe along with your website css.
 
 ---
 
@@ -52,7 +52,7 @@ Create a living, breathing design manual (or styleguide if you will). This packa
 There are two types of pages you can generate.
 
   1. ### Text page
-    A basic text page looks like this:
+    A basic text page looks something like this:
 
     ```markdown
     # Text page
@@ -65,7 +65,7 @@ There are two types of pages you can generate.
     This is section 2
     ```
 
-    The h2's will be used to create in-page-links in the sidebar navigation.
+    The h2's will be used to create a table of contents in the sidebar navigation.
 
     Markdown is parsed using [marked](https://github.com/chjj/marked). HTML is allowed.
 
@@ -131,7 +131,7 @@ new DesignManual({
   output: 'path/to/export/',
   pages: 'path/to/pages/',
   components: 'path/to/components.json',
-  includeCss: ['path/to/style1.css'],
+  websiteCss: ['path/to/style1.css'],
   meta: {
     domain: 'mywebsite.com',
     title: 'My Design Manual',
@@ -164,7 +164,7 @@ new DesignManual({
 | output        | './httpdocs/' | string    | output directory
 | pages         | ''            | string    | directory that holds your pages 
 | components    | ''            | string    | json file with components
-| includeCss    | []            | array     | list of css files to include in components
+| websiteCss    | []            | array     | list of css files to include in components
 | meta          |               | object    | 
 | meta.domain   | ''            | string    | domain for your project
 | meta.title    | ''            | string    | title for your project

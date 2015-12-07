@@ -20,7 +20,7 @@ function DesignLanguage(options){
     output: null,
     pages: null,
     components: null,
-    includeCss: [],
+    websiteCss: [],
     meta: {
       domain: '',
       title: '',

@@ -2,8 +2,7 @@
 /* global require */
 
 var rimraf = require('rimraf');
-
-rimraf.sync('httpdocs/');
+rimraf.sync('httpdocs/*');
 
 var DesignManual = require('../index');
 
@@ -11,7 +10,7 @@ new DesignManual({
   output: 'httpdocs/',
   pages: 'test/fixtures/pages/',
   components: 'test/fixtures/data/components.json',
-  includeCss: ['test/fixtures/assets/style1.css', 'test/fixtures/assets/style2.css'],
+  websiteCss: ['test/fixtures/assets/style1.css', 'test/fixtures/assets/style2.css'],
   meta: {
     domain: 'website.com',
     title: 'Style Guide',
