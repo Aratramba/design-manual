@@ -11,7 +11,7 @@ html(lang="nl")
         meta(name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1")
         meta(http-equiv="cleartype", content="on")
         meta(name="author", content="Eight Media")
-        //- link(href='https://fonts.googleapis.com/css?family=Open+Sans:400,600' rel='stylesheet' type='text/css')
+        link(href='https://fonts.googleapis.com/css?family=Open+Sans:400,600' rel='stylesheet' type='text/css')
         link(rel="stylesheet", type="text/css", href="all.min.css")
 
         | !{headHtml}
@@ -39,12 +39,10 @@ html(lang="nl")
                 
                 label(for='hamburger').header__link.header__hamburger ☰
                 if navItems
-                    ul.header__nav.inline
+                    ul.header__nav
                         each item in navItems
-                            li
-                                a.header__link(class="#{currentPage === item.label ? 'active' : ''}", href="#{item.link}") #{item.label}
-
-                h1.header__title.title--m.xhide Filter Selecties
+                            li.header__nav__item
+                                a.header__nav__item__link(class="#{currentPage === item.label ? 'active' : ''}", href="#{item.link}") #{item.label}
 
 
                 //- breadcrumbs
@@ -65,24 +63,25 @@ html(lang="nl")
                 //- header
                 label(for='projects').header__projects
                     .header__project__info
-                        .header__project__title #{meta.domain}
-                        .header__project__subtitle #{meta.title}
+                        .header__project__domain #{meta.domain}
+                        .header__project__title #{meta.title}
                     if meta.avatar
                         img(src='#{meta.avatar}').header__project__avatar
 
                     if subnav
-                        .header__project__icon ⌄
+                        span.header__project__icon ⌄
 
 
                 //- sub projects
                 if subnav
-                    .project__list
+                    ul.project__list
                         each item in subnav
-                            a(href='#{item.href}').project__link
-                                img(src='#{item.avatar}').project__avatar
-                                .project__info.text--s
-                                    .project__title.text--bold #{item.domain}
-                                    .project__subtitle #{item.title}
+                            li.project__list__item
+                                a.project__list__item__link(href='#{item.href}')
+                                    img.project__list__item__avatar(src='#{item.avatar}')
+                                    .project__list__item__body
+                                        .project__list__item__body__domain #{item.domain}
+                                        .project__list__item__body__title #{item.title}
 
 
             //- content

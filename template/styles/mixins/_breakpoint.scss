@@ -1,34 +1,34 @@
 @mixin breakpoint($first, $second: undefined) {
-    
-    // One given value will compile to min-width
-    @if length($first) == 1  and  $second == undefined {
-        @media (min-width: $first) { @content; }
-    }
 
-    // Both given values will compile to min-width & max-width
-    @if $first  and  $second != undefined {
-        @media (min-width: $first) and (max-width: $second) { @content; }
-    }
-    
-    $keyword: nth($first, 1);
+  // One given value will compile to min-width
+  @if length($first) == 1  and  $second == undefined {
+    @media (min-width: $first) { @content; }
+  }
 
-    // Parameter 'min' will compile value to min-width
-    @if $keyword == min {
-        $value: nth($first, 2);
-        @media (min-width: $value ) { @content; }
-    }
+  // Both given values will compile to min-width & max-width
+  @if $first  and  $second != undefined {
+    @media (min-width: $first) and (max-width: $second) { @content; }
+  }
+  
+  $keyword: nth($first, 1);
 
-    // Parameter 'max' will compile value to max-width
-    @if $keyword == max {
-        $value: nth($first, 2);
-        @media (max-width: $value ) { @content; }
-    }
+  // Parameter 'min' will compile value to min-width
+  @if $keyword == min {
+    $value: nth($first, 2);
+    @media (min-width: $value ) { @content; }
+  }
+
+  // Parameter 'max' will compile value to max-width
+  @if $keyword == max {
+    $value: nth($first, 2);
+    @media (max-width: $value ) { @content; }
+  }
 }
 
 
 @mixin hd() {
   @media (-webkit-min-device-pixel-ratio: 1.5),
-      (min--moz-device-pixel-ratio: 1.5),
-      (-o-min-device-pixel-ratio: 3 / 2),
-      (min-device-pixel-ratio: 1.5) { @content; }
+  (min--moz-device-pixel-ratio: 1.5),
+  (-o-min-device-pixel-ratio: 3 / 2),
+  (min-device-pixel-ratio: 1.5) { @content; }
 }

@@ -1,58 +1,57 @@
-.breadcrumbs {
-    display: none;
-    color: $white;
-    padding-top: 25px;
-    padding-left: 25px;
-    font-size: 14px;
-    float: left;
-    font-weight: $weight-bold;
-    
-    @include breakpoint($breakpoint-m) {
-        padding: 20px;
-        font-size: 16px;
-    }
+.breadcrumbs{
+  display: none;
+  color: $white;
+  padding-top: 25px;
+  padding-left: 25px;
+  font-size: 14px;
+  float: left;
+  font-weight: $weight-bold;
 
-    li {
-        display: inline-block;
-        margin-right: 10px;
-    }
+  @include breakpoint($breakpoint-m){
+    padding: 20px;
+    font-size: 16px;
+  }
+
+  li{
+    display: inline-block;
+    margin-right: 10px;
+  }
 }
 
-.breadcrumbs__section {
-    color: $white;
+.breadcrumbs__section{
+  color: $white;
 
-    &:hover {
-        text-decoration: underline;
-    }
+  &:hover{
+    text-decoration: underline;
+  }
 }
 
-.breadcrumbs__seperator {
+.breadcrumbs__seperator{
 
-    &:after {
-        content: '>';
-        font-weight: bold;
-        // transition: transform .3s;
-        color: rgba($white, .8);
-    }
-}
-
-
-@include breakpoint(1300px) {
-    .breadcrumbs__section,
-    .breadcrumbs__seperator {
-        display: none !important;
-    }
+  &:after{
+    content: '>';
+    font-weight: bold;
+    color: rgba($white, .8);
+  }
 }
 
 
+@include breakpoint(1300px){
+  .breadcrumbs__section,
+  .breadcrumbs__seperator{
+    display: none !important;
+  }
+}
 
-.is-scrolled-in-section {
-    
-    .breadcrumbs {
-        display: inline-block;
-    }
 
-    .breadcrumbs__seperator {
-        display: inline-block;
-    }
+
+.is-scrolled-in-section{
+
+  .breadcrumbs{
+    display: inline-block;
+  }
+
+  .breadcrumbs__seperator{
+    display: inline-block;
+  }
 }

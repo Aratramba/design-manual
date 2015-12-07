@@ -1,54 +1,48 @@
 %title {
-    font: {
-        family: $base-fam;
-        weight: 600;
-    }
-    line-height: 1.2;
-    color: $base-dark;
-    margin-bottom: 17px;
+  font-family: $base-fam;
+  font-weight: 600;
+  line-height: 1.2;
+  color: $base-dark;
+  margin-bottom: 17px;
 }
 
 
 @mixin title-xl {
-    @extend %title;
-    font: {
-        size: 30px;
-        weight: 600;
-    }
-    color: $primary;
+  @extend %title;
+  font-size: 30px;
+  font-weight: 600;
+  color: $primary;
 }
 .title--xl { @include title-xl; }
 
 
 @mixin title-l {
-    @extend %title;
-    font: {
-        size: 20px;
-        weight: 600;
-    }
+  @extend %title;
+  font-size: 20px;
+  font-weight: 600;
 }
 .title--l { @include title-l; }
 
 
 @mixin title-m {
-    @extend %title;
-    font-size: 20px;
+  @extend %title;
+  font-size: 20px;
 }
 .title--m { @include title-m; }
 
 
 @mixin title-s {
-    @extend %title;
-    font-size: 18px;
-    margin-bottom: 10px;
+  @extend %title;
+  font-size: 18px;
+  margin-bottom: 10px;
 }
 .title--s { @include title-s; }
 
 
 @mixin title-xs {
-    @extend %title;
-    font-size: 16px;
-    margin-bottom: 10px;
+  @extend %title;
+  font-size: 16px;
+  margin-bottom: 10px;
 }
 .title--xs { @include title-xs; }
 

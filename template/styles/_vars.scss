@@ -5,11 +5,7 @@ $white: #ffffff;
 $black: #000000;
 
 
-$grey1: darken(white, 10%);
-$grey2: darken(white, 20%);
-$grey3: darken(white, 30%);
-$grey4: darken(white, 40%);
-$grey5: darken(white, 50%);
+$grey: darken(white, 10%);
 
 // Text colors
 $base-color: #666666;
@@ -19,12 +15,8 @@ $base-dark: #333333;
 // Specific colors
 $border-color: #DDDDDD;
 $menu-color: #F5F5F5;
-// $shadow: rgba(black, .5);
-
-
 
 $base-fam: 'Open Sans', Helvetica, sans-serif;
-$serif-fam: Monospace, serif;
 
 $size-xs: 13px;
 $size-s: 14px;
@@ -33,26 +25,11 @@ $size-l: 17px;
 
 $weight-bold: 600;
 
-$space-s: 30px;
-$space-m: 50px;
-$space-l: 70px;
-
 $primary: #0288D1;
 $primary-dark: darken($primary, 5%);
-$secondary: #FF5252;
 
 
-// Default breakpoints
-$breakpoint-xs: 375px;
+// breakpoints
 $breakpoint-s: 500px;
 $breakpoint-m: 750px;
 $breakpoint-l: 990px;
-$breakpoint-xl: 1200px;
-$breakpoint-xxl: 1400px;
-
-
-// // Specific breakpoints
-$breakpoint-nav: 980px;
-
-// // Link
-$BREAKPOINTS: s $breakpoint-s, m $breakpoint-m, l $breakpoint-l;

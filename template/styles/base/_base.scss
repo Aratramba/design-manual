@@ -1,8 +1,8 @@
-*, *:before, *:after {
+*, *:before, *:after{
   box-sizing: border-box;
 }
 
-@mixin body {
+html, body{
   margin: 0;
   padding: 0;
   font-family: $base-fam;
@@ -13,13 +13,8 @@
   color: #161621;
   -webkit-tap-highlight-color: rgba(0,0,0,0);
   -webkit-font-smoothing: antialiased;
-  // text-rendering: optimizeLegibility;
 }
 
-html, body {
-  @include body;
-}
-
-img {
+img{
   max-width: 100%;
 }

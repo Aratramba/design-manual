@@ -1,72 +1,73 @@
-.offcanvas {
-    overflow-y: auto;
+.offcanvas{
+  overflow-y: auto;
 }
 
 
 // Triggers offcanvas menu for mobile
-.hamburger-toggle:checked ~ .offcanvas {
-    transform: translate3d($sidebar-width, 0, 0);
-    transition: .1s transform .2s;
+.hamburger-toggle:checked ~ .offcanvas{
+  transform: translate3d($sidebar-width, 0, 0);
+  transition: .1s transform .2s;
 }
 
-.offcanvas__link-wrapper {
-    @include clearfix;
+.offcanvas__link-wrapper{
+  @include clearfix;
 
-    @include breakpoint($breakpoint-l) {
-        display: none;
+  @include breakpoint($breakpoint-l){
+    display: none;
 
-        &.is-active{
-            display: block;
-        }
+    &.is-active{
+      display: block;
     }
+  }
 }
 
-.offcanvas__link {
-    position: relative;
+.offcanvas__link{
+  position: relative;
+  display: block;
+  padding: 22px;
+  height: 60px;
+  width: 75%;
+  cursor: pointer;
+  float: left;
+  color: $white;
+  font-weight: bold;
+  background-color: $primary;
+  border-bottom: 1px solid $primary-dark;
+  color: $white;
+
+  &:hover{
+    text-decoration: underline;
+  }
+
+  @include breakpoint($breakpoint-l){
     display: block;
-    padding: 22px;
     height: 60px;
-    width: 75%;
-    cursor: pointer;
-    float: left;
-    color: $white;
     font-weight: bold;
-    background-color: $primary;
-    border-bottom: 1px solid $primary-dark;
-    color: $white;
+    color: $primary;
+    width: 100%;
+    border-bottom: 1px solid $grey;
+    margin: 0;
+    background: none;
 
-    &:hover {
-        text-decoration: underline;
+    &:not(.current){ 
+      display: none; 
     }
-    
-    @include breakpoint($breakpoint-l) {
-        display: block;
-        height: 60px;
-        font-weight: bold;
-        // padding: 18px;
-        color: $primary;
-        width: 100%;
-        border-bottom: 1px solid $grey1;
-        margin: 0;
-        background: none;
-
-        &:not(.current) { display: none; }
-    }
+  }
 }
 
-.offcanvas__toggle {
-    background-color: $primary;
-    float: right;
-    padding: 22px;
-    text-align: center;
-    width: 25%;
-    height: 60px;
-    border-left: 1px solid $primary-dark;
-    border-bottom: 1px solid $primary-dark;
-    color: $white;
-    cursor: pointer;
+.offcanvas__toggle{
+  background-color: $primary;
+  float: right;
+  padding: 22px;
+  text-align: center;
+  width: 25%;
+  height: 60px;
+  border-left: 1px solid $primary-dark;
+  border-bottom: 1px solid $primary-dark;
+  color: $white;
+  cursor: pointer;
 
-    @include breakpoint($breakpoint-l) {
-        display: none;
-    }
+  @include breakpoint($breakpoint-l){
+    display: none;
+  }
 }

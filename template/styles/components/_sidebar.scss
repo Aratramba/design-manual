@@ -1,4 +1,4 @@
-.sidebar {
+.sidebar{
   position: fixed;
   width: $sidebar-width;
   bottom: 0;
@@ -9,7 +9,7 @@
   transform: translate3d(0, 0, 0);
   overflow-y: auto;
 
-  @include breakpoint(1300px) {
+  @include breakpoint(1300px){
     left: 0;
     box-shadow: 0 2px 4px rgba($black, .5);
   }
@@ -22,27 +22,27 @@
 
 .sidebar__list-wrapper{}
 
-.sidebar__list {
+.sidebar__list{
   padding: 0 20px;
   overflow: hidden;
   line-height: 33px;
   transition: all .5s ease;
   max-height: 0;
 
-  @include breakpoint($breakpoint-l) {
+  @include breakpoint($breakpoint-l){
     max-height: none;
     padding: 20px;
-    &:not(.current) { display: none }
+    &:not(.current){ display: none }
   }
 
   
-  &.is-open {
+  &.is-open{
     max-height: 1000px;
     transform: scale(0, 100%);
     padding: 20px;
   }
 
-  &:last-of-type {
+  &:last-of-type{
     border: 0;
   }
 }
@@ -60,21 +60,21 @@
   color: $base-color;
   font-size: $size-s;
 
-  &:hover {
+  &:hover{
     color: $primary-dark;
   }
 }
 
 
 // Triggers sidebar for medium screens
-.hamburger-toggle:checked ~ .sidebar {
-  @include breakpoint($breakpoint-m) {
+.hamburger-toggle:checked ~ .sidebar{
+  @include breakpoint($breakpoint-m){
     transform: translate3d($sidebar-width, 0, 0);
     transition: .1s transform .2s;
   }
 }
 
-.close-sidebar {
+.close-sidebar{
   position: fixed;
   bottom: 0;
   top: 0;
@@ -87,7 +87,7 @@
   cursor: pointer;
 }
 
-.hamburger-toggle:checked ~ .close-sidebar {
+.hamburger-toggle:checked ~ .close-sidebar{
   visibility: visible;
   opacity: .5;
   transition: opacity .2s ease;
