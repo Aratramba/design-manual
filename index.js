@@ -13,7 +13,7 @@ var schema = require('./lib/validate');
  * Set everything up
  */
 
-function DesignLanguage(options){
+function DesignManual(options){
   
   // options
   options = assign({
@@ -51,4 +51,4 @@ function DesignLanguage(options){
 }
 
 
-module.exports = DesignLanguage;
+module.exports = DesignManual;
