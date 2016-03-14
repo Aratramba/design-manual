@@ -154,6 +154,14 @@
       display: table-cell;
       width: 50%;
     }
+
+    .component__code__output {
+      border-right: 5px solid white;
+    }
+
+    .component__code__source {
+      border-left: 5px solid white;
+    }
   }
 
   /**
