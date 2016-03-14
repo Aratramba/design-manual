@@ -28,6 +28,6 @@ new DesignManual({
     }
   ],
   headHtml: '<script>console.log("im in the head");</script>',
-  footerHtml: '<script>console.log("im in the footer");</script>',
+  bodyHtml: '<script>console.log("im in the footer");</script>',
   contentsId: '#contents'
 });

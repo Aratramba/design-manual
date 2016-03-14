@@ -28,7 +28,9 @@ function DesignManual(options){
     },
     subnav: [],
     headHtml: '',
-    footerHtml: '',
+    bodyHtml: '',
+    componentHeadHtml: '',
+    componentBodyHtml: '',
     contentsId: '#contents'
   }, options);
 
@@ -40,7 +42,6 @@ function DesignManual(options){
     });
     return;
   }
-
 
   options.output = path.resolve(options.output);
   options.pages = path.resolve(options.pages);

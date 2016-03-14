@@ -31,6 +31,8 @@ new DesignManual({
     }
   ],
   headHtml: '<script>console.log("im in the head");</script>',
-  footerHtml: '<script>console.log("im in the footer");</script>',
-  contentsId: '#contents'
+  bodyHtml: '<script>console.log("im in the body");</script>',
+  contentsId: '#contents',
+  componentHeadHtml: '<script>console.log("im in the component head");</script>',
+  componentBodyHtml: '<script>console.log("im in the component body");</script>'
 });

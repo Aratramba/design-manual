@@ -152,8 +152,10 @@ new DesignManual({
     }
   ],
   headHtml: '<script>console.log("im in the head");</script>',
-  footerHtml: '<script>console.log("im in the footer");</script>',
-  contentsId: '#contents'
+  bodyHtml: '<script>console.log("im in the footer");</script>',
+  contentsId: '#contents',
+  componentHeadHtml: '<script>console.log("im in the component head");</script>',
+  componentBodyHtml: '<script>console.log("im in the component body");</script>'
 });
 ```
 
@@ -175,5 +177,7 @@ new DesignManual({
 | - {}.href     |               | string    | link to project
 | - {}.avatar   |               | string    | 80x80 image for project
 | headHtml      | ''            | string    | string of html to include in the head
-| footerHtml    | ''            | string    | string of html to include in the footer
+| bodyHtml    | ''            | string    | string of html to include in the body
+| componentHeadHtml      | ''            | string    | string of html to include in the head of the component
+| componentBodyHtml    | ''            | string    | string of html to include in the body of the component
 | contentsId    | '#contents'   | string    | css id to identify the contents heading
