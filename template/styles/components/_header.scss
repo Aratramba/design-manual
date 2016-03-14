@@ -27,6 +27,16 @@
   cursor: pointer;
   background-color: $primary;
   z-index: 2;
+  color: white;
+  padding: 15px;
+  opacity: .8;
+  transition: opacity .15s;
+  border-right: 1px solid rgba($black, .1);
+  font-size: 30px;
+
+  &:hover {
+    opacity: 1;
+  }
 
   @include breakpoint(1300px){
     display: none;
