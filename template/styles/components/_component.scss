@@ -32,9 +32,8 @@
  */
 
 .component{
-  border-bottom: 1px solid $border-color;
-  padding-bottom: 75px;
-  padding-top: 75px;
+  padding-bottom: 50px;
+  padding-top: 50px;
 
   &:first-of-type{
     padding-top: 0;
@@ -48,10 +47,12 @@
 
   .component__title{
     @include title-l;
+    margin-bottom: 5px;
   }
 
   .component__description{
-    @include text-large;
+    @include text-small;
+    margin-bottom: 5px;
   }
 
   .component__404{
@@ -73,6 +74,7 @@
     border-top: 1px solid $border-color;
     text-align: right;
     font-size: 11px;
+    margin-top: 12px;
     margin-bottom: 12px;
     -webkit-user-select: none;
     -moz-user-select: none;
