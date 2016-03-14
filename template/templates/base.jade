@@ -27,7 +27,6 @@ html(lang="nl")
                 each item in navItems                
                     .offcanvas__link-wrapper(class="#{currentPage === item.label ? 'is-active' : ''}")
                         a.offcanvas__link(class="current", href=item.link) #{item.label}
-                        span.offcanvas__toggle(class=".js-toggle") ^
                         
                         if currentPage === item.label
                             div.sidebar__list-wrapper(class="js-sidebar")
@@ -69,7 +68,7 @@ html(lang="nl")
                         img(src='#{meta.avatar}').header__project__avatar
 
                     if subnav
-                        span.header__project__icon ⌄
+                        span.header__project__icon
 
 
                 //- sub projects

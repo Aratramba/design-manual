@@ -26,9 +26,7 @@
   display: block;
   padding: 22px;
   height: 60px;
-  width: 75%;
   cursor: pointer;
-  float: left;
   color: $white;
   font-weight: bold;
   background-color: $primary;
@@ -52,22 +50,5 @@
     &:not(.current){ 
       display: none; 
     }
-  }
-}
-
-.offcanvas__toggle{
-  background-color: $primary;
-  float: right;
-  padding: 22px;
-  text-align: center;
-  width: 25%;
-  height: 60px;
-  border-left: 1px solid $primary-dark;
-  border-bottom: 1px solid $primary-dark;
-  color: $white;
-  cursor: pointer;
-
-  @include breakpoint($breakpoint-l){
-    display: none;
   }
 }

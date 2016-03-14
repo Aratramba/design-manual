@@ -94,10 +94,16 @@
   right: 0;
   bottom: 0;
   top: 0;
-}
 
-.header__projects:hover .header__project__title{
-  text-decoration: underline;
+  &:hover {
+    .header__project__title {
+      text-decoration: underline;
+    }
+
+    .header__project__icon {
+      border-top-color: white;
+    }
+  }
 }
 
 .header__project__info{
@@ -125,10 +131,29 @@
 }
 
 .header__project__icon{
-  display: inline-block;
-  float: right;
-  padding: 5px 10px 0 10px;
-  font-size: 200%;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 8px 7px 0 7px;
+  border-color: rgba(white, .5) transparent transparent transparent;
+  text-decoration: none;
+  margin: 0 10px;
+  position: relative;
+  transition: border-color .15s;
+  border-radius: 10px;
+
+  &:after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 5px 4px 0 4px;
+    border-color: $primary transparent transparent transparent;
+    position: absolute;
+    left: -4px;
+    top: -8px;
+  }
 }
 
 
