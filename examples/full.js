@@ -14,20 +14,20 @@ new DesignManual({
   meta: {
     domain: 'website.com',
     title: 'Style Guide',
-    avatar: 'http://placehold.it/80x80'
+    avatar: 'http://placehold.it/100x50'
   },
   subnav: [
     {
       domain: 'google.com',
       title: 'Title',
       href: 'http://www.google.com',
-      avatar: 'http://placehold.it/80x80'
+      avatar: 'http://placehold.it/60x30'
     },
     {
       domain: 'google.com',
       title: 'Title',
       href: 'http://www.google.com',
-      avatar: 'http://placehold.it/80x80'
+      avatar: 'http://placehold.it/60x30'
     }
   ],
   headHtml: '<script>console.log("im in the head");</script>',
