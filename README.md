@@ -28,7 +28,7 @@ Create a living, breathing design manual (or styleguide if you will). This packa
   See [Creating pages](#creating-pages).
 
 4. ### Create components.json
-  This can be done through Jade-doc or some other generator. 
+  This can be done through [Pug-doc](https://github.com/Aratramba/pug-doc) or some other generator. 
 
   ```json
   [
