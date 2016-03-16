@@ -15,6 +15,12 @@
   }
 }
 
+.sidebar-is-empty .sidebar {
+  @include breakpoint(1300px){
+    display: none;
+  }
+}
+
 
 /**
 * Sidebar list

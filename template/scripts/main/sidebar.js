@@ -58,6 +58,10 @@ function render(items){
   var html = Mustache.render(TEMPLATE, { items: items });
   $sidebar.innerHTML = html;
 
+  if (!items.length) {
+    document.body.classList.add(constants.SIDEBAR_EMPTY_CLASS);
+  }
+
   $navLinks = document.querySelectorAll('.js-sidebar__item');
 }
 

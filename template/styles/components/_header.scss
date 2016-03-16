@@ -14,6 +14,12 @@
   }
 }
 
+.sidebar-is-empty .header {
+  @include breakpoint(1300px){
+    left: 0;
+  }
+}
+
 .header__title{
   display: inline-block;
   padding: 22px;

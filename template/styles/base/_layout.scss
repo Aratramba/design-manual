@@ -15,6 +15,14 @@
   }
 }
 
+
+
+.sidebar-is-empty .push {
+  @include breakpoint(1300px){
+    margin-left: 0;
+  }
+}
+
 @mixin container{
   @extend %wrapper;
   position: relative;
