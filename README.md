@@ -69,7 +69,7 @@ There are two types of pages you can generate.
 
     Markdown is parsed using [marked](https://github.com/chjj/marked). HTML is allowed.
 
-    If a file called Home.md is found, it will be placed first in the navigation.
+    If a file called Index.md is found, it will be placed first in the navigation.
 
   2. ### Components page
     Create a file called Components.md. This page is where your components are documented. The file should look like this.
