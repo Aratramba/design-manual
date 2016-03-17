@@ -55,11 +55,12 @@
 
 .header__nav{
   position: relative;
-  transition: all .5s ease;
+  transition: opacity .15s ease;
   z-index: 5;
   background-color: $primary;
   float: left;
   display: none;
+  opacity: 1;
 
   @include breakpoint($breakpoint-l){
     display: block;
@@ -168,8 +169,7 @@
 .is-scrolled-in-section{
 
   .header__nav{
-    position: absolute;
-    transform: translate3d(-100% ,0,0);
+    opacity: 0;
   }
 
   @include breakpoint(max $breakpoint-s){

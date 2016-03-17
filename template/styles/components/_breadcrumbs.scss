@@ -1,15 +1,21 @@
 .breadcrumbs{
-  display: none;
   color: $white;
   padding-top: 25px;
   padding-left: 25px;
   font-size: 14px;
-  float: left;
   font-weight: $weight-bold;
+  opacity: 0;
+  transition: opacity .15s;
+  position: absolute;
+  left: 50px;
 
   @include breakpoint($breakpoint-m){
-    padding: 20px;
+    padding: 22px 20px;
     font-size: 16px;
+  }
+
+  @include breakpoint(1300px) {
+    left: 0;
   }
 
   li{
@@ -39,7 +45,7 @@
 @include breakpoint(1300px){
   .breadcrumbs__section,
   .breadcrumbs__seperator{
-    display: none !important;
+    // display: none !important;
   }
 }
 
@@ -48,7 +54,7 @@
 .is-scrolled-in-section{
 
   .breadcrumbs{
-    display: inline-block;
+    opacity: 1;
   }
 
   .breadcrumbs__seperator{
