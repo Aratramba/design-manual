@@ -26,6 +26,10 @@ function scroll(){
 
     if(rect.top > 0 && rect.bottom > 0 && h - rect.top > 0 && h - rect.bottom > 0){
       $currentSection = $sections[i];
+
+      if (i === 0 && document.body.scrollTop < rect.top) {
+        $currentSection = null;
+      }
     }
   }
 

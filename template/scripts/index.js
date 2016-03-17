@@ -6,10 +6,11 @@ window.App = {};
 require('./libs/srcdoc-polyfill.min');
 require('./libs/prism');
 require('./libs/smoothscroll');
-require('./main/offcanvas');
 require('./components/index');
+require('./main/offcanvas');
 require('./main/breadcrumb');
 require('./main/sidebar');
+require('./main/section');
 
 var iframeResizer = require('./libs/iframeResizer.min');
 iframeResizer({ checkOrigin: false });
