@@ -5,13 +5,11 @@ doctype html
 html(lang="nl")
     head
         title #{pageTitle}
-
         meta(charset="UTF-8")
         meta(http-equiv="X-UA-Compatible", content="IE=Edge")
         meta(name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1")
         meta(http-equiv="cleartype", content="on")
         meta(name="author", content="Eight Media")
-        link(href='https://fonts.googleapis.com/css?family=Open+Sans:400,600' rel='stylesheet' type='text/css')
         link(rel="stylesheet", type="text/css", href="all.min.css")
 
         | !{headHtml}
@@ -21,7 +19,6 @@ html(lang="nl")
         label(for='hamburger').close-sidebar
 
 
-        //- offcanvas navigation
         if navItems
             aside.sidebar.offcanvas
                 each item in navItems                
@@ -33,7 +30,7 @@ html(lang="nl")
             
         .wrapper.push
             #top
-            //- Header items
+
             header.header.clearfix
                 
                 label(for='hamburger').header__link.header__hamburger ☰
@@ -44,7 +41,7 @@ html(lang="nl")
                                 a.header__nav__item__link(class="#{currentPage === item.label ? 'active' : ''}", href="#{item.link}") #{item.label}
 
 
-                //- breadcrumbs
+
                 if navItems
                     ul.breadcrumbs
                         each item in navItems
@@ -58,8 +55,6 @@ html(lang="nl")
                 input(type='checkbox' class='project-toggle' id='projects').hide
                 label(for='projects').close-sidebar
                 
-
-                //- header
                 label(for='projects').header__projects
                     .header__project__info
                         .header__project__domain #{meta.domain}
@@ -71,7 +66,6 @@ html(lang="nl")
                         span.header__project__icon
 
 
-                //- sub projects
                 if subnav
                     ul.project__list
                         each item in subnav
@@ -83,16 +77,9 @@ html(lang="nl")
                                         .project__list__item__body__title #{item.title}
 
 
-            //- content
             .container(class="space content") !{content}
 
             a.scrolltop(href="#top")
-
-            //- //- footer
-            //- footer.footer
-            //-     .container
-            //-         a(href='').footer__link.footer__link--previous Wells en Highlight area’s
-            //-         a(href='').footer__link.footer__link--next Tooltips
 
             //- js-template for sidebar list
             script#sidebar-link-template(type="text/template")

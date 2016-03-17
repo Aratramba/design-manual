@@ -27,11 +27,11 @@
   padding: 22px;
   height: 60px;
   cursor: pointer;
-  color: $white;
+  color: white;
   font-weight: bold;
   background-color: $primary;
-  border-bottom: 1px solid $primary-dark;
-  color: $white;
+  border-bottom: 1px solid rgba(black, .15);
+  color: white;
 
   &:hover{
     text-decoration: underline;

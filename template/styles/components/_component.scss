@@ -1,5 +1,5 @@
 @mixin code-button{
-  border: 1px solid $border-color;
+  border: 1px solid $grey;
   border-radius: 3px;
   padding: 6px 8px;
   margin-left: 5px;
@@ -57,7 +57,7 @@
 
   .component__404{
     background-color: lightyellow;
-    border: 1px solid $border-color;
+    border: 1px solid $grey;
     margin: 0 0 -150px;
     padding: 10px;
     display: inline-block;
@@ -71,7 +71,7 @@
    */
 
   .component__meta{
-    border-top: 1px solid $border-color;
+    border-top: 1px solid $grey;
     text-align: right;
     font-size: 11px;
     margin-top: 12px;
@@ -97,7 +97,7 @@
     cursor: pointer;
 
     &:hover{
-      background-color: $border-color;
+      background-color: $grey;
     }
 
     &:before{
@@ -188,6 +188,6 @@
   }
 
   .component__toggle:checked ~ .component__meta .component__meta__toggle{
-    background-color: $border-color;
+    background-color: $grey;
   }
 }

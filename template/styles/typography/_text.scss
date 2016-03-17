@@ -1,5 +1,4 @@
 %text-base {
-  font-family: $base-fam;
   font-size: $size-m;
   font-weight: 300;
   color: $base-color;
@@ -12,11 +11,6 @@
   @extend %text-base;
 }
 
-p,
-.text--m { 
-  @include text-base; 
-}
-
 // Small text
 @mixin text-small {
   @extend %text-base;
@@ -24,26 +18,9 @@ p,
   font-weight: 300;
 }
 
-.text--s { 
-  @include text-small; 
-}
-
 // Large text
 @mixin text-large {
   @extend %text-base;
   font-size: $size-l;
   font-weight: 300;
-}
-
-.text--l { 
-  @include text-large; 
-}
-
-
-@mixin text-bold{
-  font-weight: $weight-bold;
-}
-
-.text--bold {  
-  @include text-bold;
 }

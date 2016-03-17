@@ -4,14 +4,14 @@
   bottom: 0;
   top: 0;
   left: -$sidebar-width;
-  background-color: $menu-color;
+  background-color: $bg-grey;
   z-index: 3;
   transform: translate3d(0, 0, 0);
   overflow-y: auto;
 
   @include breakpoint(1300px){
     left: 0;
-    box-shadow: 0 2px 4px rgba($black, .5);
+    box-shadow: 0 2px 4px rgba(black, .5);
   }
 }
 
@@ -57,7 +57,7 @@
 
 .sidebar__item.is-active .sidebar__item__link{
   font-weight: $weight-bold;
-  color: $primary-dark;
+  color: $base-dark;
 }
 
 .sidebar__item__link{

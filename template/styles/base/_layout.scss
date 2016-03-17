@@ -10,7 +10,6 @@
 
 .push{
   @include breakpoint(1300px){
-    // transform: translate3d($sidebar-width, 0, 0);
     margin-left: $sidebar-width;
   }
 }
@@ -35,8 +34,4 @@
 
 .container{
   @include container;
-}
-
-.space{
-  padding-top: 20px;
 }

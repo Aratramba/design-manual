@@ -1,5 +1,5 @@
 .breadcrumbs{
-  color: $white;
+  color: white;
   padding-top: 25px;
   padding-left: 25px;
   font-size: 14px;
@@ -8,6 +8,7 @@
   transition: opacity .15s;
   position: absolute;
   left: 50px;
+  white-space: nowrap;
 
   @include breakpoint($breakpoint-m){
     padding: 22px 20px;
@@ -25,7 +26,7 @@
 }
 
 .breadcrumbs__section{
-  color: $white;
+  color: white;
 
   &:hover{
     text-decoration: underline;
@@ -33,26 +34,15 @@
 }
 
 .breadcrumbs__seperator{
-
   &:after{
-    content: '>';
+    content: '›';
     font-weight: bold;
-    color: rgba($white, .8);
+    color: rgba(white, .8);
   }
 }
-
-
-@include breakpoint(1300px){
-  .breadcrumbs__section,
-  .breadcrumbs__seperator{
-    // display: none !important;
-  }
-}
-
 
 
 .is-scrolled-in-section{
-
   .breadcrumbs{
     opacity: 1;
   }

@@ -5,16 +5,16 @@
 .project__list{
   display: none;
   position: absolute;
-  background-color: $menu-color;
+  background-color: $bg-grey;
   right: 0;
   top: 60px;
   width: 250px;
-  box-shadow: 0 2px 4px rgba($black, .2);
+  box-shadow: 0 2px 4px rgba(black, .2);
 }
 
 .project__list__item{
   @include clearfix;
-  border-bottom: 1px solid $border-color;
+  border-bottom: 1px solid $grey;
   font-size: 12px;
 
   &:last-of-type{
@@ -49,7 +49,7 @@
 }
 
 .project__list__item__body__domain{
-  @include text-bold;
+  font-weight: $weight-bold;
 }
 
 

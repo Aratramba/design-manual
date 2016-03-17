@@ -19,10 +19,19 @@
   ul{
     list-style: normal;
     list-style-position: inside;
+    margin-bottom: 2em;
   }
 
   li{
-    margin-bottom: .25em;
+    margin-bottom: 1em;
   }
 
+  a {
+    color: currentColor;
+    text-decoration: underline;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
 }

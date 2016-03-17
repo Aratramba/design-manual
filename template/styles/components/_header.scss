@@ -23,7 +23,7 @@
 .header__title{
   display: inline-block;
   padding: 22px;
-  color: $white;
+  color: white;
   margin: 0;
 }
 
@@ -37,7 +37,7 @@
   padding: 15px;
   opacity: .8;
   transition: opacity .15s;
-  border-right: 1px solid rgba($black, .1);
+  border-right: 1px solid rgba(black, .1);
   font-size: 30px;
 
   &:hover {
@@ -69,11 +69,11 @@
 
 .header__nav__item{
   display: inline-block;
-  border-right: 1px solid rgba($black, .1);
+  border-right: 1px solid rgba(black, .1);
 }
 
 .header__nav__item__link{
-  color: $white;
+  color: white;
   padding: 0 20px;
   line-height: 60px;
   text-decoration: none;
@@ -82,7 +82,7 @@
 
   &.active,
   &:hover{
-    color: rgba($white, .8);
+    color: rgba(white, .8);
   }
 }
 
@@ -92,15 +92,18 @@
 
 .header__projects{
   display: inline-block;
-  color: $white;
+  color: white;
   cursor: pointer;
-  border-left: 1px solid rgba($black, .1);
+  border-left: 1px solid rgba(black, .1);
   padding-top: 5px;
   float: right;
   position: absolute;
   right: 0;
   bottom: 0;
   top: 0;
+  background-color: $primary;
+  z-index: 1;
+  position: relative;
 
   &:hover {
     .header__project__title {
@@ -125,7 +128,7 @@
 }
 
 .header__project__domain{
-  color: rgba($white, .8);
+  color: rgba(white, .8);
   margin-bottom: 5px;
 }
 
