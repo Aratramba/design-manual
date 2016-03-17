@@ -14,8 +14,6 @@
   }
 }
 
-
-
 .sidebar-is-empty .push {
   @include breakpoint(1300px){
     margin-left: 0;
@@ -29,7 +27,8 @@
   max-width: $wrapper;
   padding-left: 20px;
   padding-right: 20px;
-  margin-top: 75px;
+  margin-top: 95px;
+  margin-bottom: 95px;
 }
 
 .container{

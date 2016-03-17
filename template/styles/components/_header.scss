@@ -39,6 +39,7 @@
   transition: opacity .15s;
   border-right: 1px solid rgba(black, .1);
   font-size: 30px;
+  user-select: none;
 
   &:hover {
     opacity: 1;
@@ -104,6 +105,7 @@
   background-color: $primary;
   z-index: 1;
   position: relative;
+  user-select: none;
 
   &:hover {
     .header__project__title {
