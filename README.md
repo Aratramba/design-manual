@@ -155,7 +155,8 @@ new DesignManual({
   bodyHtml: '<script>console.log("im in the footer");</script>',
   contentsId: '#contents',
   componentHeadHtml: '<script>console.log("im in the component head");</script>',
-  componentBodyHtml: '<script>console.log("im in the component body");</script>'
+  componentBodyHtml: '<script>console.log("im in the component body");</script>',
+  brandColor: 'red'
 });
 ```
 
@@ -181,3 +182,4 @@ new DesignManual({
 | componentHeadHtml      | ''            | string    | string of html to include in the head of the component
 | componentBodyHtml    | ''            | string    | string of html to include in the body of the component
 | contentsId    | '#contents'   | string    | css id to identify the contents heading
+| brandColor    | 'STEELBLUE'   | string    | overwrite default brand color

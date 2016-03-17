@@ -67,7 +67,8 @@
   font-size: $size-s;
 
   &:hover{
-    color: $primary-dark;
+    color: $base-dark;
+    text-decoration: underline;
   }
 }
 

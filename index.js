@@ -31,7 +31,8 @@ function DesignManual(options){
     bodyHtml: '',
     componentHeadHtml: '',
     componentBodyHtml: '',
-    contentsId: '#contents'
+    contentsId: '#contents',
+    primaryColor: null
   }, options);
 
   var errors = schema.validate(options);
