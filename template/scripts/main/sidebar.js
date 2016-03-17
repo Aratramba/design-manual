@@ -19,8 +19,6 @@ var $navLinks;
 function init(){
   var headings = aggregate();
   render(headings);
-  
-  dispatcher.on(constants.EVENT_SECTION_INVIEW, setActive);
 }
 
 
@@ -70,17 +68,18 @@ function render(items){
  * Set active item
  */
 
-function setActive(sectionId){
+function setActive(e){
   var i = 0;
   var l = $navLinks.length;
   var $item;
 
   for(; i<l; i++){
     $item = $navLinks[i];
-    $item.classList.toggle(constants.ACTIVE_CLASS, ($item.getAttribute('data-rel') === sectionId));
+    $item.classList.toggle(constants.ACTIVE_CLASS, ($item.getAttribute('data-rel') === e.section));
   }
 }
 
+dispatcher.on(constants.EVENT_SECTION_INVIEW, setActive);
 
 if($sidebar){
   init();

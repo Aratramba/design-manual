@@ -12,7 +12,7 @@
     "template-js": "npm run template-js-browserify -- -o httpdocs/app.min.js",
     "template-css": "npm run template-css-sass -- -o httpdocs/all.min.css",
     "template-html": "jade template/templates/components.jade -o httpdocs",
-    "watch-js": "watchify template/scripts/**/*.js -o httpdocs/app.min.js",
+    "watch-js": "watchify template/scripts/index.js -o httpdocs/app.min.js",
     "test": "tape test/*.js | faucet",
     "test-pages": "tape test/pages.js | faucet || true",
     "test-assets": "tape test/assets.js | faucet || true"

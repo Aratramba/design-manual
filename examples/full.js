@@ -30,9 +30,9 @@ new DesignManual({
       avatar: 'http://placehold.it/60x30'
     }
   ],
-  headHtml: '<script>console.log("im in the head");</script>',
-  bodyHtml: '<script>console.log("im in the body");</script>',
+  headHtml: '<script>//console.log("im in the head");</script>',
+  bodyHtml: '<script>//console.log("im in the body");</script>',
   contentsId: '#contents',
-  componentHeadHtml: '<script>console.log("im in the component head");</script>',
-  componentBodyHtml: '<script>console.log("im in the component body");</script>'
+  componentHeadHtml: '<script>//console.log("im in the component head");</script>',
+  componentBodyHtml: '<script>//console.log("im in the component body");</script>'
 });

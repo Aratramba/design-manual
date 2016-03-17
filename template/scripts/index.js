@@ -8,8 +8,8 @@ require('./libs/prism');
 require('./libs/smoothscroll');
 require('./components/index');
 require('./main/offcanvas');
-require('./main/breadcrumb');
 require('./main/sidebar');
+require('./main/breadcrumb');
 require('./main/section');
 
 var iframeResizer = require('./libs/iframeResizer.min');

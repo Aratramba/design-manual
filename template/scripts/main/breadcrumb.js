@@ -15,16 +15,16 @@ var $breadcrumb = document.querySelector('.js-breadcrumb');
  * to the currently visible section
  */
 
-function setBreadcrumb(sectionId){
+function setBreadcrumb(e){
 
-  if(sectionId === null){
+  if(e.section === null){
     $body.classList.remove(ACTIVE_CLASS);
     $breadcrumb.innerText = '';
     return;
   }
 
   $body.classList.add(ACTIVE_CLASS);
-  $breadcrumb.innerText = document.getElementById(sectionId).innerText;
+  $breadcrumb.innerText = document.getElementById(e.section).innerText;
 }
 
 dispatcher.on(constants.EVENT_SECTION_INVIEW, setBreadcrumb);

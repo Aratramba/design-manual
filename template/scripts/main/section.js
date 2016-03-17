@@ -5,7 +5,7 @@ var dispatcher = require('./dispatcher');
 var constants = require('../constants');
 
 var $sections = document.querySelectorAll('.content h2');
-var $currentSection;
+var $currentSection = null;
 
 
 /**
@@ -26,20 +26,22 @@ function scroll(){
 
     if(rect.top > 0 && rect.bottom > 0 && h - rect.top > 0 && h - rect.bottom > 0){
       $currentSection = $sections[i];
-
-      if (i === 0 && document.body.scrollTop < rect.top) {
-        $currentSection = null;
-      }
     }
   }
 
+  // scrolled above first section
+  if (document.body.scrollTop < $sections[0].getBoundingClientRect().top) {
+    $currentSection = null;
+  }
+
+
   if($prevSection !== $currentSection){
     if($currentSection){
-      dispatcher.emit(constants.EVENT_SECTION_INVIEW, $currentSection.id);
+      dispatcher.handleViewAction({ type: constants.EVENT_SECTION_INVIEW, section: $currentSection.id });
       return;
     }
 
-    dispatcher.emit(constants.EVENT_SECTION_INVIEW, null);
+    dispatcher.handleViewAction({ type: constants.EVENT_SECTION_INVIEW, section: null });
   }
 }
 
