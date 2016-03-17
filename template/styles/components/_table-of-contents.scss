@@ -18,6 +18,7 @@
 
   .table-of-contents__list__item__link{
     text-decoration: none;
+    color: $primary;
 
     &:hover{
       text-decoration: underline;
