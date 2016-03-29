@@ -1,8 +1,12 @@
 'use strict';
 /* global require */
 
+var constants = require('../constants');
 var Component = require('./component');
 var TOC = require('./table-of-contents');
+var queue = [];
+
+document.body.classList.add(constants.LOADING_CLASS);
 
 /**
  * Setup components page
@@ -18,7 +22,8 @@ var l = elements.length;
 for(; i<l; ++i){
 
   // create component
-  new Component(elements[i]);
+  var components = new Component(elements[i]);
+  queue.push(components);
 
   // create table of contents
   new TOC(elements[i]);
@@ -26,3 +31,13 @@ for(; i<l; ++i){
   // remove original list
   elements[i].parentNode.removeChild(elements[i]);
 }
+
+// flatten
+queue = [].concat.apply([], queue);
+
+queue.forEach(function(component) {
+  component.$el.innerHTML = component.html;
+  component.$wrapper.appendChild(component.$el);
+});
+
+// document.body.classList.remove(constants.LOADING_CLASS);

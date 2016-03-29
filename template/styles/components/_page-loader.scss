@@ -1,0 +1,26 @@
+.is-loading .header{
+  &:after {
+    display: block;
+    position: absolute;
+    top: calc(100% + 15px);
+    right: 15px;
+    width: 14px;
+    height: 14px;
+    border: solid 2px transparent;
+    border-top-color: $primary;
+    border-left-color: $primary;
+    border-radius: 10px;
+    animation: pace-spinner 400ms linear infinite;
+  }
+}
+
+@keyframes pace-spinner {
+  0% { 
+    transform: rotate(0deg); 
+    transform: rotate(0deg); 
+  }
+  100% { 
+    transform: rotate(360deg); 
+    transform: rotate(360deg); 
+  }
+}

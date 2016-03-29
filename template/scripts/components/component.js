@@ -34,13 +34,15 @@ if($template){
 
 function Component($el){
 
+  var queue = [];
+
   // get all slugs inside the list items
   var keys = Array.prototype.map.call($el.querySelectorAll('li'), function(item){
     return item.textContent;
   });
 
-  var sectionWrapper = document.createElement('div');
-  sectionWrapper.className = 'component-wrapper';
+  var $sectionWrapper = document.createElement('div');
+  $sectionWrapper.className = 'component-wrapper';
 
 
   // append div with rendered mustache component
@@ -54,7 +56,7 @@ function Component($el){
 
     if(!components[key]){
       section.innerHTML = Mustache.render(EMPTY_TEMPLATE, { key: key });
-      sectionWrapper.appendChild(section);
+      $sectionWrapper.appendChild(section);
       return;
     }
 
@@ -65,11 +67,16 @@ function Component($el){
     components[key].slug = slug;
 
     // render template
-    section.innerHTML = Mustache.render(TEMPLATE, components[key]);
-    sectionWrapper.appendChild(section);
+    queue.push({
+      $el: section,
+      $wrapper: $sectionWrapper,
+      html: Mustache.render(TEMPLATE, components[key])
+    });
   });
 
-  $el.parentNode.insertBefore(sectionWrapper, $el.nextSibling);
+  $el.parentNode.insertBefore($sectionWrapper, $el.nextSibling);
+
+  return queue;
 }
 
 module.exports = Component;
