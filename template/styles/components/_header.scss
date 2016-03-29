@@ -175,6 +175,7 @@
 
   .header__nav{
     opacity: 0;
+    pointer-events: none;
   }
 
   @include breakpoint(max $breakpoint-s){
