@@ -6,8 +6,6 @@ var Component = require('./component');
 var TOC = require('./table-of-contents');
 var queue = [];
 
-document.body.classList.add(constants.LOADING_CLASS);
-
 /**
  * Setup components page
  * loops over all headings with id #contents
@@ -35,9 +33,28 @@ for(; i<l; ++i){
 // flatten
 queue = [].concat.apply([], queue);
 
-queue.forEach(function(component) {
+
+/**
+ * Create render loop
+ * Uses requestAnimationFrame to create
+ * a smooth loading experience
+ */
+
+var current = 0;
+function next() {
+  var component = queue[current];
   component.$el.innerHTML = component.html;
   component.$wrapper.appendChild(component.$el);
-});
 
-// document.body.classList.remove(constants.LOADING_CLASS);
+  current++;
+  if (queue[current]) {
+    window.requestAnimationFrame(next);
+  } else {
+    document.body.classList.remove(constants.LOADING_CLASS);
+  }
+}
+
+if (queue.length) {
+  document.body.classList.add(constants.LOADING_CLASS);
+  next();
+}
