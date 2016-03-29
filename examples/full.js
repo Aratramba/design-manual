@@ -34,5 +34,6 @@ new DesignManual({
   bodyHtml: '<script>//console.log("im in the body");</script>',
   contentsId: '#contents',
   componentHeadHtml: '<script>//console.log("im in the component head");</script>',
-  componentBodyHtml: '<script>//console.log("im in the component body");</script>'
+  componentBodyHtml: '<script>//console.log("im in the component body");</script>',
+  brandColor: 'CRIMSON'
 });
