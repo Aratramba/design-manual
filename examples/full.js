@@ -1,8 +1,8 @@
 'use strict';
 /* global require */
 
-var rimraf = require('rimraf');
-rimraf.sync('httpdocs/*');
+// var rimraf = require('rimraf');
+// rimraf.sync('httpdocs/*');
 
 var DesignManual = require('../index');
 
