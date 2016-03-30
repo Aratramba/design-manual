@@ -4,7 +4,6 @@
 window.App = {};
 
 require('./libs/srcdoc-polyfill.min');
-require('./libs/prism');
 require('./libs/smoothscroll');
 require('./components/index');
 require('./main/offcanvas');

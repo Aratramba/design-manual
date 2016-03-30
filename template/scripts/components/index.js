@@ -4,6 +4,7 @@
 var constants = require('../constants');
 var Component = require('./component');
 var TOC = require('./table-of-contents');
+var Prism = require('../libs/prism');
 var iframeResizer = require('../libs/iframeResizer.min');
 var queue = [];
 
@@ -48,6 +49,7 @@ function next() {
   component.$wrapper.appendChild(component.$el);
 
   iframeResizer({ checkOrigin: false });
+  Prism.highlightAll();
 
   current++;
   if (queue[current]) {
