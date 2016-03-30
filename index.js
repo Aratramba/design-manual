@@ -16,6 +16,7 @@ function DesignManual(options){
   
   // options
   options = assign({
+    forceUpdate: false,
     output: null,
     pages: null,
     components: null,
