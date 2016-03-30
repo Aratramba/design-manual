@@ -157,7 +157,8 @@ new DesignManual({
   componentHeadHtml: '<script>console.log("im in the component head");</script>',
   componentBodyHtml: '<script>console.log("im in the component body");</script>',
   brandColor: 'red',
-  forceUpdate: true
+  forceUpdate: true,
+  onComplete: function() { }
 });
 ```
 
@@ -185,3 +186,4 @@ new DesignManual({
 | contentsId    | '#contents'   | string    | css id to identify the contents heading
 | brandColor    | 'STEELBLUE'   | string    | overwrite default brand color
 | forceUpdate    | false   | boolean    | overwrite all files every time
+| onComplete    |    | function    | function to be called when done

@@ -32,7 +32,8 @@ function DesignManual(options){
     componentHeadHtml: '',
     componentBodyHtml: '',
     contentsId: '#contents',
-    primaryColor: null
+    primaryColor: null,
+    onComplete: function() {}
   }, options);
 
   var errors = schema.validate(options);
