@@ -42,8 +42,7 @@
     "slugify": "^0.1.1",
     "tape": "^4.2.1",
     "uglifyify": "^3.0.1",
-    "validate": "^3.0.1",
-    "pace": "HubSpot/pace"
+    "validate": "^3.0.1"
   },
   "devDependencies": {
     "is-there": "^4.1.0",

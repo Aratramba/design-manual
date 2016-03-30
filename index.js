@@ -4,8 +4,7 @@
 var assign = require('object-assign');
 var path = require('path');
 
-var pages = require('./lib/pages');
-var assets = require('./lib/assets');
+var generate = require('./lib/generate');
 var schema = require('./lib/validate');
 
 
@@ -48,8 +47,7 @@ function DesignManual(options){
   options.pages = path.resolve(options.pages);
   options.components = path.resolve(options.components);
   
-  assets.generate(options);
-  pages.generate(options);
+  generate.init(options);
 }
 
 
