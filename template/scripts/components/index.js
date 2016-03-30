@@ -4,6 +4,7 @@
 var constants = require('../constants');
 var Component = require('./component');
 var TOC = require('./table-of-contents');
+var iframeResizer = require('../libs/iframeResizer.min');
 var queue = [];
 
 /**
@@ -45,6 +46,8 @@ function next() {
   var component = queue[current];
   component.$el.innerHTML = component.html;
   component.$wrapper.appendChild(component.$el);
+
+  iframeResizer({ checkOrigin: false });
 
   current++;
   if (queue[current]) {

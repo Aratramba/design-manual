@@ -11,6 +11,3 @@ require('./main/offcanvas');
 require('./main/sidebar');
 require('./main/breadcrumb');
 require('./main/section');
-
-var iframeResizer = require('./libs/iframeResizer.min');
-iframeResizer({ checkOrigin: false });
