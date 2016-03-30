@@ -21,7 +21,7 @@ html(lang="nl")
 
         if navItems
             aside.sidebar.offcanvas
-                each item in navItems                
+                each item in navItems              
                     .offcanvas__link-wrapper(class="#{currentPage === item.label ? 'is-active' : ''} #{(currentPage === 'Index' && item.label === 'Home') ? 'is-active' : ''}")
                         a.offcanvas__link(class="current", href=item.link) #{item.label}
                         

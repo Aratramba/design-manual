@@ -7,7 +7,7 @@
 var DesignManual = require('../index');
 
 new DesignManual({
-  forceUpdate: false,
+  forceUpdate: true,
   output: 'httpdocs/',
   pages: 'test/fixtures/pages/',
   components: 'test/fixtures/data/components.json',
