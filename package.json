@@ -26,6 +26,7 @@
     "browserify": "^11.2.0",
     "clean-css": "^3.4.5",
     "cssmin": "^0.4.3",
+    "delegate-events": "^1.1.1",
     "events": "^1.1.0",
     "faucet": "0.0.1",
     "jade": "^1.11.0",

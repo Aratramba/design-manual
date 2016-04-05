@@ -2,7 +2,9 @@
 /* global module, require */
 
 var Mustache = require('mustache');
+var delegate = require('delegate-events');
 var slugify = require('slugify');
+var smoothScroll = require('../libs/smoothscroll');
 var prev = require('../libs/previous-selector');
 
 /**
@@ -39,6 +41,20 @@ function TOC($el){
   div.innerHTML = Mustache.render(TEMPLATE, { items: items });
   $el.parentNode.insertBefore(div, $el.nextSibling);
 
+  delegate.bind($el.parentNode, '.table-of-contents__list__item__link', 'click', onTocLinkClick);
+
 }
 
 module.exports = TOC;
+
+/**
+ * Table of contents link click handler
+ */
+
+
+function onTocLinkClick(e) {
+  var href = e.delegateTarget.getAttribute('href');
+  var top = document.querySelector(href).getBoundingClientRect().top - 80;
+  smoothScroll(top);
+  e.preventDefault();
+}

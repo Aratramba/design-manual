@@ -1,9 +1,11 @@
 'use strict';
 /* global require */
 
+var delegate = require('delegate-events');
 var Mustache = require('mustache');
 var dispatcher = require('./dispatcher');
 var constants = require('../constants');
+var smoothScroll = require('../libs/smoothscroll');
 
 var TEMPLATE = document.getElementById('sidebar-link-template').innerHTML;
 Mustache.parse(TEMPLATE);
@@ -61,6 +63,21 @@ function render(items){
   }
 
   $navLinks = document.querySelectorAll('.js-sidebar__item');
+
+  delegate.bind($sidebar, '.js-sidebar__item a', 'click', onNavLinkClick);
+}
+
+
+/**
+ * Nav link click handler
+ */
+
+
+function onNavLinkClick(e) {
+  var href = e.delegateTarget.getAttribute('href');
+  var top = document.querySelector(href).getBoundingClientRect().top - 80;
+  smoothScroll(top);
+  e.preventDefault();
 }
 
 
