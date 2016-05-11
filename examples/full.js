@@ -8,7 +8,7 @@ var DesignManual = require('../index');
 
 new DesignManual({
   forceUpdate: true,
-  output: 'httpdocs/',
+  output: 'examples/httpdocs/',
   pages: 'test/fixtures/pages/',
   components: 'test/fixtures/data/components.json',
   websiteCss: ['test/fixtures/assets/style1.css', 'test/fixtures/assets/style2.css'],

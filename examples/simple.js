@@ -7,7 +7,7 @@ rimraf.sync('httpdocs/*');
 var DesignManual = require('../index');
 
 new DesignManual({
-  output: 'httpdocs/',
+  output: 'examples/httpdocs/',
   pages: 'test/fixtures/pages/',
   components: 'test/fixtures/data/components.json',
   meta: {
