@@ -1,0 +1,112 @@
+<!DOCTYPE html><html lang="nl"><head><title>Components - Style Guide - website.com</title><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=Edge"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta http-equiv="cleartype" content="on"><meta name="author" content="Eight Media"><link rel="stylesheet" type="text/css" href="all.min.css"><script>//console.log("im in the head");</script></head><body class="components-page sidebar-is-empty"><input type="checkbox" id="hamburger" class="hamburger-toggle hide"><label for="hamburger" class="close-sidebar"></label><aside class="sidebar offcanvas"><div class="offcanvas__link-wrapper  "><a href="index.html" class="offcanvas__link current">Home</a></div><div class="offcanvas__link-wrapper is-active "><a href="components.html" class="offcanvas__link current">Components</a><div class="sidebar__list-wrapper js-sidebar"></div></div><div class="offcanvas__link-wrapper  "><a href="content-guidelines.html" class="offcanvas__link current">Content Guidelines</a></div><div class="offcanvas__link-wrapper  "><a href="design-principles.html" class="offcanvas__link current">Design Principles</a></div></aside><div class="wrapper push"><div id="top"></div><header class="header clearfix"><label for="hamburger" class="header__link header__hamburger">☰</label><ul class="header__nav"><li class="header__nav__item"><a href="index.html" class="header__nav__item__link">Home</a></li><li class="header__nav__item"><a href="components.html" class="header__nav__item__link active">Components</a></li><li class="header__nav__item"><a href="content-guidelines.html" class="header__nav__item__link">Content Guidelines</a></li><li class="header__nav__item"><a href="design-principles.html" class="header__nav__item__link">Design Principles</a></li></ul><ul class="breadcrumbs"><li><a href="components.html" class="breadcrumbs__section">Components</a></li><li class="breadcrumbs__seperator"></li><li class="js-breadcrumb"></li></ul><input type="checkbox" id="projects" class="project-toggle hide"><label for="projects" class="close-sidebar"></label><label for="projects" class="header__projects"><div class="header__project__info"><div class="header__project__domain">website.com</div><div class="header__project__title">Style Guide</div></div><img src="http://placehold.it/100x50" class="header__project__avatar"><span class="header__project__icon"></span></label><ul class="project__list"><li class="project__list__item"><a href="http://www.google.com" class="project__list__item__link"><img src="http://placehold.it/60x30" class="project__list__item__avatar"><div class="project__list__item__body"><div class="project__list__item__body__domain">google.com</div><div class="project__list__item__body__title">Title</div></div></a></li><li class="project__list__item"><a href="http://www.google.com" class="project__list__item__link"><img src="http://placehold.it/60x30" class="project__list__item__avatar"><div class="project__list__item__body"><div class="project__list__item__body__domain">google.com</div><div class="project__list__item__body__title">Title</div></div></a></li></ul></header><div class="container space content"><h1 id="components">Components</h1>
+<p>This is the components page.</p>
+<hr>
+<h2 id="section-1">Section 1</h2>
+<p>This is the description of section number 1.</p>
+<h3 id="contents">Contents</h3>
+<ul>
+<li>extends</li>
+<li>some-tag</li>
+</ul>
+<hr>
+<h2 id="section-2">Section 2</h2>
+<p>This is the description of section number 2.</p>
+<h3 id="contents">Contents</h3>
+<ul>
+<li>mixin</li>
+<li>inclusion tag</li>
+</ul>
+<hr>
+<h2 id="section-3">Section 3</h2>
+<p>This is the description of section number 3.</p>
+<h3 id="contents">Contents</h3>
+<ul>
+<li>some-tag</li>
+<li>mixin</li>
+<li>extends</li>
+<li>missing component</li>
+<li>some-tag</li>
+<li>mixin</li>
+<li>extends</li>
+<li>missing component</li>
+<li>some-tag</li>
+<li>mixin</li>
+<li>extends</li>
+<li>missing component</li>
+<li>some-tag</li>
+<li>mixin</li>
+<li>extends</li>
+<li>missing component</li>
+<li>some-tag</li>
+<li>mixin</li>
+<li>extends</li>
+<li>missing component</li>
+<li>some-tag</li>
+<li>mixin</li>
+<li>extends</li>
+<li>missing component</li>
+<li>some-tag</li>
+<li>mixin</li>
+<li>extends</li>
+<li>missing component</li>
+<li>some-tag</li>
+<li>mixin</li>
+<li>extends</li>
+<li>missing component</li>
+<li>some-tag</li>
+<li>mixin</li>
+<li>extends</li>
+<li>missing component</li>
+</ul>
+<hr>
+<h2 id="section-4">Section 4</h2>
+<p>This is the rest</p>
+</div><a href="#top" class="scrolltop"></a><script id="sidebar-link-template" type="text/template">{{#items.length}}<ul class="sidebar__list current is-open">{{#items}}<li data-rel="{{id}}" class="sidebar__item js-sidebar__item"><a href="#{{id}}" class="sidebar__item__link">{{label}}</a></li>{{/items}}</ul>{{/items.length}}</script><script>window.CONTENTS_ID = '#contents';
+window.COMPONENTS = [
+  {
+    "meta": {
+      "name": "extends"
+    },
+    "file": "test/fixtures/extends.jade",
+    "source": "extends tag.jade",
+    "output": "<div class=\"some-tag\">this is some tag</div><div class=\"some-other-tag\">this is some other tag</div>"
+  },
+  {
+    "meta": {
+      "name": "mixin",
+      "description": "this is jade mixin documentation",
+      "arguments": {
+        "arg1": "foo",
+        "arg2": "faa"
+      }
+    },
+    "file": "test/fixtures/mixins.jade",
+    "source": "mixin mixin2(arg1, arg2)\n  div this is a mixin #{arg1}\n  div this is the same mixin #{arg2}",
+    "output": "<div>this is a mixin foo</div><div>this is the same mixin faa</div>"
+  },
+  {
+    "meta": {
+      "name": "some-tag"
+    },
+    "file": "test/fixtures/tag.jade",
+    "source": "div.some-tag\n  | this is some tag",
+    "output": "<div class=\"some-tag\">this is some tag</div>"
+  },
+  {
+    "meta": {
+      "name": "inclusion tag",
+      "description": "this is an inclusion tag"
+    },
+    "file": "test/fixtures/include.jade",
+    "source": "div\n  include mixins.jade\n  +mixin2('foo', 'faa')",
+    "output": "<script><\/script><div><div>this is a mixin foo</div><div>this is the same mixin faa</div></div>"
+  }
+];
+
+</script><script id="table-of-contents-template" type="text/template"><ul class="table-of-contents__list">{{#items}}<li class="table-of-contents__list__item"> <a href="{{href}}" class="table-of-contents__list__item__link">{{label}}</a></li>{{/items}}</ul></script><script id="component-template" type="text/template">{{#meta.name.length}}<h3 class="component__title">{{meta.name}}</h3>{{/meta.name.length}}
+{{#meta.description.length}}<p class="component__description">{{meta.description}}</p>{{/meta.description.length}}<input type="checkbox" name="source" id="toggle-{{slug}}" class="hide component__toggle"><div class="component__meta"><label for="toggle-{{slug}}" class="component__meta__toggle">code</label><span class="component__meta__file">{{file}}</span></div><div class="component__code"><div class="component__code__output"><h3 class="component__code__title">HTML</h3><pre><code class="language-markup">{{output}}</code></pre></div>{{#source}}<div class="component__code__source"><h3 class="component__code__title">Source</h3><pre><code class="language-jade">{{source}}</code></pre></div>{{/source}}</div><iframe srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;head&gt;&lt;script src='https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/3.5.0/iframeResizer.contentWindow.min.js'&gt;&lt;/script&gt;&lt;style&gt;body{
+  font-family: Arial;
+  background-color: #eee;
+}div{
+  color: #333;
+}&lt;/style&gt;&lt;script&gt;//console.log(&quot;im in the component head&quot;);&lt;/script&gt;&lt;/head&gt;&lt;body&gt;{{output}}&lt;script&gt;//console.log(&quot;im in the component body&quot;);&lt;/script&gt;&lt;/body&gt;&lt;/html&gt;" frameborder="0" scrolling="no" class="component__iframe"></iframe></script><script id="component-empty-template" type="text/template"><div class="component__meta"></div><p class="component__404">‼&nbsp;&nbsp;Component `{{key}}` not found.</p></script><script src="app.min.js"></script><script>//console.log("im in the body");</script></div></body></html>
