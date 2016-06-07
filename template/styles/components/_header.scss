@@ -91,10 +91,9 @@
  * Project dropdown
  */
 
-.header__projects{
+.header__projects {
   display: inline-block;
   color: white;
-  cursor: pointer;
   border-left: 1px solid rgba(black, .1);
   padding-top: 5px;
   float: right;
@@ -106,12 +105,9 @@
   z-index: 1;
   position: relative;
   user-select: none;
+  height: 100%;
 
   &:hover {
-    .header__project__title {
-      text-decoration: underline;
-    }
-
     .header__project__icon {
       border-top-color: white;
     }

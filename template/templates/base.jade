@@ -62,11 +62,11 @@ html(lang="nl")
                     if meta.avatar
                         img(src='#{meta.avatar}').header__project__avatar
 
-                    if subnav
+                    if subnav.length
                         span.header__project__icon
 
 
-                if subnav
+                if subnav.length
                     ul.project__list
                         each item in subnav
                             li.project__list__item
