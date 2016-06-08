@@ -80,10 +80,14 @@
   text-decoration: none;
   font-weight: $weight-bold;
   display: block;
+  transition: background-color .15s;
 
-  &.active,
   &:hover{
-    color: rgba(white, .8);
+    background-color: rgba(0, 0, 0, .1);
+  }
+
+  &.active {
+    text-decoration: underline;
   }
 }
 
