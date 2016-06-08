@@ -96,6 +96,7 @@
   color: white;
   border-left: 1px solid rgba(black, .1);
   padding-top: 5px;
+  padding-right: 14px;
   float: right;
   position: absolute;
   right: 0;
@@ -106,6 +107,10 @@
   position: relative;
   user-select: none;
   height: 100%;
+
+  @include breakpoint($breakpoint-s){
+    padding-right: 34px;
+  }
 
   &:hover {
     .header__project__icon {
@@ -118,7 +123,11 @@
   float: left;
   padding: 11px 20px 0 20px;
   text-align: right;
-  font-size: $size-xs;
+  font-size: $size-xxs;
+
+  @include breakpoint($breakpoint-s){
+    font-size: $size-xs;
+  }
 }
 
 .header__project__title{
@@ -132,8 +141,12 @@
 
 
 .header__project__avatar{
-  display: inline-block;
+  display: none;
   height: 50px;
+
+  @include breakpoint($breakpoint-s){
+    display: inline-block;
+  }
 }
 
 .header__project__icon{
@@ -144,7 +157,9 @@
   border-color: rgba(white, .5) transparent transparent transparent;
   text-decoration: none;
   margin: 0 10px;
-  position: relative;
+  position: absolute;
+  right: 0;
+  top: 50%;
   transition: border-color .15s;
   border-radius: 10px;
 
