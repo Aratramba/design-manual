@@ -13,15 +13,16 @@
   .table-of-contents__list__item{
     display: inline-block;
     margin-right: 30px;
-    font-size: 15px;
+    font-size: 14px;
   }
 
   .table-of-contents__list__item__link{
     text-decoration: none;
-    color: $primary;
+    color: $base-dark;
+    text-decoration: underline;
 
     &:hover{
-      text-decoration: underline;
+      text-decoration: none;
     }
   }
 }

@@ -16,6 +16,7 @@
 .components-page{
   h2{
     @include title-xl;
+    color: $base-dark;
   }
 }
 
