@@ -14,8 +14,8 @@
 // Small text
 @mixin text-small {
   @extend %text-base;
-  font-size: $size-s;
-  font-weight: 300;
+  font-size: $size-m;
+  font-weight: 400;
 }
 
 // Large text
