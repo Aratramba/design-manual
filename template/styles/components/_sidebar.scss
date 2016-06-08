@@ -11,7 +11,7 @@
 
   @include breakpoint(1300px){
     left: 0;
-    box-shadow: 0 2px 4px rgba(black, .5);
+    border-right: 1px solid #ddd;
   }
 }
 
