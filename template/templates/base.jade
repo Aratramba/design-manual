@@ -19,7 +19,7 @@ html(lang="nl")
         label(for='hamburger').close-sidebar
 
 
-        if navItems
+        if navItems.length
             aside.sidebar.offcanvas
                 each item in navItems              
                     .offcanvas__link-wrapper(class="#{currentPage === item.label ? 'is-active' : ''} #{(currentPage === 'Index' && item.label === 'Home') ? 'is-active' : ''}")
@@ -34,7 +34,7 @@ html(lang="nl")
             header.header.clearfix
                 
                 label(for='hamburger').header__link.header__hamburger ☰
-                if navItems
+                if navItems.length
                     ul.header__nav
                         each item in navItems
                             li.header__nav__item
@@ -42,7 +42,7 @@ html(lang="nl")
 
 
 
-                if navItems
+                if navItems.length
                     ul.breadcrumbs
                         each item in navItems
                             if currentPage === item.label
@@ -59,6 +59,7 @@ html(lang="nl")
                     .header__project__info
                         .header__project__domain #{meta.domain}
                         .header__project__title #{meta.title}
+                        
                     if meta.avatar
                         img(src='#{meta.avatar}').header__project__avatar
 

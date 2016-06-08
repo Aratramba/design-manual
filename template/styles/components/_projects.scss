@@ -16,9 +16,18 @@
   @include clearfix;
   border-bottom: 1px solid $grey;
   font-size: 12px;
+  transition: background-color .15s;
 
   &:last-of-type{
     border: 0;
+  }
+
+  &:hover {
+    background-color: rgba(0, 0, 0, .1);
+
+    .project__list__item__body__title{
+      text-decoration: underline;
+    }
   }
 }
 
@@ -26,10 +35,6 @@
   padding: 14px;
   display: block;
   color: $base-dark;
-}
-
-.project__list__item:hover .project__list__item__body__title{
-  text-decoration: underline;
 }
 
 .project__list__item__avatar{
@@ -63,4 +68,8 @@
 
 .project-toggle:checked ~ .close-sidebar{
  opacity: 1;
+}
+
+.project-toggle:checked ~ .header__projects .header__project__icon {
+  transform: rotate(-180deg);
 }

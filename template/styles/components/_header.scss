@@ -96,7 +96,6 @@
   color: white;
   border-left: 1px solid rgba(black, .1);
   padding-top: 5px;
-  padding-right: 14px;
   float: right;
   position: absolute;
   right: 0;
@@ -107,12 +106,11 @@
   position: relative;
   user-select: none;
   height: 100%;
-
-  @include breakpoint($breakpoint-s){
-    padding-right: 34px;
-  }
+  transition: background-color .15s;
 
   &:hover {
+    background-color: rgba(0, 0, 0, .1);
+
     .header__project__icon {
       border-top-color: white;
     }
@@ -143,9 +141,11 @@
 .header__project__avatar{
   display: none;
   height: 50px;
+  padding-right: 14px;
 
   @include breakpoint($breakpoint-s){
     display: inline-block;
+    padding-right: 34px;
   }
 }
 
@@ -162,6 +162,7 @@
   top: 50%;
   transition: border-color .15s;
   border-radius: 10px;
+  transform-origin: 7px 2px;
 
   &:after {
     content: '';
