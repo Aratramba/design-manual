@@ -29,7 +29,7 @@
 .sidebar__list-wrapper{}
 
 .sidebar__list{
-  padding: 0 20px;
+  padding: 0;
   overflow: hidden;
   line-height: 33px;
   transition: all .5s ease;
@@ -37,7 +37,7 @@
 
   @include breakpoint($breakpoint-l){
     max-height: none;
-    padding: 20px;
+    padding: 20px 0 0 0;
     &:not(.current){ display: none }
   }
 
@@ -45,7 +45,6 @@
   &.is-open{
     max-height: 1000px;
     transform: scale(0, 100%);
-    padding: 20px;
   }
 
   &:last-of-type{
@@ -55,9 +54,13 @@
 
 
 
-.sidebar__item.is-active .sidebar__item__link{
-  font-weight: $weight-bold;
-  color: $base-dark;
+.sidebar__item {
+  &.is-active {
+    .sidebar__item__link{
+      background-color: rgba(0, 0, 0, .1);
+      color: $base-dark;
+    }
+  }
 }
 
 .sidebar__item__link{
@@ -66,7 +69,9 @@
   color: $base-color;
   font-size: $size-s;
   line-height: 1.4;
-  margin-bottom: .75em;
+  margin-bottom: 0;
+  transition: background-color .15s;
+  padding: 10px 20px;
 
   &:hover{
     color: $base-dark;
