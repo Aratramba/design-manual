@@ -83,11 +83,11 @@
   transition: background-color .15s;
 
   &:hover{
-    background-color: rgba(0, 0, 0, .1);
+    text-decoration: underline;
   }
 
   &.active {
-    text-decoration: underline;
+    background-color: rgba(0, 0, 0, .1);
   }
 }
 
