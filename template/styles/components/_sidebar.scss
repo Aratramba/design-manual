@@ -57,8 +57,12 @@
 .sidebar__item {
   &.is-active {
     .sidebar__item__link {
-      background-color: rgba(0, 0, 0, .1);
+      font-weight: $weight-bold;
       color: $base-dark;
+    }
+
+    .sidebar__item__components {
+      display: block;
     }
   }
 }
@@ -105,4 +109,45 @@
   visibility: visible;
   opacity: .5;
   transition: opacity .2s ease;
+}
+
+
+/**
+ * Added component list
+ */
+
+.sidebar__item__components {
+  display: none;
+
+  .table-of-contents__list {
+    margin: -5px 20px 0 20px;
+    padding: 5px;
+  }
+
+  .table-of-contents__list__item {
+
+  }
+
+  .table-of-contents__list__item__link {
+    display: block;
+    text-decoration: none;
+    color: $base-color;
+    font-size: $size-xs;
+    line-height: 1.4;
+    margin-bottom: 0;
+    transition: background-color .15s;
+
+    &:hover {
+      color: $base-dark;
+      text-decoration: underline;
+    }
+
+    &:before {
+      opacity: .5;
+      margin: 0 5px 0 0;
+      content: '•';
+      vertical-align: middle;
+      display: inline-block;
+    }
+  }
 }

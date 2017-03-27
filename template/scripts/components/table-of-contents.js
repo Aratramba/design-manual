@@ -23,7 +23,8 @@ if($template){
 
 function TOC($el){
 
-  var slug_prefix = '#'+ prev($el, 'h2').id +'-';
+  var id = prev($el, 'h2').id;
+  var slug_prefix = '#'+ id +'-';
 
   // get href/label based on list item text content
   var items = Array.prototype.map.call($el.querySelectorAll('li'), function(item){
@@ -42,6 +43,13 @@ function TOC($el){
   $el.parentNode.insertBefore(div, $el.nextSibling);
 
   delegate.bind($el.parentNode, '.table-of-contents__list__item__link', 'click', onTocLinkClick);
+
+  // append to sidebar
+  var $sidebarItem = document.querySelector('.sidebar [data-rel="' + id + '"]');
+  var $sidebarExtra = document.createElement('div');
+  $sidebarExtra.className = 'sidebar__item__components';
+  $sidebarExtra.innerHTML = div.innerHTML;
+  $sidebarItem.appendChild($sidebarExtra);
 
 }
 

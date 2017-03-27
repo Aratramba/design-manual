@@ -3,8 +3,8 @@
 
 window.App = {};
 
+require('./main/sidebar');
 require('./components/index');
 require('./main/offcanvas');
-require('./main/sidebar');
 require('./main/breadcrumb');
 require('./main/section');
