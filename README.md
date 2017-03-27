@@ -159,6 +159,7 @@ new DesignManual({
   componentHeadHtml: '<script>console.log("im in the component head");</script>',
   componentBodyHtml: '<script>console.log("im in the component body");</script>',
   brandColor: 'red',
+  brandColorContrast: 'yellow',
   forceUpdate: true,
   onComplete: function() { }
 });
@@ -187,5 +188,6 @@ new DesignManual({
 | componentBodyHtml    | ''            | string    | string of html to include in the body of the component
 | contentsId    | '#contents'   | string    | css id to identify the contents heading
 | brandColor    | 'STEELBLUE'   | string    | overwrite default brand color
+| brandColorContrast    | 'LIGHTGOLDENRODYELLOW'   | string    | overwrite default text color on brand color
 | forceUpdate    | false   | boolean    | overwrite all files every time
 | onComplete    |    | function    | function to be called when done

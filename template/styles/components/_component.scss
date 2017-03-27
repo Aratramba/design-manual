@@ -1,4 +1,4 @@
-@mixin code-button{
+@mixin code-button {
   border: 1px solid $grey;
   border-radius: 3px;
   padding: 6px 8px;
@@ -13,8 +13,8 @@
  * see _content.scss for default styling
  */
 
-.components-page{
-  h2{
+.components-page {
+  h2 {
     @include title-xl;
     color: $base-dark;
   }
@@ -28,31 +28,31 @@
  * to compensate for `.content h1` styling (see _content.scss).
  */
 
-.component{
+.component {
   padding-bottom: 50px;
   margin-top: 50px;
 
-  &:first-of-type{
+  &:first-of-type {
     padding-top: 0;
   }
 
-  &:last-of-type{
+  &:last-of-type {
     border-bottom: none;
     margin-bottom: 150px;
     padding-bottom: 0;
   }
 
-  .component__title{
+  .component__title {
     @include title-l;
     margin-bottom: 5px;
   }
 
-  .component__description{
+  .component__description {
     @include text-small;
     margin-bottom: 5px;
   }
 
-  .component__404{
+  .component__404 {
     background-color: lightyellow;
     border: 1px solid $grey;
     margin: 0 0 -150px;
@@ -67,7 +67,7 @@
    * Meta (buttons)
    */
 
-  .component__meta{
+  .component__meta {
     border-top: 1px solid $grey;
     text-align: right;
     font-size: 11px;
@@ -78,7 +78,7 @@
     -ms-user-select: none;
     user-select: none;
 
-    &:before{
+    &:before {
       content: '';
       position: relative;
       top: -5px;
@@ -89,15 +89,15 @@
     }
   }
 
-  .component__meta__toggle{
+  .component__meta__toggle {
     @include code-button;
     cursor: pointer;
 
-    &:hover{
+    &:hover {
       background-color: $grey;
     }
 
-    &:before{
+    &:before {
       content: '';
       width: 12px;
       height: 9px;
@@ -107,11 +107,11 @@
     }
   }
 
-  .component__meta__file{
+  .component__meta__file {
     @include code-button;
     border-color: transparent;
 
-    &:before{
+    &:before {
       content: '';
       width: 10px;
       height: 10px;
@@ -126,13 +126,13 @@
    * Code snippets
    */
 
-  .component__code{
+  .component__code {
     display: none;
     table-layout: fixed;
     width: 100%;
   }
 
-  .component__code__title{
+  .component__code__title {
     background-color: rgba(0,0,0,.1);
     font-size: 10px;
     padding: 3px;
@@ -142,14 +142,14 @@
   }
 
   .component__code__output,
-  .component__code__source{
+  .component__code__source {
     background-color: #F5F5F5;
     padding-right: 20px;
   }
 
-  @media (min-width: 860px){
+  @media (min-width: 860px) {
     .component__code__output,
-    .component__code__source{
+    .component__code__source {
       display: table-cell;
       width: 50%;
     }
@@ -167,7 +167,7 @@
    * Iframe that holds the component
    */
 
-  .component__iframe{
+  .component__iframe {
     width: 100%;
   }
 
@@ -176,15 +176,15 @@
    * Toggle
    */
   
-  .component__toggle:checked ~ .component__code{
+  .component__toggle:checked ~ .component__code {
     display: table;
   }
 
-  .component__toggle:checked ~ .component__iframe{
+  .component__toggle:checked ~ .component__iframe {
     display: none;
   }
 
-  .component__toggle:checked ~ .component__meta .component__meta__toggle{
+  .component__toggle:checked ~ .component__meta .component__meta__toggle {
     background-color: $grey;
   }
 }

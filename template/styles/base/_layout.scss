@@ -1,26 +1,26 @@
-%wrapper{
+%wrapper {
   padding: 0;
   margin-left: auto;
   margin-right: auto;
 }
 
-.wrapper{
+.wrapper {
   @extend %wrapper;
 }
 
-.push{
-  @include breakpoint(1300px){
+.push {
+  @include breakpoint(1300px) {
     margin-left: $sidebar-width;
   }
 }
 
 .sidebar-is-empty .push {
-  @include breakpoint(1300px){
+  @include breakpoint(1300px) {
     margin-left: 0;
   }
 }
 
-@mixin container{
+@mixin container {
   @extend %wrapper;
   position: relative;
   width: 100%;
@@ -31,6 +31,6 @@
   margin-bottom: 95px;
 }
 
-.container{
+.container {
   @include container;
 }

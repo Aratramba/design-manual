@@ -1,9 +1,6 @@
 'use strict';
 /* global require */
 
-// var rimraf = require('rimraf');
-// rimraf.sync('httpdocs/*');
-
 var DesignManual = require('../index');
 
 new DesignManual({
@@ -36,7 +33,8 @@ new DesignManual({
   contentsId: '#contents',
   componentHeadHtml: '<script>//console.log("im in the component head");</script>',
   componentBodyHtml: '<script>//console.log("im in the component body");</script>',
-  brandColor: 'CRIMSON',
+  brandColor: 'red',
+  brandColorContrast: 'white',
   onComplete: function() {
     console.log('callback');
   }

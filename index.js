@@ -32,7 +32,8 @@ function DesignManual(options){
     componentHeadHtml: '',
     componentBodyHtml: '',
     contentsId: '#contents',
-    primaryColor: null,
+    brandColor: null,
+    brandColorContrast: null,
     onComplete: function() {}
   }, options);
 

@@ -4,30 +4,31 @@
  */
 
 .content {
-  .table-of-contents__list{
+  .table-of-contents__list {
     margin-bottom: 50px;
     padding-bottom: 50px;
     border-bottom: 1px solid $grey;
   }
 
-  .table-of-contents__list__item{
+  .table-of-contents__list__item {
     display: inline-block;
     margin: 0 10px 10px 0;
     font-size: 14px;
     border-radius: 3px;
     background-color: #f3f3f3;
     padding: 3px 6px;
+    transition: background-color .15s;
 
-    &:hover{
+    &:hover {
       background-color: #e6e6e6;
     }
   }
 
-  .table-of-contents__list__item__link{
+  .table-of-contents__list__item__link {
     color: $base-mediumdark;
     text-decoration: none;
 
-    &:hover{
+    &:hover {
       color: $base-dark;
     }
   }

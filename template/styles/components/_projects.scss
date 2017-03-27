@@ -2,7 +2,7 @@
  * List of projects
  */
 
-.project__list{
+.project__list {
   display: none;
   position: absolute;
   background-color: $bg-grey;
@@ -12,48 +12,48 @@
   border: 1px solid $grey;
 }
 
-.project__list__item{
+.project__list__item {
   @include clearfix;
   border-bottom: 1px solid $grey;
   font-size: 12px;
   transition: background-color .15s;
 
-  &:last-of-type{
+  &:last-of-type {
     border: 0;
   }
 
   &:hover {
     background-color: rgba(0, 0, 0, .1);
 
-    .project__list__item__body__title{
+    .project__list__item__body__title {
       text-decoration: underline;
     }
   }
 }
 
-.project__list__item__link{
+.project__list__item__link {
   padding: 14px;
   display: block;
   color: $base-dark;
 }
 
-.project__list__item__avatar{
+.project__list__item__avatar {
   margin-right: 10px;
   display: inline-block;
   height: 30px;
 }
 
-.project__list__item__body{
+.project__list__item__body {
   display: inline-block;
   margin-bottom: 0;
   line-height: 1.5;
 }
 
-.project__list__item__body__title{
+.project__list__item__body__title {
 
 }
 
-.project__list__item__body__domain{
+.project__list__item__body__domain {
   font-weight: $weight-bold;
 }
 
@@ -62,11 +62,11 @@
  * Toggle logic
  */
 
-.project-toggle:checked ~ .project__list{
+.project-toggle:checked ~ .project__list {
  display: block;
 }
 
-.project-toggle:checked ~ .close-sidebar{
+.project-toggle:checked ~ .close-sidebar {
  opacity: 1;
 }
 

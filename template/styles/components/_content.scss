@@ -1,28 +1,28 @@
-.content{
-  h1{ 
+.content {
+  h1 { 
     @include title-xl; 
     margin-bottom: 20px;
   }
-  h2{ 
+  h2 { 
     @include title-l; 
     margin-bottom: 10px;
   }
-  h3{ 
+  h3 { 
     @include title-xs; 
     margin-bottom: 10px;
   }
 
-  p{
+  p {
     @include text-small;
   }
   
-  ul{
+  ul {
     list-style: normal;
     list-style-position: inside;
     margin-bottom: 2em;
   }
 
-  li{
+  li {
     margin-bottom: 1em;
   }
 
