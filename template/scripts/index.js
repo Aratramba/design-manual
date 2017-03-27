@@ -3,7 +3,6 @@
 
 window.App = {};
 
-require('./libs/srcdoc-polyfill.min');
 require('./components/index');
 require('./main/offcanvas');
 require('./main/sidebar');
