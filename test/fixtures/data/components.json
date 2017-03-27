@@ -10,7 +10,7 @@
   {
     "meta": {
       "name": "mixin",
-      "description": "this is jade mixin documentation",
+      "description": "this is [jade](http://pugjs.org) mixin documentation",
       "arguments": {
         "arg1": "foo",
         "arg2": "faa"

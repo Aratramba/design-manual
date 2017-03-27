@@ -1,4 +1,4 @@
-# Design Manual (not finished)
+# Design Manual
 Create a living, breathing design manual (or styleguide if you will). This package combines your Markdown files with JSON containing your html snippets and creates a beautiful design manual. Each html snippet will be placed in an iframe along with your website css.
 
 ---
@@ -28,13 +28,14 @@ Create a living, breathing design manual (or styleguide if you will). This packa
   See [Creating pages](#creating-pages).
 
 4. ### Create components.json
-  This can be done through [Pug-doc](https://github.com/Aratramba/pug-doc) or some other generator. 
+  This can be done through [Pug-doc](https://github.com/Aratramba/pug-doc) or some other generator.
 
   ```json
   [
     {
       "meta": {
-        "name": "my-component"
+        "name": "my-component",
+        "description": "this is my component description"
       },
       "file": "path/to/file.jade",
       "source": "div.some-tag\n  | this is some tag",
@@ -44,6 +45,7 @@ Create a living, breathing design manual (or styleguide if you will). This packa
   ```
 
   The `source` part is optional.
+  The `meta.description` part is optional and, if present, will be parsed using markdown.
 
 
 ---

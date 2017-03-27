@@ -28,7 +28,7 @@ block footer_js
     | {{/meta.name.length}}
 
     | {{#meta.description.length}}
-    p.component__description {{meta.description}}
+    .component__description {{{meta.description}}}
     | {{/meta.description.length}}
     
     input.hide(type='checkbox' name='source' id='toggle-{{slug}}' class="component__toggle")
