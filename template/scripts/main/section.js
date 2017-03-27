@@ -30,8 +30,10 @@ function scroll(){
   }
 
   // scrolled above first section
-  if (document.body.scrollTop < $sections[0].getBoundingClientRect().top) {
-    $currentSection = null;
+  if ($sections[0]) {
+    if (document.body.scrollTop < $sections[0].getBoundingClientRect().top) {
+      $currentSection = null;
+    }
   }
 
 

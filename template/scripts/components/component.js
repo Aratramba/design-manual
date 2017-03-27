@@ -23,7 +23,6 @@ if($template){
   Mustache.parse(TEMPLATE);
   Mustache.parse(EMPTY_TEMPLATE);
 
-
   // create lookup
   var components = [];
   window.COMPONENTS.forEach(function(component){

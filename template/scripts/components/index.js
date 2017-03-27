@@ -48,7 +48,9 @@ function next() {
   component.$el.innerHTML = component.html;
   component.$wrapper.appendChild(component.$el);
 
-  iframeResizer({ checkOrigin: false });
+  iframeResizer({ 
+    checkOrigin: false
+  }, '#' + component.$el.id + ' iframe');
   Prism.highlightAll();
 
   current++;

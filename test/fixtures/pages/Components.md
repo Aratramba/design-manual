@@ -25,42 +25,7 @@ This is the description of section number 2.
 This is the description of section number 3.
 
 ### Contents
-* some-tag
-* mixin
-* extends
-* missing component
-* some-tag
-* mixin
-* extends
-* missing component
-* some-tag
-* mixin
-* extends
-* missing component
-* some-tag
-* mixin
-* extends
-* missing component
-* some-tag
-* mixin
-* extends
-* missing component
-* some-tag
-* mixin
-* extends
-* missing component
-* some-tag
-* mixin
-* extends
-* missing component
-* some-tag
-* mixin
-* extends
-* missing component
-* some-tag
-* mixin
-* extends
-* missing component
+* foo
 
 ---
 
