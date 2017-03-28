@@ -1,6 +1,7 @@
 'use strict';
 /* global require */
 
+var LazyLoad = require('vanilla-lazyload');
 var constants = require('../constants');
 var Component = require('./component');
 var TOC = require('./table-of-contents');
@@ -48,9 +49,16 @@ function next() {
   component.$el.innerHTML = component.html;
   component.$wrapper.appendChild(component.$el);
 
+  var iframeSelector = '#' + component.$el.id + ' iframe';
+
   iframeResizer({ 
     checkOrigin: false
-  }, '#' + component.$el.id + ' iframe');
+  }, iframeSelector);
+
+   new LazyLoad({
+    elements_selector: iframeSelector
+  });
+
   Prism.highlightAll();
 
   current++;

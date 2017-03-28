@@ -55,7 +55,7 @@ block footer_js
       | {{/source}}
 
 
-    iframe.component__iframe(src="{{libFile}}" frameborder="0" scrolling="no")
+    iframe.component__iframe(data-original="{{libFile}}" frameborder="0" scrolling="no")
 
   //- js-template component
   script#component-empty-template(type="text/template")

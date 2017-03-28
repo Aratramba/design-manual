@@ -1,6 +1,6 @@
 {
   "name": "design-manual",
-  "version": "0.14.0",
+  "version": "0.15.0",
   "description": "Design manual / style guide",
   "main": "index.js",
   "directories": {
@@ -45,7 +45,8 @@
     "tape": "^4.2.1",
     "to-sentence-case": "^1.0.0",
     "uglifyify": "^3.0.1",
-    "validate": "^3.0.1"
+    "validate": "^3.0.1",
+    "vanilla-lazyload": "^5.1.1"
   },
   "devDependencies": {
     "is-there": "^4.1.0",
