@@ -56,7 +56,13 @@ function next() {
   }, iframeSelector);
 
    new LazyLoad({
-    elements_selector: iframeSelector
+    elements_selector: iframeSelector,
+    callback_load: function($el) {
+      $el.parentNode.classList.remove('is-loading');
+    },
+    callback_error: function(elemen$el) {
+      $el.parentNode.classList.remove('has-error');
+    }
   });
 
   Prism.highlightAll();

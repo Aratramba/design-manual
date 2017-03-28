@@ -5,6 +5,7 @@ var Mustache = require('mustache');
 var pretty = require('pretty');
 var slugify = require('../libs/slugify');
 var prev = require('../libs/previous-selector');
+var constants = require('../constants');
 
 /**
  * Renders the components
@@ -58,6 +59,8 @@ function Component($el){
       $sectionWrapper.appendChild(section);
       return;
     }
+
+    section.classList.add(constants.LOADING_CLASS);
 
     // make html look pretty with indents and all that
     components[key].output = pretty(components[key].output);

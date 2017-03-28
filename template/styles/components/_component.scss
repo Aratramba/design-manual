@@ -31,6 +31,7 @@
 .component {
   padding-bottom: 50px;
   margin-top: 50px;
+  position: relative;
 
   &:first-of-type {
     padding-top: 0;
@@ -40,6 +41,43 @@
     border-bottom: none;
     margin-bottom: 150px;
     padding-bottom: 0;
+  }
+
+  &.is-loading {
+    &:before {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 15px;
+      right: 0;
+      width: 14px;
+      height: 14px;
+      border: solid 2px transparent;
+      border-top-color: $primary;
+      border-left-color: $primary;
+      border-radius: 10px;
+      animation: pace-spinner 400ms linear infinite;
+    }
+  }
+
+  &.has-error {
+    &:before {
+      content: '!';
+      display: block;
+      position: absolute;
+      top: 8px;
+      right: 0;
+      color: white;
+      width: 20px;
+      height: 20px;
+      text-align: center;
+      line-height: 14px;
+      font-size: $size-xs;
+      font-weight: $weight-bold;
+      border-radius: 50%;
+      padding: 3px;
+      background-color: red;
+    }
   }
 
   .component__title {
@@ -169,6 +207,12 @@
 
   .component__iframe {
     width: 100%;
+    opacity: 0;
+    transition: opacity .5s;
+
+    &.loaded {
+      opacity: 1;
+    }
   }
 
 
