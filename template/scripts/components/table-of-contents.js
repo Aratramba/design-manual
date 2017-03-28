@@ -45,11 +45,11 @@ function TOC($el){
   delegate.bind($el.parentNode, '.table-of-contents__list__item__link', 'click', onTocLinkClick);
 
   // append to sidebar
-  var $sidebarItem = document.querySelector('.sidebar [data-rel="' + id + '"]');
-  var $sidebarExtra = document.createElement('div');
-  $sidebarExtra.className = 'sidebar__item__components';
-  $sidebarExtra.innerHTML = div.innerHTML;
-  $sidebarItem.appendChild($sidebarExtra);
+  // var $sidebarItem = document.querySelector('.sidebar [data-rel="' + id + '"]');
+  // var $sidebarExtra = document.createElement('div');
+  // $sidebarExtra.className = 'sidebar__item__components';
+  // $sidebarExtra.innerHTML = div.innerHTML;
+  // $sidebarItem.appendChild($sidebarExtra);
 
 }
 
