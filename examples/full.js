@@ -1,12 +1,17 @@
 'use strict';
 /* global require */
 
+var rimraf = require('rimraf');
+rimraf.sync('httpdocs/*');
+
 var DesignManual = require('../index');
 
 new DesignManual({
   forceUpdate: true,
   output: 'examples/httpdocs/',
   pages: 'test/fixtures/pages/',
+  indexPage: 'Index.md',
+  componentsPage: 'Components.md',
   components: 'test/fixtures/data/components.json',
   websiteCss: ['test/fixtures/assets/style1.css', 'test/fixtures/assets/style2.css'],
   meta: {

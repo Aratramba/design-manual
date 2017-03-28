@@ -31,6 +31,8 @@ function DesignManual(options){
     bodyHtml: '',
     componentHeadHtml: '',
     componentBodyHtml: '',
+    indexPage: 'Index.md',
+    componentsPage: 'Components.md',
     contentsId: '#contents',
     brandColor: null,
     brandColorContrast: null,

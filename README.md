@@ -71,7 +71,7 @@ There are two types of pages you can generate.
 
     Markdown is parsed using [marked](https://github.com/chjj/marked). HTML is allowed.
 
-    If a file called Index.md is found, it will be placed first in the navigation.
+    The options.indexPage file will be will be placed first in the navigation.
 
   2. ### Components page
     Create a file called Components.md. This page is where your components are documented. The file should look like this.
@@ -156,6 +156,8 @@ new DesignManual({
   headHtml: '<script>console.log("im in the head");</script>',
   bodyHtml: '<script>console.log("im in the footer");</script>',
   contentsId: '#contents',
+  indexPage: 'Home.md',
+  componentsPage: 'Componentes.md',
   componentHeadHtml: '<script>console.log("im in the component head");</script>',
   componentBodyHtml: '<script>console.log("im in the component body");</script>',
   brandColor: 'red',
@@ -186,6 +188,8 @@ new DesignManual({
 | bodyHtml    | ''            | string    | string of html to include in the body
 | componentHeadHtml      | ''            | string    | string of html to include in the head of the component
 | componentBodyHtml    | ''            | string    | string of html to include in the body of the component
+| indexPage    | 'Index.md'   | string    | file to be the homepage (first item in navigation)
+| componentsPage    | 'Components.md'   | string    | file to be the components page
 | contentsId    | '#contents'   | string    | css id to identify the contents heading
 | brandColor    | 'STEELBLUE'   | string    | overwrite default brand color
 | brandColorContrast    | 'LIGHTGOLDENRODYELLOW'   | string    | overwrite default text color on brand color

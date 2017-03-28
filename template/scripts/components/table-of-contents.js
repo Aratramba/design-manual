@@ -64,5 +64,4 @@ function onTocLinkClick(e) {
   var href = e.delegateTarget.getAttribute('href');
   var top = document.querySelector(href).getBoundingClientRect().top - 80;
   smoothScroll(top);
-  e.preventDefault();
 }
