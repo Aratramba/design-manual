@@ -1,7 +1,7 @@
 {
   "name": "design-manual",
-  "version": "0.10.0",
-  "description": "Create a living client design language / style guide",
+  "version": "0.11.0",
+  "description": "Design manual / style guide",
   "main": "index.js",
   "directories": {
     "test": "test"
