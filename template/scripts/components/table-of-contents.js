@@ -3,7 +3,7 @@
 
 var Mustache = require('mustache');
 var delegate = require('delegate-events');
-var slugify = require('slugify');
+var slugify = require('../libs/slugify');
 var smoothScroll = require('../libs/smoothscroll');
 var prev = require('../libs/previous-selector');
 

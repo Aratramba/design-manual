@@ -30,7 +30,7 @@
   },
   {
     "meta": {
-      "name": "inclusion tag",
+      "name": "inclusion (tag)",
       "description": "this is an inclusion tag"
     },
     "file": "test/fixtures/include.jade",

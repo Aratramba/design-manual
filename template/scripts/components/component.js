@@ -3,7 +3,7 @@
 
 var Mustache = require('mustache');
 var pretty = require('pretty');
-var slugify = require('slugify');
+var slugify = require('../libs/slugify');
 var prev = require('../libs/previous-selector');
 
 /**

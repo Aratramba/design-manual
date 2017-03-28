@@ -17,7 +17,7 @@ This is the description of section number 2.
 
 ### Contents
 * mixin
-* inclusion tag
+* inclusion (tag)
 
 ---
 
