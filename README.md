@@ -74,7 +74,7 @@ There are two types of pages you can generate.
     The options.indexPage file will be will be placed first in the navigation.
 
   2. ### Components page
-    Create a file called Components.md. This page is where your components are documented. The file should look like this.
+  Create a file called Components.md. This page is where your components are documented. The file should look like this.
 
     ```markdown
     # My Components Page
@@ -115,9 +115,9 @@ There are two types of pages you can generate.
 
     More content.
 
-  ```
+    ```
   
-  The ```### Contents``` part is where the components will be rendered. If you want to change the text of this heading, make sure to edit the `contentsId` option when setting up. 
+  The `### Contents` part is where the components will be rendered. If you want to change the text of this heading, make sure to edit the `contentsId` option when setting up. 
 
   The items in the list directly next to this heading will be used to look up data in your components.json, they should be an exact match of `meta.name` in your json file.
 
