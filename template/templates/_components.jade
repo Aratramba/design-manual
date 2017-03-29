@@ -1,0 +1,48 @@
+//- table of contents
+ul.table-of-contents__list
+  each component in locals.components
+    if component && component.meta
+      li.table-of-contents__list__item 
+        a.table-of-contents__list__item__link(href=('#' + component.id)) #{component.meta.name}
+
+//- components
+.component-wrapper
+  each component in locals.components
+      
+    .component(class="js-section", id=(component.id))
+      if !component || !component.meta
+        h3.component__title #{component['404']}
+        .component__meta
+        p.component__404 ‼&nbsp;&nbsp;Component `#{component['404']}` not found.
+      else
+        if component.meta.name
+          h3.component__title #{component.meta.name}
+
+
+        if component.meta.description
+          .component__description !{component.meta.description}
+
+        input.hide(type='checkbox' name='source' id=('toggle-' + component.id) class="component__toggle")
+
+        .component__meta
+
+          label.component__meta__toggle(for=('toggle-' + component.id)) code
+          span.component__meta__file #{component.file}
+
+        .component__code
+          div.component__code__output
+            h3.component__code__title HTML
+            pre
+              code.language-markup
+                | #{component.output}
+
+          
+          if component.source
+            div.component__code__source
+              h3.component__code__title Source
+              pre
+                code.language-jade
+                  | #{component.source}
+
+
+        iframe.component__iframe(data-original=component.libFile frameborder="0" scrolling="no")

@@ -29,5 +29,5 @@ new DesignManual({
   ],
   headHtml: '<script>console.log("im in the head");</script>',
   bodyHtml: '<script>console.log("im in the footer");</script>',
-  contentsId: '#contents'
+  contentsFlag: 'contents'
 });

@@ -2,61 +2,20 @@
 /* global require */
 
 var LazyLoad = require('vanilla-lazyload');
-var constants = require('../constants');
-var Component = require('./component');
-var TOC = require('./table-of-contents');
 var Prism = require('../libs/prism');
 var iframeResizer = require('../libs/iframeResizer.min');
-var queue = [];
-
-/**
- * Setup components page
- * loops over all headings with id #contents
- * and finds the next unordered list
- * kicks of table of contents and component.
- */
-
-var elements = document.querySelectorAll(window.CONTENTS_ID +' + ul');
-var i = 0;
-var l = elements.length;
-
-for(; i<l; ++i){
-
-  // create component
-  var components = new Component(elements[i]);
-  queue.push(components);
-
-  // create table of contents
-  new TOC(elements[i]);
-
-  // remove original list
-  elements[i].parentNode.removeChild(elements[i]);
-}
-
-// flatten
-queue = [].concat.apply([], queue);
+var smoothScroll = require('../libs/smoothscroll');
+var delegate = require('delegate-events');
+var constants = require('../constants');
 
 
-/**
- * Create render loop
- * Uses requestAnimationFrame to create
- * a smooth loading experience
- */
+if (document.querySelectorAll('.table-of-contents__list').length) {
+  document.body.classList.add(constants.LOADING_CLASS);
+  document.body.classList.add('components-page');
 
-var current = 0;
-function next() {
-  var component = queue[current];
-  component.$el.innerHTML = component.html;
-  component.$wrapper.appendChild(component.$el);
-
-  var iframeSelector = '#' + component.$el.id + ' iframe';
-
-  iframeResizer({ 
-    checkOrigin: false
-  }, iframeSelector);
-
-   new LazyLoad({
-    elements_selector: iframeSelector,
+  // enable lazy loading
+  new LazyLoad({
+    elements_selector: 'iframe',
     callback_load: function($el) {
       $el.parentNode.classList.remove('is-loading');
     },
@@ -65,17 +24,18 @@ function next() {
     }
   });
 
+  // resize frames
+  iframeResizer({ checkOrigin: false });
+
+  // syntax highlighting
   Prism.highlightAll();
 
-  current++;
-  if (queue[current]) {
-    window.requestAnimationFrame(next);
-  } else {
-    document.body.classList.remove(constants.LOADING_CLASS);
-  }
-}
+  // smooth scroll
+  delegate.bind(document.body, '.table-of-contents__list__item__link', 'click', function(e) {
+    var href = e.delegateTarget.getAttribute('href');
+    var top = document.querySelector(href).getBoundingClientRect().top - 80;
+    smoothScroll(top);
+  });
 
-if (queue.length) {
-  document.body.classList.add(constants.LOADING_CLASS);
-  next();
+  document.body.classList.remove(constants.LOADING_CLASS);
 }

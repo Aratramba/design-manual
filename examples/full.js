@@ -35,7 +35,7 @@ new DesignManual({
   ],
   headHtml: '<script>//console.log("im in the head");</script>',
   bodyHtml: '<script>//console.log("im in the body");</script>',
-  contentsId: '#contents',
+  contentsFlag: 'contents',
   componentHeadHtml: '<script>//console.log("im in the component head");</script>',
   componentBodyHtml: '<script>//console.log("im in the component body");</script>',
   brandColor: 'red',

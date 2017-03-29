@@ -33,7 +33,7 @@ function DesignManual(options){
     componentBodyHtml: '',
     indexPage: 'Index.md',
     componentsPage: 'Components.md',
-    contentsId: '#contents',
+    contentsFlag: 'contents',
     brandColor: null,
     brandColorContrast: null,
     onComplete: function() {}
