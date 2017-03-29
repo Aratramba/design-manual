@@ -117,11 +117,7 @@ More content.
 
 ```
   
-<<<<<<< HEAD
-  The ```### Contents``` part is where the components will be rendered. If you want to change the text of this heading, make sure to edit the `contentsFlag` option when setting up. 
-=======
-The `### Contents` part is where the components will be rendered. If you want to change the text of this heading, make sure to edit the `contentsId` option when setting up. 
->>>>>>> origin/master
+The `### Contents` part is where the components will be rendered. If you want to change the text of this heading, make sure to edit the `contentsFlag` option when setting up. 
 
 The items in the list directly next to this heading will be used to look up data in your components.json, they should be an exact match of `meta.name` in your json file.
 
@@ -194,7 +190,7 @@ new DesignManual({
 | componentBodyHtml    | ''            | string    | string of html to include in the body of the component
 | indexPage    | 'Index.md'   | string    | file to be the homepage (first item in navigation)
 | componentsPage    | 'Components.md'   | string    | file to be the components page
-| contentsFlag    | 'contents'   | string    | Text in markdown heading to identify the contents heading - the list next to it will be the table of contents
+| contentsFlag    | 'contents'   | string    | css id to identify the contents heading
 | brandColor    | 'STEELBLUE'   | string    | overwrite default brand color
 | brandColorContrast    | 'LIGHTGOLDENRODYELLOW'   | string    | overwrite default text color on brand color
 | forceUpdate    | false   | boolean    | overwrite all files every time
