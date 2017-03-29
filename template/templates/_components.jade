@@ -8,13 +8,15 @@ ul.table-of-contents__list
 //- components
 .component-wrapper
   each component in locals.components
-      
-    .component(class="js-section", id=(component.id))
-      if !component || !component.meta
+
+    if !component || !component.meta
+      .component(class="js-section", id=(component.id))
         h3.component__title #{component['404']}
         .component__meta
         p.component__404 ‼&nbsp;&nbsp;Component `#{component['404']}` not found.
-      else
+        
+    else
+      .component(class="js-section is-loading", id=(component.id))
         if component.meta.name
           h3.component__title #{component.meta.name}
 
