@@ -6,46 +6,46 @@ Create a living, breathing design manual (or styleguide if you will). This packa
 ## Getting started
 
 1. ### Install
-  ```bash
-  npm install design-manual
-  ```
+```bash
+npm install design-manual
+```
 
 2. ### Set up
-  ```js
-  var DesignManual = require('design-manual');
-  new DesignManual({
-    output: 'path/to/export/',
-    pages: 'path/to/pages/',
-    components: 'path/to/components.json',
-    meta: {
-      domain: 'my-domain.com',
-      title: 'my Design Manual'
-    }
-  });
-  ```
+```js
+var DesignManual = require('design-manual');
+new DesignManual({
+  output: 'path/to/export/',
+  pages: 'path/to/pages/',
+  components: 'path/to/components.json',
+  meta: {
+    domain: 'my-domain.com',
+    title: 'my Design Manual'
+  }
+});
+```
 
 3. ### Create your page pages using Markdown
-  See [Creating pages](#creating-pages).
+See [Creating pages](#creating-pages).
 
 4. ### Create components.json
-  This can be done through [Pug-doc](https://github.com/Aratramba/pug-doc) or some other generator.
+This can be done through [Pug-doc](https://github.com/Aratramba/pug-doc) or some other generator.
 
-  ```json
-  [
-    {
-      "meta": {
-        "name": "my-component",
-        "description": "this is my component description"
-      },
-      "file": "path/to/file.jade",
-      "source": "div.some-tag\n  | this is some tag",
-      "output": "<div class=\"some-tag\">this is some tag</div>"
-    }
-  ]
-  ```
+```json
+[
+  {
+    "meta": {
+      "name": "my-component",
+      "description": "this is my component description"
+    },
+    "file": "path/to/file.jade",
+    "source": "div.some-tag\n  | this is some tag",
+    "output": "<div class=\"some-tag\">this is some tag</div>"
+  }
+]
+```
 
-  The `source` part is optional.
-  The `meta.description` part is optional and, if present, will be parsed using markdown.
+The `source` part is optional.
+The `meta.description` part is optional and, if present, will be parsed using markdown.
 
 
 ---
@@ -53,75 +53,75 @@ Create a living, breathing design manual (or styleguide if you will). This packa
 ## Creating pages
 There are two types of pages you can generate.
 
-  1. ### Text page
-    A basic text page looks something like this:
+1. ### Text page
+A basic text page looks something like this:
 
-    ```markdown
-    # Text page
-    This is my text page.
+```markdown
+# Text page
+This is my text page.
 
-    ## Section 1
-    This is section 1
+## Section 1
+This is section 1
 
-    ## Section 2
-    This is section 2
-    ```
+## Section 2
+This is section 2
+```
 
-    The h2's will be used to create a table of contents in the sidebar navigation.
+The h2's will be used to create a table of contents in the sidebar navigation.
 
-    Markdown is parsed using [marked](https://github.com/chjj/marked). HTML is allowed.
+Markdown is parsed using [marked](https://github.com/chjj/marked). HTML is allowed.
 
-    The options.indexPage file will be will be placed first in the navigation.
+The options.indexPage file will be will be placed first in the navigation.
 
-  2. ### Components page
-  Create a file called Components.md. This page is where your components are documented. The file should look like this.
+2. ### Components page
+Create a file called Components.md. This page is where your components are documented. The file should look like this.
 
-    ```markdown
-    # My Components Page
-    This is the components page.
+```markdown
+# My Components Page
+This is the components page.
 
-    ---
+---
 
-    ## Section 1
-    This is the description of section number 1.
+## Section 1
+This is the description of section number 1.
 
-    ### Contents
-    - extends
-    - some-tag
+### Contents
+- extends
+- some-tag
 
-    ---
+---
 
-    ## Section 2
-    This is the description of section number 2.
+## Section 2
+This is the description of section number 2.
 
-    ### Contents
-    - mixin
-    - inclusion tag
+### Contents
+- mixin
+- inclusion tag
 
-    ---
+---
 
-    ## Section 3
-    This is the description of section number 3.
+## Section 3
+This is the description of section number 3.
 
-    ### Contents
-    - some-tag
-    - mixin
-    - extends
+### Contents
+- some-tag
+- mixin
+- extends
 
-    ---
+---
 
-    ## Section 4
-    Some other section
+## Section 4
+Some other section
 
-    More content.
+More content.
 
-    ```
+```
   
-  The `### Contents` part is where the components will be rendered. If you want to change the text of this heading, make sure to edit the `contentsId` option when setting up. 
+The `### Contents` part is where the components will be rendered. If you want to change the text of this heading, make sure to edit the `contentsId` option when setting up. 
 
-  The items in the list directly next to this heading will be used to look up data in your components.json, they should be an exact match of `meta.name` in your json file.
+The items in the list directly next to this heading will be used to look up data in your components.json, they should be an exact match of `meta.name` in your json file.
 
-  The h2's will be used to create in-page-links in the sidebar navigation.
+The h2's will be used to create in-page-links in the sidebar navigation.
 
 
 ---
