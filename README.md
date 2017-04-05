@@ -37,14 +37,12 @@ This can be done through [Pug-doc](https://github.com/Aratramba/pug-doc) or some
       "name": "my-component",
       "description": "this is my component description"
     },
-    "file": "path/to/file.jade",
-    "source": "div.some-tag\n  | this is some tag",
+    "file": "path/to/file.pug",
     "output": "<div class=\"some-tag\">this is some tag</div>"
   }
 ]
 ```
 
-The `source` part is optional.
 The `meta.description` part is optional and, if present, will be parsed using markdown.
 
 
@@ -86,8 +84,8 @@ This is the components page.
 This is the description of section number 1.
 
 ### Contents
-- extends
-- some-tag
+- Component #1
+- Other Component
 
 ---
 
@@ -95,8 +93,8 @@ This is the description of section number 1.
 This is the description of section number 2.
 
 ### Contents
-- mixin
-- inclusion tag
+- Component #2
+- Other Component
 
 ---
 
@@ -104,9 +102,9 @@ This is the description of section number 2.
 This is the description of section number 3.
 
 ### Contents
-- some-tag
-- mixin
-- extends
+- Component #1
+- Component #2
+- Component #3
 
 ---
 

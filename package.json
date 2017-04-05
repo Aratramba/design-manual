@@ -1,6 +1,6 @@
 {
   "name": "design-manual",
-  "version": "0.18.0",
+  "version": "0.19.0",
   "description": "Design manual / style guide",
   "main": "index.js",
   "directories": {
@@ -11,7 +11,7 @@
     "template-css-sass": "node-sass template/styles/all.scss | cleancss",
     "template-js": "npm run template-js-browserify -- -o httpdocs/app.min.js",
     "template-css": "npm run template-css-sass -- -o httpdocs/all.min.css",
-    "template-html": "jade template/templates/components.jade -o httpdocs",
+    "template-html": "jade template/templates/components.pug -o httpdocs",
     "watch-js": "watchify template/scripts/index.js -o httpdocs/app.min.js",
     "test": "tape test/*.js | faucet",
     "test-pages": "tape test/pages.js | faucet || true",
@@ -29,7 +29,6 @@
     "delegate-events": "^1.1.1",
     "events": "^1.1.0",
     "faucet": "0.0.1",
-    "jade": "^1.11.0",
     "marked": "^0.3.6",
     "minimist": "^1.2.0",
     "mkdirp": "^0.5.1",
@@ -39,6 +38,7 @@
     "object-assign": "^4.0.1",
     "postcss": "^5.0.19",
     "pretty": "^1.0.0",
+    "pug": "^2.0.0-beta11",
     "rimraf": "^2.5.2",
     "shortid": "^2.2.6",
     "slug": "^0.9.1",

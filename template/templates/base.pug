@@ -9,7 +9,6 @@ html(lang="nl")
         meta(http-equiv="X-UA-Compatible", content="IE=Edge")
         meta(name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1")
         meta(http-equiv="cleartype", content="on")
-        meta(name="author", content="Eight Media")
         link(rel="stylesheet", type="text/css", href="all.min.css")
 
         | !{headHtml}
@@ -22,7 +21,7 @@ html(lang="nl")
         if navItems.length
             aside.sidebar.offcanvas
                 each item in navItems              
-                    .offcanvas__link-wrapper(class="#{currentPage === item.label ? 'is-active' : ''} #{(currentPage === 'Index' && item.label === 'Home') ? 'is-active' : ''}")
+                    .offcanvas__link-wrapper(class=(currentPage === item.label ? 'is-active' : '')) #{(currentPage === 'Index' && item.label === 'Home') ? 'is-active' : ''}
                         a.offcanvas__link(class="current", href=item.link) #{item.label}
                         
                         if (currentPage === item.label) || (currentPage === 'Index' && item.label === 'Home')
@@ -38,7 +37,7 @@ html(lang="nl")
                     ul.header__nav
                         each item in navItems
                             li.header__nav__item
-                                a.header__nav__item__link(class="#{currentPage === item.label ? 'active' : ''}", href="#{item.link}") #{item.label}
+                                a.header__nav__item__link(class=(currentPage === item.label ? 'active' : ''), href=item.link) #{item.label}
 
 
 
@@ -47,7 +46,7 @@ html(lang="nl")
                         each item in navItems
                             if currentPage === item.label
                                 li(class="breadcrumbs__item breadcrumbs__item--current")
-                                    a.breadcrumbs__section(href='#{item.link}') #{item.label}
+                                    a.breadcrumbs__section(href=item.link) #{item.label}
                         li.breadcrumbs__item(class="js-breadcrumb")
 
 
@@ -60,7 +59,7 @@ html(lang="nl")
                         .header__project__title #{meta.title}
                         
                     if meta.avatar
-                        img(src='#{meta.avatar}').header__project__avatar
+                        img(src=meta.avatar).header__project__avatar
 
                     if subnav.length
                         span.header__project__icon
@@ -70,8 +69,8 @@ html(lang="nl")
                     ul.project__list
                         each item in subnav
                             li.project__list__item
-                                a.project__list__item__link(href='#{item.href}')
-                                    img.project__list__item__avatar(src='#{item.avatar}')
+                                a.project__list__item__link(href=item.href)
+                                    img.project__list__item__avatar(src=item.avatar)
                                     .project__list__item__body
                                         .project__list__item__body__domain #{item.domain}
                                         .project__list__item__body__title #{item.title}

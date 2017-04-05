@@ -35,16 +35,7 @@ ul.table-of-contents__list
           div.component__code__output
             h3.component__code__title HTML
             pre
-              code.language-markup
-                | #{component.output}
-
-          
-          if component.source
-            div.component__code__source
-              h3.component__code__title Source
-              pre
-                code.language-jade
-                  | #{component.source}
+              code.language-markup #{component.output}
 
 
         iframe.component__iframe(data-original=component.libFile frameborder="0" scrolling="no")
