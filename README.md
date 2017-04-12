@@ -1,7 +1,7 @@
 # Design Manual
 Create a living, breathing design manual / styleguide that presents all components used on your website. This package combines Markdown files with JSON containing your html snippets and creates a beautiful design manual. Each component will be placed in an iframe along with your website css/js.
 
-Use (Design Manual Scraper)[https://github.com/EightMedia/design-manual-scraper] to feed components from your (live) website into Design Manual.
+Use [Design Manual Scraper](https://github.com/EightMedia/design-manual-scraper) to feed components from your (live) website into Design Manual.
 
 ---
 
@@ -30,7 +30,7 @@ new DesignManual({
 See [Creating pages](#creating-pages).
 
 ### Create components.json
-This can be done through (Design Manual Scraper)[https://github.com/EightMedia/design-manual-scraper], [Pug-doc](https://github.com/Aratramba/pug-doc) or some other generator.
+This can be done through [Design Manual Scraper](https://github.com/EightMedia/design-manual-scraper), [Pug-doc](https://github.com/Aratramba/pug-doc) or some other generator.
 
 ```json
 [
