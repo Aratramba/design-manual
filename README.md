@@ -1,16 +1,18 @@
 # Design Manual
-Create a living, breathing design manual (or styleguide if you will). This package combines your Markdown files with JSON containing your html snippets and creates a beautiful design manual. Each html snippet will be placed in an iframe along with your website css.
+Create a living, breathing design manual / styleguide that presents all components used on your website. This package combines Markdown files with JSON containing your html snippets and creates a beautiful design manual. Each component will be placed in an iframe along with your website css/js.
+
+Use (Design Manual Scraper)[https://github.com/EightMedia/design-manual-scraper] to feed components from your (live) website into Design Manual.
 
 ---
 
 ## Getting started
 
-1. ### Install
+### Install
 ```bash
 npm install design-manual
 ```
 
-2. ### Set up
+### Set up
 ```js
 var DesignManual = require('design-manual');
 new DesignManual({
@@ -24,11 +26,11 @@ new DesignManual({
 });
 ```
 
-3. ### Create your page pages using Markdown
+### Create your page pages using Markdown
 See [Creating pages](#creating-pages).
 
-4. ### Create components.json
-This can be done through [Pug-doc](https://github.com/Aratramba/pug-doc) or some other generator.
+### Create components.json
+This can be done through (Design Manual Scraper)[https://github.com/EightMedia/design-manual-scraper], [Pug-doc](https://github.com/Aratramba/pug-doc) or some other generator.
 
 ```json
 [
@@ -51,7 +53,7 @@ The `meta.description` part is optional and, if present, will be parsed using ma
 ## Creating pages
 There are two types of pages you can generate.
 
-1. ### Text page
+### Text page
 A basic text page looks something like this:
 
 ```markdown
@@ -71,7 +73,7 @@ Markdown is parsed using [marked](https://github.com/chjj/marked). HTML is allow
 
 The options.indexPage file will be will be placed first in the navigation.
 
-2. ### Components page
+### Components page
 Create a file called Components.md. This page is where your components are documented. The file should look like this.
 
 ```markdown
