@@ -24,7 +24,8 @@ function DesignManual(options){
     meta: {
       domain: '',
       title: '',
-      avatar: ''
+      avatar: '',
+      version: ''
     },
     subnav: [],
     headHtml: '',

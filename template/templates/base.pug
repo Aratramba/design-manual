@@ -2,7 +2,7 @@ block params
     - var body_class = ''
 
 doctype html
-html(lang="nl")
+html(lang="en")
     head
         title #{pageTitle}
         meta(charset="UTF-8")
@@ -56,7 +56,9 @@ html(lang="nl")
                 label(for='projects').header__projects
                     .header__project__info
                         .header__project__domain #{meta.domain}
-                        .header__project__title #{meta.title}
+                        .header__project__title 
+                            | #{meta.title} 
+                            span.header__project__version #{meta.version}
                         
                     if meta.avatar
                         img(src=meta.avatar).header__project__avatar

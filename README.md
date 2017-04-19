@@ -21,7 +21,8 @@ new DesignManual({
   components: 'path/to/components.json',
   meta: {
     domain: 'my-domain.com',
-    title: 'my Design Manual'
+    title: 'my Design Manual',
+    version: 'v1.1.0'
   }
 });
 ```
@@ -39,7 +40,7 @@ This can be done through [Design Manual Scraper](https://github.com/EightMedia/d
       "name": "my-component",
       "description": "this is my component description"
     },
-    "file": "path/to/file.pug",
+    "file": "path/to/file.html",
     "output": "<div class=\"some-tag\">this is some tag</div>"
   }
 ]
@@ -86,8 +87,8 @@ This is the components page.
 This is the description of section number 1.
 
 ### Contents
-- Component #1
-- Other Component
+* Component #1
+* Other Component
 
 ---
 
@@ -95,8 +96,8 @@ This is the description of section number 1.
 This is the description of section number 2.
 
 ### Contents
-- Component #2
-- Other Component
+* Component #2
+* Other Component
 
 ---
 
@@ -104,9 +105,9 @@ This is the description of section number 2.
 This is the description of section number 3.
 
 ### Contents
-- Component #1
-- Component #2
-- Component #3
+* Component #1
+* Component #2
+* Component #3
 
 ---
 

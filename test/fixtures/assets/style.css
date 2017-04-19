@@ -1,0 +1,39 @@
+body{
+  font-family: Arial;
+  background-color: #fff;
+}
+
+button {
+  background-color: white;
+  color: #111;
+  border: 0;
+  background-color: lightgreen;
+}
+
+button.small {
+  font-size: 13px;
+  padding: 5px 10px;
+}
+
+button.medium {
+  font-size: 15px;
+  padding: 7px 15px;
+}
+
+button.large {
+  font-size: 17px;
+  padding: 10px 20px;
+}
+
+p {
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+p.large {
+  font-size: 20px;
+}
+
+p.mega {
+  font-size: 25px;
+}

@@ -1,40 +1,58 @@
 [
   {
     "meta": {
-      "name": "extends"
+      "name": "button (small)"
     },
-    "file": "test/fixtures/extends.pug",
-    "source": "extends tag.pug",
-    "output": "<div class=\"some-tag\">this is some tag</div><div class=\"some-other-tag\">this is some other tag</div>"
+    "file": "path/to/buttons.html",
+    "output": "<button class=\"small\">this is a small button</button>"
   },
   {
     "meta": {
-      "name": "mixin",
-      "description": "this is [pug](http://pugjs.org) mixin documentation",
-      "arguments": {
-        "arg1": "foo",
-        "arg2": "faa"
-      }
+      "name": "button (medium)"
     },
-    "file": "test/fixtures/mixins.pug",
-    "source": "mixin mixin2(arg1, arg2)\n  div this is a mixin #{arg1}\n  div this is the same mixin #{arg2}",
-    "output": "<div>this is a mixin foo</div><div>this is the same mixin faa</div>"
+    "file": "path/to/buttons.html",
+    "output": "<button class=\"medium\">this is a medium button</button>"
   },
   {
     "meta": {
-      "name": "some-tag"
+      "name": "button (large)"
     },
-    "file": "test/fixtures/tag.pug",
-    "source": "div.some-tag\n  | this is some tag",
-    "output": "<div class=\"some-tag\">this is some tag</div>"
+    "file": "path/to/buttons.html",
+    "output": "<button class=\"large\">this is a large button</button>"
   },
   {
     "meta": {
-      "name": "inclusion (tag)",
-      "description": "this is an inclusion tag"
+      "name": "headings"
     },
-    "file": "test/fixtures/include.pug",
-    "source": "div\n  include mixins.pug\n  +mixin2('foo', 'faa')",
-    "output": "<script></script><div><div>this is a mixin foo</div><div>this is the same mixin faa</div></div>"
+    "file": "path/to/typography.html",
+    "output": "<h1>Heading 1</h1><h2>Heading 2</h2><h3>Heading 3</h3><h4>Heading 4</h4><h5>Heading 5</h5><h6>Heading 6</h6>"
+  },
+  {
+    "meta": {
+      "name": "text"
+    },
+    "file": "path/to/typography.html",
+    "output": "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p><p class=\"large\">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p><p class=\"mega\">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>"
+  },
+  {
+    "meta": {
+      "name": "nav"
+    },
+    "file": "path/to/nav.html",
+    "output": "<nav><ul><li><a href=\"\">Home</a></li><li><a href=\"\">About</a></li><li><a href=\"\">Contact</a></li></ul></nav>"
+  },
+  {
+    "meta": {
+      "name": "nav (large)"
+    },
+    "file": "path/to/nav.html",
+    "output": "<nav class=\"large\"><ul><li><a href=\"\">Home</a></li><li><a href=\"\">About</a></li><li><a href=\"\">Contact</a></li></ul></nav>"
+  },
+  {
+    "meta": {
+      "name": "nav (hamburger)"
+    },
+    "file": "path/to/nav.html",
+    "output": "<div style=\"height: 300px;\"><button class=\"hamburger\"><svg width=\"24\" height=\"19\" viewBox=\"0 0 24 19\"><rect x=\"0\" y=\"0\" width=\"24\" height=\"3\"></rect><rect x=\"0\" y=\"8\" width=\"24\" height=\"3\"></rect><rect x=\"0\" y=\"16\" width=\"24\" height=\"3\"></rect></svg></button><nav class=\"hamburger\"><ul><li><a href=\"\">Home</a></li><li><a href=\"\">About</a></li><li><a href=\"\">Contact</a></li></ul></nav><div>"
   }
 ]

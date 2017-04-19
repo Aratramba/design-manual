@@ -3,31 +3,29 @@ This is the components page.
 
 ---
 
-## Section 1
-This is the description of section number 1.
+## Buttons
+This is what buttons look like on my website.
 
 ### Contents
-* extends
-* some-tag
+* button (small)
+* button (medium)
+* button (large)
 
 ---
 
-## Section 2
-This is the description of section number 2.
+## Typography
+This is what typography look like on my website
 
 ### Contents
-* mixin
-* inclusion (tag)
+* headings
+* text
 
 ---
 
-## Section 3
-This is the description of section number 3.
+## Navigation
+This is the navigation on my website
 
 ### Contents
-* foo
-
----
-
-## Section 4
-This is the rest
+* nav
+* nav (large)
+* nav (hamburger)
