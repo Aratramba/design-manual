@@ -5,9 +5,15 @@ body{
 
 button {
   background-color: white;
-  color: #111;
+  color: white;
   border: 0;
-  background-color: lightgreen;
+  background-color: dodgerblue;
+  border-radius: 3px;
+  transition: background-color .15s;
+}
+
+button:hover {
+  background-color: steelblue;
 }
 
 button.small {

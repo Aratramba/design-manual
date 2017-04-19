@@ -1,6 +1,6 @@
 nav {
   width: 100%;
-  background-color: lightgreen;
+  background-color: dodgerblue;
 }
 
 nav ul {
@@ -16,7 +16,7 @@ nav ul li {
 nav ul li a {
   display: block;
   padding: 10px;
-  color: black;
+  color: white;
 }
 
 nav.large ul li a{
@@ -25,9 +25,11 @@ nav.large ul li a{
 
 nav.hamburger {
   display: none;
+  width: 200px;
 }
 
-button.hamburger {
+nav.hamburger ul li {
+  display: block;
 }
 
 button.hamburger svg {
@@ -35,4 +37,9 @@ button.hamburger svg {
   width: 24px;
   height: 19px;
   margin: 15px 10px;
+  fill: white;
+}
+
+.nav-is-open nav.hamburger {
+  display: block;
 }

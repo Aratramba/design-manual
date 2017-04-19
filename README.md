@@ -134,7 +134,6 @@ new DesignManual({
   output: 'path/to/export/',
   pages: 'path/to/pages/',
   components: 'path/to/components.json',
-  websiteCss: ['path/to/style1.css'],
   meta: {
     domain: 'mywebsite.com',
     title: 'My Design Manual',
@@ -157,10 +156,15 @@ new DesignManual({
   headHtml: '<script>console.log("im in the head");</script>',
   bodyHtml: '<script>console.log("im in the footer");</script>',
   contentsFlag: 'contents',
-  indexPage: 'Home.md',
-  componentsPage: 'Componentes.md',
-  componentHeadHtml: '<script>console.log("im in the component head");</script>',
-  componentBodyHtml: '<script>console.log("im in the component body");</script>',
+  indexPage: 'Index.md',
+  componentsPage: 'Components.md',
+  componentHeadHtml: `
+    <link rel="stylesheet" href="/assets/style.css" />
+    <script>console.log("im in the component head");</script>
+  `,
+  componentBodyHtml: `
+    <script>console.log("im in the component body");</script>
+  `,
   brandColor: 'red',
   brandColorContrast: 'yellow',
   forceUpdate: true,
@@ -175,7 +179,6 @@ new DesignManual({
 | output        | './httpdocs/' | string    | output directory
 | pages         | ''            | string    | directory that holds your pages 
 | components    | ''            | string    | json file with components
-| websiteCss    | []            | array     | list of css files to include in components
 | meta          |               | object    | 
 | meta.domain   | ''            | string    | domain for your project
 | meta.title    | ''            | string    | title for your project

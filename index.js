@@ -20,7 +20,6 @@ function DesignManual(options){
     output: null,
     pages: null,
     components: null,
-    websiteCss: [],
     meta: {
       domain: '',
       title: '',

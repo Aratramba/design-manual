@@ -8,12 +8,11 @@ var DesignManual = require('../index');
 
 new DesignManual({
   forceUpdate: true,
-  output: 'examples/full/',
-  pages: 'test/fixtures/pages/',
+  output: 'examples/httpdocs/',
+  pages: 'examples/pages/',
   indexPage: 'Index.md',
   componentsPage: 'Components.md',
-  components: 'test/fixtures/data/components.json',
-  websiteCss: ['test/fixtures/assets/style.css', 'test/fixtures/assets/nav.css'],
+  components: 'examples/components.json',
   meta: {
     domain: 'website.com',
     title: 'Style Guide',
@@ -34,19 +33,24 @@ new DesignManual({
       avatar: 'http://placehold.it/60x30'
     }
   ],
-  headHtml: '<script>//console.log("im in the head");</script>',
-  bodyHtml: `<script>
+  headHtml: '',
+  bodyHtml: '',
+  contentsFlag: 'contents',
+  componentHeadHtml: `
+    <link rel="stylesheet" href="/assets/style.css">
+    <link rel="stylesheet" href="/assets/nav.css">
+  `,
+  componentBodyHtml: `
+  <script>
     var $hamburger = document.querySelector('button.hamburger');
     if ($hamburger) {
       $hamburger.addEventListener('click', function(e) {
-        console.log(e);
+        document.body.classList.toggle('nav-is-open');
       });
     }
-  </script>`,
-  contentsFlag: 'contents',
-  componentHeadHtml: '<script>//console.log("im in the component head");</script>',
-  componentBodyHtml: '<script>//console.log("im in the component body");</script>',
-  brandColor: 'red',
+  </script>
+  `,
+  brandColor: 'dodgerblue',
   brandColorContrast: 'white',
   onComplete: function() {
     console.log('callback');
