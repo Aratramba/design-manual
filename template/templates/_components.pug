@@ -28,14 +28,14 @@ ul.table-of-contents__list
 
         .component__meta
 
-          label.component__meta__toggle(for=('toggle-' + component.id)) code
+          label.component__meta__toggle(for=('toggle-' + component.id), class="js-code-toggle") code
           span.component__meta__file #{component.file}
 
         .component__code
           div.component__code__output
             h3.component__code__title HTML
             pre
-              code.language-markup #{component.output}
+              code.language-markup
 
 
         iframe.component__iframe(data-original=component.libFile frameborder="0" scrolling="no")

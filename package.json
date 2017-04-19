@@ -1,6 +1,6 @@
 {
   "name": "design-manual",
-  "version": "0.20.0",
+  "version": "0.21.0",
   "description": "Design manual / style guide",
   "main": "index.js",
   "directories": {
@@ -29,6 +29,7 @@
     "delegate-events": "^1.1.1",
     "events": "^1.1.0",
     "faucet": "0.0.1",
+    "html": "^1.0.0",
     "marked": "^0.3.6",
     "minimist": "^1.2.0",
     "mkdirp": "^0.5.1",

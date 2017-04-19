@@ -6,6 +6,7 @@ var Prism = require('../libs/prism');
 var iframeResizer = require('../libs/iframeResizer.min');
 var smoothScroll = require('../libs/smoothscroll');
 var delegate = require('delegate-events');
+var prettyPrint = require('html').prettyPrint;
 var constants = require('../constants');
 
 
@@ -27,9 +28,6 @@ if (document.querySelectorAll('.table-of-contents__list').length) {
   // resize frames
   iframeResizer({ checkOrigin: false });
 
-  // syntax highlighting
-  Prism.highlightAll();
-
   // smooth scroll
   delegate.bind(document.body, '.table-of-contents__list__item__link', 'click', function(e) {
     var href = e.delegateTarget.getAttribute('href');
@@ -38,4 +36,20 @@ if (document.querySelectorAll('.table-of-contents__list').length) {
   });
 
   document.body.classList.remove(constants.LOADING_CLASS);
+
+
+  /**
+   * Capture toggle code clicks
+   * and place iframe contents inside a pre tag
+   */
+
+  delegate.bind(document.body, '.js-code-toggle', 'click', onToggle);
+
+  function onToggle(e) {
+    var $component = e.target.parentNode.parentNode;
+    var $pre = $component.querySelector('pre code');
+    var $source = $component.querySelector('iframe');
+    var html = $source.contentWindow.document.body.querySelector('.js-output').innerHTML;
+    $pre.innerHTML = Prism.highlight(prettyPrint(html), Prism.languages.markup);
+  }
 }
