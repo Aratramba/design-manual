@@ -30,6 +30,7 @@
     "events": "^1.1.0",
     "faucet": "0.0.1",
     "html": "^1.0.0",
+    "interact.js": "^1.2.8",
     "marked": "^0.3.6",
     "minimist": "^1.2.0",
     "mkdirp": "^0.5.1",

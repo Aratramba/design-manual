@@ -37,5 +37,13 @@ ul.table-of-contents__list
             pre
               code.language-markup
 
-
-        iframe.component__iframe(data-original=component.libFile frameborder="0" scrolling="no")
+        .component__preview(class="js-component-preview")
+          span.component__preview__handle(class="js-component-preview-handle")
+            | <svg width="5px" height="23px" viewBox="0 0 5 23" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+            |   <g id="Group" fill="#000000">
+            |     <circle id="Oval" cx="2.5" cy="2.5" r="2.5"></circle>
+            |     <circle id="Oval" cx="2.5" cy="11.5" r="2.5"></circle>
+            |     <circle id="Oval" cx="2.5" cy="20.5" r="2.5"></circle>
+            |   </g>
+            | </svg>
+          iframe.component__preview__iframe(data-original=component.libFile frameborder="0" scrolling="no")

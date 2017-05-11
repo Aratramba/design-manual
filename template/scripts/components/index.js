@@ -6,6 +6,7 @@ var Prism = require('../libs/prism');
 var iframeResizer = require('../libs/iframeResizer.min');
 var delegate = require('delegate-events');
 var prettyPrint = require('html').prettyPrint;
+var interact = require('interact.js');
 var constants = require('../constants');
 
 
@@ -17,10 +18,10 @@ if (document.querySelectorAll('.table-of-contents__list').length) {
     threshold: 100,
     elements_selector: 'iframe',
     callback_load: function($el) {
-      $el.parentNode.classList.remove('is-loading');
+      $el.parentNode.parentNode.classList.remove('is-loading');
     },
     callback_error: function(elemen$el) {
-      $el.parentNode.classList.remove('has-error');
+      $el.parentNode.parentNode.classList.remove('has-error');
     }
   });
 
@@ -53,4 +54,22 @@ if (document.querySelectorAll('.table-of-contents__list').length) {
     var html = $source.contentWindow.document.body.querySelector('.js-output').innerHTML;
     $pre.innerHTML = Prism.highlight(prettyPrint(html), Prism.languages.markup);
   }
+
+
+  interact('.js-component-preview').resizable({
+    edges: {
+      left: false,
+      right: '.js-component-preview-handle',
+      bottom: false,
+      top: false
+    },
+    onmove: function (e) {
+      e.target.style.width = e.rect.width + 'px';
+      e.target.classList.add(constants.RESIZING_CLASS);
+      e.target.querySelector('iframe').contentWindow.parentIFrame.size();
+    },
+    onend: function (e) {
+      e.target.classList.remove(constants.RESIZING_CLASS);
+    }
+  });
 }

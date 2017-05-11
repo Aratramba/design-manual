@@ -206,7 +206,58 @@
    * Iframe that holds the component
    */
 
-  .component__iframe {
+  .component__preview {
+    position: relative;
+    max-width: 100%;
+    min-width: 275px;
+    padding-right: 24px;
+
+    &.is-resizing {
+      .component__preview__handle {
+        background-color: #f5f5f5;
+
+        svg {
+          opacity: .5;
+        }
+      }
+    }
+  }
+
+  .component__preview__handle {
+    display: block;
+    position: absolute;
+    width: 24px;
+    height: calc(100% - 2px);
+    right: 0;
+    top: 0;
+    bottom: 0;
+    border-top: 1px solid $grey;
+    border-right: 1px solid $grey;
+    border-bottom: 1px solid $grey;
+    transition: background-color .15s;
+
+    &:hover {
+      background-color: #f5f5f5;
+
+      svg {
+        opacity: .5;
+      }
+    }
+
+    svg {
+      display: block;
+      width: 5px;
+      height: 23px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      opacity: .25;
+      transition: opacity .15s;
+    }
+  }
+
+  .component__preview__iframe {
     width: 100%;
     opacity: 0;
     transition: opacity .5s;
