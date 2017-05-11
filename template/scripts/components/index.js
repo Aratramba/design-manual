@@ -12,7 +12,6 @@ var constants = require('../constants');
 
 if (document.querySelectorAll('.table-of-contents__list').length) {
   document.body.classList.add(constants.LOADING_CLASS);
-  document.body.classList.add('components-page');
 
   // enable lazy loading
   new LazyLoad({
