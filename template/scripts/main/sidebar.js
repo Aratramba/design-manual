@@ -5,7 +5,6 @@ var delegate = require('delegate-events');
 var Mustache = require('mustache');
 var dispatcher = require('./dispatcher');
 var constants = require('../constants');
-var smoothScroll = require('../libs/smoothscroll');
 
 var TEMPLATE = document.getElementById('sidebar-link-template').innerHTML;
 Mustache.parse(TEMPLATE);
@@ -77,6 +76,7 @@ function onNavLinkClick(e) {
   var href = e.delegateTarget.getAttribute('href');
   var top = document.querySelector(href).offsetTop;
   window.scrollTo(0, top);
+  history.pushState(null, null, href);
   document.getElementById('hamburger').checked = false;
   e.preventDefault();
 }

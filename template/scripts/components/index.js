@@ -4,7 +4,6 @@
 var LazyLoad = require('vanilla-lazyload');
 var Prism = require('../libs/prism');
 var iframeResizer = require('../libs/iframeResizer.min');
-var smoothScroll = require('../libs/smoothscroll');
 var delegate = require('delegate-events');
 var prettyPrint = require('html').prettyPrint;
 var constants = require('../constants');
@@ -15,6 +14,7 @@ if (document.querySelectorAll('.table-of-contents__list').length) {
 
   // enable lazy loading
   new LazyLoad({
+    threshold: 100,
     elements_selector: 'iframe',
     callback_load: function($el) {
       $el.parentNode.classList.remove('is-loading');
@@ -30,8 +30,10 @@ if (document.querySelectorAll('.table-of-contents__list').length) {
   // smooth scroll
   delegate.bind(document.body, '.table-of-contents__list__item__link', 'click', function(e) {
     var href = e.delegateTarget.getAttribute('href');
-    var top = document.querySelector(href).getBoundingClientRect().top - 80;
-    smoothScroll(top);
+    var top = document.querySelector(href).offsetTop;
+    window.scrollTo(0, top);
+    history.pushState(null, null, href);
+    e.preventDefault();
   });
 
   document.body.classList.remove(constants.LOADING_CLASS);
