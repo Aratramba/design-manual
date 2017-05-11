@@ -3,6 +3,12 @@ Create a living, breathing design manual / styleguide that presents all componen
 
 Use [Design Manual Scraper](https://github.com/EightMedia/design-manual-scraper) to feed components from your (live) website into Design Manual.
 
+* [Getting started](#getting-started)
+* [Pages](#pages)
+* [Options](#options)
+* [Recipes](#recipes)
+
+
 ---
 
 ## Getting started
@@ -16,9 +22,9 @@ npm install design-manual
 ```js
 var DesignManual = require('design-manual');
 new DesignManual({
-  output: 'path/to/export/',
-  pages: 'path/to/pages/',
-  components: 'path/to/components.json',
+  output: 'path/to/export/', // destination dir
+  pages: 'path/to/pages/', // dir containing .md files
+  components: 'path/to/components.json', // path to the components
   meta: {
     domain: 'my-domain.com',
     title: 'my Design Manual',
@@ -28,7 +34,7 @@ new DesignManual({
 ```
 
 ### Create your page pages using Markdown
-See [Creating pages](#creating-pages).
+Add markdown files for each page you want to create. For example Index.md, Components.md and Guidelines.md. See [pages](#pages) for more information.
 
 ### Create components.json
 This can be done through [Design Manual Scraper](https://github.com/EightMedia/design-manual-scraper), [Pug-doc](https://github.com/Aratramba/pug-doc) or some other generator.
@@ -51,7 +57,7 @@ The `meta.description` part is optional and, if present, will be parsed using ma
 
 ---
 
-## Creating pages
+## Pages
 There are two types of pages you can generate.
 
 ### Text page
@@ -72,10 +78,10 @@ The h2's will be used to create a table of contents in the sidebar navigation.
 
 Markdown is parsed using [marked](https://github.com/chjj/marked). HTML is allowed.
 
-The options.indexPage file will be will be placed first in the navigation.
+For the homepage, create a file called Index.md (`options.indexPage`). This will be will be placed first in the navigation.
 
 ### Components page
-Create a file called Components.md. This page is where your components are documented. The file should look like this.
+Create a file called Components.md (`options.componentsPage`). This page is where your components are documented. The file should look like this.
 
 ```markdown
 # My Components Page
@@ -199,3 +205,64 @@ new DesignManual({
 | brandColorContrast    | 'LIGHTGOLDENRODYELLOW'   | string    | overwrite default text color on brand color
 | forceUpdate    | false   | boolean    | overwrite all files every time
 | onComplete    |    | function    | function to be called when done
+
+
+---
+
+## Custom styling
+You can customize the look and feel by adding an extra css file through the `headHtml` option:
+
+```js
+{
+  headHtml: `
+    <link rel="stylesheet" href="/assets/css/design-manual.css">
+  `
+}
+```
+
+All pages get the following body class: `#{lowercase-slug(filename)}-page`. So for the file My File.md the body class will be `.my-file-page`.
+
+All pages except for `options.indexPage` and `options.componentsPage` get the body classname `.info-page` as well.
+
+
+---
+
+## Recipes
+### Gulp
+Example gulp implementation with Pug doc:
+
+```js
+gulp.watch('./design-manual/**/*.md', ['design-manual']);
+gulp.task('watch', function() {
+  gulp.watch('templates/**/*.jade', ['templates','design-manual']);
+});
+
+gulp.task('design-manual', function(gulpDone) {
+  renderPugDoc(gulpDone);
+});
+
+function renderPugDoc(gulpDone) {
+  pugDoc({
+    input: 'src/templates/**/*.jade',
+    output: 'design-manual/components.json',
+    complete: function() {
+      renderDesignManual(gulpDone)
+    }
+  });
+}
+
+function renderDesignManual(gulpDone) {
+  new DesignManual({
+    onComplete: gulpDone,
+    forceUpdate: true,
+    output: 'httpdocs/design-manual/',
+    pages: 'design-manual/pages/',
+    components: 'design-manual/components.json',
+    meta: {
+      domain: 'website.com',
+      title: 'Website Design Manual',
+      avatar: '/design-manual/avatar.png'
+    },
+  });
+}
+```
