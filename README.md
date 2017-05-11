@@ -220,7 +220,7 @@ You can customize the look and feel by adding an extra css file through the `hea
 }
 ```
 
-All pages get the following body class: `#{lowercase-slug(filename)}-page`. So for the file My File.md the body class will be `.my-file-page`.
+All pages get a body class formatted like so: `#{lowercase-slug(filename)}-page`. For example the body class for the file 'My File.md' will be `.my-file-page`.
 
 All pages except for `options.indexPage` and `options.componentsPage` get the body classname `.info-page` as well.
 

@@ -75,8 +75,8 @@ function render(items){
 
 function onNavLinkClick(e) {
   var href = e.delegateTarget.getAttribute('href');
-  var top = document.querySelector(href).getBoundingClientRect().top - 80;
-  smoothScroll(top);
+  var top = document.querySelector(href).offsetTop;
+  window.scrollTo(0, top);
   document.getElementById('hamburger').checked = false;
   e.preventDefault();
 }

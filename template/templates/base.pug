@@ -10,7 +10,7 @@ html(lang="en")
 
     | !{headHtml}
 
-  body(class="sidebar-is-empty " + bodyClass)
+  body(class="sidebar-is-empty " + bodyClass, id="top")
     input(type='checkbox' id='hamburger' class='hamburger-toggle').hide
     label(for='hamburger').close-sidebar
 
@@ -24,7 +24,6 @@ html(lang="en")
               div.sidebar__list-wrapper(class="js-sidebar")
       
     .wrapper.push
-      #top
 
       header.header.clearfix
         
