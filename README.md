@@ -143,7 +143,8 @@ new DesignManual({
   meta: {
     domain: 'mywebsite.com',
     title: 'My Design Manual',
-    avatar: 'http://placehold.it/80x80'
+    avatar: 'http://placehold.it/80x80',
+    version: 'v1.1.0'
   },
   subnav: [
     {
@@ -189,6 +190,7 @@ new DesignManual({
 | meta.domain   | ''            | string    | domain for your project
 | meta.title    | ''            | string    | title for your project
 | meta.avatar   | ''            | string    | avatar for your project
+| meta.version  | ''            | string    | version
 | subnav        | []            | array     | array of objects that populate the dropdown navigation with sub projects
 | - {}.domain   |               | string    | domain for project
 | - {}.title    |               | string    | title of project
