@@ -21,6 +21,12 @@
   }
 }
 
+.sidebar-is-empty .header__hamburger {
+  @include breakpoint($breakpoint-l) {
+    display: none;
+  }
+}
+
 .header__title {
   display: inline-block;
   padding: 22px;

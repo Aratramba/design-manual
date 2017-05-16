@@ -1,6 +1,6 @@
 {
   "name": "design-manual",
-  "version": "0.24.0",
+  "version": "0.25.0",
   "description": "Design manual / style guide",
   "main": "index.js",
   "directories": {
@@ -20,7 +20,6 @@
   "author": "Eight Media",
   "license": "ISC",
   "dependencies": {
-    "array-move": "^1.0.0",
     "async": "^1.5.0",
     "autoprefixer": "^6.3.3",
     "browserify": "^11.2.0",
@@ -34,7 +33,6 @@
     "marked": "^0.3.6",
     "minimist": "^1.2.0",
     "mkdirp": "^0.5.1",
-    "multiline": "^1.0.2",
     "mustache": "^2.2.0",
     "node-sass": "^4.5.1",
     "object-assign": "^4.0.1",

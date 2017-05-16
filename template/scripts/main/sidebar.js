@@ -93,7 +93,12 @@ function setActive(e){
 
   for(; i<l; i++){
     $item = $navLinks[i];
-    $item.classList.toggle(constants.ACTIVE_CLASS, ($item.getAttribute('data-rel') === e.section));
+    
+    if ($item.getAttribute('data-rel') === e.section) {
+      $item.classList.add(constants.ACTIVE_CLASS);
+    } else {
+      $item.classList.remove(constants.ACTIVE_CLASS);
+    }
   }
 }
 
