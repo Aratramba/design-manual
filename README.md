@@ -1,5 +1,7 @@
 # Design Manual
-Create a living, breathing design manual / styleguide that presents all components used on your website. This package combines Markdown files with JSON containing your html snippets and creates a beautiful design manual. Each component will be placed in an iframe along with your website css/js.
+Create a living, breathing design manual that presents all components used on your website. 
+
+This package combines Markdown files with JSON containing your html snippets and creates a beautiful design manual. Each component will be placed in an iframe along with your website css/js.
 
 Use [Design Manual Scraper](https://github.com/EightMedia/design-manual-scraper) to feed components from your (live) website into Design Manual.
 
@@ -78,7 +80,7 @@ The h2's will be used to create a table of contents in the sidebar navigation.
 
 Markdown is parsed using [marked](https://github.com/chjj/marked). HTML is allowed.
 
-For the homepage, create a file called Index.md (`options.indexPage`). This will be will be placed first in the navigation.
+For the homepage, create a file called Index.md (`options.indexPage`). This will be placed first in the navigation.
 
 ### Components page
 Create a file called Components.md (`options.componentsPage`). This page is where your components are documented. The file should look like this.
@@ -231,7 +233,14 @@ All pages except for `options.indexPage` and `options.componentsPage` get the bo
 
 ## Recipes
 ### Gulp
-Example gulp implementation with Pug doc:
+Example gulp implementation with Pug-doc:
+
+```pug
+//- @pugdoc
+  name: My Button
+
+button.btn Click Me!
+```
 
 ```js
 gulp.watch('./design-manual/**/*.md', ['design-manual']);
