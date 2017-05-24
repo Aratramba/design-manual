@@ -52,6 +52,8 @@ new DesignManual({
   `,
   brandColor: 'dodgerblue',
   brandColorContrast: 'white',
+  prerenderComponents: true,
+  prerenderPort: 3000,
   onComplete: function() {
     console.log('callback');
   }

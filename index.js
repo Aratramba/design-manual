@@ -36,6 +36,8 @@ function DesignManual(options){
     contentsFlag: 'contents',
     brandColor: null,
     brandColorContrast: null,
+    prerenderComponents: true,
+    prerenderPort: 8000,
     onComplete: function() {}
   }, options);
 
@@ -54,6 +56,5 @@ function DesignManual(options){
   
   generate.init(options);
 }
-
 
 module.exports = DesignManual;
