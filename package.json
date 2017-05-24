@@ -1,6 +1,6 @@
 {
   "name": "design-manual",
-  "version": "0.28.0",
+  "version": "0.29.0",
   "description": "Design manual / style guide",
   "main": "index.js",
   "directories": {

@@ -209,7 +209,10 @@ new DesignManual({
 | brandColorContrast    | 'LIGHTGOLDENRODYELLOW'   | string    | overwrite default text color on brand color
 | forceUpdate    | false   | boolean    | overwrite all files every time
 | prerenderComponents | true | boolean | prerender all components to get their heights (at 1200px wide browser window, using Electron). This speeds up the user interface and makes it less jumpy, but makes the compiling Design Manual slower because it needs to open all components in a headless browser |
-| prerenderPort | 8000 | number | static server port for rendering components (http://localhost:{port}) |
+| prerender | | object | |
+| prerender.port | 8000 | number | static server port for rendering components (http://localhost:{port}) |
+| prerender.path | '' | string | path to design manual folder (http://localhost:{port}/{path}) |
+| prerender.serveFolder | './' | string | directory to start the static file server in |
 | onComplete    |    | function    | function to be called when done
 
 

@@ -37,7 +37,11 @@ function DesignManual(options){
     brandColor: null,
     brandColorContrast: null,
     prerenderComponents: true,
-    prerenderPort: 8000,
+    prerender: {
+      port: 8000,
+      path: '',
+      serveFolder: './',
+    },
     onComplete: function() {}
   }, options);
 
