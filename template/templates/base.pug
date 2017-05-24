@@ -10,7 +10,7 @@ html(lang="en")
 
     | !{headHtml}
 
-  body(class="sidebar-is-empty " + bodyClass, id="top")
+  body(class=bodyClass, id="top")
     input(type='checkbox' id='hamburger' class='hamburger-toggle').hide
     label(for='hamburger').close-sidebar
 
@@ -22,6 +22,11 @@ html(lang="en")
             
             if (currentPage === item.label) || (currentPage === 'Index' && item.label === 'Home')
               div.sidebar__list-wrapper(class="js-sidebar")
+                if headings.length
+                  ul.sidebar__list(class="current is-open")
+                    each heading in headings
+                      li.sidebar__item(class="js-sidebar__item", data-rel=heading.slug)
+                        a.sidebar__item__link(href='\#' + heading.slug) #{heading.label}
       
     .wrapper.push
 
@@ -73,16 +78,6 @@ html(lang="en")
         block content
 
       a.scrolltop(href="#top")
-
-      //- js-template for sidebar list
-      script#sidebar-link-template(type="text/template")
-        | {{#items.length}}
-        ul.sidebar__list(class="current is-open")
-          | {{#items}}
-          li.sidebar__item(class="js-sidebar__item", data-rel="{{id}}")
-            a.sidebar__item__link(href='\#{{id}}') {{label}}
-          | {{/items}}
-        | {{/items.length}}
 
       block footer_js
       script(src='app.min.js')

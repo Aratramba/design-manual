@@ -1,6 +1,6 @@
 {
   "name": "design-manual",
-  "version": "0.25.0",
+  "version": "0.26.0",
   "description": "Design manual / style guide",
   "main": "index.js",
   "directories": {
@@ -33,7 +33,6 @@
     "marked": "^0.3.6",
     "minimist": "^1.2.0",
     "mkdirp": "^0.5.1",
-    "mustache": "^2.2.0",
     "node-sass": "^4.5.1",
     "object-assign": "^4.0.1",
     "postcss": "^5.0.19",

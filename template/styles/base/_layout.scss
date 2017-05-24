@@ -14,7 +14,7 @@
   }
 }
 
-.sidebar-is-empty .push {
+.has-no-headings .push {
   @include breakpoint(1300px) {
     margin-left: 0;
   }

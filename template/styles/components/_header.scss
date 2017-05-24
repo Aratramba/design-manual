@@ -15,13 +15,13 @@
   }
 }
 
-.sidebar-is-empty .header {
+.has-no-headings .header {
   @include breakpoint(1300px) {
     left: 0;
   }
 }
 
-.sidebar-is-empty .header__hamburger {
+.has-no-headings .header__hamburger {
   @include breakpoint($breakpoint-l) {
     display: none;
   }
@@ -147,14 +147,9 @@
 
 
 .header__project__avatar {
-  display: none;
   height: 50px;
-  padding-right: 14px;
-
-  @include breakpoint($breakpoint-s) {
-    display: inline-block;
-    padding-right: 34px;
-  }
+  display: inline-block;
+  padding-right: 34px;
 }
 
 .header__project__icon {

@@ -1,0 +1,45 @@
+nav {
+  width: 100%;
+  background-color: dodgerblue;
+}
+
+nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+nav ul li {
+  display: inline-block;
+}
+
+nav ul li a {
+  display: block;
+  padding: 10px;
+  color: white;
+}
+
+nav.large ul li a{
+  padding: 20px;
+}
+
+nav.hamburger {
+  display: none;
+  width: 200px;
+}
+
+nav.hamburger ul li {
+  display: block;
+}
+
+button.hamburger svg {
+  display: block;
+  width: 24px;
+  height: 19px;
+  margin: 15px 10px;
+  fill: white;
+}
+
+.nav-is-open nav.hamburger {
+  display: block;
+}
