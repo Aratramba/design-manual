@@ -52,7 +52,7 @@ new DesignManual({
   `,
   brandColor: 'dodgerblue',
   brandColorContrast: 'white',
-  prerenderComponents: true,
+  prerenderComponents: false,
   prerender: {
     port: 3000,
     path: '',
