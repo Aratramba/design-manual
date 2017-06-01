@@ -3,15 +3,20 @@
   width: $sidebar-width;
   bottom: 0;
   top: 0;
-  left: -$sidebar-width;
+  left: 0;
   background-color: $bg-grey;
   z-index: 3;
-  transform: translate3d(0, 0, 0);
+  transition: transform .25s;
+  transform: translateX(-$sidebar-width);
   overflow-y: auto;
 
   @include breakpoint(1300px) {
-    left: 0;
+    transform: none;
     border-right: 1px solid #ddd;
+  }
+
+  .is-open & {
+    transform: scale(0, 100%);
   }
 }
 
@@ -23,75 +28,68 @@
 
 
 /**
-* Sidebar list
+* Sidebar list pages
 */
 
-.sidebar__list-wrapper {}
-
-.sidebar__list {
-  padding: 0;
-  overflow: auto;
-  line-height: 33px;
-  transition: all .5s ease;
-  max-height: 0;
-
+.sidebar__nav {
   @include breakpoint($breakpoint-l) {
-    max-height: none;
-    padding: 20px 0 0 0;
-    &:not(.current) { display: none }
-  }
-
-  
-  &.is-open {
-    max-height: 1000px;
-    transform: scale(0, 100%);
-  }
-
-  &:last-of-type {
-    border: 0;
+    display: none;
   }
 }
 
+.sidebar__nav__item__link {
+  display: block;
+  text-decoration: none;
+  margin-bottom: 0;
+  color: $primary-contrast;
+  font-weight: bold;
+  background-color: $primary;
+  border-bottom: 1px solid rgba(black, .15);
+  padding: 22px;
 
+  &:hover {
+    text-decoration: underline;
+  }
 
-.sidebar__item {
-  &.is-active {
-    .sidebar__item__link {
-      font-weight: $weight-bold;
-      color: $base-dark;
-    }
-
-    /*
-    .sidebar__item__components {
-      display: block;
-    }
-    */
+  .is-active & {
+    text-decoration: underline;
   }
 }
 
-.sidebar__item__link {
+/**
+ * Sidebar list headings
+ */
+
+.sidebar__inpage {
+  padding-top: 10px;
+}
+
+.sidebar__inpage__item__link {
   display: block;
   text-decoration: none;
   color: $base-color;
   font-size: $size-s;
   line-height: 1.4;
   margin-bottom: 0;
-  transition: background-color .15s;
   padding: 10px 20px;
 
   &:hover {
     color: $base-dark;
     text-decoration: underline;
   }
+
+  .is-active & {
+    font-weight: $weight-bold;
+  }
 }
 
 
-// Triggers sidebar for medium screens
+/**
+ * Toggles
+ */
+
 .hamburger-toggle:checked ~ .sidebar {
-  @include breakpoint($breakpoint-m) {
-    transform: translate3d($sidebar-width, 0, 0);
-    transition: .1s transform .2s;
-  }
+  transform: translateX(0);
 }
 
 .close-sidebar {
@@ -105,53 +103,10 @@
   visibility: hidden;
   z-index: 2;
   cursor: pointer;
+  transition: opacity .5s;
 }
 
 .hamburger-toggle:checked ~ .close-sidebar {
   visibility: visible;
   opacity: .5;
-  transition: opacity .2s ease;
 }
-
-
-/**
- * Added component list
- */
-
-/*
-.sidebar__item__components {
-  display: none;
-
-  .table-of-contents__list {
-    margin: -5px 20px 0 20px;
-    padding: 5px;
-  }
-
-  .table-of-contents__list__item {
-
-  }
-
-  .table-of-contents__list__item__link {
-    display: block;
-    text-decoration: none;
-    color: $base-color;
-    font-size: $size-xs;
-    line-height: 1.4;
-    margin-bottom: 0;
-    transition: background-color .15s;
-
-    &:hover {
-      color: $base-dark;
-      text-decoration: underline;
-    }
-
-    &:before {
-      opacity: .5;
-      margin: 0 5px 0 0;
-      content: '•';
-      vertical-align: middle;
-      display: inline-block;
-    }
-  }
-}
-*/

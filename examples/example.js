@@ -53,7 +53,6 @@ new DesignManual({
   brandColor: 'dodgerblue',
   brandColorContrast: 'white',
   prerenderComponents: true,
-  prerenderComponents: true,
   prerender: {
     port: 3000,
     path: '',

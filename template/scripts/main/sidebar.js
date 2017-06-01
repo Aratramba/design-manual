@@ -23,7 +23,9 @@ function onNavLinkClick(e) {
   e.preventDefault();
 }
 
-delegate.bind($sidebar, '.js-sidebar__item a', 'click', onNavLinkClick);
+if ($sidebar) {
+  delegate.bind($sidebar, '.js-sidebar__item a', 'click', onNavLinkClick);
+}
 
 
 /**
