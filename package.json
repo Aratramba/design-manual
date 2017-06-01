@@ -1,6 +1,6 @@
 {
   "name": "design-manual",
-  "version": "0.32.0",
+  "version": "1.0.0",
   "description": "Design manual / style guide",
   "main": "index.js",
   "directories": {
@@ -13,9 +13,7 @@
     "template-css": "npm run template-css-sass -- -o httpdocs/all.min.css",
     "template-html": "jade template/templates/components.pug -o httpdocs",
     "watch-js": "watchify template/scripts/index.js -o httpdocs/app.min.js",
-    "test": "tape test/*.js | faucet",
-    "test-pages": "tape test/pages.js | faucet || true",
-    "test-assets": "tape test/assets.js | faucet || true"
+    "test": "tape test/*.js | faucet"
   },
   "author": "Eight Media",
   "license": "ISC",
@@ -48,7 +46,6 @@
     "tape": "^4.2.1",
     "to-sentence-case": "^1.0.0",
     "uglifyify": "^3.0.1",
-    "validate": "^3.0.1",
     "vanilla-lazyload": "^5.1.1"
   },
   "devDependencies": {

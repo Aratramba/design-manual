@@ -1,12 +1,9 @@
 # Components
-This is the components page.
-
----
 
 ## Buttons
 This is what buttons look like on my website.
 
-### Contents
+### Contents flag
 * button (small)
 * button (medium)
 * button (large)
@@ -16,16 +13,6 @@ This is what buttons look like on my website.
 ## Typography
 This is what typography looks like on my website
 
-### Contents
+### Contents flag
 * headings
 * text
-
----
-
-## Navigation
-This is the navigation on my website
-
-### Contents
-* nav
-* nav (large)
-* nav (hamburger)

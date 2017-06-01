@@ -15,7 +15,7 @@ new DesignManual({
   components: 'examples/components.json',
   meta: {
     domain: 'website.com',
-    title: 'Style Guide',
+    title: 'Design Manual',
     avatar: 'http://placehold.it/100x50',
     version: 'v' + require('../package.json').version
   },

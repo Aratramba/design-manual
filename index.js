@@ -5,7 +5,7 @@ var assign = require('object-assign');
 var path = require('path');
 
 var generate = require('./lib/generate');
-var schema = require('./lib/validate');
+var validate = require('./lib/validate');
 
 
 /**
@@ -45,14 +45,7 @@ function DesignManual(options){
     onComplete: function() {}
   }, options);
 
-  var errors = schema.validate(options);
-  if(errors.length){
-    console.log('Error creating Design Manual');
-    errors.forEach(function(err){
-      console.log('-', err.message);
-    });
-    return;
-  }
+  validate(options);
 
   options.output = path.resolve(options.output);
   options.pages = path.resolve(options.pages);
