@@ -6,12 +6,12 @@ var test = require('tape');
 var isThere = require('is-there');
 var rimraf = require('rimraf');
 
-test('full', function(assert){
+test('options', function(assert){
 
   var DesignManual = require('../index');
 
-  var fixtures = 'test/fixtures/full/';
-  var tmp = 'test/tmp/full/';
+  var fixtures = 'test/fixtures/options/';
+  var tmp = 'test/tmp/options/';
   rimraf.sync(tmp);
 
   new DesignManual({

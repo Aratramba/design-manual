@@ -5,12 +5,12 @@ var test = require('tape');
 var isThere = require('is-there');
 var rimraf = require('rimraf');
 
-test('minimal', function(assert){
+test('defaults', function(assert){
 
   var DesignManual = require('../index');
 
-  var fixtures = 'test/fixtures/minimal/';
-  var tmp = 'test/tmp/minimal/';
+  var fixtures = 'test/fixtures/defaults/';
+  var tmp = 'test/tmp/defaults/';
   rimraf.sync(tmp);
 
   new DesignManual({
