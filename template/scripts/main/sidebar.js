@@ -10,22 +10,27 @@ var $navLinks = document.querySelectorAll('.js-sidebar__item');
 
 
 /**
- * Nav link click handler
+ * Internal link click handler
  */
 
 
-function onNavLinkClick(e) {
+function onLinkClick(e) {
   var href = e.delegateTarget.getAttribute('href');
-  var top = document.querySelector(href).offsetTop;
-  window.scrollTo(0, top);
-  history.pushState(null, null, href);
-  document.getElementById('hamburger').checked = false;
-  e.preventDefault();
+  if (href && document.querySelector(href)) {
+    e.preventDefault();
+    var top = document.querySelector(href).getBoundingClientRect().top;
+    var $header = document.querySelector('.header');
+    if ($header) {
+      top -= $header.getBoundingClientRect().height;
+    }
+    window.scrollBy(0, top - 20);
+    history.replaceState(null, null, href);
+    document.getElementById('hamburger').checked = false;
+  }
 }
 
-if ($sidebar) {
-  delegate.bind($sidebar, '.js-sidebar__item a', 'click', onNavLinkClick);
-}
+delegate.bind(document.body, 'a', 'click', onLinkClick);
+
 
 
 /**
