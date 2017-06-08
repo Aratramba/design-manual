@@ -7,6 +7,7 @@ This is the components page.
 This is what buttons look like on my website.
 
 ### Contents
+* link
 * button (small)
 * button (medium)
 * button (large)
