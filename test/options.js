@@ -102,5 +102,7 @@ test('options', function(assert){
     }
 
     assert.end();
+
+    process.exit(0);
   }
 });
