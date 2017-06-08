@@ -7,3 +7,4 @@ require('./main/sidebar');
 require('./components/index');
 require('./main/breadcrumb');
 require('./main/section');
+require('./main/anchors');
