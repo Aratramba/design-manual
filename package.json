@@ -26,7 +26,6 @@
     "delegate-events": "^1.1.1",
     "electron": "^1.6.10",
     "events": "^1.1.0",
-    "faucet": "0.0.1",
     "finalhandler": "^1.0.3",
     "html": "^1.0.0",
     "interact.js": "^1.2.8",
@@ -43,12 +42,13 @@
     "rimraf": "^2.5.2",
     "serve-static": "^1.12.3",
     "slug": "^0.9.1",
-    "tape": "^4.2.1",
     "to-sentence-case": "^1.0.0",
     "uglifyify": "^3.0.1",
     "vanilla-lazyload": "^5.1.1"
   },
   "devDependencies": {
+    "faucet": "0.0.1",
+    "tape": "^4.2.1",
     "is-there": "^4.1.0",
     "rimraf": "^2.4.3",
     "watchify": "^3.4.0"
