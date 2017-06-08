@@ -63,11 +63,17 @@
  */
 
 .project-toggle:checked ~ .project__list {
- display: block;
+  display: block;
 }
 
-.project-toggle:checked ~ .close-sidebar {
- opacity: 1;
+.close-projects {
+  z-index: 0;
+  top: 60px;
+}
+
+.project-toggle:checked ~ .close-projects {
+  visibility: visible;
+  opacity: .5;
 }
 
 .project-toggle:checked ~ .header__projects .header__project__icon {
