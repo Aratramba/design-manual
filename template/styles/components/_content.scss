@@ -3,11 +3,16 @@
     @include title-xl; 
     margin-bottom: 20px;
   }
+
   h2 { 
     @include title-l; 
     margin-bottom: 10px;
   }
-  h3 { 
+
+  h3,
+  h4,
+  h5,
+  h6 { 
     @include title-xs; 
     margin-bottom: 10px;
   }
@@ -16,14 +21,25 @@
     @include text-small;
   }
   
+  ol,
   ul {
     list-style: normal;
-    list-style-position: inside;
-    margin-bottom: 2em;
+    margin-left: 1em;
+    margin-bottom: 1em;
+
+    ol,
+    ul {
+      margin-bottom: 0;
+    }
+  }
+
+  ol {
+    list-style: decimal;
   }
 
   li {
-    margin-bottom: 1em;
+    @include text-small;
+    margin-bottom: 0;
   }
 
   a {
@@ -32,6 +48,78 @@
 
     &:hover {
       text-decoration: none;
+    }
+  }
+
+
+  /**
+   * Table styling
+   */
+
+  table {
+    width: 100%;
+    margin-bottom: 1em;
+
+    caption {
+      background: darken($bg-grey, 5%);
+      padding: .7em 15px;
+      text-align: left;
+      font-size: 1.3em;
+      border-bottom: solid 2px #fff;
+      margin: auto -3px;
+      border-radius: 3px;
+    }
+
+    th {
+      font-weight: bold;
+    }
+
+    td,
+    th {
+      background: $bg-grey;
+      padding: .7em 15px;
+      text-align: left;
+    }
+
+    thead {
+      td,
+      th {
+        background: darken($bg-grey, 5%);
+        border: solid 1px darken($bg-grey, 10%);
+        font-weight: bold;
+      }
+    }
+
+    tbody {
+      td,
+      th {
+        vertical-align: top;
+        border: solid 1px darken($bg-grey, 10%);
+      }
+    }
+
+    tr {
+      &:first-child {
+        & > td,
+        & > th {
+          border-top: 0;
+        }
+      }
+
+      &:last-child {
+        & > td,
+        & > th {
+          border-bottom: 0;
+        }
+      }
+
+      & > :first-child {
+        border-left: 0;
+      }
+
+      & > :last-child {
+        border-right: 0;
+      }
     }
   }
 }
