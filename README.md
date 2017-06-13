@@ -1,9 +1,10 @@
 # Design Manual
-Create a living, breathing design manual that presents all components used on your website. 
+<img src="https://raw.githubusercontent.com/EightMedia/design-manual/master/docs/assets/logo.png" align="left" height="140" />
+Design Manual is a documentation platform for your websites components and design decisions.
 
-This package combines Markdown files with JSON containing your html snippets and creates a beautiful design manual. Each component will be placed in an iframe along with your website css/js.
+This package combines free format Markdown files with a json file containing your components and creates a beautiful design manual. Use [Design Manual Scraper](https://github.com/EightMedia/design-manual-scraper) to feed components from your (live) website into Design Manual. 
 
-Use [Design Manual Scraper](https://github.com/EightMedia/design-manual-scraper) to feed components from your (live) website into Design Manual.
+[Live Demo](https://rijkswaterstaat.eightmedia.com/stijlgids/componenten.html)
 
 * [Getting started](#getting-started)
 * [Pages](#pages)
