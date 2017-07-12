@@ -14,10 +14,12 @@ new DesignManual({
   meta: {
     domain: 'github.com/eightmedia/design-manual',
     title: 'Design Manual',
-    avatar: '/assets/avatar.png',
+    avatar: './assets/avatar.png',
     version: 'v' + require('../package.json').version
   },
-  headHtml: '',
+  headHtml: `
+  <link rel="stylesheet" href="./assets/style.css" />
+  `,
   bodyHtml: '',
   brandColor: '#EB1D38',
   brandColorContrast: 'white',
