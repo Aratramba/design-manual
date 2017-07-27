@@ -52,6 +52,10 @@ new DesignManual({
   `,
   brandColor: 'dodgerblue',
   brandColorContrast: 'white',
+  renderPages: true,
+  renderComponents: true,
+  renderJS: true,
+  renderCSS: true,
   prerenderComponents: true,
   prerender: {
     port: 3000,

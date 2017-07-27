@@ -36,6 +36,10 @@ function DesignManual(options){
     contentsFlag: 'contents',
     brandColor: null,
     brandColorContrast: null,
+    renderPages: true,
+    renderComponents: true,
+    renderJS: true,
+    renderCSS: true,
     prerenderComponents: true,
     prerender: {
       port: 8000,
