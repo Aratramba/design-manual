@@ -37,8 +37,8 @@ new DesignManual({
   bodyHtml: '',
   contentsFlag: 'contents',
   componentHeadHtml: `
-    <link rel="stylesheet" href="/assets/style.css">
-    <link rel="stylesheet" href="/assets/nav.css">
+    <link rel="stylesheet" href="/all.min.css">
+    <link rel="stylesheet" href="/app.min.js">
   `,
   componentBodyHtml: `
   <script>
