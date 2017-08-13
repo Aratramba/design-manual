@@ -11,7 +11,6 @@ new DesignManual({
   output: 'examples/httpdocs/',
   pages: 'examples/pages/',
   indexPage: 'Index.md',
-  componentsPage: 'Components.md',
   components: 'examples/components.json',
   meta: {
     domain: 'website.com',
@@ -56,7 +55,6 @@ new DesignManual({
   renderComponents: true,
   renderJS: true,
   renderCSS: true,
-  prerenderComponents: true,
   prerender: {
     port: 3000,
     path: '',

@@ -32,7 +32,6 @@ function DesignManual(options){
     componentHeadHtml: '',
     componentBodyHtml: '',
     indexPage: 'Index.md',
-    componentsPage: 'Components.md',
     contentsFlag: 'contents',
     brandColor: null,
     brandColorContrast: null,
@@ -41,11 +40,7 @@ function DesignManual(options){
     renderJS: true,
     renderCSS: true,
     prerenderComponents: true,
-    prerender: {
-      port: 8000,
-      path: '',
-      serveFolder: './',
-    },
+    prerender: null,
     onComplete: function() {}
   }, options);
 
