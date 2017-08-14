@@ -94,9 +94,6 @@ The h2's will be used to create in-page-links in the sidebar navigation.
 ### Markdown
 Markdown is parsed using [marked](https://github.com/chjj/marked). HTML is allowed.
 
-### Homepage
-For the homepage, create a file called Index.md (`options.indexPage`). This will be placed first in the navigation.
-
 
 ---
 
@@ -113,6 +110,9 @@ new DesignManual({
     avatar: 'http://placehold.it/80x80',
     version: 'v1.1.0'
   },
+  nav: [
+    { label: 'Home', href: '/' }
+  ],
   subnav: [
     {
       domain: 'google.com',
@@ -130,7 +130,6 @@ new DesignManual({
   headHtml: '<script>console.log("im in the head");</script>',
   bodyHtml: '<script>console.log("im in the footer");</script>',
   contentsFlag: 'contents',
-  indexPage: 'Index.md',
   componentHeadHtml: `
     <link rel="stylesheet" href="/assets/style.css" />
     <script>console.log("im in the component head");</script>
@@ -140,7 +139,6 @@ new DesignManual({
   `,
   brandColor: 'red',
   brandColorContrast: 'yellow',
-  forceUpdate: true,
   onComplete: function() { }
 });
 ```
@@ -157,6 +155,9 @@ new DesignManual({
 | meta.title    | ''            | string    | title for your project
 | meta.avatar   | ''            | string    | avatar for your project
 | meta.version  | ''            | string    | version
+| nav           | []            | array     | array of objects with navigation items 
+| - {}.label    |               | string    | label of the navigation item
+| - {}.href    |                | string    | link for the navigation item
 | subnav        | []            | array     | array of objects that populate the dropdown navigation with sub projects
 | - {}.domain   |               | string    | domain for project
 | - {}.title    |               | string    | title of project
@@ -166,11 +167,9 @@ new DesignManual({
 | bodyHtml    | ''            | string    | string of html to include in the body
 | componentHeadHtml      | ''            | string    | string of html to include in the head of the component
 | componentBodyHtml    | ''            | string    | string of html to include in the body of the component
-| indexPage    | 'Index.md'   | string    | file to be the homepage (first item in navigation)
 | contentsFlag    | 'contents'   | string    | css id to identify the contents heading
 | brandColor    | 'STEELBLUE'   | string    | overwrite default brand color
 | brandColorContrast    | 'LIGHTGOLDENRODYELLOW'   | string    | overwrite default text color on brand color
-| forceUpdate    | false   | boolean    | overwrite all files every time
 | prerender | | object || null | prerender all components to get their heights (at 1200px wide browser window, using Electron). This speeds up the user interface and makes it less jumpy, but makes compiling Design Manual slower because it needs to open all components in a headless browser |
 | prerender.port | 8000 | number | static server port for rendering components (http://localhost:{port}) |
 | prerender.path | '' | string | path to design manual folder (http://localhost:{port}/{path}) |
@@ -192,8 +191,6 @@ You can customize the look and feel by adding an extra css file through the `hea
 ```
 
 All pages get a body class formatted like so: `#{lowercase-slug(filename)}-page`. For example the body class for the file 'My File.md' will be `.my-file-page`.
-
-All pages except for `options.indexPage` get the body classname `.info-page` as well.
 
 
 ---
@@ -232,7 +229,6 @@ function renderPugDoc(gulpDone) {
 function renderDesignManual(gulpDone) {
   new DesignManual({
     onComplete: gulpDone,
-    forceUpdate: true,
     output: 'httpdocs/design-manual/',
     pages: 'design-manual/pages/',
     components: 'design-manual/components.json',

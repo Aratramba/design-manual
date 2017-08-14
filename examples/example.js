@@ -7,10 +7,8 @@ rimraf.sync('httpdocs/*');
 var DesignManual = require('../index');
 
 new DesignManual({
-  forceUpdate: true,
   output: 'examples/httpdocs/',
   pages: 'examples/pages/',
-  indexPage: 'Index.md',
   components: 'examples/components.json',
   meta: {
     domain: 'website.com',
@@ -18,6 +16,12 @@ new DesignManual({
     avatar: 'http://placehold.it/100x50',
     version: 'v' + require('../package.json').version
   },
+  nav: [
+    { label: 'Home', href: '/index.html' },
+    { label: 'Components', href: '/components.html' },
+    { label: 'Content Guidelines', href: '/content-guidelines.html' },
+    { label: 'Design Principles', href: '/design-principles.html' }
+  ],
   subnav: [
     {
       domain: 'google.com',

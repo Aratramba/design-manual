@@ -16,7 +16,6 @@ function DesignManual(options){
   
   // options
   options = assign({
-    forceUpdate: false,
     output: null,
     pages: null,
     components: null,
@@ -26,12 +25,12 @@ function DesignManual(options){
       avatar: '',
       version: ''
     },
+    nav: [],
     subnav: [],
     headHtml: '',
     bodyHtml: '',
     componentHeadHtml: '',
     componentBodyHtml: '',
-    indexPage: 'Index.md',
     contentsFlag: 'contents',
     brandColor: null,
     brandColorContrast: null,
@@ -39,7 +38,6 @@ function DesignManual(options){
     renderComponents: true,
     renderJS: true,
     renderCSS: true,
-    prerenderComponents: true,
     prerender: null,
     onComplete: function() {}
   }, options);

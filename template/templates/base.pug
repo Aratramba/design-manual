@@ -19,7 +19,7 @@ html(lang="en")
         ul.sidebar__nav
           each item in navItems
               li.sidebar__nav__item(class=(currentPage === item.label ? 'is-active' : ''))
-                a.sidebar__nav__item__link(href=item.link) #{item.label}
+                a.sidebar__nav__item__link(href=item.href) #{item.label}
 
       if headings.length
         ul.sidebar__inpage
@@ -35,14 +35,14 @@ html(lang="en")
           ul.header__nav
             each item in navItems
               li.header__nav__item
-                a.header__nav__item__link(class=(currentPage === item.label ? 'active' : ''), href=rootPath + item.link) #{item.label}
+                a.header__nav__item__link(class=(currentPage === item.label ? 'active' : ''), href=item.href) #{item.label}
 
         if navItems.length
           ul.breadcrumbs
             each item in navItems
               if currentPage === item.label
                 li(class="breadcrumbs__item breadcrumbs__item--current")
-                  a.breadcrumbs__section(href=rootPath + item.link) #{item.label}
+                  a.breadcrumbs__section(href=item.href) #{item.label}
             li.breadcrumbs__item(class="js-breadcrumb")
 
         input(type='checkbox' class='project-toggle' id='projects').hide

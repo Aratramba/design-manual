@@ -7,7 +7,6 @@ rimraf.sync('./*.html');
 var DesignManual = require('../index');
 
 new DesignManual({
-  forceUpdate: true,
   output: 'docs/',
   pages: 'docs/pages/',
   components: 'examples/components.json',
@@ -22,6 +21,5 @@ new DesignManual({
   `,
   bodyHtml: '',
   brandColor: '#EB1D38',
-  brandColorContrast: 'white',
-  prerenderComponents: false
+  brandColorContrast: 'white'
 });

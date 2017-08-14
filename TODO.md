@@ -1,11 +1,10 @@
-bezig met updaten van generator. 
+`node examples/example` for now.
 
-`node examples/example` voor nu.
-
-* [ ] README updaten
-* [ ] index.js options aanpassen
-* [x] lib/validate aanpassen
-* [ ] css opschonen
-* [ ] tests aanpassen
+* [ ] README update
+* [ ] index.js options update
+* [x] lib/validate refactor
+* [ ] clean up / refactor css
+* [ ] fix tests
 * [x] markdown tables
-* [ ] navigatie optie toevoegen
+* [x] navigation option
+* [ ] navigation active state refactor?
