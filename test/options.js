@@ -63,9 +63,7 @@ test('options', function(assert){
     `,
     brandColor: 'dodgerblue',
     brandColorContrast: 'white',
-    prerenderComponents: true,
     indexPage: 'Home.md',
-    componentsPage: 'Items.md',
     prerender: {
       port: 3000,
       path: '',
