@@ -35,7 +35,6 @@ test('components', function(assert){
     files.push('lib/button-small.html');
     files.push('lib/headings.html');
     files.push('lib/text.html');
-    files.push('components.html');
 
     for (var i = 0, l = files.length; i < l; ++i) {
 

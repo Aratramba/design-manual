@@ -8,3 +8,4 @@ bezig met updaten van generator.
 * [ ] css opschonen
 * [ ] tests aanpassen
 * [x] markdown tables
+* [ ] navigatie optie toevoegen
