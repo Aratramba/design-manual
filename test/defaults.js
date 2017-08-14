@@ -39,10 +39,6 @@ test('defaults', function(assert){
     expected = true;
     assert.equal(actual, expected, 'html file generated');
 
-    actual = isThere(tmp + 'components.html');
-    expected = true;
-    assert.equal(actual, expected, 'components file generated');
-
     assert.end();
   }
 });

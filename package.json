@@ -13,7 +13,7 @@
     "template-css": "npm run template-css-sass -- -o httpdocs/all.min.css",
     "template-html": "jade template/templates/components.pug -o httpdocs",
     "watch-js": "watchify template/scripts/index.js -o httpdocs/app.min.js",
-    "test": "tape test/com*.js | faucet"
+    "test": "tape test/def*.js | faucet"
   },
   "author": "Eight Media",
   "license": "ISC",
