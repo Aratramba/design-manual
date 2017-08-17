@@ -23,7 +23,7 @@
 
 .has-no-headings .header__hamburger {
   @include breakpoint($breakpoint-l) {
-    display: none;
+    color: transparent;
   }
 }
 
