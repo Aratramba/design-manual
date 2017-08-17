@@ -40,12 +40,11 @@ new DesignManual({
   bodyHtml: '',
   contentsFlag: 'contents',
   componentHeadHtml: `
-    <link rel="stylesheet" href="/all.min.css">
-    <link rel="stylesheet" href="/app.min.js">
+    <link rel="stylesheet" href="/lib.css">
   `,
   componentBodyHtml: `
   <script>
-    var $hamburger = document.querySelector('button.hamburger');
+    var $hamburger = document.querySelector('.hamburger');
     if ($hamburger) {
       $hamburger.addEventListener('click', function(e) {
         document.body.classList.toggle('nav-is-open');

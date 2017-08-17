@@ -60,7 +60,7 @@ The `meta.description` part is optional and, if present, will be parsed using ma
 ---
 
 ## Pages
-All `.md` files inside `options.pages` will be used as input. Markdown files in subdirectories will be rendered, but won't show up in the navigation.
+All `.md` files inside `options.pages` will be used as input. Markdown files in subdirectories will also be rendered.
 
 A basic page looks something like this:
 

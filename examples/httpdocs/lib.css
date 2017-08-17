@@ -1,0 +1,44 @@
+body {
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  color: #333;
+  line-height: 1.4;
+}
+
+a {
+  color: royalblue;
+}
+
+
+/**
+ * Nav examples
+ */
+
+.nav {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  max-width: 250px;
+}
+
+.nav--large {
+  font-size: 1.3rem;
+}
+
+body:not(.nav-is-open) .nav--hamburger {
+  display: none;
+}
+
+.hamburger {
+  width: 44px;
+  height: 44px;
+  border: 1px solid steelblue;
+  background-color: white;
+}
+
+.hamburger svg {
+  fill: steelblue;
+  display: block;
+  margin: 0 auto;
+}
