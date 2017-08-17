@@ -113,20 +113,6 @@ new DesignManual({
   nav: [
     { label: 'Home', href: '/' }
   ],
-  subnav: [
-    {
-      domain: 'google.com',
-      title: 'Title',
-      href: 'http://www.google.com',
-      avatar: 'http://placehold.it/80x80'
-    },
-    {
-      domain: 'google.com',
-      title: 'Title',
-      href: 'http://www.google.com',
-      avatar: 'http://placehold.it/80x80'
-    }
-  ],
   headHtml: '<script>console.log("im in the head");</script>',
   bodyHtml: '<script>console.log("im in the footer");</script>',
   contentsFlag: 'contents',
@@ -158,7 +144,6 @@ new DesignManual({
 | nav           | []            | array     | array of objects with navigation items 
 | - {}.label    |               | string    | label of the navigation item
 | - {}.href    |                | string    | link for the navigation item
-| subnav        | []            | array     | array of objects that populate the dropdown navigation with sub projects
 | - {}.domain   |               | string    | domain for project
 | - {}.title    |               | string    | title of project
 | - {}.href     |               | string    | link to project

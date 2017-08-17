@@ -26,7 +26,6 @@ function DesignManual(options){
       version: ''
     },
     nav: [],
-    subnav: [],
     headHtml: '',
     bodyHtml: '',
     componentHeadHtml: '',

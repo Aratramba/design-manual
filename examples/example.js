@@ -22,20 +22,6 @@ new DesignManual({
     { label: 'Content Guidelines', href: '/content-guidelines.html' },
     { label: 'Design Principles', href: '/design-principles.html' }
   ],
-  subnav: [
-    {
-      domain: 'google.com',
-      title: 'Title',
-      href: 'http://www.google.com',
-      avatar: 'http://placehold.it/60x30'
-    },
-    {
-      domain: 'google.com',
-      title: 'Title',
-      href: 'http://www.google.com',
-      avatar: 'http://placehold.it/60x30'
-    }
-  ],
   headHtml: '',
   bodyHtml: '',
   contentsFlag: 'contents',

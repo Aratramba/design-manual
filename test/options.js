@@ -26,20 +26,6 @@ test('options', function(assert){
       avatar: 'http://placehold.it/100x50',
       version: 'x.x.x'
     },
-    subnav: [
-      {
-        domain: 'google.com',
-        title: 'Title',
-        href: 'http://www.google.com',
-        avatar: 'http://placehold.it/60x30'
-      },
-      {
-        domain: 'google.com',
-        title: 'Title',
-        href: 'http://www.google.com',
-        avatar: 'http://placehold.it/60x30'
-      }
-    ],
     headHtml: `
     <script>
       console.log('extra head html');

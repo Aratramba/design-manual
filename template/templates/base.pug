@@ -44,32 +44,16 @@ html(lang="en")
                 li(class="breadcrumbs__item breadcrumbs__item--current")
                   a.breadcrumbs__section(href=item.href) #{item.label}
             li.breadcrumbs__item(class="js-breadcrumb")
-
-        input(type='checkbox' class='project-toggle' id='projects').hide
-        label(for='projects').close-projects
         
-        label(for='projects').header__projects
-          .header__project__info
-            .header__project__domain #{meta.domain}
-            .header__project__title 
+        .header__meta
+          .header__meta__info
+            .header__meta__info__domain #{meta.domain}
+            .header__meta__info__title 
               | #{meta.title} 
-              span.header__project__version #{meta.version}
+              span.header__meta__info__version #{meta.version}
             
           if meta.avatar
-            img(src=meta.avatar).header__project__avatar
-
-          if subnav.length
-            span.header__project__icon
-
-        if subnav.length
-          ul.project__list
-            each item in subnav
-              li.project__list__item
-                a.project__list__item__link(href=item.href)
-                  img.project__list__item__avatar(src=item.avatar)
-                  .project__list__item__body
-                    .project__list__item__body__domain #{item.domain}
-                    .project__list__item__body__title #{item.title}
+            img(src=meta.avatar).header__meta__avatar
 
       .container(class="space content") 
         | !{content}

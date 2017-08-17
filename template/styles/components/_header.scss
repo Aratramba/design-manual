@@ -103,11 +103,12 @@
  * Project dropdown
  */
 
-.header__projects {
+.header__meta {
   display: inline-block;
   color: $primary-contrast;
   border-left: 1px solid rgba(black, .1);
   padding-top: 5px;
+  padding-right: 5px;
   float: right;
   position: absolute;
   right: 0;
@@ -119,13 +120,9 @@
   user-select: none;
   height: 100%;
   transition: background-color .15s;
-
-  &:hover {
-    background-color: rgba(0, 0, 0, .1);
-  }
 }
 
-.header__project__info {
+.header__meta__info {
   float: left;
   padding: 11px 20px 0 20px;
   text-align: right;
@@ -136,36 +133,19 @@
   }
 }
 
-.header__project__title {
+.header__meta__info__title {
   font-weight: $weight-bold;
 }
 
-.header__project__domain {
+.header__meta__info__domain {
   color: $primary-contrast;
   margin-bottom: 5px;
 }
 
 
-.header__project__avatar {
+.header__meta__avatar {
   height: 50px;
   display: inline-block;
-  padding-right: 34px;
-}
-
-.header__project__icon {
-  width: 0;
-  height: 0;
-  border-style: solid;
-  border-width: 8px 7px 0 7px;
-  border-color: $primary-contrast transparent transparent transparent;
-  text-decoration: none;
-  margin: 0 10px;
-  position: absolute;
-  right: 0;
-  top: 50%;
-  transition: border-color .15s;
-  border-radius: 2px;
-  transform-origin: 7px 2px;
 }
 
 
@@ -181,7 +161,7 @@
   }
 
   @include breakpoint(max $breakpoint-s) {
-    .header__projects {
+    .header__meta {
       display: none;
     }
   }
