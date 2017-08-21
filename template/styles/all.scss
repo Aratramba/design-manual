@@ -3,16 +3,13 @@
 
 // Mixins;
 @import 'mixins/clearfix';
-@import 'mixins/breakpoint';
 
 // Base
 @import 'base/reset';
-@import 'base/general';
 
 
 // base;
 @import 'base/base';
-@import 'base/layout';
 
 // typography;
 @import 'typography/title';

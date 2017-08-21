@@ -11,7 +11,7 @@ html(lang="en")
     | !{headHtml}
 
   body(class=bodyClass, id="top")
-    input(type='checkbox' id='hamburger' class='hamburger-toggle').hide
+    input(type='checkbox' id='hamburger' class='hamburger-toggle')
     label(for='hamburger').close-sidebar
 
     .sidebar
@@ -27,7 +27,7 @@ html(lang="en")
             li.sidebar__inpage__item(class="js-sidebar__item", data-rel=item.slug)
               a.sidebar__inpage__item__link(href='\#' + item.slug) #{item.label}
       
-    .wrapper.push
+    .main
       header.header.clearfix
         
         label(for='hamburger').header__link.header__hamburger ☰
@@ -55,7 +55,7 @@ html(lang="en")
           if meta.avatar
             img(src=meta.avatar).header__meta__avatar
 
-      .container(class="space content") 
+      .content
         | !{content}
         block content
 

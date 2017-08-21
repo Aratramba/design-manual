@@ -6,11 +6,11 @@
   left: 0;
   background-color: $bg-grey;
   z-index: 3;
-  transition: transform .25s;
+  transition: transform .15s;
   transform: translateX(-$sidebar-width);
   overflow-y: auto;
 
-  @include breakpoint(1300px) {
+  @media (min-width: $breakpoint-xl) {
     transform: none;
     border-right: 1px solid #ddd;
   }
@@ -21,7 +21,7 @@
 }
 
 .has-no-headings .sidebar {
-  @include breakpoint(1300px) {
+  @media (min-width: $breakpoint-xl) {
     display: none;
   }
 }
@@ -32,7 +32,7 @@
 */
 
 .sidebar__nav {
-  @include breakpoint($breakpoint-l) {
+  @media (min-width: $breakpoint-l) {
     display: none;
   }
 }
@@ -87,6 +87,10 @@
 /**
  * Toggles
  */
+
+.hamburger-toggle {
+  display: none;
+}
 
 .hamburger-toggle:checked ~ .sidebar {
   transform: translateX(0);

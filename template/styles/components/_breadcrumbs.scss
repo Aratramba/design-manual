@@ -10,12 +10,12 @@
   left: 50px;
   white-space: nowrap;
 
-  @include breakpoint($breakpoint-m){
+  @media (min-width: $breakpoint-m) {
     padding: 22px 20px;
     font-size: 16px;
   }
 
-  @include breakpoint(1300px) {
+  @media (min-width: $breakpoint-xl) {
     left: 0;
   }
 }

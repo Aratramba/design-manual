@@ -1,4 +1,5 @@
 .header {
+  @include clearfix;
   position: fixed;
   height: 60px;
   left: 0;
@@ -8,21 +9,19 @@
   z-index: 1;
   border-bottom: 1px solid rgba(black, .1);
 
-  @include clearfix;
-
-  @include breakpoint(1300px) {
+  @media (min-width: $breakpoint-xl) {
     left: $sidebar-width;
   }
 }
 
 .has-no-headings .header {
-  @include breakpoint(1300px) {
+  @media (min-width: $breakpoint-xl) {
     left: 0;
   }
 }
 
 .has-no-headings .header__hamburger {
-  @include breakpoint($breakpoint-l) {
+  @media (min-width: $breakpoint-l) {
     color: transparent;
   }
 }
@@ -52,7 +51,7 @@
     opacity: 1;
   }
 
-  @include breakpoint(1300px) {
+  @media (min-width: $breakpoint-xl) {
     display: none;
   }
 }
@@ -71,7 +70,7 @@
   opacity: 1;
   border-bottom: 1px solid rgba(black, .1);
 
-  @include breakpoint($breakpoint-l) {
+  @media (min-width: $breakpoint-l) {
     display: block;
   }
 }
@@ -128,7 +127,7 @@
   text-align: right;
   font-size: $size-xxs;
 
-  @include breakpoint($breakpoint-s) {
+  @media (min-width: $breakpoint-s) {
     font-size: $size-xs;
   }
 }
@@ -160,7 +159,7 @@
     pointer-events: none;
   }
 
-  @include breakpoint(max $breakpoint-s) {
+  @media (max-width: $breakpoint-s) {
     .header__meta {
       display: none;
     }

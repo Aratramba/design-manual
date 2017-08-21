@@ -8,6 +8,8 @@ These are the content guidelines. This is a [subpage](sub/page.html).
   * Guideline 2b
 * Guideline 3
 
+!{text}
+
 ---
 
 1. Guideline
