@@ -1,11 +1,17 @@
 .content {
+
   h1 { 
-    @include title-xl; 
+    line-height: 1.2;
+    font-size: 30px;
+    font-weight: 600;
+    color: $primary;
     margin-bottom: 20px;
   }
 
-  h2 { 
-    @include title-l; 
+  h2 {
+    line-height: 1.2;
+    font-size: 20px;
+    font-weight: 600;
     margin-bottom: 10px;
   }
 
@@ -13,12 +19,19 @@
   h4,
   h5,
   h6 { 
-    @include title-xs; 
+    font-weight: 600;
+    line-height: 1.2;
+    margin-bottom: 17px;
+    font-size: 16px;
     margin-bottom: 10px;
   }
 
-  p {
-    @include text-small;
+  p,
+  li {
+    line-height: 1.5;
+    margin-bottom: 1em;
+    font-weight: 400;
+    font-size: 16px;
   }
   
   ol,
@@ -38,7 +51,6 @@
   }
 
   li {
-    @include text-small;
     margin-bottom: 0;
   }
 

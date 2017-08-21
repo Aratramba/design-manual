@@ -1,21 +1,8 @@
-// Inventory
 @import 'vars';
 
-// Mixins;
-@import 'mixins/clearfix';
-
-// Base
 @import 'base/reset';
-
-
-// base;
 @import 'base/base';
 
-// typography;
-@import 'typography/title';
-@import 'typography/text';
-
-// components;
 @import 'components/content';
 @import 'components/sidebar';
 @import 'components/header';

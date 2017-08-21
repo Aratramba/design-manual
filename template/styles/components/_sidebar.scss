@@ -67,19 +67,18 @@
 .sidebar__inpage__item__link {
   display: block;
   text-decoration: none;
-  color: $base-color;
-  font-size: $size-s;
+  color: $text;
+  font-size: 14px;
   line-height: 1.4;
   margin-bottom: 0;
   padding: 10px 20px;
 
   &:hover {
-    color: $base-dark;
     text-decoration: underline;
   }
 
   .is-active & {
-    font-weight: $weight-bold;
+    font-weight: 600;
   }
 }
 

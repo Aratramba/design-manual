@@ -13,7 +13,7 @@
 }
 
 .project__list__item {
-  @include clearfix;
+  overflow: hidden;
   border-bottom: 1px solid $grey;
   font-size: 12px;
   transition: background-color .15s;
@@ -34,7 +34,7 @@
 .project__list__item__link {
   padding: 14px;
   display: block;
-  color: $base-dark;
+  color: $text;
 }
 
 .project__list__item__avatar {
@@ -54,7 +54,7 @@
 }
 
 .project__list__item__body__domain {
-  font-weight: $weight-bold;
+  font-weight: 600;
 }
 
 
