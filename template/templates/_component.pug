@@ -1,10 +1,9 @@
 //- components
 .component-wrapper
-  if !component || !component.meta
-    .component(class="js-section", id=(component.slug))
-      h3.component__title #{component['404']}
+  if !component.meta
+    .component(class="js-section has-error", id=(component.slug))
+      h3.component__title #{component.slug}
       .component__meta
-      p.component__404 ‼&nbsp;&nbsp;Component `#{component['404']}` not found.
       
   else
     .component(class="js-section is-loading", id=(component.slug))

@@ -31,6 +31,10 @@
     vertical-align: top;
   }
 
+  .table-of-contents__list__item--error {
+    text-decoration: line-through;
+  }
+
   .table-of-contents__list__item__link {
     text-decoration: none;
     margin: 0;
