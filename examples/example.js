@@ -60,4 +60,4 @@ build();
 
 setTimeout(function() {
   dm.interrupt(build);
-}, 1500);
+}, 2500);
