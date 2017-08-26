@@ -23,7 +23,26 @@ function build() {
       { label: 'Content Guidelines', href: '/content-guidelines.html' },
       { label: 'Design Principles', href: '/design-principles.html' }
     ],
-    headHtml: '',
+    headHtml: `
+      <style>
+        .content h1 {
+          color: red;
+        }
+        .header {
+          background-color: red;
+        }
+        .component &.is-loading:before {
+          border-top-color: red;
+          border-left-color: red;
+        }
+        .component__meta:before {
+          background-color: red;
+        }
+        .sidebar__nav__item__link {
+          background-color: red;
+        }
+      </style>
+    `,
     bodyHtml: '',
     contentsFlag: 'contents',
     componentHeadHtml: `
@@ -40,7 +59,7 @@ function build() {
     </script>
     `,
     renderPages: true,
-    renderComponents: true,
+    renderComponents: false,
     renderJS: true,
     renderCSS: true,
     prerender: {
@@ -56,6 +75,6 @@ function build() {
 
 build();
 
-setTimeout(function() {
-  dm.interrupt(build);
-}, 2500);
+// setTimeout(function() {
+//   dm.interrupt(build);
+// }, 2500);

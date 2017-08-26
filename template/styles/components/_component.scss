@@ -15,6 +15,17 @@
  * to compensate for `.content h1` styling (see _content.scss).
  */
 
+@keyframes pace-spinner {
+  0% { 
+    transform: rotate(0deg); 
+    transform: rotate(0deg); 
+  }
+  100% { 
+    transform: rotate(360deg); 
+    transform: rotate(360deg); 
+  }
+}
+
 .component {
   padding-bottom: 50px;
   margin-top: 50px;

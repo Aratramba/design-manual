@@ -37,7 +37,6 @@
   display: inline-block;
   float: left;
   cursor: pointer;
-  background-color: $primary;
   z-index: 2;
   color: $primary-contrast;
   padding: 15px;
@@ -64,7 +63,6 @@
   position: relative;
   transition: opacity .15s ease;
   z-index: 5;
-  background-color: $primary;
   float: left;
   display: none;
   opacity: 1;
@@ -113,7 +111,6 @@
   right: 0;
   bottom: 0;
   top: 0;
-  background-color: $primary;
   z-index: 1;
   position: relative;
   user-select: none;

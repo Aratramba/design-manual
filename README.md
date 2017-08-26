@@ -167,6 +167,24 @@ You can customize the look and feel by adding an extra css file through the `hea
 {
   headHtml: `
     <link rel="stylesheet" href="/assets/css/design-manual.css">
+    <style>
+      .content h1 {
+        color: red;
+      }
+      .header {
+        background-color: red;
+      }
+      .component &.is-loading:before {
+        border-top-color: red;
+        border-left-color: red;
+      }
+      .component__meta:before {
+        background-color: red;
+      }
+      .sidebar__nav__item__link {
+        background-color: red;
+      }
+    </style>
   `
 }
 ```
@@ -221,3 +239,7 @@ function renderDesignManual(gulpDone) {
   });
 }
 ```
+
+---
+
+
