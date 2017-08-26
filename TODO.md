@@ -1,6 +1,6 @@
 `node examples/example` for now.
 
-* [ ] README update
+* [ ] README update options, examples
 * [ ] index.js options update
 * [x] lib/validate refactor
 * [x] clean up / refactor css

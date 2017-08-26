@@ -123,8 +123,6 @@ new DesignManual({
   componentBodyHtml: `
     <script>console.log("im in the component body");</script>
   `,
-  brandColor: 'red',
-  brandColorContrast: 'yellow',
   onComplete: function() { }
 });
 ```
@@ -153,8 +151,6 @@ new DesignManual({
 | componentHeadHtml      | ''            | string    | string of html to include in the head of the component
 | componentBodyHtml    | ''            | string    | string of html to include in the body of the component
 | contentsFlag    | 'contents'   | string    | css id to identify the contents heading
-| brandColor    | 'STEELBLUE'   | string    | overwrite default brand color
-| brandColorContrast    | 'LIGHTGOLDENRODYELLOW'   | string    | overwrite default text color on brand color
 | prerender | | object || null | prerender all components to get their heights (at 1200px wide browser window, using Electron). This speeds up the user interface and makes it less jumpy, but makes compiling Design Manual slower because it needs to open all components in a headless browser |
 | prerender.port | 8000 | number | static server port for rendering components (http://localhost:{port}) |
 | prerender.path | '' | string | path to design manual folder (http://localhost:{port}/{path}) |

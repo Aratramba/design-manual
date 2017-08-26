@@ -39,8 +39,6 @@ function build() {
       }
     </script>
     `,
-    brandColor: 'dodgerblue',
-    brandColorContrast: 'white',
     renderPages: true,
     renderComponents: true,
     renderJS: true,

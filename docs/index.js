@@ -20,6 +20,4 @@ new DesignManual({
   <link rel="stylesheet" href="./assets/style.css" />
   `,
   bodyHtml: '',
-  brandColor: '#EB1D38',
-  brandColorContrast: 'white'
 });

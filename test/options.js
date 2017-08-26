@@ -47,8 +47,6 @@ test('options', function(assert){
       console.log('extra component body html');
     </script>
     `,
-    brandColor: 'dodgerblue',
-    brandColorContrast: 'white',
     indexPage: 'Home.md',
     prerender: {
       port: 3000,
