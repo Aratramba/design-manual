@@ -14,4 +14,5 @@
 * [ ] add specific (non-output) tests
 * [x] fix assets error handling
 * [x] quit electron on error
-* [ ] add interruption (cleanup)
+* [x] add interruption (cleanup)
+* [ ] remove color in favor of css example
