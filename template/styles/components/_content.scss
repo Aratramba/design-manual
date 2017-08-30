@@ -2,10 +2,11 @@
 
   h1 { 
     line-height: 1.2;
-    font-size: 30px;
+    font-size: 40px;
     font-weight: 600;
     color: $primary;
     margin-bottom: 20px;
+    max-width: 740px;
   }
 
   h2 {
@@ -13,6 +14,7 @@
     font-size: 20px;
     font-weight: 600;
     margin-bottom: 10px;
+    max-width: 740px;
   }
 
   h3,
@@ -24,6 +26,7 @@
     margin-bottom: 17px;
     font-size: 16px;
     margin-bottom: 10px;
+    max-width: 740px;
   }
 
   p,
@@ -32,6 +35,7 @@
     margin-bottom: 1em;
     font-weight: 400;
     font-size: 16px;
+    max-width: 740px;
   }
   
   ol,
@@ -141,5 +145,15 @@
     background-color: $grey;
     height: 1px;
     margin: 50px 0;
+  }
+
+  p code {
+    padding: 0 3px;
+    margin: 0;
+    font-size: .85em;
+    background-color: rgba(27, 31, 35, .05);
+    border-radius: 3px;
+    font-family: monospace;
+    display: inline-block;
   }
 }

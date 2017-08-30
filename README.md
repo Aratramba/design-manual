@@ -129,39 +129,39 @@ new DesignManual({
 
 
 
-| option        | default value | type      | description                  |
-|---------------|---------------|-----------|------------------------------|
-| output        | './httpdocs/' | string    | output directory
-| pages         | ''            | string    | directory that holds your pages 
-| components    | ''            | string    | json file with components
-| meta          |               | object    | 
-| meta.domain   | ''            | string    | domain for your project
-| meta.title    | ''            | string    | title for your project
-| meta.avatar   | ''            | string    | avatar for your project
-| meta.version  | ''            | string    | version
-| nav           | []            | array     | array of objects with navigation items 
-| - {}.label    |               | string    | label of the navigation item
-| - {}.href    |                | string    | link for the navigation item
-| - {}.domain   |               | string    | domain for project
-| - {}.title    |               | string    | title of project
-| - {}.href     |               | string    | link to project
-| - {}.avatar   |               | string    | 80x80 image for project
-| headHtml      | ''            | string    | string of html to include in the head
-| bodyHtml    | ''            | string    | string of html to include in the body
-| componentHeadHtml      | ''            | string    | string of html to include in the head of the component
-| componentBodyHtml    | ''            | string    | string of html to include in the body of the component
-| contentsFlag    | 'contents'   | string    | css id to identify the contents heading
-| prerender | | object || null | prerender all components to get their heights (at 1200px wide browser window, using Electron). This speeds up the user interface and makes it less jumpy, but makes compiling Design Manual slower because it needs to open all components in a headless browser |
-| prerender.port | 8000 | number | static server port for rendering components (http://localhost:{port}) |
-| prerender.path | '' | string | path to design manual folder (http://localhost:{port}/{path}) |
-| prerender.serveFolder | './' | string | directory to start the static file server in |
-| onComplete    |    | function    | function to be called when done
+| option                  | default value | type            | description                  |
+|-------------------------|---------------|-----------------|------------------------------|
+| __output__              | null          | string          | output directory
+| __pages__               | null          | string          | directory that holds your pages 
+| __components__          | null          | string          | json file with components
+| __meta__                |               | object          | 
+| __meta.domain__         | ''            | string          | domain for your project
+| __meta.title__          | ''            | string          | title for your project
+| meta.avatar             | ''            | string          | avatar for your project
+| meta.version            | ''            | string          | version
+| nav                     | []            | array           | array of objects with navigation items 
+| - {}.label              |               | string          | label of the navigation item
+| - {}.href               |               | string          | link for the navigation item
+| headHtml                | ''            | string          | string of html to include in the head
+| bodyHtml                | ''            | string          | string of html to include in the body
+| componentHeadHtml       | ''            | string          | string of html to include in the head of the component
+| componentBodyHtml       | ''            | string          | string of html to include in the body of the component
+| contentsFlag            | 'contents'    | string          | css id to identify the contents heading
+| renderPages             | true          | boolean         | turn rendering pages on/off
+| renderComponents        | true          | boolean         | turn rendering components on/off
+| renderJS                | true          | boolean         | turn rendering js on/off
+| renderCSS               | true          | boolean         | turn rendering css on/off
+| prerender               | null          | object || null  | prerender all components to get their heights (at 1200px wide browser window, using Electron). This speeds up the user interface and makes it less jumpy, but makes compiling Design Manual slower because it needs to open all components in a headless browser |
+| prerender.port          |               | number          | static server port for rendering components (http://localhost:{port}) |
+| prerender.path          |               | string          | path to design manual folder (http://localhost:{port}/{path}) |
+| prerender.serveFolder   |               | string          | directory to start the static file server in |
+| onComplete              | function(){}  | function        | function to be called when done
 
 
 ---
 
 ## Custom styling
-You can customize the look and feel by adding an extra css file through the `headHtml` option:
+You can customize the look and feel by adding an extra css file a style tag through the `headHtml` option:
 
 ```js
 {
@@ -206,40 +206,77 @@ button.btn Click Me!
 ```
 
 ```js
-gulp.watch('./design-manual/**/*.md', ['design-manual']);
-gulp.task('watch', function() {
-  gulp.watch('templates/**/*.jade', ['templates','design-manual']);
-});
+var gulp = require('gulp');
+var pugDoc = require('pug-doc');
+var DesignManual = require('design-manual');
+```
 
-gulp.task('design-manual', function(gulpDone) {
-  renderPugDoc(gulpDone);
-});
+```js
+gulp.watch('src/**/*.pug', ['templates', ['design-manual']]);
+gulp.watch('design-manual/**/*.md', ['design-manual']);
+```
 
-function renderPugDoc(gulpDone) {
+```js
+/**
+ * Pug Doc
+ */
+
+gulp.task('pug-doc', function(gulpDone) {
   pugDoc({
-    input: 'src/templates/**/*.jade',
-    output: 'design-manual/components.json',
-    complete: function() {
-      renderDesignManual(gulpDone)
-    }
+    input: paths.SRC.templates + '**/*.pug',
+    output: paths.DEST.styleguide + 'pugdoc.json',
+    complete: gulpDone
   });
-}
+});
+```
 
-function renderDesignManual(gulpDone) {
-  new DesignManual({
-    onComplete: gulpDone,
+```js
+/**
+ * Design Manual
+ */
+
+var designManualInit;
+
+function buildDesignManual(cb) {
+  designManualInit = false;
+
+  DesignManual.build({
     output: 'httpdocs/design-manual/',
-    pages: 'design-manual/pages/',
-    components: 'design-manual/components.json',
+    components: 'httpdocs/design-manual/pugdoc.json',
+    pages: 'src/design-manual',
     meta: {
-      domain: 'website.com',
-      title: 'Website Design Manual',
-      avatar: '/design-manual/avatar.png'
+      domain: '',
+      title: 'Design Manual',
+      avatar: 'http://placehold.it/80x80',
+      version: 'v' + require('../../package.json').version
     },
+    nav: [
+      { label: 'Home', href: '/index.html' },
+      { label: 'Components', href: '/components.html' }
+    ],
+    renderPages: true,
+    renderComponents: true,
+    renderJS: true,
+    renderCSS: true,
+    prerender: {
+      port: 3000,
+      path: '',
+      serveFolder: 'examples/httpdocs/',
+    },
+    onComplete: cb
   });
 }
 ```
 
----
-
+```js
+gulp.task('design-manual', ['pug-doc'], function(gulpDone) {
+  if (!designManualInit) {
+    buildDesignManual(gulpDone);
+  } else {
+    DesignManual.interrupt(function() {
+      buildDesignManual(gulpDone);
+    });
+  }
+});
+```
 

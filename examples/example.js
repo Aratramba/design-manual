@@ -26,10 +26,10 @@ function build() {
     headHtml: `
       <style>
         .content h1 {
-          color: red;
+          color: inherit;
         }
         .header {
-          background-color: red;
+          background-color: sienna;
         }
         .component &.is-loading:before {
           border-top-color: red;
@@ -59,7 +59,7 @@ function build() {
     </script>
     `,
     renderPages: true,
-    renderComponents: false,
+    renderComponents: true,
     renderJS: true,
     renderCSS: true,
     prerender: {

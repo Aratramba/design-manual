@@ -4,7 +4,7 @@ This is the components page.
 ---
 
 ## Buttons
-This is what buttons look like on my website.
+This is what buttons look like on my website. This is a `.classname`.
 
 ### Contents
 !{link}

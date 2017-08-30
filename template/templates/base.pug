@@ -47,10 +47,11 @@ html(lang="en")
         
         .header__meta
           .header__meta__info
-            .header__meta__info__domain #{meta.domain}
-            .header__meta__info__title 
-              | #{meta.title} 
-              span.header__meta__info__version #{meta.version}
+              .header__meta__info__domain #{meta.domain}
+              .header__meta__info__title
+                | #{meta.title}
+                if meta.version
+                  span.header__meta__info__version #{meta.version}
             
           if meta.avatar
             img(src=meta.avatar).header__meta__avatar
