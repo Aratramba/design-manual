@@ -55,6 +55,7 @@ function build() {
         $hamburger.addEventListener('click', function(e) {
           document.body.classList.toggle('nav-is-open');
         });
+        $hamburger.classList.add('foofaa');
       }
     </script>
     `,

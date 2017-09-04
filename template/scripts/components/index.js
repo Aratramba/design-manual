@@ -51,7 +51,7 @@ function onToggle(e) {
   var $component = e.target.parentNode.parentNode;
   var $pre = $component.querySelector('pre code');
   var $source = $component.querySelector('iframe');
-  var html = $source.contentWindow.document.body.querySelector('.js-output').innerHTML;
+  var html = $source.contentWindow.document.body.querySelector('.dm-raw-source').innerHTML;
   $pre.innerHTML = Prism.highlight(prettyPrint(html), Prism.languages.markup);
 }
 
