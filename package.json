@@ -36,7 +36,6 @@
     "node-sass": "^4.5.1",
     "object-assign": "^4.0.1",
     "postcss": "^5.0.19",
-    "pretty": "^1.0.0",
     "pug": "^2.0.0-beta11",
     "recursive-readdir": "^2.2.1",
     "rimraf": "^2.5.2",

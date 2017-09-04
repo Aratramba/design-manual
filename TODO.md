@@ -3,6 +3,7 @@
 * [x] docs: README update options
 * [ ] docs: README update examples
 * [x] index.js options update
+* [ ] add isInit check in lib/
 * [ ] navigation active state refactor?
 * [ ] test: fix tests
 * [ ] test: add gulp example
