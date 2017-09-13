@@ -3,7 +3,9 @@
 * [x] docs: README update options
 * [ ] docs: README update examples
 * [x] index.js options update
-* [ ] add isInit check in lib/
+* [x] add firstrun check in lib/
+* [ ] split examples (at least break in code block, maybe even separate iframes?)
+* [ ] idea: supported browsers icons (browserstack integration?)
 * [ ] navigation active state refactor?
 * [ ] test: fix tests
 * [ ] test: add gulp example

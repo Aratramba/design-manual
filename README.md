@@ -235,11 +235,7 @@ gulp.task('pug-doc', function(gulpDone) {
  * Design Manual
  */
 
-var designManualInit;
-
 function buildDesignManual(cb) {
-  designManualInit = false;
-
   DesignManual.build({
     output: 'httpdocs/design-manual/',
     components: 'httpdocs/design-manual/pugdoc.json',
@@ -270,13 +266,7 @@ function buildDesignManual(cb) {
 
 ```js
 gulp.task('design-manual', ['pug-doc'], function(gulpDone) {
-  if (!designManualInit) {
-    buildDesignManual(gulpDone);
-  } else {
-    DesignManual.interrupt(function() {
-      buildDesignManual(gulpDone);
-    });
-  }
+  buildDesignManual(gulpDone);
 });
 ```
 
