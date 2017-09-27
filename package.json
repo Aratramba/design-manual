@@ -23,6 +23,7 @@
     "browserify": "^11.2.0",
     "clean-css": "^3.4.5",
     "cssmin": "^0.4.3",
+    "deep-equal": "^1.0.1",
     "delegate-events": "^1.1.1",
     "electron": "^1.6.10",
     "events": "^1.1.0",

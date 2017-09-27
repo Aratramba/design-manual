@@ -2,7 +2,7 @@
   {
     "meta": {
       "name": "link",
-      "description": "this is a link"
+      "description": "<p>this is a link</p>"
     },
     "file": "path/to/link.html",
     "output": "<a href=\"http://google.com\">this is a link</a>"
