@@ -1,6 +1,6 @@
 `node examples/example` for now.
 
-* [ ] add deep equal check for new/old components.json
+* [x] add deep equal check for new/old components.json
 * [x] docs: README update options
 * [ ] docs: README update examples
 * [x] index.js options update
