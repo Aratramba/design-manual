@@ -76,6 +76,6 @@ function build() {
 
 build();
 
-setTimeout(function() {
-  build();
-}, 2500);
+// setTimeout(function() {
+//   build();
+// }, 2500);

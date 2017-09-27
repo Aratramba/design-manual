@@ -174,7 +174,7 @@ You can customize the look and feel by adding an extra css file a style tag thro
       .header {
         background-color: red;
       }
-      .component &.is-loading:before {
+      .component.is-loading:before {
         border-top-color: red;
         border-left-color: red;
       }

@@ -1,10 +1,11 @@
 `node examples/example` for now.
 
+* [ ] add deep equal check for new/old components.json
 * [x] docs: README update options
 * [ ] docs: README update examples
 * [x] index.js options update
 * [x] add firstrun check in lib/
-* [ ] split examples (at least break in code block, maybe even separate iframes?)
+* [ ] split examples (at least break in code block, maybe even separate iframes?): idea: maybe pugdoc.output should be an array of code blocks instead of a single concatenated string.
 * [ ] idea: supported browsers icons (browserstack integration?)
 * [ ] navigation active state refactor?
 * [ ] test: fix tests
