@@ -38,6 +38,7 @@ img {
 
   @media (min-width: $breakpoint-xl) {
     margin-left: $sidebar-width;
+    max-width: calc(100% - #{$sidebar-width});
   }
 
   .has-no-headings & {
