@@ -44,6 +44,7 @@ img {
   .has-no-headings & {
     @media (min-width: $breakpoint-xl) {
       margin-left: 0;
+      max-width: 100%;
     }
   }
 }
