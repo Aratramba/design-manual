@@ -1,4 +1,4 @@
-/* http://prismjs.com/download.html?themes=prism&languages=markup+css+clike+javascript+markdown+scss */
+/* http://prismjs.com/download.html?themes=prism&languages=markup+css+clike+javascript+diff+markdown+scss */
 /**
  * prism.js default theme for JavaScript, CSS and HTML
  * Based on dabblet (http://dabblet.com)
@@ -17,6 +17,7 @@ pre[class*="language-"] {
   word-break: normal;
   word-wrap: normal;
   line-height: 1.5;
+  font-size: 13px;
 
   -moz-tab-size: 4;
   -o-tab-size: 4;
@@ -56,7 +57,7 @@ pre[class*="language-"] {
 
 :not(pre) > code[class*="language-"],
 pre[class*="language-"] {
-  background: #F5F5F5;
+  background: #f5f2f0;
 }
 
 /* Inline code */
