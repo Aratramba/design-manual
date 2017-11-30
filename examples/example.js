@@ -23,6 +23,7 @@ function build() {
       { label: 'Content Guidelines', href: '/content-guidelines.html' },
       { label: 'Design Principles', href: '/design-principles.html' }
     ],
+    force: false,
     headHtml: `
       <style>
         .content h1 {

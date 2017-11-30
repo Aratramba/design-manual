@@ -137,6 +137,7 @@ new DesignManual({
 | __meta__                |               | object          | 
 | __meta.domain__         | ''            | string          | domain for your project
 | __meta.title__          | ''            | string          | title for your project
+| force                   | fasle         | boolean         | force update for all components and pages
 | meta.avatar             | ''            | string          | avatar for your project
 | meta.version            | ''            | string          | version
 | nav                     | []            | array           | array of objects with navigation items 
