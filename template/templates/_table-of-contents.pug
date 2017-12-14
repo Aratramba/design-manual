@@ -3,8 +3,7 @@
   ul.table-of-contents__list
     each component in locals.components
       li.table-of-contents__list__item(class=(component.hasError ? 'table-of-contents__list__item--error' : null))
-          a.table-of-contents__list__item__link(href=('#' + component.slug)) 
-            | <svg width="7" height="11" viewBox="0 0 7 11" xmlns="http://www.w3.org/2000/svg">
-            |   <path d="M6.872 5.807L1.858 10.87c-.085.087-.187.13-.304.13-.117 0-.218-.043-.304-.13L.128 9.738C.043 9.65 0 9.548 0 9.43c0-.118.043-.22.128-.307L3.716 5.5.128 1.877C.043 1.79 0 1.687 0 1.57c0-.12.043-.22.128-.308L1.25.13c.086-.087.187-.13.304-.13.117 0 .22.043.304.13l5.014 5.063c.085.086.128.19.128.307 0 .118-.043.22-.128.307z" fill-rule="nonzero" />
-            | </svg>
-            | #{component.name}
+        a.table-of-contents__list__item__link(href=('#' + component.slug))
+          | <svg width="7" height="11" viewBox="0 0 7 11" xmlns="http://www.w3.org/2000/svg">
+          |   <path d="M6.872 5.807L1.858 10.87c-.085.087-.187.13-.304.13-.117 0-.218-.043-.304-.13L.128 9.738C.043 9.65 0 9.548 0 9.43c0-.118.043-.22.128-.307L3.716 5.5.128 1.877C.043 1.79 0 1.687 0 1.57c0-.12.043-.22.128-.308L1.25.13c.086-.087.187-.13.304-.13.117 0 .22.043.304.13l5.014 5.063c.085.086.128.19.128.307 0 .118-.043.22-.128.307z" fill-rule="nonzero" />
+          | </svg>#{component.name}
