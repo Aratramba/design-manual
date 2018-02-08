@@ -1,11 +1,8 @@
 `node examples/example` for now.
 
-* [x] add deep equal check for new/old components.json
-* [x] docs: README update options
 * [ ] docs: README update examples
-* [x] index.js options update
-* [x] add firstrun check in lib/
-* [ ] split examples (at least break in code block, maybe even separate iframes?): idea: maybe pugdoc.output should be an array of code blocks instead of a single concatenated string.
+* [ ] refactor queue
+* [ ] if setup has changed, regenerate everything: store config in .json
 * [ ] idea: supported browsers icons (browserstack integration?)
 * [ ] navigation active state refactor?
 * [ ] test: fix tests
@@ -14,15 +11,4 @@
 * [ ] test: add electron tests
 * [ ] test: add specific (non-output) tests
 * [ ] js: fix js error in browser console
-* [x] css: inline code `div()`
-* [x] css: html label in code is too big
-* [x] css: realign component loader, conflicts with description
-* [x] css: max-width for paragraphs
-* [x] lib/validate refactor
-* [x] clean up / refactor css
-* [x] markdown tables
-* [x] navigation option
-* [x] fix assets error handling
-* [x] quit electron on error
-* [x] add interruption (cleanup)
-* [x] remove color in favor of css example
+* [ ] split examples (at least break in code block, maybe even separate iframes?): idea: maybe pugdoc.output should be an array of code blocks instead of a single concatenated string.
