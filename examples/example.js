@@ -23,7 +23,7 @@ function build() {
       { label: 'Content Guidelines', href: '/content-guidelines.html' },
       { label: 'Design Principles', href: '/design-principles.html' }
     ],
-    force: false,
+    force: true,
     headHtml: `
       <style>
         .content h1 {
@@ -61,9 +61,9 @@ function build() {
     </script>
     `,
     renderPages: true,
-    renderComponents: true,
-    renderJS: true,
-    renderCSS: true,
+    renderComponents: false,
+    renderJS: false,
+    renderCSS: false,
     prerender: {
       port: 3000,
       path: '',
