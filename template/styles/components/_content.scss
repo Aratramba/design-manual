@@ -75,6 +75,7 @@
   table {
     width: 100%;
     border: 1px dotted $grey;
+    border-bottom: 0;
     margin-bottom: 1em;
 
     caption {
@@ -88,23 +89,43 @@
     th {
       font-weight: bold;
       background-color: $bg-grey;
+      border-right: 1px dotted $grey;
+
+      &:last-of-type {
+        border-right: 0;
+      }
+    }
+
+    td {      
+      background: white;
+      border-bottom: 1px dotted $grey;
+      border-right: 1px dotted $grey;
+
+      &:last-of-type {
+        border-right: 0;
+      }
     }
 
     td,
     th {
-      background: white;
       padding: .7em 15px;
       text-align: left;
       line-height: 1.7;
       font-weight: 400;
       font-size: 15px;
+
+      &:empty {
+        &::after {
+          content: '';
+          display: block;
+          height: 1em;
+        }
+      }
     }
 
     thead {
       td,
       th {
-        background: white;
-        border: 1px dotted $grey;
         font-weight: bold;
       }
     }
@@ -113,35 +134,6 @@
       td,
       th {
         vertical-align: top;
-        border: 1px dotted $grey;
-
-        &:empty {
-          border: 0;
-        }
-      }
-    }
-
-    tr {
-      &:first-child {
-        & > td,
-        & > th {
-          border-top: 0;
-        }
-      }
-
-      &:last-child {
-        & > td,
-        & > th {
-          border-bottom: 0;
-        }
-      }
-
-      & > :first-child {
-        border-left: 0;
-      }
-
-      & > :last-child {
-        border-right: 0;
       }
     }
   }
