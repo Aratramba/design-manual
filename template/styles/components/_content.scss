@@ -74,25 +74,25 @@
 
   table {
     width: 100%;
+    border: 1px dotted $grey;
     margin-bottom: 1em;
 
     caption {
-      background: darken($bg-grey, 5%);
       padding: .7em 15px;
       text-align: left;
       font-size: 1.3em;
-      border-bottom: solid 2px #fff;
       margin: auto -3px;
       border-radius: 3px;
     }
 
     th {
       font-weight: bold;
+      background-color: $bg-grey;
     }
 
     td,
     th {
-      background: $bg-grey;
+      background: white;
       padding: .7em 15px;
       text-align: left;
       line-height: 1.7;
@@ -103,8 +103,8 @@
     thead {
       td,
       th {
-        background: darken($bg-grey, 5%);
-        border: solid 1px darken($bg-grey, 10%);
+        background: white;
+        border: 1px dotted $grey;
         font-weight: bold;
       }
     }
@@ -113,7 +113,11 @@
       td,
       th {
         vertical-align: top;
-        border: solid 1px darken($bg-grey, 10%);
+        border: solid 1px dotted $grey;
+
+        &:empty {
+          border: 0;
+        }
       }
     }
 
