@@ -61,9 +61,9 @@ function build() {
     </script>
     `,
     renderPages: true,
-    renderComponents: false,
-    renderJS: false,
-    renderCSS: false,
+    renderComponents: true,
+    renderJS: true,
+    renderCSS: true,
     prerender: {
       port: 3000,
       path: '',

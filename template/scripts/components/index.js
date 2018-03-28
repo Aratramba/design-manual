@@ -7,7 +7,7 @@ var Prism = require('../libs/prism');
 var iframeResizer = require('../libs/iframeResizer.min');
 var delegate = require('delegate-events');
 var prettyPrint = require('html').prettyPrint;
-var interact = require('interact.js');
+var interact = require('interactjs/dist/interact.min');
 var constants = require('../constants');
 
 
