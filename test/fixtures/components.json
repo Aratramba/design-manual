@@ -1,0 +1,26 @@
+[
+  {
+    "meta": {
+      "name": "component1",
+      "description": "<p>this is component 1</p>"
+    },
+    "file": "path/to/component1.html",
+    "output": "<p>this is component 1</p>"
+  },
+  {
+    "meta": {
+      "name": "component2",
+      "description": "<p>this is component 2</p>"
+    },
+    "file": "path/to/component2.html",
+    "output": "<p>this is component 2</p>"
+  },
+  {
+    "meta": {
+      "name": "component3",
+      "description": "<p>this is component 3</p>"
+    },
+    "file": "path/to/component3.html",
+    "output": "<p>this is component 3</p>"
+  }
+]

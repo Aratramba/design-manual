@@ -13,7 +13,7 @@
     "template-css": "npm run template-css-sass -- -o httpdocs/all.min.css",
     "template-html": "jade template/templates/components.pug -o httpdocs",
     "watch-js": "watchify template/scripts/index.js -o examples/httpdocs/app.min.js",
-    "test": "tape test/opt*.js | faucet"
+    "test": "rm -rf test/tmp && ava"
   },
   "author": "Eight Media",
   "license": "ISC",
@@ -47,6 +47,7 @@
     "vanilla-lazyload": "^5.1.1"
   },
   "devDependencies": {
+    "ava": "^1.0.0-beta.3",
     "eslint": "^4.3.0",
     "eslint-config-airbnb": "^15.1.0",
     "eslint-config-airbnb-base": "^11.3.1",
