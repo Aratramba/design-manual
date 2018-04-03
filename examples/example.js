@@ -1,6 +1,3 @@
-'use strict';
-/* global require */
-
 var rimraf = require('rimraf');
 rimraf.sync('httpdocs/*');
 
@@ -76,7 +73,3 @@ function build() {
 }
 
 build();
-
-// setTimeout(function() {
-//   build();
-// }, 2500);
