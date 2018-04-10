@@ -43,11 +43,13 @@ test.cb('add head html', t => {
       </style>
     `,
     onComplete: function() {
-      let componentsHtmlFixture = fs.readFileSync(config.pages + 'page-head-html.html', 'utf8');
-      let componentsHtmlTmp = fs.readFileSync(config.output + 'page.html', 'utf8');
-      t.is(componentsHtmlFixture, componentsHtmlTmp);
+      setTimeout(() => {
+        let componentsHtmlFixture = fs.readFileSync(config.pages + 'page-head-html.html', 'utf8');
+        let componentsHtmlTmp = fs.readFileSync(config.output + 'page.html', 'utf8');
+        t.is(componentsHtmlFixture, componentsHtmlTmp);
 
-      t.end();
+        t.end();
+      }, 1000);
     }
   }));
 });
@@ -62,11 +64,13 @@ test.cb('add body html', t => {
       <script>alert('foo);</script>
     `,
     onComplete: function() {
-      let componentsHtmlFixture = fs.readFileSync(config.pages + 'page-body-html.html', 'utf8');
-      let componentsHtmlTmp = fs.readFileSync(config.output + 'page.html', 'utf8');
-      t.is(componentsHtmlFixture, componentsHtmlTmp);
+      setTimeout(() => {
+        let componentsHtmlFixture = fs.readFileSync(config.pages + 'page-body-html.html', 'utf8');
+        let componentsHtmlTmp = fs.readFileSync(config.output + 'page.html', 'utf8');
+        t.is(componentsHtmlFixture, componentsHtmlTmp);
 
-      t.end();
+        t.end();
+      }, 1000);
     }
   }));
 });

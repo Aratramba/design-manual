@@ -26,10 +26,12 @@ test.cb('render pages without components', t => {
     renderPages: true,
     renderComponents: false,
     onComplete: function() {
-      let expected = fs.readFileSync(config.pages + 'page-no-components.html', 'utf8');
-      let actual = fs.readFileSync(config.output + 'page.html', 'utf8');
-      t.is(expected, actual);
-      t.end();
+      setTimeout(() => {
+        let expected = fs.readFileSync(config.pages + 'page-no-components.html', 'utf8');
+        let actual = fs.readFileSync(config.output + 'page.html', 'utf8');
+        t.is(expected, actual);
+        t.end();
+      }, 1000);
     }
   }));
 });
@@ -42,10 +44,12 @@ test.cb('render pages with components', t => {
     renderPages: true,
     renderComponents: true,
     onComplete: function() {
-      let expected = fs.readFileSync(config.pages + 'page-components.html', 'utf8');
-      let actual = fs.readFileSync(config.output + 'page.html', 'utf8');
-      t.is(expected, actual);
-      t.end();
+      setTimeout(() => {
+        let expected = fs.readFileSync(config.pages + 'page-components.html', 'utf8');
+        let actual = fs.readFileSync(config.output + 'page.html', 'utf8');
+        t.is(expected, actual);
+        t.end();
+      }, 1000);
     }
   }));
 });
