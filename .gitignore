@@ -28,3 +28,4 @@ node_modules
 
 test/tmp
 .DS_STORE
+.vscode
