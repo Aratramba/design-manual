@@ -14,7 +14,8 @@
     "template-html": "jade template/templates/components.pug -o httpdocs",
     "watch-js": "watchify template/scripts/index.js -o examples/httpdocs/app.min.js",
     "test": "ava test/**/*/test.js --serial",
-    "test-prerender": "ava test/prerender/test.js --serial"
+    "test-prerender": "ava test/prerender/test.js --serial",
+    "test-puppeteer": "ava test/puppeteer/test.js --serial"
   },
   "author": "Eight Media",
   "license": "ISC",
