@@ -1,12 +1,23 @@
 import test from 'ava';
 let fs = require('fs');
+let rimraf = require('rimraf');
 
 let isThere = require('is-there');
-let DM = require('../lib/index');
-let config = require('./fixtures/defaults/config.json');
+let DM = require('../../lib/index');
+
+let config = {
+  output: __dirname + '/tmp/',
+  pages: __dirname + '/',
+  components: './test/components.json',
+  meta: {
+    domain: 'website.com',
+    title: 'Design Manual'
+  }
+}
 
 test.cb('defaults', t => {
   t.plan(12);
+  rimraf.sync(__dirname + '/tmp');
 
   DM.build(Object.assign({}, config, {
     onComplete: function() {

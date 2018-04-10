@@ -21,6 +21,6 @@
       "description": "<p>this is component 3</p>"
     },
     "file": "path/to/component3.html",
-    "output": "<p>this is component 3</p>"
+    "output": "<p style='height: 111px'>this is component 3</p>"
   }
 ]

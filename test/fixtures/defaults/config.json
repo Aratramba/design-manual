@@ -1,9 +1,0 @@
-{
-  "output": "test/tmp/defaults/",
-  "pages": "test/fixtures/defaults/",
-  "components": "test/fixtures/components.json",
-  "meta": {
-    "domain": "website.com",
-    "title": "Design Manual"
-  }
-}

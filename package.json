@@ -13,7 +13,8 @@
     "template-css": "npm run template-css-sass -- -o httpdocs/all.min.css",
     "template-html": "jade template/templates/components.pug -o httpdocs",
     "watch-js": "watchify template/scripts/index.js -o examples/httpdocs/app.min.js",
-    "test": "rm -rf test/tmp && ava"
+    "test": "ava test/**/*/test.js --serial",
+    "test-prerender": "ava test/prerender/test.js --serial"
   },
   "author": "Eight Media",
   "license": "ISC",
