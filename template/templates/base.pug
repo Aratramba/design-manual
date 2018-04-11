@@ -24,7 +24,7 @@ html(lang="en")
       if headings.length
         ul.sidebar__inpage
           each item in headings
-            li.sidebar__inpage__item(class="js-sidebar__item", data-rel=item.slug)
+            li.sidebar__inpage__item(class="js-sidebar__item", data-rel=item.slug, title=item.label)
               a.sidebar__inpage__item__link(href='\#' + item.slug) #{item.label}
       
     .main

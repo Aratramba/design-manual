@@ -10,7 +10,7 @@ This is principle 1
 ## Principle 2
 This is text about a principle.
 
-## Principle 3
+## Principle 3 with a very very long title
 This is text about a principle.
 
 ## Principle 4

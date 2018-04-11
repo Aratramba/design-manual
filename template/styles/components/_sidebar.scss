@@ -71,7 +71,12 @@
   font-size: 14px;
   line-height: 1.4;
   margin-bottom: 0;
-  padding: 10px 20px;
+  padding: 10px;
+  width: 239px;
+  letter-spacing: -.07px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 
   &:hover {
     text-decoration: underline;

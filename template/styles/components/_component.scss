@@ -80,7 +80,9 @@
 .component__meta__link {
   @include code-button;
   display: inline-block;
-  vertical-align: middle;
+  vertical-align: top;
+  padding-top: 4px;
+  padding-bottom: 4px;
 
   svg {
     fill: red;
@@ -211,7 +213,7 @@
 
   svg {
     display: block;
-    width: 5px;
+    width: 6px;
     height: 23px;
     position: absolute;
     top: 50%;

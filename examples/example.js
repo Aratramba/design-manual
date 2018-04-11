@@ -27,7 +27,7 @@ function build() {
           color: inherit;
         }
         .header {
-          background-color: sienna;
+          background-color: #2A66DC;
         }
         .component &.is-loading:before {
           border-top-color: red;
@@ -37,7 +37,7 @@ function build() {
           background-color: red;
         }
         .sidebar__nav__item__link {
-          background-color: red;
+          background-color: #2A66DC;
         }
       </style>
     `,
@@ -59,8 +59,8 @@ function build() {
     `,
     renderPages: true,
     renderComponents: true,
-    renderJS: false,
-    renderCSS: false,
+    renderJS: true,
+    renderCSS: true,
     prerender: {
       port: 3000,
       path: '',
