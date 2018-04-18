@@ -148,7 +148,6 @@ new DesignManual({
 | componentHeadHtml       | ''            | string          | string of html to include in the head of the component
 | componentBodyHtml       | ''            | string          | string of html to include in the body of the component
 | contentsFlag            | 'contents'    | string          | css id to identify the contents heading
-| renderPages             | true          | boolean         | turn rendering pages on/off
 | renderComponents        | true          | boolean         | turn rendering components on/off
 | renderJS                | true          | boolean         | turn rendering js on/off
 | renderCSS               | true          | boolean         | turn rendering css on/off
