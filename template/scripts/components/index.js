@@ -2,9 +2,9 @@
 /* global require */
 
 
-var LazyLoad = require('vanilla-lazyload');
-var Prism = require('../libs/prism');
-var iframeResizer = require('../libs/iframeResizer.min');
+// var LazyLoad = require('vanilla-lazyload');
+// var Prism = require('../libs/prism');
+// var iframeResizer = require('../libs/iframeResizer.min');
 var delegate = require('delegate-events');
 var prettyPrint = require('html').prettyPrint;
 var interact = require('interactjs/dist/interact.min');
@@ -14,8 +14,8 @@ var constants = require('../constants');
 document.body.classList.add(constants.LOADING_CLASS);
 
 // enable lazy loading
-new LazyLoad({
-  threshold: 100,
+new window.LazyLoad({
+  threshold: 200,
   elements_selector: 'iframe',
   callback_load: function($el) {
     $el.parentNode.parentNode.classList.remove('is-loading');
@@ -26,7 +26,7 @@ new LazyLoad({
 });
 
 // resize frames
-iframeResizer({ checkOrigin: false });
+window.iFrameResize({ checkOrigin: false });
 
 // smooth scroll
 delegate.bind(document.body, '.table-of-contents__list__item__link', 'click', function(e) {
@@ -52,7 +52,7 @@ function onToggle(e) {
   var $pre = $component.querySelector('pre code');
   var $source = $component.querySelector('iframe');
   var html = $source.contentWindow.document.body.querySelector('.dm-raw-source').innerHTML;
-  $pre.innerHTML = Prism.highlight(prettyPrint(html), Prism.languages.markup);
+  $pre.innerHTML = window.Prism.highlight(prettyPrint(html), window.Prism.languages.markup);
 }
 
 

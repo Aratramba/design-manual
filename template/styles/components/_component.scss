@@ -104,6 +104,13 @@
 .component__meta__toggle {
   @include code-button;
   cursor: pointer;
+  opacity: 1;
+  transition: opacity .15s;
+
+  .is-loading & {
+    pointer-events: none;
+    opacity: 0;
+  }
 
   &:hover {
     background-color: $grey;

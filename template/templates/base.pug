@@ -62,7 +62,21 @@ html(lang="en")
 
       a.scrolltop(href="#top")
 
-      block footer_js
-      script(src=rootPath + 'app.min.js')
+      //- iframes
+      script(src='https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/3.6.0/iframeResizer.min.js', defer)
+      script(src='https://cdnjs.cloudflare.com/ajax/libs/vanilla-lazyload/10.5.2/lazyload.min.js', defer)
+
+      //- prism
+      script(src='https://cdnjs.cloudflare.com/ajax/libs/prism/1.14.0/prism.min.js' defer)
+      script(src='https://cdnjs.cloudflare.com/ajax/libs/prism/1.14.0/components/prism-markup-templating.js' defer)
+      script(src='https://cdnjs.cloudflare.com/ajax/libs/prism/1.14.0/components/prism-scss.min.js' defer)
+      script(src='https://cdnjs.cloudflare.com/ajax/libs/prism/1.14.0/components/prism-css.min.js' defer)
+      script(src='https://cdnjs.cloudflare.com/ajax/libs/prism/1.14.0/components/prism-clike.min.js' defer)
+      script(src='https://cdnjs.cloudflare.com/ajax/libs/prism/1.14.0/components/prism-javascript.min.js' defer)
+      script(src='https://cdnjs.cloudflare.com/ajax/libs/prism/1.14.0/components/prism-diff.min.js' defer)
+      script(src='https://cdnjs.cloudflare.com/ajax/libs/prism/1.14.0/components/prism-json.min.js' defer)
+      script(src='https://cdnjs.cloudflare.com/ajax/libs/prism/1.14.0/components/prism-markdown.min.js' defer)
+      
+      script(src=rootPath + 'app.min.js', defer)
 
       | !{bodyHtml}
