@@ -28,10 +28,8 @@ test.cb('add head html', t => {
     `,
     onComplete: function () {
       setTimeout(() => {
-        let componentsHtmlFixture = fs.readFileSync(config.pages + 'component-head-html.html', 'utf8');
         let componentsHtmlTmp = fs.readFileSync(config.output + 'head/lib/component1.html', 'utf8');
-        t.is(componentsHtmlFixture, componentsHtmlTmp);
-
+        t.truthy(componentsHtmlTmp.indexOf("<script>alert('foo');</script>") > -1);
         t.end();
       }, 1000);
     }
@@ -50,10 +48,8 @@ test.cb('add body html', t => {
     `,
     onComplete: function() {
       setTimeout(() => {
-        let componentsHtmlFixture = fs.readFileSync(config.pages + 'component-body-html.html', 'utf8');
         let componentsHtmlTmp = fs.readFileSync(config.output + 'body/lib/component1.html', 'utf8');
-        t.is(componentsHtmlFixture, componentsHtmlTmp);
-
+        t.truthy(componentsHtmlTmp.indexOf("<script>alert('foo');</script>") > -1);
         t.end();
       }, 1000);
     }

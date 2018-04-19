@@ -20,33 +20,15 @@ test.cb('add head html', t => {
   t.plan(1);
   rimraf.sync(__dirname + '/tmp/head/');
 
+  let headHtml = '<style></style>';
+
   DM.build(Object.assign({}, config, {
     output: config.output + 'head/',
-    headHtml: `
-      <style>
-        .content h1 {
-          color: inherit;
-        }
-        .header {
-          background-color: sienna;
-        }
-        .component &.is-loading:before {
-          border-top-color: red;
-          border-left-color: red;
-        }
-        .component__meta:before {
-          background-color: red;
-        }
-        .sidebar__nav__item__link {
-          background-color: red;
-        }
-      </style>
-    `,
+    headHtml: '<style>foo{}</style>',
     onComplete: function() {
       setTimeout(() => {
-        let componentsHtmlFixture = fs.readFileSync(config.pages + 'page-head-html.html', 'utf8');
         let componentsHtmlTmp = fs.readFileSync(config.output + 'head/page.html', 'utf8');
-        t.is(componentsHtmlFixture, componentsHtmlTmp);
+        t.truthy(componentsHtmlTmp.indexOf('<style>foo{}</style>') > -1);
 
         t.end();
       }, 1000);
@@ -61,15 +43,11 @@ test.cb('add body html', t => {
 
   DM.build(Object.assign({}, config, {
     output: config.output + 'body/',
-    bodyHtml: `
-      <script>alert('foo);</script>
-    `,
+    bodyHtml: '<script>alert("foo");</script>',
     onComplete: function() {
       setTimeout(() => {
-        let componentsHtmlFixture = fs.readFileSync(config.pages + 'page-body-html.html', 'utf8');
         let componentsHtmlTmp = fs.readFileSync(config.output + 'body/page.html', 'utf8');
-        t.is(componentsHtmlFixture, componentsHtmlTmp);
-
+        t.truthy(componentsHtmlTmp.indexOf('<script>alert("foo");</script>') > -1);
         t.end();
       }, 1000);
     }
