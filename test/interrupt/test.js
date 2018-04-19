@@ -1,8 +1,6 @@
 import test from 'ava';
-let fs = require('fs');
 let rimraf = require('rimraf');
 
-let isThere = require('is-there');
 let DM = require('../../lib/index');
 
 let config = {
@@ -21,17 +19,26 @@ test.cb('interrupt', t => {
 
   DM.build(Object.assign({}, config, {
     onComplete: function() {
-      // t.equal(1, 1);
-      // t.end();
+      t.fail();
+      t.end();
     }
   }));
   
   setTimeout(() => {
     DM.build(Object.assign({}, config, {
       onComplete: function() {
-        t.equal(1, 1);
+        t.pass();
         t.end();
       }
     }));
-  }, 500);
+  }, 400);
+  
+  setTimeout(() => {
+    DM.build(Object.assign({}, config, {
+      onComplete: function() {
+        t.fail();
+        t.end();
+      }
+    }));
+  }, 200);
 });

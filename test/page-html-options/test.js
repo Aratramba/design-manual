@@ -13,15 +13,15 @@ let config = {
     title: 'Design Manual'
   },
   renderComponents: false,
-  renderCSS: false,
-  renderJS: false
+  renderCSS: false
 }
 
 test.cb('add head html', t => {
   t.plan(1);
-  rimraf.sync(__dirname + '/tmp');
+  rimraf.sync(__dirname + '/tmp/head/');
 
   DM.build(Object.assign({}, config, {
+    output: config.output + 'head/',
     headHtml: `
       <style>
         .content h1 {
@@ -45,7 +45,7 @@ test.cb('add head html', t => {
     onComplete: function() {
       setTimeout(() => {
         let componentsHtmlFixture = fs.readFileSync(config.pages + 'page-head-html.html', 'utf8');
-        let componentsHtmlTmp = fs.readFileSync(config.output + 'page.html', 'utf8');
+        let componentsHtmlTmp = fs.readFileSync(config.output + 'head/page.html', 'utf8');
         t.is(componentsHtmlFixture, componentsHtmlTmp);
 
         t.end();
@@ -57,16 +57,17 @@ test.cb('add head html', t => {
 
 test.cb('add body html', t => {
   t.plan(1);
-  rimraf.sync(__dirname + '/tmp');
+  rimraf.sync(__dirname + '/tmp/body/');
 
   DM.build(Object.assign({}, config, {
+    output: config.output + 'body/',
     bodyHtml: `
       <script>alert('foo);</script>
     `,
     onComplete: function() {
       setTimeout(() => {
         let componentsHtmlFixture = fs.readFileSync(config.pages + 'page-body-html.html', 'utf8');
-        let componentsHtmlTmp = fs.readFileSync(config.output + 'page.html', 'utf8');
+        let componentsHtmlTmp = fs.readFileSync(config.output + 'body/page.html', 'utf8');
         t.is(componentsHtmlFixture, componentsHtmlTmp);
 
         t.end();

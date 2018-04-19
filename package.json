@@ -14,10 +14,15 @@
     "template-html": "jade template/templates/components.pug -o httpdocs",
     "watch-js": "watchify template/scripts/index.js -o examples/httpdocs/app.min.js",
     "test": "ava test/**/*/test.js --serial --verbose",
+    "test-component-html-options": "ava test/component-html-options/test.js --serial",
+    "test-defaults": "ava test/defaults/test.js --serial",
+    "test-gulp": "ava test/gulp/test.js --serial",
+    "test-interrupt": "ava test/interrupt/test.js --serial",
+    "test-page-html-options": "ava test/page-html-options/test.js --serial",
     "test-prerender": "ava test/prerender/test.js --serial",
     "test-puppeteer": "ava test/puppeteer/test.js --serial",
-    "test-page-html-options": "ava test/page-html-options/test.js --serial",
-    "test-component-html-options": "ava test/component-html-options/test.js --serial"
+    "test-render-css": "ava test/render-css/test.js --serial",
+    "test-render-pages": "ava test/render-pages/test.js --serial"
   },
   "author": "Eight Media",
   "license": "ISC",

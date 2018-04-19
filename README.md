@@ -249,7 +249,6 @@ function buildDesignManual(cb) {
       { label: 'Home', href: '/index.html' },
       { label: 'Components', href: '/components.html' }
     ],
-    renderPages: true,
     renderComponents: true,
     renderCSS: true,
     prerender: {

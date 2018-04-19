@@ -1,5 +1,4 @@
 import test from 'ava';
-let fs = require('fs');
 let rimraf = require('rimraf');
 
 let isThere = require('is-there');
@@ -16,7 +15,7 @@ let config = {
 }
 
 test.cb('defaults', t => {
-  t.plan(8);
+  t.plan(7);
   rimraf.sync(__dirname + '/tmp');
 
   DM.build(Object.assign({}, config, {
@@ -26,7 +25,6 @@ test.cb('defaults', t => {
 
         // test styles/js generated
         t.true(isThere(config.output + 'all.min.css'), 'css exists');
-        t.true(isThere(config.output + 'app.min.js'), 'js exists');
 
         // test register files generated
         t.true(isThere(config.output + 'design-manual-components.json'), 'design manual components json exists');

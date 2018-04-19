@@ -1,7 +1,7 @@
-var rimraf = require('rimraf');
+const rimraf = require('rimraf');
 rimraf.sync('httpdocs/*');
 
-var dm = require('../lib/index');
+const dm = require('../lib/index');
 
 function build() {
   dm.build({
@@ -57,9 +57,7 @@ function build() {
       }
     </script>
     `,
-    renderPages: true,
     renderComponents: true,
-    renderJS: true,
     renderCSS: true,
     prerender: {
       port: 3000,
