@@ -2,10 +2,18 @@
   {
     "meta": {
       "name": "link",
-      "description": "<p>this is a link</p>"
+      "description": "this is a link"
     },
     "file": "path/to/link.html",
     "output": "<a href=\"http://google.com\">this is a link</a>"
+  },
+  {
+    "meta": {
+      "name": "picture",
+      "description": "picture"
+    },
+    "file": "path/to/picture.html",
+    "output": "<picture><source srcset=\"https://assets.imgix.net/examples/butterfly.jpg?px=40&w=1024\" media=\"(min-width: 1044px)\"><source srcset=\"https://assets.imgix.net/examples/butterfly.jpg?px=40&w=600\" media=\"(min-width: 620px)\"><source srcset=\"https://assets.imgix.net/examples/butterfly.jpg?px=40&w=100\" media=\"(min-width: 1px)\"><img src=\"\" alt=\"\"/></picture>"
   },
   {
     "meta": {

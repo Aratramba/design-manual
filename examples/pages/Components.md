@@ -8,6 +8,7 @@ This is what buttons look like on my website. This is a `.classname`.
 
 ### Contents
 !{link}
+!{picture}
 !{button (small)}
 !{button (medium)}
 !{button (large)}

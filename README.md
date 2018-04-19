@@ -149,7 +149,6 @@ new DesignManual({
 | componentBodyHtml       | ''            | string          | string of html to include in the body of the component
 | contentsFlag            | 'contents'    | string          | css id to identify the contents heading
 | renderComponents        | true          | boolean         | turn rendering components on/off
-| renderJS                | true          | boolean         | turn rendering js on/off
 | renderCSS               | true          | boolean         | turn rendering css on/off
 | prerender               | null          | object || null  | prerender all components to get their heights (at 1200px wide browser window, using Puppeteer). This speeds up the user interface and makes it less jumpy, but makes compiling Design Manual slower because it needs to open all components in a headless browser |
 | prerender.port          |               | number          | static server port for rendering components (http://localhost:{port}) |
@@ -252,7 +251,6 @@ function buildDesignManual(cb) {
     ],
     renderPages: true,
     renderComponents: true,
-    renderJS: true,
     renderCSS: true,
     prerender: {
       port: 3000,
