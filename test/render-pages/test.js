@@ -23,7 +23,8 @@ test.cb('render pages without components', t => {
   DM.build(Object.assign({}, config, {
     output: config.output + 'no-components/',
     renderComponents: false,
-    onComplete: function() {
+    onLog: () => { },
+    onComplete: () => {
       setTimeout(() => {
         let expected = fs.readFileSync(config.pages + 'page-no-components.html', 'utf8');
         let actual = fs.readFileSync(config.output + 'no-components/page.html', 'utf8');
@@ -41,7 +42,8 @@ test.cb('render pages with components', t => {
   DM.build(Object.assign({}, config, {
     output: config.output + 'components/',
     renderComponents: true,
-    onComplete: function() {
+    onLog: () => { },
+    onComplete: () => {
       setTimeout(() => {
         let expected = fs.readFileSync(config.pages + 'page-components.html', 'utf8');
         let actual = fs.readFileSync(config.output + 'components/page.html', 'utf8');

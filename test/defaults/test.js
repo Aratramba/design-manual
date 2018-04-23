@@ -19,8 +19,8 @@ test.cb('defaults', t => {
   rimraf.sync(__dirname + '/tmp');
 
   DM.build(Object.assign({}, config, {
-    onComplete: function() {
-
+    onLog: () => { },
+    onComplete: () => {
       setTimeout(() => {
 
         // test styles/js generated

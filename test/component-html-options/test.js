@@ -20,13 +20,13 @@ test.cb('add head html', t => {
   t.plan(1);
   rimraf.sync(__dirname + '/tmp/head/');
 
-
   DM.build(Object.assign({}, config, {
     output: config.output + 'head/',
     componentHeadHtml: `
       <script>alert('foo');</script>
     `,
-    onComplete: function () {
+    onLog: () => { },
+    onComplete: () => {
       setTimeout(() => {
         let componentsHtmlTmp = fs.readFileSync(config.output + 'head/lib/component1.html', 'utf8');
         t.truthy(componentsHtmlTmp.indexOf("<script>alert('foo');</script>") > -1);
@@ -46,7 +46,8 @@ test.cb('add body html', t => {
     componentBodyHtml: `
       <script>alert('foo');</script>
     `,
-    onComplete: function() {
+    onLog: () => { },
+    onComplete: () => {
       setTimeout(() => {
         let componentsHtmlTmp = fs.readFileSync(config.output + 'body/lib/component1.html', 'utf8');
         t.truthy(componentsHtmlTmp.indexOf("<script>alert('foo');</script>") > -1);

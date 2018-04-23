@@ -25,7 +25,8 @@ test.cb('add head html', t => {
   DM.build(Object.assign({}, config, {
     output: config.output + 'head/',
     headHtml: '<style>foo{}</style>',
-    onComplete: function() {
+    onLog: () => { },
+    onComplete: () => {
       setTimeout(() => {
         let componentsHtmlTmp = fs.readFileSync(config.output + 'head/page.html', 'utf8');
         t.truthy(componentsHtmlTmp.indexOf('<style>foo{}</style>') > -1);
@@ -44,7 +45,8 @@ test.cb('add body html', t => {
   DM.build(Object.assign({}, config, {
     output: config.output + 'body/',
     bodyHtml: '<script>alert("foo");</script>',
-    onComplete: function() {
+    onLog: () => { },
+    onComplete: () => {
       setTimeout(() => {
         let componentsHtmlTmp = fs.readFileSync(config.output + 'body/page.html', 'utf8');
         t.truthy(componentsHtmlTmp.indexOf('<script>alert("foo");</script>') > -1);

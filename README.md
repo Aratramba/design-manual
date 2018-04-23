@@ -3,7 +3,7 @@
 
 Design Manual is a documentation platform for your websites components and design decisions.
 
-This package combines free format Markdown files with a json file containing your components and creates a beautiful design manual. Use [Design Manual Scraper](https://github.com/EightMedia/design-manual-scraper) to feed components from your (live) website into Design Manual. See a [Live Demo](https://rijkswaterstaat.eightmedia.com/stijlgids/componenten.html) here.
+This package combines free format Markdown files with a json file containing your components and creates a beautiful design manual. Use [Design Manual Scraper](https://github.com/EightMedia/design-manual-scraper) to feed components from your (live) website into Design Manual. See a [Live Demo](https://rijkswaterstaat.eightmedia.nl/stijlgids/componenten.html) here.
 
 * [Getting started](#getting-started)
 * [Pages](#pages)
@@ -123,7 +123,8 @@ new DesignManual({
   componentBodyHtml: `
     <script>console.log("im in the component body");</script>
   `,
-  onComplete: function() { }
+  onComplete: () => {},
+  onLog: (msg) => {} 
 });
 ```
 
@@ -154,7 +155,8 @@ new DesignManual({
 | prerender.port          |               | number          | static server port for rendering components (http://localhost:{port}) |
 | prerender.path          |               | string          | path to design manual folder (http://localhost:{port}/{path}) |
 | prerender.serveFolder   |               | string          | directory to start the static file server in |
-| onComplete              | function(){}  | function        | function to be called when done
+| onComplete              | function(){}  | function        | function to be called when done |
+| onLog                   | console.log   | function        | custom logging function |
 
 
 ---
@@ -220,7 +222,7 @@ gulp.watch('design-manual/**/*.md', ['design-manual']);
  * Pug Doc
  */
 
-gulp.task('pug-doc', function(gulpDone) {
+gulp.task('pug-doc', (gulpDone) => {
   pugDoc({
     input: paths.SRC.templates + '**/*.pug',
     output: paths.DEST.styleguide + 'pugdoc.json',
@@ -262,7 +264,7 @@ function buildDesignManual(cb) {
 ```
 
 ```js
-gulp.task('design-manual', ['pug-doc'], function(gulpDone) {
+gulp.task('design-manual', ['pug-doc'], (gulpDone) => {
   buildDesignManual(gulpDone);
 });
 ```

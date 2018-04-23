@@ -15,6 +15,8 @@
     "watch-js": "watchify template/scripts/index.js -o examples/httpdocs/app.min.js",
     "test": "ava test/**/*/test.js --serial --verbose",
     "test-component-html-options": "ava test/component-html-options/test.js --serial",
+    "test-changed-component": "ava test/changed-component/test.js --serial",
+    "test-changed-config": "ava test/changed-config/test.js --serial",
     "test-defaults": "ava test/defaults/test.js --serial",
     "test-gulp": "ava test/gulp/test.js --serial",
     "test-interrupt": "ava test/interrupt/test.js --serial",
@@ -29,7 +31,6 @@
   "dependencies": {
     "async": "^1.5.0",
     "autoprefixer": "^6.3.3",
-    "browserify": "^16.2.0",
     "clean-css": "^3.4.5",
     "cssmin": "^0.4.3",
     "death": "^1.1.0",
@@ -53,7 +54,6 @@
     "serve-static": "^1.12.3",
     "slug": "^0.9.1",
     "to-sentence-case": "^1.0.0",
-    "uglifyify": "^3.0.1",
     "vanilla-lazyload": "^5.1.1"
   },
   "devDependencies": {
@@ -62,12 +62,9 @@
     "eslint-config-airbnb": "^15.1.0",
     "eslint-config-airbnb-base": "^11.3.1",
     "eslint-plugin-import": "^2.7.0",
-    "faucet": "0.0.1",
     "gulp": "^3.9.1",
     "is-there": "^4.1.0",
-    "rimraf": "^2.4.3",
-    "tape": "^4.2.1",
-    "watchify": "^3.4.0"
+    "rimraf": "^2.4.3"
   },
   "repository": {
     "type": "git",
@@ -75,8 +72,8 @@
   },
   "keywords": [
     "styleguide",
-    "design",
-    "manual"
+    "design system",
+    "component library"
   ],
   "bugs": {
     "url": "https://github.com/EightMedia/design-manual/issues"

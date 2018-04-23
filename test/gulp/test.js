@@ -45,6 +45,7 @@ test.cb('gulp', t => {
 
 gulp.task('design-manual', done => {
   DM.build(Object.assign({}, config, {
+    onLog: () => { },
     onComplete: function () {
       done();
     }

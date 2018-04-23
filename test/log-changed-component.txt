@@ -1,0 +1,9 @@
+Starting design manual
+- Starting components
+- Found 1 changed component
+-- Rendering component ./lib/component1-changed.html
+- Generated components
+- Starting pages
+- Found 0 changed pages
+- Generated pages
+Design manual complete

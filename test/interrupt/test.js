@@ -18,7 +18,8 @@ test.cb('interrupt', t => {
   rimraf.sync(__dirname + '/tmp');
 
   DM.build(Object.assign({}, config, {
-    onComplete: function() {
+    onLog: () => { },
+    onComplete: () => {
       t.fail();
       t.end();
     }
@@ -26,7 +27,8 @@ test.cb('interrupt', t => {
   
   setTimeout(() => {
     DM.build(Object.assign({}, config, {
-      onComplete: function() {
+      onLog: () => { },
+      onComplete: () => {
         t.pass();
         t.end();
       }
@@ -35,7 +37,8 @@ test.cb('interrupt', t => {
   
   setTimeout(() => {
     DM.build(Object.assign({}, config, {
-      onComplete: function() {
+      onLog: () => { },
+      onComplete: () => {
         t.fail();
         t.end();
       }

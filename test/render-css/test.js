@@ -22,7 +22,8 @@ test.cb('render css', t => {
 
   DM.build(Object.assign({}, config, {
     renderCSS: true,
-    onComplete: function() {
+    onLog: () => { },
+    onComplete: () => {
       t.true(isThere(config.output + 'all.min.css'), 'css exists');
       t.end();
     }
@@ -35,7 +36,8 @@ test.cb('don\'t render css', t => {
 
   DM.build(Object.assign({}, config, {
     renderCSS: false,
-    onComplete: function() {
+    onLog: () => { },
+    onComplete: () => {
       t.true(!isThere(config.output + 'app.min.js'), 'css does not exist');
       t.end();
     }

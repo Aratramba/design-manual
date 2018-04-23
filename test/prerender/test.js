@@ -26,8 +26,8 @@ test.cb('render pages with components and get their heights set', t => {
   rimraf.sync(__dirname + '/tmp');
 
   DM.build(Object.assign({}, config, {
-    onComplete: function() {
-
+    onLog: () => { },
+    onComplete: () => {
       setTimeout(() => {
 
         let componentsHtmlTmp = fs.readFileSync(config.output + 'page.html', 'utf8');
