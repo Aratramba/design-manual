@@ -39,3 +39,23 @@ test.cb('render pages with components and get their heights set', t => {
     }
   }));
 });
+
+test.cb('render pages with components and don\'t prerender', t => {
+  t.plan(2);
+  rimraf.sync(__dirname + '/tmp');
+
+  DM.build(Object.assign({}, config, {
+    prerender: false,
+    onLog: () => { },
+    onComplete: () => {
+      setTimeout(() => {
+
+        let componentsHtmlTmp = fs.readFileSync(config.output + 'page.html', 'utf8');
+        t.truthy(componentsHtmlTmp.indexOf('<iframe class="component__preview__iframe" data-src="./lib/component1.html" frameborder="0" scrolling="no"></iframe>') > -1);
+        t.truthy(componentsHtmlTmp.indexOf('<iframe class="component__preview__iframe" data-src="./lib/component3.html" frameborder="0" scrolling="no"></iframe>') > -1);
+
+        t.end();
+      }, 1000);
+    }
+  }));
+});

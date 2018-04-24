@@ -132,26 +132,26 @@ new DesignManual({
 
 | option                  | default value | type            | description                  |
 |-------------------------|---------------|-----------------|------------------------------|
-| __output__              | null          | string          | output directory
-| __pages__               | null          | string          | directory that holds your pages 
-| __components__          | null          | string          | json file with components
-| __meta__                |               | object          | 
-| __meta.domain__         | ''            | string          | domain for your project
-| __meta.title__          | ''            | string          | title for your project
-| force                   | false         | boolean         | force update for all components and pages
-| meta.avatar             | ''            | string          | avatar for your project
-| meta.version            | ''            | string          | version
-| nav                     | []            | array           | array of objects with navigation items 
-| - {}.label              |               | string          | label of the navigation item
-| - {}.href               |               | string          | link for the navigation item
-| headHtml                | ''            | string          | string of html to include in the head
-| bodyHtml                | ''            | string          | string of html to include in the body
-| componentHeadHtml       | ''            | string          | string of html to include in the head of the component
-| componentBodyHtml       | ''            | string          | string of html to include in the body of the component
-| contentsFlag            | 'contents'    | string          | css id to identify the contents heading
-| renderComponents        | true          | boolean         | turn rendering components on/off
-| renderCSS               | true          | boolean         | turn rendering css on/off
-| prerender               | null          | object || null  | prerender all components to get their heights (at 1200px wide browser window, using Puppeteer). This speeds up the user interface and makes it less jumpy, but makes compiling Design Manual slower because it needs to open all components in a headless browser |
+| __output__              | null          | string          | output directory |
+| __pages__               | null          | string          | directory that holds your pages  |
+| __components__          | null          | string          | json file with components |
+| __meta__                |               | object          |  |
+| __meta.domain__         | ''            | string          | domain for your project |
+| __meta.title__          | ''            | string          | title for your project |
+| force                   | false         | boolean         | force update for all components and pages |
+| meta.avatar             | ''            | string          | avatar for your project |
+| meta.version            | ''            | string          | version |
+| nav                     | []            | array           | array of objects with navigation items  |
+| - {}.label              |               | string          | label of the navigation item |
+| - {}.href               |               | string          | link for the navigation item |
+| headHtml                | ''            | string          | string of html to include in the head |
+| bodyHtml                | ''            | string          | string of html to include in the body |
+| componentHeadHtml       | ''            | string          | string of html to include in the head of the component |
+| componentBodyHtml       | ''            | string          | string of html to include in the body of the component |
+| contentsFlag            | 'contents'    | string          | css id to identify the contents heading |
+| renderComponents        | true          | boolean         | turn rendering components on/off |
+| renderCSS               | true          | boolean         | turn rendering css on/off |
+| prerender               | null          | object || null  | prerender all components to get their heights (at 1200px wide browser window, using Puppeteer). This speeds up the user interface and makes it less jumpy, but makes compiling Design Manual slower because it needs to open all components in a headless browser | |
 | prerender.port          |               | number          | static server port for rendering components (http://localhost:{port}) |
 | prerender.path          |               | string          | path to design manual folder (http://localhost:{port}/{path}) |
 | prerender.serveFolder   |               | string          | directory to start the static file server in |
