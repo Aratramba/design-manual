@@ -8,6 +8,7 @@ Starting design manual
 -- Rendering component ./lib/component3.html
 - Generated components
 - Starting pages
-- Found 0 changed pages
+- Found 1 changed page
+-- Generated test/changed-config/tmp/page.html
 - Generated pages
 Design manual complete

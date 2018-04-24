@@ -1,8 +1,8 @@
 [
   {
     "meta": {
-      "name": "component1-changed",
-      "description": "<p>this is component 1</p>"
+      "name": "component1",
+      "description": "<p>this is component 1 changed</p>"
     },
     "file": "path/to/component1.html",
     "output": "<p>this is component 1</p>"
