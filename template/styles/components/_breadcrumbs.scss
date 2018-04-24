@@ -25,7 +25,7 @@
 }
 
 .breadcrumbs__item--current {
-  &:after {
+  &::after {
     opacity: .5;
     margin: 0 7px;
     content: '';

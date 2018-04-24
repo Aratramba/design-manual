@@ -15,7 +15,7 @@
 	transform: translate3d(0,200%,0);
 	transition: transform .2s ease-out, border-color .15s;
 
-	&:before {
+	&::before {
 	  content: '';
 	  display: block;
 		width: 0;
@@ -30,7 +30,7 @@
 	  transition: border-color .15s;
 	}
 
-	&:after {
+	&::after {
 	  content: '';
 	  display: block;
 	  width: 0;
@@ -47,7 +47,7 @@
 	&:hover {
 		border-color: #aaa;
 
-		&:before {
+		&::before {
 			border-bottom-color: #aaa;
 		}
 	}

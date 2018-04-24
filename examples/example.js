@@ -44,16 +44,17 @@ function build() {
     bodyHtml: '',
     contentsFlag: 'contents',
     componentHeadHtml: `
-      <link rel="stylesheet" href="/lib.css">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     `,
     componentBodyHtml: `
     <script>
       var $hamburger = document.querySelector('.hamburger');
+      var $nav = document.querySelector('.nav');
       if ($hamburger) {
         $hamburger.addEventListener('click', function(e) {
-          document.body.classList.toggle('nav-is-open');
+          $nav.style.display = 'block';
         });
-        $hamburger.classList.add('foofaa');
+        $nav.style.display = 'none';
       }
     </script>
     `,

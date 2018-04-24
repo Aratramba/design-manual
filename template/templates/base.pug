@@ -18,8 +18,8 @@ html(lang="en")
       if navItems.length
         ul.sidebar__nav
           each item in navItems
-              li.sidebar__nav__item(class=(currentPage === item.label ? 'is-active' : ''))
-                a.sidebar__nav__item__link(href=item.href) #{item.label}
+            li.sidebar__nav__item(class=(currentPage === item.label ? 'is-active' : ''))
+              a.sidebar__nav__item__link(href=item.href) #{item.label}
 
       if headings.length
         ul.sidebar__inpage
