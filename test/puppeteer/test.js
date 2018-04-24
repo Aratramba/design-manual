@@ -1,14 +1,14 @@
-import test from 'ava';
-let serveStatic = require('serve-static');
-let cp = require('child_process');
-let http = require('http');
+const test = require('ava');
+const serveStatic = require('serve-static');
+const cp = require('child_process');
+const http = require('http');
 
 test('get components height', async t => {
   const height = new Promise((resolve, reject) => {
 
     // static file server
-    var serve = serveStatic(__dirname);
-    let server = http.createServer(function(req, res) {
+    const serve = serveStatic(__dirname);
+    const server = http.createServer(function(req, res) {
       serve(req, res, function (err) {
         res.statusCode = err ? (err.status || 500) : 404
         res.end(err ? err.stack : 'sorry!')

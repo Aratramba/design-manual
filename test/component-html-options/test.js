@@ -1,10 +1,10 @@
-import test from 'ava';
-let fs = require('fs');
-let rimraf = require('rimraf');
+const test = require('ava');
+const fs = require('fs');
+const rimraf = require('rimraf');
 
-let DM = require('../../lib/index');
+const DM = require('../../lib/index');
 
-let config = {
+const config = {
   output: __dirname + '/tmp/',
   pages: __dirname + '/',
   components: './test/components.json',
@@ -28,7 +28,7 @@ test.cb('add head html', t => {
     onLog: () => { },
     onComplete: () => {
       setTimeout(() => {
-        let componentsHtmlTmp = fs.readFileSync(config.output + 'head/lib/component1.html', 'utf8');
+        const componentsHtmlTmp = fs.readFileSync(config.output + 'head/lib/component1.html', 'utf8');
         t.truthy(componentsHtmlTmp.indexOf("<script>alert('foo');</script>") > -1);
         t.end();
       }, 1000);
@@ -49,7 +49,7 @@ test.cb('add body html', t => {
     onLog: () => { },
     onComplete: () => {
       setTimeout(() => {
-        let componentsHtmlTmp = fs.readFileSync(config.output + 'body/lib/component1.html', 'utf8');
+        const componentsHtmlTmp = fs.readFileSync(config.output + 'body/lib/component1.html', 'utf8');
         t.truthy(componentsHtmlTmp.indexOf("<script>alert('foo');</script>") > -1);
         t.end();
       }, 1000);

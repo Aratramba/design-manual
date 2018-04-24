@@ -1,10 +1,10 @@
-import test from 'ava';
-let rimraf = require('rimraf');
+const test = require('ava');
+const rimraf = require('rimraf');
 
-let isThere = require('is-there');
-let DM = require('../../lib/index');
+const isThere = require('is-there');
+const DM = require('../../lib/index');
 
-let config = {
+const config = {
   output: __dirname + '/tmp/',
   pages: __dirname + '/',
   components: './test/components.json',

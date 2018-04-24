@@ -1,10 +1,10 @@
-import test from 'ava';
-let fs = require('fs');
-let rimraf = require('rimraf');
+const test = require('ava');
+const fs = require('fs');
+const rimraf = require('rimraf');
 
-let DM = require('../../lib/index');
+const DM = require('../../lib/index');
 
-let config = {
+const config = {
   output: __dirname + '/tmp/',
   pages: __dirname + '/',
   components: './test/components.json',
@@ -19,8 +19,6 @@ let config = {
 test.cb('add head html', t => {
   t.plan(1);
   rimraf.sync(__dirname + '/tmp/head/');
-
-  let headHtml = '<style></style>';
 
   DM.build(Object.assign({}, config, {
     output: config.output + 'head/',

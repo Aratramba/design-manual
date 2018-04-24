@@ -1,10 +1,10 @@
-import test from 'ava';
-let rimraf = require('rimraf');
-let fs = require('fs');
+const test = require('ava');
+const rimraf = require('rimraf');
+const fs = require('fs');
 
-let DM = require('../../lib/index');
+const DM = require('../../lib/index');
 
-let config = {
+const config = {
   output: __dirname + '/tmp/',
   pages: __dirname + '/',
   components: './test/components.json',

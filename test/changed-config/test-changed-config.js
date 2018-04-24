@@ -1,10 +1,10 @@
-import test from 'ava';
-let rimraf = require('rimraf');
-let fs = require('fs');
+const test = require('ava');
+const rimraf = require('rimraf');
+const fs = require('fs');
 
-let DM = require('../../lib/index');
+const DM = require('../../lib/index');
 
-let config = {
+const config = {
   output: __dirname + '/tmp/',
   pages: __dirname + '/',
   components: './test/components.json',
@@ -26,14 +26,14 @@ test.cb('new config', t => {
   t.plan(1);
   rimraf.sync(config.output);
 
-  let log = [];
+  const log = [];
 
   DM.build(Object.assign({}, config, {
     onLog: (msg) => {
       log.push(msg);
     },
     onComplete: () => {
-      let logFixture = fs.readFileSync(__dirname + '/../log-new.txt', 'utf8');
+      const logFixture = fs.readFileSync(__dirname + '/../log-new.txt', 'utf8');
       t.deepEqual(logFixture, log.join('\n'));
       t.end();
     }
@@ -49,14 +49,14 @@ test.cb('new config', t => {
 
 test.cb('unchanged config', t => {
   t.plan(1);
-  let log = [];
+  const log = [];
 
   DM.build(Object.assign({}, config, {
     onLog: (msg) => {
       log.push(msg);
     },
     onComplete: () => {
-      let logFixture = fs.readFileSync(__dirname + '/../log-no-changes.txt', 'utf8');
+      const logFixture = fs.readFileSync(__dirname + '/../log-no-changes.txt', 'utf8');
       t.deepEqual(logFixture, log.join('\n'));
       t.end();
     }
@@ -72,7 +72,7 @@ test.cb('unchanged config', t => {
 
 test.cb('changed component head html config option', t => {
   t.plan(1);
-  let log = [];
+  const log = [];
 
   DM.build(Object.assign({}, config, {
     componentHeadHtml: 'foo',
@@ -80,7 +80,7 @@ test.cb('changed component head html config option', t => {
       log.push(msg);
     },
     onComplete: () => {
-      let logFixture = fs.readFileSync(__dirname + '/../log-changed-config.txt', 'utf8');
+      const logFixture = fs.readFileSync(__dirname + '/../log-changed-config.txt', 'utf8');
       t.deepEqual(logFixture, log.join('\n'));
       t.end();
     }
@@ -89,7 +89,7 @@ test.cb('changed component head html config option', t => {
 
 test.cb('changed component body html config option', t => {
   t.plan(1);
-  let log = [];
+  const log = [];
 
   DM.build(Object.assign({}, config, {
     componentBodyHtml: 'foo',
@@ -97,7 +97,7 @@ test.cb('changed component body html config option', t => {
       log.push(msg);
     },
     onComplete: () => {
-      let logFixture = fs.readFileSync(__dirname + '/../log-changed-config.txt', 'utf8');
+      const logFixture = fs.readFileSync(__dirname + '/../log-changed-config.txt', 'utf8');
       t.deepEqual(logFixture, log.join('\n'));
       t.end();
     }
