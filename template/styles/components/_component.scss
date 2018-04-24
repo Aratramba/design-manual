@@ -77,6 +77,30 @@
   }
 }
 
+.component__meta__browsers {
+  display: inline-block;
+  vertical-align: middle;
+  opacity: 1;
+  transition: opacity .25s;
+  transition-delay: .1s;
+
+  .is-loading & {
+    pointer-events: none;
+    opacity: 0;
+  }
+}
+
+.component__meta__browsers__item {
+  filter: grayscale(100%);
+  margin-right: 2px;
+  opacity: .5
+
+  &.is-active {
+    opacity: .5;
+    filter: none;
+  }
+}
+
 .component__meta__link {
   @include code-button;
   display: inline-block;

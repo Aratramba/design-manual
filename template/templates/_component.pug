@@ -16,6 +16,11 @@
       input(type='checkbox' name='source' id=('toggle-' + component.slug) class="component__toggle")
 
       .component__meta
+        if component.meta.browsers
+          .component__meta__browsers
+            each browser in component.meta.browsers
+              img.component__meta__browsers__item(src=browser.icon, alt=browser.name, class=(browser.active ? 'is-active' : null))
+
         label.component__meta__toggle(for=('toggle-' + component.slug), class="js-code-toggle") code
 
         a.component__meta__link(href=component.libFile, target="_blank")
