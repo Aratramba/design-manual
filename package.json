@@ -14,7 +14,7 @@
     "template-html": "jade template/templates/components.pug -o httpdocs",
     "watch-js": "watchify template/scripts/index.js -o examples/httpdocs/app.min.js",
     "test": "ava test/**/*/test*.js --serial --verbose",
-    "test-changed-config": "ava test/config/*.js --serial",
+    "test-config": "ava test/config/*.js --serial",
     "test-validate": "ava test/config/test-validate.js --serial",
     "test-defaults": "ava test/defaults/test.js --serial",
     "test-gulp": "ava test/gulp/test.js --serial",

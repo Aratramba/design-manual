@@ -6,8 +6,6 @@
   <a href="">Get started ›</a>
 </div>
 
-
-### Contents
 !!{hello world}
 
 <div class="features">
@@ -26,7 +24,6 @@
 </div>
 
 
-
 ---
 
 ### Install
@@ -35,7 +32,7 @@
 > npm i design-manual design-manual-scraper --save-dev
 ```
 
-### Setup `build.js`
+### Setup
 
 ```js
 const DesignManual = require('design-manual');
@@ -60,7 +57,7 @@ scraper({
 });
 ```
 
-### Document components `page.html`
+### Write HTML
 
 ```html
   <!-- @component
@@ -71,7 +68,7 @@ scraper({
   <img src="https://assets.imgix.net/examples/butterfly.jpg?px=50&w=1200&h=50&fit=crop" alt="" />
 ```
 
-### Write markdown `page.md`
+### Write markdown
 
 ```md
 !{hello world}
@@ -91,7 +88,4 @@ scraper({
 ```
 ---
 
-### Contents
-!{hello world}
-!{hello world}
 !{hello world}
