@@ -29,14 +29,14 @@ test.cb('config: component change', t => {
 
   const expected = `
     Starting design manual
-    - Starting components
-    - Found 1 changed component
-    -- Rendering component ./lib/component1.html
-    - Generated components
-    - Starting pages
-    - Found 1 changed page
-    -- Generated test/config/tmp/page.html
-    - Generated pages
+    Starting components
+    Found 1 changed component
+    Rendering component ./lib/component1.html
+    Generated components
+    Starting pages
+    Found 1 changed page
+    Generated test/config/tmp/page.html
+    Generated pages
     Design manual complete
   `;
 

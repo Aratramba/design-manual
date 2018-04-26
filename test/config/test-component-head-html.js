@@ -28,18 +28,18 @@ test.cb('config: component head html change', t => {
 
   const expected = `
     Starting design manual
-    - Detected changed configuration (components head html)
-    - Forcing components rebuild
-    - Starting components
-    - Found 3 changed components
-    -- Rendering component ./lib/component1.html
-    -- Rendering component ./lib/component2.html
-    -- Rendering component ./lib/component3.html
-    - Generated components
-    - Starting pages
-    - Found 1 changed page
-    -- Generated test/config/tmp/page.html
-    - Generated pages
+    Detected changed configuration (components head html)
+    Forcing components rebuild
+    Starting components
+    Found 3 changed components
+    Rendering component ./lib/component1.html
+    Rendering component ./lib/component2.html
+    Rendering component ./lib/component3.html
+    Generated components
+    Starting pages
+    Found 1 changed page
+    Generated test/config/tmp/page.html
+    Generated pages
     Design manual complete
   `;
 

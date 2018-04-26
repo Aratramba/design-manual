@@ -26,12 +26,12 @@ test.cb('config: new config', t => {
 
   const expected = `
     Starting design manual
-    - Starting components
-    - Found 0 changed components
-    - Generated components
-    - Starting pages
-    - Found 0 changed pages
-    - Generated pages
+    Starting components
+    Found 0 changed components
+    Generated components
+    Starting pages
+    Found 0 changed pages
+    Generated pages
     Design manual complete
   `;
 

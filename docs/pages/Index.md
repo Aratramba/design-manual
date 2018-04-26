@@ -7,6 +7,7 @@
 </div>
 
 
+### Contents
 !!{hello world}
 
 <div class="features">
@@ -31,28 +32,10 @@
 ### Install
 
 ```bash
-npm i design-manual design-manual-scraper --save-dev
+> npm i design-manual design-manual-scraper --save-dev
 ```
 
-### Write markdown
-
-```md
-# Design System
-!{my-component1}
-!{my-component2}
-```
-
-### Document components
-```html
-  <!-- @component
-    name: hello world
-  -->
-
-  <img src="https://assets.imgix.net/examples/butterfly.jpg?px=50&w=1200&h=50&fit=crop" alt="" />
-```
-
-
-### Setup build flow
+### Setup `build.js`
 
 ```js
 const DesignManual = require('design-manual');
@@ -62,12 +45,12 @@ const scraper = require('design-manual-scraper);
 scraper({
   url: 'http://localhost:8000/',
   paths: ['homepage.html', 'page.html'],
-  output: 'docs/tmp/components.json',
+  output: 'docs/components.json',
   complete: function(results) {
     DesignManual.build({
-      output: 'docs/tmp/',
+      output: 'docs/',
       pages: './',
-      components: 'docs/tmp/components.json',
+      components: 'docs/components.json',
       meta: {
         domain: 'example.com',
         title: 'Example'
@@ -76,3 +59,39 @@ scraper({
   }
 });
 ```
+
+### Document components `page.html`
+
+```html
+  <!-- @component
+    name: hello world
+    description: This is my first component
+  -->
+
+  <img src="https://assets.imgix.net/examples/butterfly.jpg?px=50&w=1200&h=50&fit=crop" alt="" />
+```
+
+### Write markdown `page.md`
+
+```md
+!{hello world}
+```
+
+```bash
+> Starting design manual
+> Starting components
+> Found 1 changed component
+> Rendering component ./lib/hello-world.html
+> Generated components
+> Starting pages
+> Found 1 changed page
+> Generated docs/index.html
+> Generated pages
+> Design manual complete
+```
+---
+
+### Contents
+!{hello world}
+!{hello world}
+!{hello world}

@@ -15,17 +15,12 @@ mixin component-preview
 mixin component-meta
   .component__meta
     .component__meta__text
-
-      if component.meta.name
-        h3.component__meta__text__title #{component.meta.name}
+      h3.component__meta__text__title #{component.meta.name}
 
       if component.meta.description
         .component__meta__text__description !{component.meta.description}
 
-    .component__meta__buttons
-      if component.meta.name && component.embedType === 'frameless'
-        span.component__meta__buttons__title #{component.meta.name}
-      
+    .component__meta__buttons      
       label.component__meta__buttons__code(for=('toggle-' + component.slug), class="js-code-toggle") code
 
       a.component__meta__buttons__link(href=component.libFile, target="_blank")
@@ -56,12 +51,10 @@ mixin component-code
       - cls.push('is-frameless');
     
     .component(class=cls, id=(component.slug))
+      +component-meta
+      +component-code
+      +component-preview
+
       if component.embedType === 'frameless'
-        +component-code
-        +component-preview
-        +component-meta
-      else 
-        +component-meta
-        +component-code
-        +component-preview
+        span.component__caption #{component.meta.name}
       

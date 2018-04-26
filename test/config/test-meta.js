@@ -24,16 +24,16 @@ const config = {
 
 const expectedMetaChange = `
   Starting design manual
-  - Detected changed configuration (meta)
-  - Forcing pages rebuild
-  - Starting components
-  - Found 0 changed components
-  - Generated components
-  - Starting pages
-  - Found 2 changed pages
-  -- Generated test/config/tmp/page.html
-  -- Generated test/config/tmp/page2.html
-  - Generated pages
+  Detected changed configuration (meta)
+  Forcing pages rebuild
+  Starting components
+  Found 0 changed components
+  Generated components
+  Starting pages
+  Found 2 changed pages
+  Generated test/config/tmp/page.html
+  Generated test/config/tmp/page2.html
+  Generated pages
   Design manual complete
 `;
 

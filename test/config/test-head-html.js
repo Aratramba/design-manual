@@ -28,16 +28,16 @@ test.cb('config: head html change', t => {
 
   const expected = `
     Starting design manual
-    - Detected changed configuration (head html)
-    - Forcing pages rebuild
-    - Starting components
-    - Found 0 changed components
-    - Generated components
-    - Starting pages
-    - Found 2 changed pages
-    -- Generated test/config/tmp/page.html
-    -- Generated test/config/tmp/page2.html
-    - Generated pages
+    Detected changed configuration (head html)
+    Forcing pages rebuild
+    Starting components
+    Found 0 changed components
+    Generated components
+    Starting pages
+    Found 2 changed pages
+    Generated test/config/tmp/page.html
+    Generated test/config/tmp/page2.html
+    Generated pages
     Design manual complete
   `;
 
