@@ -4,9 +4,9 @@
 var rimraf = require('rimraf');
 rimraf.sync('./*.html');
 
-var DesignManual = require('../index');
+var DesignManual = require('../lib/index');
 
-new DesignManual({
+DesignManual.build({
   output: 'docs/',
   pages: 'docs/pages/',
   components: 'examples/components.json',
