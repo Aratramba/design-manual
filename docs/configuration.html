@@ -244,7 +244,15 @@
     threshold: 500,
     elements_selector: 'iframe',
     callback_load: function ($el) {
-      $el.parentNode.parentNode.classList.remove('is-loading');
+      var $component = $el.parentNode.parentNode;
+      $component.classList.remove('is-loading');
+
+      var $codeCheckbox = $component.querySelector('.js-code-toggle');
+
+      if ($codeCheckbox.getAttribute('data-checked')) {
+        $codeCheckbox.checked = true;
+        onToggleCode({ target: $codeCheckbox });
+      }
     },
     callback_error: function ($el) {
       $el.parentNode.parentNode.classList.remove('has-error');
@@ -313,14 +321,14 @@
   */
 
   function onToggleCode(e) {
-    var $component = e.target.parentNode.parentNode.parentNode;
+    var $component = e.target.parentNode;
     var $pre = $component.querySelector('pre code');
     var $source = $component.querySelector('iframe');
     var html = $source.contentWindow.document.body.querySelector('.dm-raw-source').innerHTML;
     $pre.innerHTML = window.Prism.highlight(window.html_beautify(html), window.Prism.languages.markup);
   }
 
-  window.delegate.bind(document.body, '.js-code-toggle', 'click', onToggleCode);
+  window.delegate.bind(document.body, '.js-code-toggle', 'change', onToggleCode);
 
 
   /**

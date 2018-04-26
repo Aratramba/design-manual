@@ -50,6 +50,8 @@ This is section 2
 ### Contents
 !{my-component}
 !!{my-frameless-component}
+${my-component-codeview}
+$${my-frameless-component-codeview}
 </code></pre>
 <h3 id="embedding-components">Embedding components</h3>
 You can embed a component in any page by typing <code>&lt;div class=&quot;component-wrapper&quot;&gt;&lt;div class=&quot;component js-section has-error&quot; id=&quot;component-name&quot;&gt;&lt;h3 class=&quot;component__title&quot;&gt;component-name&lt;/h3&gt;&lt;div class=&quot;component__meta&quot;&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</code>. The tag should be an exact match of a components <code>meta.name</code> in your json file.<h3 id="table-of-contents">Table of contents</h3>
@@ -78,7 +80,15 @@ You can embed a component in any page by typing <code>&lt;div class=&quot;compon
     threshold: 500,
     elements_selector: 'iframe',
     callback_load: function ($el) {
-      $el.parentNode.parentNode.classList.remove('is-loading');
+      var $component = $el.parentNode.parentNode;
+      $component.classList.remove('is-loading');
+
+      var $codeCheckbox = $component.querySelector('.js-code-toggle');
+
+      if ($codeCheckbox.getAttribute('data-checked')) {
+        $codeCheckbox.checked = true;
+        onToggleCode({ target: $codeCheckbox });
+      }
     },
     callback_error: function ($el) {
       $el.parentNode.parentNode.classList.remove('has-error');
@@ -147,14 +157,14 @@ You can embed a component in any page by typing <code>&lt;div class=&quot;compon
   */
 
   function onToggleCode(e) {
-    var $component = e.target.parentNode.parentNode.parentNode;
+    var $component = e.target.parentNode;
     var $pre = $component.querySelector('pre code');
     var $source = $component.querySelector('iframe');
     var html = $source.contentWindow.document.body.querySelector('.dm-raw-source').innerHTML;
     $pre.innerHTML = window.Prism.highlight(window.html_beautify(html), window.Prism.languages.markup);
   }
 
-  window.delegate.bind(document.body, '.js-code-toggle', 'click', onToggleCode);
+  window.delegate.bind(document.body, '.js-code-toggle', 'change', onToggleCode);
 
 
   /**

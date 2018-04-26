@@ -66,6 +66,8 @@ This is section 2
 ### Contents
 !{my-component}
 !!{my-frameless-component}
+${my-component-codeview}
+$${my-frameless-component-codeview}
 
 ```
 
