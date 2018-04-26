@@ -1,1 +1,9 @@
-[]
+[
+  {
+    "meta": {
+      "name": "hello world",
+      "description": "this is my image"
+    },
+    "output": "<img src=\"https://assets.imgix.net/examples/butterfly.jpg?px=50&w=1200&h=50&fit=crop\" alt=\"\" />"
+  }
+]

@@ -15,9 +15,9 @@
   display: block;
   position: absolute;
   top: -35px;
-  right: 0;
+  right: -20px;
   bottom: 0;
-  left: 0;
+  left: -20px;
   background-image: url(./stars.png);
   background-repeat: no-repeat;
   opacity: .1;
@@ -42,25 +42,29 @@
   background-image: url(./stars.png);
   background-position: -346% -79%; 
   background-color: #2A66DC;
-  transition: background-color .15s;
+  transition: background-color .15s, background-position .25s cubic-bezier(0.075, 0.820, 0.165, 1.000);
 }
 
 .lead a:hover {
   background-color: #225BCB;
+  background-position: -363% -79%; 
 }
 
-.features {
-  display: flex;
-}
 
-.features__item {
-  flex: 1;
-}
+@media screen and (min-width: 768px) {
+  .features {
+    display: flex;
+  }
 
-.features__item h2 {
-  max-width: calc(100% - 10px);
-}
+  .features__item {
+    flex: 1;
+  }
 
-.features__item p {
-  max-width: calc(100% - 10px);
+  .features__item h2 {
+    max-width: calc(100% - 10px);
+  }
+
+  .features__item p {
+    max-width: calc(100% - 10px);
+  }
 }

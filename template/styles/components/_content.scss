@@ -159,19 +159,17 @@
     display: inline-block;
   }
 
-  :not(pre) > code[class*="language-"],
-  pre[class*="language-"] {
-    background: transparent;
-  }
-
   code[class*="language-"],
   pre[class*="language-"] {
-    font-size: 12px;
+    font-size: 13.6px;
+    line-height: 19px;
+    background-color: #1B1D23;
+    box-shadow: none;
   }
 
   pre[class*="language-"] {
     border: 1px solid #eee;
-    border-radius: 6px;
+    border-radius: 0;
     margin-bottom: 24px;
   }
 }

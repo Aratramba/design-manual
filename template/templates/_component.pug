@@ -1,3 +1,48 @@
+//- @pugdoc
+  name: Component preview
+
+mixin component-preview
+  .component__preview(class="js-component-preview")
+        span.component__preview__handle(class="js-component-preview-handle")
+          | <svg width="6" height="23" viewBox="0 0 6 23" xmlns="http://www.w3.org/2000/svg"><circle cx="2.5" cy="2.5" r="2.5"/><circle cx="2.5" cy="11.5" r="2.5"/><circle cx="2.5" cy="20.5" r="2.5"/></svg>
+        
+        iframe.component__preview__iframe(data-src=component.libFile frameborder="0" scrolling="no", height=component.height)
+
+
+//- @pugdoc
+  name: Component meta
+
+mixin component-meta
+  .component__meta
+    .component__meta__text
+
+      if component.meta.name
+        h3.component__meta__text__title #{component.meta.name}
+
+      if component.meta.description
+        .component__meta__text__description !{component.meta.description}
+
+    .component__meta__buttons
+      if component.meta.name && component.embedType === 'frameless'
+        span.component__meta__buttons__title #{component.meta.name}
+      
+      label.component__meta__buttons__code(for=('toggle-' + component.slug), class="js-code-toggle") code
+
+      a.component__meta__buttons__link(href=component.libFile, target="_blank")
+        | <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"><path fill="#444" d="M24 26H4V10h4l4-4H2c-.57 0-2 1.478-2 2v20c0 .816.8 2 2 2h24c.342 0 2-1.088 2-2v-8l-4 2v4zM8 24c3.756-6.142 4.798-10 12-10v6l12-9.004L20 2v6C6.732 8 8 24 8 24z"/></svg>
+
+
+//- @pugdoc
+  name: Component code
+
+mixin component-code
+  input(type='checkbox' name='source' id=('toggle-' + component.slug) class="component__toggle")
+  .component__code
+    div.component__code__output
+      pre
+        code.language-markup
+
+
 //- components
 .component-wrapper
   if !component.meta
@@ -6,28 +51,17 @@
       .component__meta
       
   else
-    .component(class="js-section is-loading", id=(component.slug))
-      if component.meta.name
-        h3.component__title #{component.meta.name}
-
-      if component.meta.description
-        .component__description !{component.meta.description}
-
-      input(type='checkbox' name='source' id=('toggle-' + component.slug) class="component__toggle")
-
-      .component__meta
-        label.component__meta__toggle(for=('toggle-' + component.slug), class="js-code-toggle") code
-
-        a.component__meta__link(href=component.libFile, target="_blank")
-          | <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"><path fill="#444" d="M24 26H4V10h4l4-4H2c-.57 0-2 1.478-2 2v20c0 .816.8 2 2 2h24c.342 0 2-1.088 2-2v-8l-4 2v4zM8 24c3.756-6.142 4.798-10 12-10v6l12-9.004L20 2v6C6.732 8 8 24 8 24z"/></svg>
-
-      .component__code
-        div.component__code__output
-          pre
-            code.language-markup
-
-      .component__preview(class="js-component-preview")
-        span.component__preview__handle(class="js-component-preview-handle")
-          | <svg width="6" height="23" viewBox="0 0 6 23" xmlns="http://www.w3.org/2000/svg"><circle cx="2.5" cy="2.5" r="2.5"/><circle cx="2.5" cy="11.5" r="2.5"/><circle cx="2.5" cy="20.5" r="2.5"/></svg>
-        
-        iframe.component__preview__iframe(data-src=component.libFile frameborder="0" scrolling="no", height=component.height)
+    - var cls = ['js-section', 'is-loading'];
+    if component.embedType === 'frameless'
+      - cls.push('is-frameless');
+    
+    .component(class=cls, id=(component.slug))
+      if component.embedType === 'frameless'
+        +component-code
+        +component-preview
+        +component-meta
+      else 
+        +component-meta
+        +component-code
+        +component-preview
+      

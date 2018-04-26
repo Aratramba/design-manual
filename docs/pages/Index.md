@@ -6,7 +6,8 @@
   <a href="">Get started ›</a>
 </div>
 
----
+
+!!{hello world}
 
 <div class="features">
   <div class="features__item">
@@ -24,6 +25,7 @@
 </div>
 
 
+
 ---
 
 ### Install
@@ -39,6 +41,16 @@ npm i design-manual design-manual-scraper --save-dev
 !{my-component1}
 !{my-component2}
 ```
+
+### Document components
+```html
+  <!-- @component
+    name: hello world
+  -->
+
+  <img src="https://assets.imgix.net/examples/butterfly.jpg?px=50&w=1200&h=50&fit=crop" alt="" />
+```
+
 
 ### Setup build flow
 

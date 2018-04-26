@@ -179,7 +179,7 @@ html(lang="en")
           */
 
           function onToggleCode(e) {
-            var $component = e.target.parentNode.parentNode;
+            var $component = e.target.parentNode.parentNode.parentNode;
             var $pre = $component.querySelector('pre code');
             var $source = $component.querySelector('iframe');
             var html = $source.contentWindow.document.body.querySelector('.dm-raw-source').innerHTML;
@@ -212,7 +212,10 @@ html(lang="en")
             }
 
             document.body.classList.add(constants.SCROLLED_IN_SECTION_CLASS);
-            $breadcrumb.innerText = document.getElementById(e.section).innerText;
+            var $section = document.getElementById(e.section);
+            if ($section) {
+              $breadcrumb.innerText = $section.innerText;
+            }
           }
 
 
