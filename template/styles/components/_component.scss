@@ -136,6 +136,10 @@
   display: none;
   width: 100%;
   border: 1px solid $grey;
+
+  pre[class*="language-"] {
+    border: 0;
+  }
 }
 
 /**

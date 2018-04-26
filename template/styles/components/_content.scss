@@ -167,6 +167,10 @@
   code[class*="language-"],
   pre[class*="language-"] {
     font-size: 12px;
-    margin: 0;
+  }
+
+  pre[class*="language-"] {
+    border: 1px solid #eee;
+    border-radius: 6px;
   }
 }
