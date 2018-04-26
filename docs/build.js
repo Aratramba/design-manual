@@ -11,7 +11,7 @@ DesignManual.build({
     { label: 'Github', href: 'https://github.com/EightMedia/design-manual' },
   ],
   meta: {
-    domain: 'github.com/eightmedia/design-manual',
+    domain: 'eightmedia.github.io/design-manual/',
     title: 'Design Manual',
     avatar: './assets/avatar.png',
     version: 'v' + require('../package.json').version
@@ -27,7 +27,7 @@ DesignManual.build({
   `,
   prerender: {
     port: 3000,
-    path: '',
-    serveFolder: process.cwd(),
+    path: '/',
+    serveFolder: 'docs/',
   },
 });
