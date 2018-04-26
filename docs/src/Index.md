@@ -3,7 +3,7 @@
   <br>
   <h1>JAMstack Design System Generator</h1>
   <br>
-  <a href="">Get started ›</a>
+  <a href="/getting-started.html">Get started ›</a>
 </div>
 
 !!{hello world}
@@ -36,7 +36,7 @@
 
 ```js
 const DesignManual = require('design-manual');
-const scraper = require('design-manual-scraper);
+const scraper = require('design-manual-scraper');
 
 // aggregate components
 scraper({

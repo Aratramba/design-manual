@@ -1,7 +1,7 @@
 {
   "name": "design-manual",
-  "version": "0.35.0",
-  "description": "Design manual / style guide",
+  "version": "1.0.0",
+  "description": "JAMstack Design System Generator",
   "main": "lib/index.js",
   "directories": {
     "test": "test"
@@ -55,6 +55,7 @@
   },
   "devDependencies": {
     "ava": "^1.0.0-beta.3",
+    "design-manual-scraper": "^1.1.0",
     "eslint": "^4.3.0",
     "eslint-config-airbnb": "^15.1.0",
     "eslint-config-airbnb-base": "^11.3.1",
@@ -70,7 +71,8 @@
   "keywords": [
     "styleguide",
     "design system",
-    "component library"
+    "component library",
+    "pattern library"
   ],
   "bugs": {
     "url": "https://github.com/EightMedia/design-manual/issues"

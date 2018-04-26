@@ -8,14 +8,14 @@ test('get components height', async t => {
 
     // static file server
     const serve = serveStatic(__dirname);
-    const server = http.createServer(function(req, res) {
+    const server = http.createServer((req, res) => {
       serve(req, res, function (err) {
         res.statusCode = err ? (err.status || 500) : 404
         res.end(err ? err.stack : 'sorry!')
       })
     });
 
-    server.on('listening', function() {
+    server.on('listening', () => {
       let puppet = cp.fork(`lib/puppeteer.js`);
 
       puppet.once('message', function(data) {
