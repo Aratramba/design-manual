@@ -55,12 +55,14 @@
 const DesignManual = require('design-manual');
 const scraper = require('design-manual-scraper');
 
-// aggregate components
+// gather components
 scraper({
   url: 'http://localhost:8000/',
   paths: ['homepage.html', 'page.html'],
   output: 'docs/components.json',
   complete: function() {
+    
+    // build design manual
     DesignManual.build({
       output: 'docs/',
       pages: './',
