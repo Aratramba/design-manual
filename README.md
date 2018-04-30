@@ -6,6 +6,8 @@ https://eightmedia.github.io/design-manual
 
 ---
 
+Gather components from your website and embed them in your Design System.
+
 ```markdown
 # This is my Design System
 
