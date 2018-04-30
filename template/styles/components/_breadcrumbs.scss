@@ -3,19 +3,19 @@
   padding-top: 25px;
   padding-left: 25px;
   font-size: 14px;
-  font-weight: $weight-bold;
+  font-weight: 600;
   opacity: 0;
   transition: opacity .15s;
   position: absolute;
   left: 50px;
   white-space: nowrap;
 
-  @include breakpoint($breakpoint-m){
+  @media (min-width: $breakpoint-m) {
     padding: 22px 20px;
     font-size: 16px;
   }
 
-  @include breakpoint(1300px) {
+  @media (min-width: $breakpoint-xl) {
     left: 0;
   }
 }
@@ -25,7 +25,7 @@
 }
 
 .breadcrumbs__item--current {
-  &:after {
+  &::after {
     opacity: .5;
     margin: 0 7px;
     content: '';

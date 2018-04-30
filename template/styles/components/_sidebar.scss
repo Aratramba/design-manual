@@ -6,11 +6,13 @@
   left: 0;
   background-color: $bg-grey;
   z-index: 3;
-  transition: transform .25s;
+  transition: transform .15s;
   transform: translateX(-$sidebar-width);
   overflow-y: auto;
+  padding-top: 60px;
 
-  @include breakpoint(1300px) {
+  @media (min-width: $breakpoint-xl) {
+    padding-top: 0;
     transform: none;
     border-right: 1px solid #ddd;
   }
@@ -21,7 +23,7 @@
 }
 
 .has-no-headings .sidebar {
-  @include breakpoint(1300px) {
+  @media (min-width: $breakpoint-xl) {
     display: none;
   }
 }
@@ -32,7 +34,7 @@
 */
 
 .sidebar__nav {
-  @include breakpoint($breakpoint-l) {
+  @media (min-width: $breakpoint-l) {
     display: none;
   }
 }
@@ -46,13 +48,23 @@
   background-color: $primary;
   border-bottom: 1px solid rgba(black, .15);
   padding: 22px;
+  position: relative;
 
   &:hover {
     text-decoration: underline;
   }
 
   .is-active & {
-    text-decoration: underline;
+    &::after {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      display: block;
+      content: '';
+      background-color: rgba(0, 0, 0, .1);
+    }
   }
 }
 
@@ -67,19 +79,23 @@
 .sidebar__inpage__item__link {
   display: block;
   text-decoration: none;
-  color: $base-color;
-  font-size: $size-s;
+  color: $text;
+  font-size: 14px;
   line-height: 1.4;
   margin-bottom: 0;
-  padding: 10px 20px;
+  padding: 10px;
+  width: 100%;
+  letter-spacing: -.07px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 
   &:hover {
-    color: $base-dark;
     text-decoration: underline;
   }
 
   .is-active & {
-    font-weight: $weight-bold;
+    font-weight: 600;
   }
 }
 
@@ -87,6 +103,10 @@
 /**
  * Toggles
  */
+
+.hamburger-toggle {
+  display: none;
+}
 
 .hamburger-toggle:checked ~ .sidebar {
   transform: translateX(0);

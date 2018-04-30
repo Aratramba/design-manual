@@ -1,57 +1,69 @@
 {
   "name": "design-manual",
-  "version": "0.35.0",
-  "description": "Design manual / style guide",
-  "main": "index.js",
+  "version": "1.0.0",
+  "description": "JAMstack Design System Generator",
+  "main": "lib/index.js",
   "directories": {
     "test": "test"
   },
   "scripts": {
+    "prepublish": "npm test",
     "template-js-browserify": "browserify template/scripts/index -t uglifyify",
     "template-css-sass": "node-sass template/styles/all.scss | cleancss",
     "template-js": "npm run template-js-browserify -- -o httpdocs/app.min.js",
     "template-css": "npm run template-css-sass -- -o httpdocs/all.min.css",
     "template-html": "jade template/templates/components.pug -o httpdocs",
-    "watch-js": "watchify template/scripts/index.js -o httpdocs/app.min.js",
-    "test": "tape test/*.js | faucet"
+    "watch-js": "watchify template/scripts/index.js -o examples/httpdocs/app.min.js",
+    "test": "ava test/**/*/test*.js --serial --verbose",
+    "test-config": "ava test/config/*.js --serial",
+    "test-validate": "ava test/config/test-validate.js --serial",
+    "test-defaults": "ava test/defaults/test.js --serial",
+    "test-gulp": "ava test/gulp/test.js --serial",
+    "test-interrupt": "ava test/interrupt/test.js --serial",
+    "test-prerender": "ava test/prerender/test.js --serial",
+    "test-puppeteer": "ava test/puppeteer/test.js --serial",
+    "test-render-css": "ava test/render-css/test.js --serial",
+    "test-render-pages": "ava test/render-pages/test.js --serial"
   },
   "author": "Eight Media",
   "license": "ISC",
   "dependencies": {
     "async": "^1.5.0",
     "autoprefixer": "^6.3.3",
-    "browserify": "^11.2.0",
     "clean-css": "^3.4.5",
     "cssmin": "^0.4.3",
+    "death": "^1.1.0",
+    "deep-equal": "^1.0.1",
     "delegate-events": "^1.1.1",
-    "electron": "^1.6.10",
     "events": "^1.1.0",
     "finalhandler": "^1.0.3",
     "html": "^1.0.0",
-    "interact.js": "^1.2.8",
+    "interactjs": "^1.3.3",
     "killable": "^1.0.0",
     "marked": "^0.3.6",
     "minimist": "^1.2.0",
     "mkdirp": "^0.5.1",
     "node-sass": "^4.5.1",
-    "object-assign": "^4.0.1",
     "postcss": "^5.0.19",
-    "pretty": "^1.0.0",
     "pug": "^2.0.0-beta11",
+    "puppeteer": "^1.2.0",
     "recursive-readdir": "^2.2.1",
     "rimraf": "^2.5.2",
     "serve-static": "^1.12.3",
     "slug": "^0.9.1",
     "to-sentence-case": "^1.0.0",
-    "uglifyify": "^3.0.1",
     "vanilla-lazyload": "^5.1.1"
   },
   "devDependencies": {
-    "faucet": "0.0.1",
-    "tape": "^4.2.1",
+    "ava": "^1.0.0-beta.3",
+    "design-manual-scraper": "^1.1.0",
+    "eslint": "^4.3.0",
+    "eslint-config-airbnb": "^15.1.0",
+    "eslint-config-airbnb-base": "^11.3.1",
+    "eslint-plugin-import": "^2.7.0",
+    "gulp": "^3.9.1",
     "is-there": "^4.1.0",
-    "rimraf": "^2.4.3",
-    "watchify": "^3.4.0"
+    "rimraf": "^2.4.3"
   },
   "repository": {
     "type": "git",
@@ -59,8 +71,9 @@
   },
   "keywords": [
     "styleguide",
-    "design",
-    "manual"
+    "design system",
+    "component library",
+    "pattern library"
   ],
   "bugs": {
     "url": "https://github.com/EightMedia/design-manual/issues"

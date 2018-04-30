@@ -10,29 +10,31 @@
     padding: 0 0 50px 0;
     list-style: none;
 
-    @include breakpoint($breakpoint-m) {
+    @media (min-width: $breakpoint-m) {
       column-count: 2;
       column-gap: 20px;
     }
 
-    @include breakpoint($breakpoint-l) {
+    @media (min-width: $breakpoint-l) {
       column-count: 4;
     }
   }
 
   .table-of-contents__list__item {
-    font-size: $size-s;
+    font-size: 14px;
     margin-bottom: 10px;
     line-height: 20px;
     vertical-align: top;
-    position: relative;
     width: 100%;
     display: inline-block;
     vertical-align: top;
   }
 
+  .table-of-contents__list__item--error {
+    text-decoration: line-through;
+  }
+
   .table-of-contents__list__item__link {
-    color: $base-color;
     text-decoration: none;
     margin: 0;
     padding: 0;
@@ -42,7 +44,7 @@
     }
 
     svg {
-      fill: $base-color;
+      fill: $text;
       display: inline-block;
       width: 6px;
       height: 9px;

@@ -11,23 +11,23 @@ html(lang="en")
     | !{headHtml}
 
   body(class=bodyClass, id="top")
-    input(type='checkbox' id='hamburger' class='hamburger-toggle').hide
+    input(type='checkbox' id='hamburger' class='hamburger-toggle')
     label(for='hamburger').close-sidebar
 
     .sidebar
       if navItems.length
         ul.sidebar__nav
           each item in navItems
-              li.sidebar__nav__item(class=(currentPage === item.label ? 'is-active' : ''))
-                a.sidebar__nav__item__link(href=item.link) #{item.label}
+            li.sidebar__nav__item(class=(currentPage.replace(/\//g, '') === item.href.replace(/\//g, '') ? 'is-active' : ''))
+              a.sidebar__nav__item__link(href=item.href, target=item.target) #{item.label}
 
       if headings.length
         ul.sidebar__inpage
           each item in headings
-            li.sidebar__inpage__item(class="js-sidebar__item", data-rel=item.slug)
+            li.sidebar__inpage__item(class="js-sidebar__item", data-rel=item.slug, title=item.label)
               a.sidebar__inpage__item__link(href='\#' + item.slug) #{item.label}
       
-    .wrapper.push
+    .main
       header.header.clearfix
         
         label(for='hamburger').header__link.header__hamburger ☰
@@ -35,49 +35,327 @@ html(lang="en")
           ul.header__nav
             each item in navItems
               li.header__nav__item
-                a.header__nav__item__link(class=(currentPage === item.label ? 'active' : ''), href=rootPath + item.link) #{item.label}
+                a.header__nav__item__link(class=(currentPage.replace(/\//g, '') === item.href.replace(/\//g, '') ? 'is-active' : ''), href=item.href, target=item.target) #{item.label}
 
         if navItems.length
           ul.breadcrumbs
             each item in navItems
               if currentPage === item.label
                 li(class="breadcrumbs__item breadcrumbs__item--current")
-                  a.breadcrumbs__section(href=rootPath + item.link) #{item.label}
+                  a.breadcrumbs__section(href=item.href) #{item.label}
             li.breadcrumbs__item(class="js-breadcrumb")
-
-        input(type='checkbox' class='project-toggle' id='projects').hide
-        label(for='projects').close-projects
         
-        label(for='projects').header__projects
-          .header__project__info
-            .header__project__domain #{meta.domain}
-            .header__project__title 
-              | #{meta.title} 
-              span.header__project__version #{meta.version}
+        .header__meta
+          .header__meta__info
+              .header__meta__info__domain #{meta.domain}
+              .header__meta__info__title
+                | #{meta.title}
+                if meta.version
+                  span.header__meta__info__version #{meta.version}
             
           if meta.avatar
-            img(src=meta.avatar).header__project__avatar
+            img(src=meta.avatar).header__meta__avatar
 
-          if subnav.length
-            span.header__project__icon
-
-        if subnav.length
-          ul.project__list
-            each item in subnav
-              li.project__list__item
-                a.project__list__item__link(href=item.href)
-                  img.project__list__item__avatar(src=item.avatar)
-                  .project__list__item__body
-                    .project__list__item__body__domain #{item.domain}
-                    .project__list__item__body__title #{item.title}
-
-      .container(class="space content") 
+      .content
         | !{content}
         block content
 
       a.scrolltop(href="#top")
 
-      block footer_js
-      script(src=rootPath + 'app.min.js')
+      //- iframes
+      script(src='https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/3.6.0/iframeResizer.min.js', defer)
+      script(src='https://cdnjs.cloudflare.com/ajax/libs/vanilla-lazyload/10.5.2/lazyload.min.js', defer)
+
+      //- prism
+      script(src='https://cdnjs.cloudflare.com/ajax/libs/prism/1.14.0/prism.min.js' defer)
+      script(src='https://cdnjs.cloudflare.com/ajax/libs/prism/1.14.0/components/prism-markup-templating.js' defer)
+      script(src='https://cdnjs.cloudflare.com/ajax/libs/prism/1.14.0/components/prism-scss.min.js' defer)
+      script(src='https://cdnjs.cloudflare.com/ajax/libs/prism/1.14.0/components/prism-css.min.js' defer)
+      script(src='https://cdnjs.cloudflare.com/ajax/libs/prism/1.14.0/components/prism-clike.min.js' defer)
+      script(src='https://cdnjs.cloudflare.com/ajax/libs/prism/1.14.0/components/prism-javascript.min.js' defer)
+      script(src='https://cdnjs.cloudflare.com/ajax/libs/prism/1.14.0/components/prism-diff.min.js' defer)
+      script(src='https://cdnjs.cloudflare.com/ajax/libs/prism/1.14.0/components/prism-json.min.js' defer)
+      script(src='https://cdnjs.cloudflare.com/ajax/libs/prism/1.14.0/components/prism-markdown.min.js' defer)
+      script(src='https://cdnjs.cloudflare.com/ajax/libs/prism/1.14.0/components/prism-bash.min.js' defer)
+      script(src='https://cdnjs.cloudflare.com/ajax/libs/prism/1.14.0/components/prism-markdown.min.js' defer)
+
+      //- html beautify      
+      script(src='https://cdnjs.cloudflare.com/ajax/libs/js-beautify/1.7.5/beautify-html.min.js', defer)
+
+      //- interact
+      script(src='https://unpkg.com/interactjs@1.3.3/dist/interact.min.js', defer)
+
+      //- delegate
+      script.
+        !function e(t, n, r) { function o(c, u) { if (!n[c]) { if (!t[c]) { var a = "function" == typeof require && require; if (!u && a) return a(c, !0); if (i) return i(c, !0); var f = new Error("Cannot find module '" + c + "'"); throw f.code = "MODULE_NOT_FOUND", f } var d = n[c] = { exports: {} }; t[c][0].call(d.exports, function (e) { var n = t[c][1][e]; return o(n || e) }, d, d.exports, e, t, n, r) } return n[c].exports } for (var i = "function" == typeof require && require, c = 0; c < r.length; c++)o(r[c]); return o }({ 1: [function (e, t, n) { window.delegate = e("delegate-events") }, { "delegate-events": 4 }], 2: [function (e, t, n) { var r = e("matches-selector"); t.exports = function (e, t, n) { for (var o = n ? e : e.parentNode; o && o !== document;) { if (r(o, t)) return o; o = o.parentNode } } }, { "matches-selector": 5 }], 3: [function (e, t, n) { var r, o, i; function c() { r = window.addEventListener ? "addEventListener" : "attachEvent", o = window.removeEventListener ? "removeEventListener" : "detachEvent", i = "addEventListener" !== r ? "on" : "" } n.bind = function (e, t, n, o) { return r || c(), e[r](i + t, n, o || !1), n }, n.unbind = function (e, t, n, r) { return o || c(), e[o](i + t, n, r || !1), n } }, {}], 4: [function (e, t, n) { var r = e("closest"), o = e("component-event"), i = ["focus", "blur"]; n.bind = function (e, t, n, c, u) { return -1 !== i.indexOf(n) && (u = !0), o.bind(e, n, function (n) { var o = n.target || n.srcElement; n.delegateTarget = r(o, t, !0, e), n.delegateTarget && c.call(e, n) }, u) }, n.unbind = function (e, t, n, r) { -1 !== i.indexOf(t) && (r = !0), o.unbind(e, t, n, r) } }, { closest: 2, "component-event": 3 }], 5: [function (e, t, n) { var r = Element.prototype, o = r.matchesSelector || r.webkitMatchesSelector || r.mozMatchesSelector || r.msMatchesSelector || r.oMatchesSelector; t.exports = function (e, t) { if (o) return o.call(e, t); for (var n = e.parentNode.querySelectorAll(t), r = 0; r < n.length; ++r)if (n[r] == e) return !0; return !1 } }, {}] }, {}, [1]);
+
+      //- inlined all script for faster rendering
+      script.
+
+        function setupDesignManual() {
+          var constants = {
+            EVENT_SECTION_INVIEW: 'section-in-view',
+            LOADING_CLASS: 'is-loading',
+            ACTIVE_CLASS: 'is-active',
+            RESIZING_CLASS: 'is-resizing',
+            SCROLLED_IN_SECTION_CLASS: 'is-scrolled-in-section'
+          };
+
+
+          /**
+          * Make iframes lazy load
+          */
+
+          new window.LazyLoad({
+            threshold: 500,
+            elements_selector: 'iframe',
+            callback_load: function ($el) {
+              var $component = $el.parentNode.parentNode;
+              $component.classList.remove('is-loading');
+
+              var $codeCheckbox = $component.querySelector('.js-code-toggle');
+
+              if ($codeCheckbox.getAttribute('data-checked') === 'true') {
+                $codeCheckbox.checked = true;
+                onToggleCode({ target: $codeCheckbox });
+              }
+            },
+            callback_error: function ($el) {
+              $el.parentNode.parentNode.classList.remove('has-error');
+            }
+          });
+
+          
+          /**
+          * Make iframe auto resize
+          */
+
+          window.iFrameResize({ checkOrigin: false });
+
+
+          /**
+          * Make component preview resizable
+          */
+
+          window.interact('.js-component-preview').resizable({
+            edges: {
+              left: false,
+              right: '.js-component-preview-handle',
+              bottom: false,
+              top: false
+            },
+            onmove: function (e) {
+              e.target.style.width = e.rect.width + 'px';
+              e.target.classList.add(constants.RESIZING_CLASS);
+              e.target.querySelector('iframe').contentWindow.parentIFrame.size();
+            },
+            onend: function (e) {
+              e.target.classList.remove(constants.RESIZING_CLASS);
+            }
+          });
+
+
+          /**
+          * Highlight all code snippets
+          */
+
+          window.Prism.highlightAll();
+
+
+          /**
+          * Scroll to anchor with offset
+          */
+
+          function scrollWithOffset(href) {
+            var $el = document.querySelector(href);
+            if ($el) {
+              var top = $el.getBoundingClientRect().top;
+              var $header = document.querySelector('.header');
+              if ($header) {
+                top -= $header.getBoundingClientRect().height;
+              }
+              window.scrollBy(0, top - 20);
+              onScroll();
+            }
+          }
+
+
+          /**
+          * Capture toggle code clicks
+          * and place html code inside a pre tag
+          * and finally beautify and highlight code
+          */
+
+          function onToggleCode(e) {
+            var $component = e.target.parentNode;
+            var $pre = $component.querySelector('pre code');
+            var $source = $component.querySelector('iframe');
+            var html = $source.contentWindow.document.body.querySelector('.dm-raw-source').innerHTML;
+            $pre.innerHTML = window.Prism.highlight(window.html_beautify(html), window.Prism.languages.markup);
+          }
+
+          window.delegate.bind(document.body, '.js-code-toggle', 'change', onToggleCode);
+
+ 
+          /**
+          * Section
+          */
+
+          var $sections = document.querySelectorAll('.content h2');
+          var $currentSection = null;
+
+
+          /**
+          * This changes the breadcrumb title
+          * to the currently visible section
+          */
+
+          function setBreadcrumb(e) {
+            var $breadcrumb = document.querySelector('.js-breadcrumb');
+
+            if (e.section === null) {
+              document.body.classList.remove(constants.SCROLLED_IN_SECTION_CLASS);
+              $breadcrumb.innerText = '';
+              return;
+            }
+
+            document.body.classList.add(constants.SCROLLED_IN_SECTION_CLASS);
+            var $section = document.getElementById(e.section);
+            if ($section) {
+              $breadcrumb.innerText = $section.innerText;
+            }
+          }
+
+
+          /**
+          * Highlight the currently active section
+          * in the sidebar navigation
+          */
+
+          function highLightSidebarItem(e) {
+            var $navLinks = document.querySelectorAll('.js-sidebar__item');
+            var i = 0;
+            var l = $navLinks.length;
+            var $item;
+
+            for (; i < l; i++) {
+              $item = $navLinks[i];
+              if ($item.getAttribute('data-rel') === e.section) {
+                $item.classList.add(constants.ACTIVE_CLASS);
+              } else {
+                $item.classList.remove(constants.ACTIVE_CLASS);
+              }
+            }
+          }
+
+
+          /**
+          * In view check
+          */
+
+          function isAnyPartOfElementInViewport($el) {
+            var  rect = $el.getBoundingClientRect();
+            var  windowHeight = (window.innerHeight || document.documentElement.clientHeight);
+            var  windowWidth = (window.innerWidth || document.documentElement.clientWidth);
+            var  vertInView = (rect.top <= windowHeight) && ((rect.top + rect.height) >= 0);
+            var  horInView = (rect.left <= windowWidth) && ((rect.left + rect.width) >= 0);
+            return (vertInView && horInView);
+          }
+
+
+          /**
+          * on scroll, check which section is in view
+          */
+
+          function onScroll() {
+            var $prevSection = $currentSection;
+
+            var i = 0;
+            var l = $sections.length;
+            var rect;
+            var h = window.innerHeight;
+
+            for (; i < l; i++) {
+              if (isAnyPartOfElementInViewport($sections[i])) {
+                $currentSection = $sections[i];
+              }
+            }
+
+            // scrolled above first section
+            if ($sections[0]) {
+              if (document.body.scrollTop < $sections[0].getBoundingClientRect().top) {
+                $currentSection = null;
+              }
+            }
+
+            // entered new section   
+            if ($prevSection !== $currentSection) {
+              if ($currentSection) {
+                highLightSidebarItem({ section: $currentSection.id });
+                setBreadcrumb({ section: $currentSection.id });
+                return;
+              }
+
+              highLightSidebarItem({ section: null });
+              setBreadcrumb({ section: null });
+            }
+          }
+
+          window.addEventListener('scroll', onScroll, { passive: true });
+          onScroll();
+
+
+          /**
+          * Internal link click handler
+          */
+
+          function onLinkClick(e) {
+            var href = e.delegateTarget.getAttribute('href');
+
+            // check if it's an anchor link
+            if (href && document.querySelector(href)) {
+
+              // stop scroll
+              e.preventDefault();
+
+              // scroll to element
+              scrollWithOffset(href)
+
+              // replace history item
+              history.replaceState(null, null, href);
+
+              // close offcanvas just in case
+              document.getElementById('hamburger').checked = false;
+            }
+          }
+
+          window.delegate.bind(document.body, 'a', 'click', onLinkClick);
+
+
+          /**
+          * Initial scroll to anchor when location.hash is set
+          */
+
+          if (location.hash) {
+            setTimeout(function () {
+              scrollWithOffset(location.hash)
+            }, 0);
+          }
+        };
+
+
+        /**
+        * Wait for all deferred external libraries to be loaded
+        * then call setup
+        */
+
+        function pollDependenciesReady() {          
+          if (window.LazyLoad && window.Prism && window.iFrameResize && window.interact && window.html_beautify) {
+            return setupDesignManual();
+          }
+          setTimeout(pollDependenciesReady, 10);
+        } 
+
+        pollDependenciesReady();
 
       | !{bodyHtml}

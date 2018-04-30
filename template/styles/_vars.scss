@@ -1,30 +1,13 @@
-$wrapper: 1160px;
-$sidebar-width: 240px;
+$sidebar-width: 200px;
 
 $grey: #ddd;
+$text: #666;
+$bg-grey: #F4F5F7;
 
-// Text colors
-$base-color: #666;
-$base-dark: #333;
-$base-mediumdark: #555;
-
-
-// Specific colors
-$bg-grey: #F5F5F5;
-
-$size-xxs: 11px;
-$size-xs: 13px;
-$size-s: 14px;
-$size-m: 16px; // Base size
-$size-l: 17px;
-
-$weight-bold: 600;
-
-$primary: STEELBLUE;
+$primary: #2A66DC;
 $primary-contrast: WHITESMOKE;
 
-
-// breakpoints
 $breakpoint-s: 500px;
 $breakpoint-m: 750px;
 $breakpoint-l: 990px;
+$breakpoint-xl: 1300px;

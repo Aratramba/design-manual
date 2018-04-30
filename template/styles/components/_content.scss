@@ -1,24 +1,41 @@
 .content {
+
   h1 { 
-    @include title-xl; 
+    line-height: 1.2;
+    font-size: 40px;
+    font-weight: 600;
+    color: $primary;
     margin-bottom: 20px;
+    max-width: 740px;
   }
 
-  h2 { 
-    @include title-l; 
+  h2 {
+    line-height: 1.2;
+    font-size: 20px;
+    font-weight: 600;
     margin-bottom: 10px;
+    max-width: 740px;
   }
 
   h3,
   h4,
   h5,
   h6 { 
-    @include title-xs; 
+    font-weight: 600;
+    line-height: 1.2;
+    margin-bottom: 17px;
+    font-size: 16px;
     margin-bottom: 10px;
+    max-width: 740px;
   }
 
-  p {
-    @include text-small;
+  p,
+  li {
+    line-height: 1.7;
+    margin-bottom: 1em;
+    font-weight: 400;
+    font-size: 15px;
+    max-width: 740px;
   }
   
   ol,
@@ -38,17 +55,20 @@
   }
 
   li {
-    @include text-small;
     margin-bottom: 0;
   }
 
   a {
-    color: currentColor;
+    color: #4183C4;
     text-decoration: underline;
 
     &:hover {
       text-decoration: none;
     }
+  }
+
+  strong {
+    font-weight: bold;
   }
 
 
@@ -58,34 +78,58 @@
 
   table {
     width: 100%;
+    border: 1px dotted $grey;
+    border-bottom: 0;
     margin-bottom: 1em;
 
     caption {
-      background: darken($bg-grey, 5%);
       padding: .7em 15px;
       text-align: left;
       font-size: 1.3em;
-      border-bottom: solid 2px #fff;
       margin: auto -3px;
       border-radius: 3px;
     }
 
     th {
       font-weight: bold;
+      background-color: $bg-grey;
+      border-right: 1px dotted $grey;
+
+      &:last-of-type {
+        border-right: 0;
+      }
+    }
+
+    td {      
+      background: white;
+      border-bottom: 1px dotted $grey;
+      border-right: 1px dotted $grey;
+
+      &:last-of-type {
+        border-right: 0;
+      }
     }
 
     td,
     th {
-      background: $bg-grey;
       padding: .7em 15px;
       text-align: left;
+      line-height: 1.7;
+      font-weight: 400;
+      font-size: 15px;
+
+      &:empty {
+        &::after {
+          content: '';
+          display: block;
+          height: 1em;
+        }
+      }
     }
 
     thead {
       td,
       th {
-        background: darken($bg-grey, 5%);
-        border: solid 1px darken($bg-grey, 10%);
         font-weight: bold;
       }
     }
@@ -94,32 +138,48 @@
       td,
       th {
         vertical-align: top;
-        border: solid 1px darken($bg-grey, 10%);
       }
     }
+  }
 
-    tr {
-      &:first-child {
-        & > td,
-        & > th {
-          border-top: 0;
-        }
-      }
+  
+  hr {
+    border: 0;
+    background-color: $grey;
+    height: 1px;
+    margin: 50px 0;
+  }
 
-      &:last-child {
-        & > td,
-        & > th {
-          border-bottom: 0;
-        }
-      }
+  h1 code,
+  h2 code,
+  h3 code,
+  h4 code,
+  h5 code,
+  h6 code,
+  td code,
+  th code,
+  li code,
+  p code {
+    padding: 0 3px;
+    margin: 0;
+    font-size: .85em;
+    background-color: rgba(27, 31, 35, .05);
+    border-radius: 3px;
+    font-family: monospace;
+    display: inline-block;
+  }
 
-      & > :first-child {
-        border-left: 0;
-      }
+  code[class*="language-"],
+  pre[class*="language-"] {
+    font-size: 13.6px;
+    line-height: 19px;
+    background-color: #1B1D23;
+    box-shadow: none;
+  }
 
-      & > :last-child {
-        border-right: 0;
-      }
-    }
+  pre[class*="language-"] {
+    border: 1px solid #eee;
+    border-radius: 0;
+    margin-bottom: 24px;
   }
 }

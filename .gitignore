@@ -26,5 +26,8 @@ build/Release
 # https://www.npmjs.org/doc/misc/npm-faq.html#should-i-check-my-node_modules-folder-into-git
 node_modules
 
-test/tmp
+**/tmp
 .DS_STORE
+.vscode
+test/defaults/tmp/all.min.css
+test/interrupt/tmp/all.min.css
