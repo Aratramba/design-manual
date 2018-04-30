@@ -25,7 +25,7 @@ server.on('listening', () => {
         pages: 'docs/src/',
         components: 'docs/components.json',
         nav: [
-          { label: '🏡', href: '/' },
+          { label: '🏡', href: 'index.html' },
           { label: 'Getting started', href: 'getting-started.html' },
           { label: 'Configuration', href: 'configuration.html' },
           { label: 'Examples', href: 'examples.html' },
