@@ -42,7 +42,7 @@ DesignManual.build({
 });
 ```
 
-See [configuration](/configuration.html) for more information.
+See [configuration](configuration.html) for more information.
 
 ---
 

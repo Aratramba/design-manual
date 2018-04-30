@@ -3,7 +3,7 @@
   <br>
   <h1>Unopinionated Design System Generator</h1>
   <br>
-  <a href="/getting-started.html">Get started ›</a>
+  <a href="./getting-started.html">Get started ›</a>
 </div>
 
 !!{hello world}

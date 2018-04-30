@@ -26,9 +26,9 @@ server.on('listening', () => {
         components: 'docs/components.json',
         nav: [
           { label: '🏡', href: '/' },
-          { label: 'Getting started', href: '/getting-started.html' },
-          { label: 'Configuration', href: '/configuration.html' },
-          { label: 'Examples', href: '/examples.html' },
+          { label: 'Getting started', href: 'getting-started.html' },
+          { label: 'Configuration', href: 'configuration.html' },
+          { label: 'Examples', href: 'examples.html' },
           { label: 'Github ↗', href: 'https://github.com/EightMedia/design-manual', target: '_blank' },
         ],
         meta: {
