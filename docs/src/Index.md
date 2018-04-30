@@ -86,6 +86,5 @@ scraper({
 > Generated pages
 > Design manual complete
 ```
----
 
 !{hello world}

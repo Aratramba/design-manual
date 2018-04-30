@@ -52,6 +52,7 @@ DesignManual.build({
 | nav                     | []            | array           | array of objects with navigation items  |
 | - {}.label              |               | string          | label of the navigation item |
 | - {}.href               |               | string          | link for the navigation item |
+| - {}.target             |               | string          | use _blank for new window |
 | headHtml                | ''            | string          | string of html to include in the head |
 | bodyHtml                | ''            | string          | string of html to include in the body |
 | componentHeadHtml       | ''            | string          | string of html to include in the head of the component |

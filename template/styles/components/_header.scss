@@ -22,7 +22,7 @@
 
 .has-no-headings .header__hamburger {
   @media (min-width: $breakpoint-l) {
-    color: transparent;
+    display: none;
   }
 }
 
@@ -91,7 +91,7 @@
     text-decoration: underline;
   }
 
-  &.active {
+  &.is-active {
     background-color: rgba(0, 0, 0, .1);
   }
 }
