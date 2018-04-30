@@ -1,7 +1,7 @@
 <div class="lead">
   <img src="./assets/logo.png" height="100" />
   <br>
-  <h1>JAMstack Design System Generator</h1>
+  <h1>Unopinionated Design System Generator</h1>
   <br>
   <a href="/getting-started.html">Get started ›</a>
 </div>
@@ -10,16 +10,16 @@
 
 <div class="features">
   <div class="features__item">
-    <h2>Component library</h2>
-    <p>Use HTML comments on your site to document your components.</p>
+    <h2>Full component library</h2>
+    <p>Mix documentation with real life components to get an active representation of your websites components.</p>
   </div>
   <div class="features__item">
-    <h2>Generate pages</h2>
-    <p>Write markdown documentation and embed your components.</p>
+    <h2>Write free form markdown</h2>
+    <p>Write your pages in free form markdown and embed your `!​{components}` wherever you want.</p>
   </div>
   <div class="features__item">
     <h2>Always up to date</h2>
-    <p>Integrated in your build pipeline.</p>
+    <p>Integrated in your build pipeline so it always reflects the current state of your website.</p>
   </div>
 </div>
 
@@ -32,7 +32,24 @@
 > npm i design-manual design-manual-scraper --save-dev
 ```
 
-### Setup
+### Tag your HTML components
+
+```html
+  <!-- @component
+    name: hello world
+    description: This is my first component
+  -->
+
+  <img src="https://assets.imgix.net/examples/butterfly.jpg?px=50&w=1200&h=50&fit=crop" alt="" />
+```
+
+### Embed components in markdown
+
+```md
+!{hello world}
+```
+
+### Build
 
 ```js
 const DesignManual = require('design-manual');
@@ -43,7 +60,7 @@ scraper({
   url: 'http://localhost:8000/',
   paths: ['homepage.html', 'page.html'],
   output: 'docs/components.json',
-  complete: function(results) {
+  complete: function() {
     DesignManual.build({
       output: 'docs/',
       pages: './',
@@ -55,23 +72,6 @@ scraper({
     });
   }
 });
-```
-
-### Write HTML
-
-```html
-  <!-- @component
-    name: hello world
-    description: This is my first component
-  -->
-
-  <img src="https://assets.imgix.net/examples/butterfly.jpg?px=50&w=1200&h=50&fit=crop" alt="" />
-```
-
-### Write markdown
-
-```md
-!{hello world}
 ```
 
 ```bash

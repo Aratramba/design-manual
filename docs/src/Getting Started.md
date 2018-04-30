@@ -7,7 +7,7 @@ First you need to install Design Manual.
 ```
 
 ## Components
-Then you need to setup your build pipeline. You can automate component aggregation using our [website scraper](https://www.npmjs.com/package/design-manual-scraper) to look for HTML-comments on your (local) website, [Pug-doc](https://www.npmjs.com/package/pug-doc) if you're using Pug, or some other way - as long as it results in a components.json file, looking like this:
+Then you need to setup your build pipeline. You can automate component aggregation using [Design Manual Scraper](https://www.npmjs.com/package/design-manual-scraper) to look for HTML-comments on your (local) website, [Pug-doc](https://www.npmjs.com/package/pug-doc) if you're using Pug, or some other way - as long as it results in a components.json file, looking like this:
 
 ```json
 [
@@ -67,43 +67,38 @@ This is section 2
 !{my-component}
 ```
 
+---
+
 ### Embedding components
-You can embed a component in any page by typing wrapping the components name in !​{}.
+You can embed a component in any page by typing wrapping the components name in `!​{}`.
 The tag should be an exact match of a components `meta.name` in your json file.
 
 ```markdown
 !{component-name}
 ```
 
-For a simpler view of the component, with buttons only visible on mouse over and without the description:
+!{hello world}
 
-```markdown
-!!{my-frameless-component}
-```
+Use double exclamation marks for a simpler view of the component  `!!​{}`, with buttons only visible on mouse over and without the description:
 
-For a code-first view of the component:
+!!{hello world}
 
-```markdown
-${my-component-codeview}
-```
+For a code-first view of the component use `$​{}` or `$$​{}`
 
-Or for a simpler view of the component:
-
-```markdown
-$${my-frameless-component-codeview}
-```
-
----
-  
-### Table of contents
-Use `### Contents` to insert a components table of contents. It will contain all components coming after the contents heading. It will scan for components until it encounters another table of contents heading, or the end of the page.
-
-If you want to change the text of this heading, edit the `contentsFlag` option when setting up.
+${hello world}
+$${hello world}
 
 ---
 
 ### Sidebar
 All H2's on the page will be used to create in-page-links in the sidebar navigation.
+
+---
+
+### Table of contents
+Use `### Contents` to insert a components table of contents. It will contain all components coming after the contents heading. It will scan for components until it encounters another table of contents heading, or the end of the page.
+
+If you want to change the text of this heading, edit the `contentsFlag` option when setting up.
 
 ---
 

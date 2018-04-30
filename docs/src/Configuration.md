@@ -70,7 +70,7 @@ DesignManual.build({
 ---
 
 ## Custom styling
-You can customize the look and feel by adding an extra css file a style tag through the `headHtml` option:
+You can customize the look and feel by adding an extra css file or a style tag through the `headHtml` option:
 
 ```js
 {

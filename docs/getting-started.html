@@ -5,7 +5,7 @@
 <pre><code class="lang-bash">&gt; npm i design-manual design-manual-scraper --save-dev
 </code></pre>
 <h2 id="components">Components</h2>
-<p>Then you need to setup your build pipeline. You can automate component aggregation using our <a href="https://www.npmjs.com/package/design-manual-scraper">website scraper</a> to look for HTML-comments on your (local) website, <a href="https://www.npmjs.com/package/pug-doc">Pug-doc</a> if you&#39;re using Pug, or some other way - as long as it results in a components.json file, looking like this:</p>
+<p>Then you need to setup your build pipeline. You can automate component aggregation using <a href="https://www.npmjs.com/package/design-manual-scraper">Design Manual Scraper</a> to look for HTML-comments on your (local) website, <a href="https://www.npmjs.com/package/pug-doc">Pug-doc</a> if you&#39;re using Pug, or some other way - as long as it results in a components.json file, looking like this:</p>
 <pre><code class="lang-json">[
   {
     &quot;meta&quot;: {
@@ -50,27 +50,26 @@ This is section 2
 ### Contents
 !{my-component}
 </code></pre>
+<hr>
 <h3 id="embedding-components">Embedding components</h3>
-<p>You can embed a component in any page by typing wrapping the components name in !​{}.
+<p>You can embed a component in any page by typing wrapping the components name in <code>!​{}</code>.
 The tag should be an exact match of a components <code>meta.name</code> in your json file.</p>
 <pre><code class="lang-markdown">!{component-name}
 </code></pre>
-<p>For a simpler view of the component, with buttons only visible on mouse over and without the description:</p>
-<pre><code class="lang-markdown">!!{my-frameless-component}
-</code></pre>
-<p>For a code-first view of the component:</p>
-<pre><code class="lang-markdown">${my-component-codeview}
-</code></pre>
-<p>Or for a simpler view of the component:</p>
-<pre><code class="lang-markdown">$${my-frameless-component-codeview}
-</code></pre>
+<div class="component-wrapper"><div class="component js-section is-loading" id="hello-world"><div class="component__meta"><div class="component__meta__text"><h3 class="component__meta__text__title">hello world</h3><div class="component__meta__text__description"><p>This is my first component</p>
+</div></div><div class="component__meta__buttons">     <label class="component__meta__buttons__code" for="toggle-hello-world">code</label><a class="component__meta__buttons__link" href="./lib/hello-world.html" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"><path fill="#444" d="M24 26H4V10h4l4-4H2c-.57 0-2 1.478-2 2v20c0 .816.8 2 2 2h24c.342 0 2-1.088 2-2v-8l-4 2v4zM8 24c3.756-6.142 4.798-10 12-10v6l12-9.004L20 2v6C6.732 8 8 24 8 24z"/></svg></a></div></div><input class="component__toggle js-code-toggle" type="checkbox" name="source" id="toggle-hello-world" data-checked="false"/><div class="component__code"><div class="component__code__output"><pre><code class="language-markup"></code></pre></div></div><div class="component__preview js-component-preview"><span class="component__preview__handle js-component-preview-handle"><svg width="6" height="23" viewBox="0 0 6 23" xmlns="http://www.w3.org/2000/svg"><circle cx="2.5" cy="2.5" r="2.5"/><circle cx="2.5" cy="11.5" r="2.5"/><circle cx="2.5" cy="20.5" r="2.5"/></svg></span><iframe class="component__preview__iframe" data-src="./lib/hello-world.html" frameborder="0" scrolling="no" height="70"></iframe></div></div></div><p>Use double exclamation marks for a simpler view of the component  <code>!!​{}</code>, with buttons only visible on mouse over and without the description:</p>
+<div class="component-wrapper"><div class="component js-section is-loading is-frameless" id="hello-world-2"><div class="component__meta"><div class="component__meta__text"><h3 class="component__meta__text__title">hello world</h3><div class="component__meta__text__description"><p>This is my first component</p>
+</div></div><div class="component__meta__buttons">     <label class="component__meta__buttons__code" for="toggle-hello-world-2">code</label><a class="component__meta__buttons__link" href="./lib/hello-world.html" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"><path fill="#444" d="M24 26H4V10h4l4-4H2c-.57 0-2 1.478-2 2v20c0 .816.8 2 2 2h24c.342 0 2-1.088 2-2v-8l-4 2v4zM8 24c3.756-6.142 4.798-10 12-10v6l12-9.004L20 2v6C6.732 8 8 24 8 24z"/></svg></a></div></div><input class="component__toggle js-code-toggle" type="checkbox" name="source" id="toggle-hello-world-2" data-checked="false"/><div class="component__code"><div class="component__code__output"><pre><code class="language-markup"></code></pre></div></div><div class="component__preview js-component-preview"><span class="component__preview__handle js-component-preview-handle"><svg width="6" height="23" viewBox="0 0 6 23" xmlns="http://www.w3.org/2000/svg"><circle cx="2.5" cy="2.5" r="2.5"/><circle cx="2.5" cy="11.5" r="2.5"/><circle cx="2.5" cy="20.5" r="2.5"/></svg></span><iframe class="component__preview__iframe" data-src="./lib/hello-world.html" frameborder="0" scrolling="no" height="70"></iframe></div><span class="component__caption">hello world</span></div></div><p>For a code-first view of the component use <code>$​{}</code> or <code>$$​{}</code></p>
+<div class="component-wrapper"><div class="component js-section is-loading" id="hello-world-3"><div class="component__meta"><div class="component__meta__text"><h3 class="component__meta__text__title">hello world</h3><div class="component__meta__text__description"><p>This is my first component</p>
+</div></div><div class="component__meta__buttons">     <label class="component__meta__buttons__code" for="toggle-hello-world-3">code</label><a class="component__meta__buttons__link" href="./lib/hello-world.html" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"><path fill="#444" d="M24 26H4V10h4l4-4H2c-.57 0-2 1.478-2 2v20c0 .816.8 2 2 2h24c.342 0 2-1.088 2-2v-8l-4 2v4zM8 24c3.756-6.142 4.798-10 12-10v6l12-9.004L20 2v6C6.732 8 8 24 8 24z"/></svg></a></div></div><input class="component__toggle js-code-toggle" type="checkbox" name="source" id="toggle-hello-world-3" data-checked="true"/><div class="component__code"><div class="component__code__output"><pre><code class="language-markup"></code></pre></div></div><div class="component__preview js-component-preview"><span class="component__preview__handle js-component-preview-handle"><svg width="6" height="23" viewBox="0 0 6 23" xmlns="http://www.w3.org/2000/svg"><circle cx="2.5" cy="2.5" r="2.5"/><circle cx="2.5" cy="11.5" r="2.5"/><circle cx="2.5" cy="20.5" r="2.5"/></svg></span><iframe class="component__preview__iframe" data-src="./lib/hello-world.html" frameborder="0" scrolling="no" height="70"></iframe></div></div></div>
+<div class="component-wrapper"><div class="component js-section is-loading is-frameless" id="hello-world-4"><div class="component__meta"><div class="component__meta__text"><h3 class="component__meta__text__title">hello world</h3><div class="component__meta__text__description"><p>This is my first component</p>
+</div></div><div class="component__meta__buttons">     <label class="component__meta__buttons__code" for="toggle-hello-world-4">code</label><a class="component__meta__buttons__link" href="./lib/hello-world.html" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"><path fill="#444" d="M24 26H4V10h4l4-4H2c-.57 0-2 1.478-2 2v20c0 .816.8 2 2 2h24c.342 0 2-1.088 2-2v-8l-4 2v4zM8 24c3.756-6.142 4.798-10 12-10v6l12-9.004L20 2v6C6.732 8 8 24 8 24z"/></svg></a></div></div><input class="component__toggle js-code-toggle" type="checkbox" name="source" id="toggle-hello-world-4" data-checked="true"/><div class="component__code"><div class="component__code__output"><pre><code class="language-markup"></code></pre></div></div><div class="component__preview js-component-preview"><span class="component__preview__handle js-component-preview-handle"><svg width="6" height="23" viewBox="0 0 6 23" xmlns="http://www.w3.org/2000/svg"><circle cx="2.5" cy="2.5" r="2.5"/><circle cx="2.5" cy="11.5" r="2.5"/><circle cx="2.5" cy="20.5" r="2.5"/></svg></span><iframe class="component__preview__iframe" data-src="./lib/hello-world.html" frameborder="0" scrolling="no" height="70"></iframe></div><span class="component__caption">hello world</span></div></div><hr>
+<h3 id="sidebar">Sidebar</h3>
+<p>All H2&#39;s on the page will be used to create in-page-links in the sidebar navigation.</p>
 <hr>
 <h3 id="table-of-contents">Table of contents</h3>
 <p>Use <code>### Contents</code> to insert a components table of contents. It will contain all components coming after the contents heading. It will scan for components until it encounters another table of contents heading, or the end of the page.</p>
 <p>If you want to change the text of this heading, edit the <code>contentsFlag</code> option when setting up.</p>
-<hr>
-<h3 id="sidebar">Sidebar</h3>
-<p>All H2&#39;s on the page will be used to create in-page-links in the sidebar navigation.</p>
 <hr>
 <h3 id="markdown">Markdown</h3>
 <p>Markdown is parsed using <a href="https://github.com/chjj/marked">marked</a>. HTML is allowed.</p>
