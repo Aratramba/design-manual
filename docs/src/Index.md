@@ -10,7 +10,7 @@
 
 <div class="features">
   <div class="features__item">
-    <h2>Full component library</h2>
+    <h2>Active component library</h2>
     <p>Mix documentation with real life components to get an active representation of your websites components.</p>
   </div>
   <div class="features__item">
