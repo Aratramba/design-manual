@@ -42,6 +42,6 @@ test.cb('config: nav change', t => {
   `;
 
   buildAndMatchLogs(null, config, null, () => {
-    buildAndMatchLogs(t, Object.assign(config, { nav: '[1]' }), expected);
+    buildAndMatchLogs(t, Object.assign(config, { nav: [{ label: '🏡', href: '/' }] }), expected);
   });
 });

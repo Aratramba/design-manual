@@ -98,7 +98,7 @@ The tag should be an exact match of a components <code>meta.name</code> in your 
 
       var $codeCheckbox = $component.querySelector('.js-code-toggle');
 
-      if ($codeCheckbox.getAttribute('data-checked') === true) {
+      if ($codeCheckbox.getAttribute('data-checked') === 'true') {
         $codeCheckbox.checked = true;
         onToggleCode({ target: $codeCheckbox });
       }

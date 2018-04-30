@@ -98,7 +98,7 @@ scraper({
 
       var $codeCheckbox = $component.querySelector('.js-code-toggle');
 
-      if ($codeCheckbox.getAttribute('data-checked') === true) {
+      if ($codeCheckbox.getAttribute('data-checked') === 'true') {
         $codeCheckbox.checked = true;
         onToggleCode({ target: $codeCheckbox });
       }
