@@ -61,10 +61,10 @@
   }
 
   .features__item h2 {
-    max-width: calc(100% - 10px);
+    max-width: calc(100% - 20px);
   }
 
   .features__item p {
-    max-width: calc(100% - 10px);
+    max-width: calc(100% - 20px);
   }
 }
