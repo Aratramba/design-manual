@@ -65,22 +65,47 @@ This is section 2
 
 ### Contents
 !{my-component}
-!!{my-frameless-component}
-${my-component-codeview}
-$${my-frameless-component-codeview}
-
 ```
 
 ### Embedding components
-You can embed a component in any page by typing `!{component-name}`. The tag should be an exact match of a components `meta.name` in your json file.
+You can embed a component in any page by typing wrapping the components name in !​{}.
+The tag should be an exact match of a components `meta.name` in your json file.
+
+```markdown
+!{component-name}
+```
+
+For a simpler view of the component, with buttons only visible on mouse over and without the description:
+
+```markdown
+!!{my-frameless-component}
+```
+
+For a code-first view of the component:
+
+```markdown
+${my-component-codeview}
+```
+
+Or for a simpler view of the component:
+
+```markdown
+$${my-frameless-component-codeview}
+```
+
+---
   
 ### Table of contents
-The `### Contents` part is where the components table of contents will be rendered. It will contain all components after the contents heading. It will scan for components until it encounters another table of contents heading, or the end of the page.
+Use `### Contents` to insert a components table of contents. It will contain all components coming after the contents heading. It will scan for components until it encounters another table of contents heading, or the end of the page.
 
-If you want to change the text of this heading, make sure to edit the `contentsFlag` option when setting up.
+If you want to change the text of this heading, edit the `contentsFlag` option when setting up.
+
+---
 
 ### Sidebar
-The h2's will be used to create in-page-links in the sidebar navigation.
+All H2's on the page will be used to create in-page-links in the sidebar navigation.
+
+---
 
 ### Markdown
 Markdown is parsed using [marked](https://github.com/chjj/marked). HTML is allowed.

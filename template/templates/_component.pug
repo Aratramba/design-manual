@@ -31,7 +31,7 @@ mixin component-meta
   name: Component code
 
 mixin component-code
-  input(type='checkbox' name='source' id=('toggle-' + component.slug) class="component__toggle js-code-toggle", data-checked=(component.embedOptions.indexOf('code') > -1))
+  input(type='checkbox' name='source' id=('toggle-' + component.slug) class="component__toggle js-code-toggle", data-checked=(component.embedOptions.indexOf('code') > -1) ? 'true' : 'false')
   .component__code
     div.component__code__output
       pre

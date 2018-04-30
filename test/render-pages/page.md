@@ -10,3 +10,5 @@ These are components
 !{component1}
 !{component2}
 !!{component3}
+${component3}
+$${component3}

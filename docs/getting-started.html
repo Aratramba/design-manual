@@ -49,16 +49,29 @@ This is section 2
 
 ### Contents
 !{my-component}
-!!{my-frameless-component}
-${my-component-codeview}
-$${my-frameless-component-codeview}
 </code></pre>
 <h3 id="embedding-components">Embedding components</h3>
-You can embed a component in any page by typing <code>&lt;div class=&quot;component-wrapper&quot;&gt;&lt;div class=&quot;component js-section has-error&quot; id=&quot;component-name&quot;&gt;&lt;h3 class=&quot;component__title&quot;&gt;component-name&lt;/h3&gt;&lt;div class=&quot;component__meta&quot;&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</code>. The tag should be an exact match of a components <code>meta.name</code> in your json file.<h3 id="table-of-contents">Table of contents</h3>
-<p>The <code>### Contents</code> part is where the components table of contents will be rendered. It will contain all components after the contents heading. It will scan for components until it encounters another table of contents heading, or the end of the page.</p>
-<p>If you want to change the text of this heading, make sure to edit the <code>contentsFlag</code> option when setting up.</p>
+<p>You can embed a component in any page by typing wrapping the components name in !​{}.
+The tag should be an exact match of a components <code>meta.name</code> in your json file.</p>
+<pre><code class="lang-markdown">!{component-name}
+</code></pre>
+<p>For a simpler view of the component, with buttons only visible on mouse over and without the description:</p>
+<pre><code class="lang-markdown">!!{my-frameless-component}
+</code></pre>
+<p>For a code-first view of the component:</p>
+<pre><code class="lang-markdown">${my-component-codeview}
+</code></pre>
+<p>Or for a simpler view of the component:</p>
+<pre><code class="lang-markdown">$${my-frameless-component-codeview}
+</code></pre>
+<hr>
+<h3 id="table-of-contents">Table of contents</h3>
+<p>Use <code>### Contents</code> to insert a components table of contents. It will contain all components coming after the contents heading. It will scan for components until it encounters another table of contents heading, or the end of the page.</p>
+<p>If you want to change the text of this heading, edit the <code>contentsFlag</code> option when setting up.</p>
+<hr>
 <h3 id="sidebar">Sidebar</h3>
-<p>The h2&#39;s will be used to create in-page-links in the sidebar navigation.</p>
+<p>All H2&#39;s on the page will be used to create in-page-links in the sidebar navigation.</p>
+<hr>
 <h3 id="markdown">Markdown</h3>
 <p>Markdown is parsed using <a href="https://github.com/chjj/marked">marked</a>. HTML is allowed.</p>
 </div><a class="scrolltop" href="#top"></a><script src="https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/3.6.0/iframeResizer.min.js" defer></script><script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-lazyload/10.5.2/lazyload.min.js" defer></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.14.0/prism.min.js" defer></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.14.0/components/prism-markup-templating.js" defer></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.14.0/components/prism-scss.min.js" defer></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.14.0/components/prism-css.min.js" defer></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.14.0/components/prism-clike.min.js" defer></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.14.0/components/prism-javascript.min.js" defer></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.14.0/components/prism-diff.min.js" defer></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.14.0/components/prism-json.min.js" defer></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.14.0/components/prism-markdown.min.js" defer></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.14.0/components/prism-bash.min.js" defer></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.14.0/components/prism-markdown.min.js" defer></script><script src="https://cdnjs.cloudflare.com/ajax/libs/js-beautify/1.7.5/beautify-html.min.js" defer></script><script src="https://unpkg.com/interactjs@1.3.3/dist/interact.min.js" defer></script><script>!function e(t, n, r) { function o(c, u) { if (!n[c]) { if (!t[c]) { var a = "function" == typeof require && require; if (!u && a) return a(c, !0); if (i) return i(c, !0); var f = new Error("Cannot find module '" + c + "'"); throw f.code = "MODULE_NOT_FOUND", f } var d = n[c] = { exports: {} }; t[c][0].call(d.exports, function (e) { var n = t[c][1][e]; return o(n || e) }, d, d.exports, e, t, n, r) } return n[c].exports } for (var i = "function" == typeof require && require, c = 0; c < r.length; c++)o(r[c]); return o }({ 1: [function (e, t, n) { window.delegate = e("delegate-events") }, { "delegate-events": 4 }], 2: [function (e, t, n) { var r = e("matches-selector"); t.exports = function (e, t, n) { for (var o = n ? e : e.parentNode; o && o !== document;) { if (r(o, t)) return o; o = o.parentNode } } }, { "matches-selector": 5 }], 3: [function (e, t, n) { var r, o, i; function c() { r = window.addEventListener ? "addEventListener" : "attachEvent", o = window.removeEventListener ? "removeEventListener" : "detachEvent", i = "addEventListener" !== r ? "on" : "" } n.bind = function (e, t, n, o) { return r || c(), e[r](i + t, n, o || !1), n }, n.unbind = function (e, t, n, r) { return o || c(), e[o](i + t, n, r || !1), n } }, {}], 4: [function (e, t, n) { var r = e("closest"), o = e("component-event"), i = ["focus", "blur"]; n.bind = function (e, t, n, c, u) { return -1 !== i.indexOf(n) && (u = !0), o.bind(e, n, function (n) { var o = n.target || n.srcElement; n.delegateTarget = r(o, t, !0, e), n.delegateTarget && c.call(e, n) }, u) }, n.unbind = function (e, t, n, r) { -1 !== i.indexOf(t) && (r = !0), o.unbind(e, t, n, r) } }, { closest: 2, "component-event": 3 }], 5: [function (e, t, n) { var r = Element.prototype, o = r.matchesSelector || r.webkitMatchesSelector || r.mozMatchesSelector || r.msMatchesSelector || r.oMatchesSelector; t.exports = function (e, t) { if (o) return o.call(e, t); for (var n = e.parentNode.querySelectorAll(t), r = 0; r < n.length; ++r)if (n[r] == e) return !0; return !1 } }, {}] }, {}, [1]);
