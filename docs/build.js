@@ -52,7 +52,7 @@ server.on('listening', () => {
           serveFolder: 'docs/',
         },
         onComplete: () => {
-          // process.exit();
+          if (process.argv[2] === '-q') process.exit();
         }
       });
     }
