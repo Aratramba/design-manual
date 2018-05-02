@@ -7,7 +7,7 @@
     "test": "test"
   },
   "scripts": {
-    "prepublishOnly": "npm test && docs/build.js -q",
+    "prepublishOnly": "npm test && node docs/build.js -q",
     "template-js-browserify": "browserify template/scripts/index -t uglifyify",
     "template-css-sass": "node-sass template/styles/all.scss | cleancss",
     "template-js": "npm run template-js-browserify -- -o httpdocs/app.min.js",
