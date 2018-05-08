@@ -10,19 +10,18 @@
 
 <div class="features">
   <div class="features__item">
-    <h2>Active component library</h2>
+    <h2>Component library</h2>
     <p>Mix documentation with real life components to get an active representation of your websites components.</p>
   </div>
   <div class="features__item">
-    <h2>Write free form markdown</h2>
+    <h2>Free form markdown</h2>
     <p>Write your pages in free form markdown and embed your `!​{components}` wherever you want.</p>
   </div>
   <div class="features__item">
-    <h2>Always up to date</h2>
-    <p>Integrated in your build pipeline so it always reflects the current state of your website.</p>
+    <h2>Source code agnostic</h2>
+    <p>Use your source code documentation, html comments or a web scraper to collect components.</p>
   </div>
 </div>
-
 
 ---
 

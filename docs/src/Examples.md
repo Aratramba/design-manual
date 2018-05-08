@@ -1,81 +1,12 @@
 # Examples
 
-## Demo
+## Used by
 * [Rijkswaterstaat](https://rijkswaterstaat.eightmedia.nl/stijlgids)
 * [Hogeschool Utrecht](https://hu.eightmedia.nl)
 * [Saxion Hogeschool](https://saxion.eightmedia.nl)
 
----
 
-### Gulp
-Example gulp implementation with Pug-doc:
-
-```pug
-//- @pugdoc
-  name: My Button
-
-button.btn Click Me!
-```
-
-```js
-var gulp = require('gulp');
-var pugDoc = require('pug-doc');
-var DesignManual = require('design-manual');
-```
-
-```js
-gulp.watch('src/**/*.pug', ['templates', ['design-manual']]);
-gulp.watch('design-manual/**/*.md', ['design-manual']);
-```
-
-```js
-/**
- * Pug Doc
- */
-
-gulp.task('pug-doc', (gulpDone) => {
-  pugDoc({
-    input: paths.SRC.templates + '**/*.pug',
-    output: paths.DEST.styleguide + 'pugdoc.json',
-    complete: gulpDone
-  });
-});
-```
-
-```js
-/**
- * Design Manual
- */
-
-function buildDesignManual(cb) {
-  DesignManual.build({
-    output: 'httpdocs/design-manual/',
-    components: 'httpdocs/design-manual/pugdoc.json',
-    pages: 'src/design-manual',
-    meta: {
-      domain: '',
-      title: 'Design Manual',
-      avatar: 'http://placehold.it/80x80',
-      version: 'v' + require('../../package.json').version
-    },
-    nav: [
-      { label: 'Home', href: '/index.html' },
-      { label: 'Components', href: '/components.html' }
-    ],
-    renderComponents: true,
-    renderCSS: true,
-    prerender: {
-      port: 3000,
-      path: '',
-      serveFolder: 'examples/httpdocs/',
-    },
-    onComplete: cb
-  });
-}
-```
-
-```js
-gulp.task('design-manual', ['pug-doc'], (gulpDone) => {
-  buildDesignManual(gulpDone);
-});
-```
+## Implementation
+* [Design Manual setup with Gulp / Pug-doc](https://gist.github.com/Aratramba/017efabe40e63f02157f974e525f1659)
+* [Design Manual setup with Gather Components](https://gist.github.com/Aratramba/896250b0b9695c3900ce29c2a0cf08a8)
+* [Design Manual setup with Design Manual Scraper](https://gist.github.com/Aratramba/b997f22d75edc8911bd5df6dd1a697d6)

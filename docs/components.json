@@ -1,1 +1,9 @@
-[{"meta":{"name":"hello world","description":"This is my first component"},"file":"src/patterns.html","output":"<img src=\"https://assets.imgix.net/examples/butterfly.jpg?px=50&amp;w=1200&amp;h=50&amp;fit=crop\" alt=\"\">"}]
+[
+	{
+		"meta": {
+			"name": "hello world",
+			"description": ""
+		},
+		"output": "<img src=\"https://assets.imgix.net/examples/butterfly.jpg?px=50&amp;w=1200&amp;h=50&amp;fit=crop\" alt=\"\">"
+	}
+]
