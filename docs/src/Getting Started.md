@@ -20,9 +20,9 @@ First you need to install Design Manual.
 ## Collect website components
 Design Manual doesn't collect the components itself, it just displays them. You need another package to get the components. There are several ways to achieve this.
 
-* [Documentation inside source code](#method-1-documentation-inside-source-code)
-* [Use HTML comments](#method-2-use-html-comments)
-* [Scrape your site](#method-3-scrape-your-site)
+* [Documentation inside source code](#-method-1-documentation-inside-source-code)
+* [Use HTML comments](#-method-2-use-html-comments)
+* [Scrape your site](#-method-3-scrape-your-site)
 
 All of these methods output a json file containing HTML-snippets, which Design Manual imports. It's just a matter of where you want your component documentation to live.
 

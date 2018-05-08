@@ -25,13 +25,13 @@
 
 ---
 
-### Install
+### 🏰 [NPM Install](https://www.npmjs.com/package/design-manual)
 
 ```bash
 > npm i design-manual design-manual-scraper --save-dev
 ```
 
-### Tag your HTML components
+### 💬 [Tag your HTML components](./getting-started.html#collect-website-components)
 
 ```html
   <!-- @component
@@ -42,13 +42,13 @@
   <img src="https://assets.imgix.net/examples/butterfly.jpg?px=50&w=1200&h=50&fit=crop" alt="" />
 ```
 
-### Embed components in markdown
+### ✏️ [Embed components in markdown](./getting-started.html#write-documentation-pages)
 
 ```md
 !{hello world}
 ```
 
-### Build
+### 🚀 [Build](./examples.html#implementation)
 
 ```js
 const DesignManual = require('design-manual');
