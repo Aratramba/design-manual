@@ -11,6 +11,7 @@
 
 .lead img {
   height: auto;
+  max-height: 100px;
 }
 
 .lead::before {

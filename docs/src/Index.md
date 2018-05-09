@@ -28,7 +28,7 @@
 ### [NPM Install](https://www.npmjs.com/package/design-manual)
 
 ```bash
-> npm i design-manual design-manual-scraper --save-dev
+> npm i design-manual collect-components --save-dev
 ```
 
 ### [Tag your HTML components](./getting-started.html#collect-website-components)
@@ -52,10 +52,10 @@
 
 ```js
 const DesignManual = require('design-manual');
-const scraper = require('design-manual-scraper');
+const collectComponents = require('collect-components');
 
 // gather components
-scraper({
+collectComponents({
   url: 'http://localhost:8000/',
   paths: ['homepage.html', 'page.html'],
   output: 'docs/components.json',

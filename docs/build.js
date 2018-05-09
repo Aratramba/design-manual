@@ -1,6 +1,6 @@
 const DesignManual = require('../lib/index');
 
-const scraper = require('gather-components');
+const gatherComponents = require('gather-components');
 const serveStatic = require('serve-static');
 const http = require('http');
 
@@ -14,7 +14,7 @@ const server = http.createServer((req, res) => {
 
 server.on('listening', () => {
   
-  scraper({
+  gatherComponents({
     url: 'http://localhost:8000/',
     paths: ['src/patterns.html'],
     components: 'docs/components.yaml',

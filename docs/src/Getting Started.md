@@ -12,7 +12,7 @@
 First you need to install Design Manual.
 
 ```bash
-> npm i design-manual design-manual-scraper --save-dev
+> npm i design-manual collect-components --save-dev
 ```
 
 ---
@@ -44,7 +44,7 @@ If you can't use your source code to generate components, tag comments with `@co
 ---
 
 ### 💬 Method 2: Use HTML comments
-Second best method. If you're not using a static site renderer, or there is not documentation tool you can use, but do have control over the final HTML, use comments to point to the components and scrape them using [Design Manual Scraper](https://www.npmjs.com/package/design-manual-scraper).
+Second best method. If you're not using a static site renderer, or there is not documentation tool you can use, but do have control over the final HTML, use comments to point to the components and scrape them using [Collect Components](https://www.npmjs.com/package/collect-components).
 
 ```html
 <!-- @component

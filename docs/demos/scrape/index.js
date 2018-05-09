@@ -1,8 +1,8 @@
 const DesignManual = require('../../../lib/index');
-const scraper = require('gather-components');
+const gatherComponents = require('gather-components');
 const rimraf = require('rimraf');
 
-scraper({
+gatherComponents({
   url: 'http://eightmedia.github.io/design-manual/',
   paths: ['index.html', 'getting-started.html'],
   components: __dirname + '/components.yaml',

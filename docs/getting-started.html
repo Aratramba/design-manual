@@ -10,7 +10,7 @@
 <hr>
 <h2 id="install">Install</h2>
 <p>First you need to install Design Manual.</p>
-<pre><code class="lang-bash">&gt; npm i design-manual design-manual-scraper --save-dev
+<pre><code class="lang-bash">&gt; npm i design-manual collect-components --save-dev
 </code></pre>
 <hr>
 <h2 id="collect-website-components">Collect website components</h2>
@@ -32,7 +32,7 @@ div hello world
 <p>If you can&#39;t use your source code to generate components, tag comments with <code>@component</code> and use <a href="#-method-2-use-html-comments">method 2, HTML comments</a>.</p>
 <hr>
 <h3 id="-method-2-use-html-comments">💬 Method 2: Use HTML comments</h3>
-<p>Second best method. If you&#39;re not using a static site renderer, or there is not documentation tool you can use, but do have control over the final HTML, use comments to point to the components and scrape them using <a href="https://www.npmjs.com/package/design-manual-scraper">Design Manual Scraper</a>.</p>
+<p>Second best method. If you&#39;re not using a static site renderer, or there is not documentation tool you can use, but do have control over the final HTML, use comments to point to the components and scrape them using <a href="https://www.npmjs.com/package/collect-components">Collect Components</a>.</p>
 <pre><code class="lang-html">&lt;!-- @component
   name: Hello world
 --&gt;

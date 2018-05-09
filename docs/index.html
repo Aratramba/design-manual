@@ -25,7 +25,7 @@
 
 <hr>
 <h3 id="npm-install"><a href="https://www.npmjs.com/package/design-manual">NPM Install</a></h3>
-<pre><code class="lang-bash">&gt; npm i design-manual design-manual-scraper --save-dev
+<pre><code class="lang-bash">&gt; npm i design-manual collect-components --save-dev
 </code></pre>
 <h3 id="tag-your-html-components"><a href="./getting-started.html#collect-website-components">Tag your HTML components</a></h3>
 <pre><code class="lang-html">  &lt;!-- @component
@@ -40,10 +40,10 @@
 </code></pre>
 <h3 id="build"><a href="./examples.html#implementation">Build</a></h3>
 <pre><code class="lang-js">const DesignManual = require(&#39;design-manual&#39;);
-const scraper = require(&#39;design-manual-scraper&#39;);
+const collectComponents = require(&#39;collect-components&#39;);
 
 // gather components
-scraper({
+collectComponents({
   url: &#39;http://localhost:8000/&#39;,
   paths: [&#39;homepage.html&#39;, &#39;page.html&#39;],
   output: &#39;docs/components.json&#39;,
