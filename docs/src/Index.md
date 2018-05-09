@@ -1,7 +1,7 @@
 <div class="lead">
   <img src="./assets/logo.png" height="100" />
   <br>
-  <h1>Unopinionated Design System Generator</h1>
+  <h1>Lightweight Design System Generator</h1>
   <br>
   <a href="./getting-started.html">Get started ›</a>
 </div>
@@ -15,11 +15,11 @@
   </div>
   <div class="features__item">
     <h2>Free form markdown</h2>
-    <p>Write your pages in free form markdown and embed your `!​{components}` wherever you want.</p>
+    <p>Write your pages in free form markdown and embed your `!​{components}` wherever you want, as often as you want. No limits.</p>
   </div>
   <div class="features__item">
-    <h2>Source code agnostic</h2>
-    <p>Use your source code documentation, html comments or a web scraper to collect components.</p>
+    <h2>The way you work</h2>
+    <p>Use your source code documentation, HTML comments or a web scraper to collect components. No need to write markup or code any different.</p>
   </div>
 </div>
 
