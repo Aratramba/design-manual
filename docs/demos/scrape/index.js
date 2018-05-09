@@ -24,9 +24,6 @@ scraper({
       path: 'demos/scrape/',
       serveFolder: 'docs/'
     },
-    headHtml: `
-      <link rel="stylesheet" href="/assets/style.css" />
-    `,
     componentHeadHtml: `
       <base href="http://eightmedia.github.io/design-manual/">
       <link rel="stylesheet" href="all.min.css" />

@@ -25,6 +25,6 @@
 			"name": "Text",
 			"description": ""
 		},
-		"output": "<div class='content'>\n  <h3 id=\"-method-2-use-html-comments\">&#x1F4AC; Method 2: Use HTML comments</h3>\n</div>\n\n<div class='content'>\n  <p>Second best method. If you&apos;re not using a static site renderer, or there is not documentation tool you can use, but do have control over the final HTML, use comments to point to the components and scrape them using <a href=\"https://www.npmjs.com/package/design-manual-scraper\">Design Manual Scraper</a>.</p>\n</div>\n"
+		"output": "<div class='content'>\n  <h3 id=\"-method-3-scrape-your-site\">&#x1F52A; Method 3: Scrape your site</h3>\n</div>\n\n<div class='content'>\n  <p>If you have no control whatsoever over the HTML code, use a scraper based on queryselectors, like <a href=\"https://www.npmjs.com/package/gather-components\">Gather Components</a>. You can use this to build a Design Manual for a website you don&apos;t maintain yourself.</p>\n</div>\n"
 	}
 ]

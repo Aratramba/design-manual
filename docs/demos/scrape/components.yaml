@@ -30,8 +30,8 @@
 -
   name: Text
   selectors: 
-    - "#-method-2-use-html-comments"
-    - "#-method-2-use-html-comments + p"
+    - "#-method-3-scrape-your-site"
+    - "#-method-3-scrape-your-site + p"
   examples:
     - |
       <div class='content'>
