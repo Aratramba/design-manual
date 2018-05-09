@@ -1,0 +1,39 @@
+-
+  name: Navigation
+  description: This is the navigation component
+  selectors: 
+    - .header
+  examples:
+    - |
+      <style>
+        .header { 
+          position: static !important; 
+        }
+      </style>
+      {{block}}
+      <br>
+-
+  name: Page head
+  description: This is the page head with logo and button
+  selectors: 
+    - .lead
+-
+  name: Features
+  description: Grid with three columns with heading and text
+  selectors: 
+    - .features
+  examples:
+    - |
+      <div class='content'>
+        {{block}}
+      </div>
+-
+  name: Text
+  selectors: 
+    - "#-method-2-use-html-comments"
+    - "#-method-2-use-html-comments + p"
+  examples:
+    - |
+      <div class='content'>
+        {{block}}
+      </div>

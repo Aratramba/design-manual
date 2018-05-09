@@ -1,0 +1,30 @@
+[
+	{
+		"meta": {
+			"name": "Navigation",
+			"description": "This is the navigation component"
+		},
+		"output": "<style>\n  .header { \n    position: static !important; \n  }\n</style>\n<header class=\"header clearfix\"><label class=\"header__link header__hamburger\" for=\"hamburger\">&#x2630;</label><ul class=\"header__nav\"><li class=\"header__nav__item\"><a class=\"header__nav__item__link is-active\" href=\"index.html\">&#x1F3E1;</a></li><li class=\"header__nav__item\"><a class=\"header__nav__item__link\" href=\"getting-started.html\">Getting started</a></li><li class=\"header__nav__item\"><a class=\"header__nav__item__link\" href=\"configuration.html\">Configuration</a></li><li class=\"header__nav__item\"><a class=\"header__nav__item__link\" href=\"examples.html\">Examples</a></li><li class=\"header__nav__item\"><a class=\"header__nav__item__link\" href=\"https://github.com/EightMedia/design-manual\" target=\"_blank\">Github &#x2197;</a></li></ul><ul class=\"breadcrumbs\"><li class=\"breadcrumbs__item js-breadcrumb\"></li></ul><div class=\"header__meta\"><div class=\"header__meta__info\"><div class=\"header__meta__info__domain\">eightmedia.github.io/design-manual/</div><div class=\"header__meta__info__title\">Design Manual<span class=\"header__meta__info__version\">v1.0.2</span></div></div><img class=\"header__meta__avatar\" src=\"./assets/avatar.png\"></div></header>\n<br>\n\n<style>\n  .header { \n    position: static !important; \n  }\n</style>\n<header class=\"header clearfix\"><label class=\"header__link header__hamburger\" for=\"hamburger\">&#x2630;</label><ul class=\"header__nav\"><li class=\"header__nav__item\"><a class=\"header__nav__item__link\" href=\"index.html\">&#x1F3E1;</a></li><li class=\"header__nav__item\"><a class=\"header__nav__item__link is-active\" href=\"getting-started.html\">Getting started</a></li><li class=\"header__nav__item\"><a class=\"header__nav__item__link\" href=\"configuration.html\">Configuration</a></li><li class=\"header__nav__item\"><a class=\"header__nav__item__link\" href=\"examples.html\">Examples</a></li><li class=\"header__nav__item\"><a class=\"header__nav__item__link\" href=\"https://github.com/EightMedia/design-manual\" target=\"_blank\">Github &#x2197;</a></li></ul><ul class=\"breadcrumbs\"><li class=\"breadcrumbs__item js-breadcrumb\"></li></ul><div class=\"header__meta\"><div class=\"header__meta__info\"><div class=\"header__meta__info__domain\">eightmedia.github.io/design-manual/</div><div class=\"header__meta__info__title\">Design Manual<span class=\"header__meta__info__version\">v1.0.2</span></div></div><img class=\"header__meta__avatar\" src=\"./assets/avatar.png\"></div></header>\n<br>\n"
+	},
+	{
+		"meta": {
+			"name": "Page head",
+			"description": "This is the page head with logo and button"
+		},
+		"output": "<div class=\"lead\">\n  <img src=\"./assets/logo.png\" height=\"100\">\n  <br>\n  <h1>Lightweight Design System Generator</h1>\n  <br>\n  <a href=\"./getting-started.html\">Get started &#x203A;</a>\n</div>"
+	},
+	{
+		"meta": {
+			"name": "Features",
+			"description": "Grid with three columns with heading and text"
+		},
+		"output": "<div class='content'>\n  <div class=\"features\">\n  <div class=\"features__item\">\n    <h2>Component library</h2>\n    <p>Mix documentation with real life components to get an active representation of your websites components.</p>\n  </div>\n  <div class=\"features__item\">\n    <h2>Free form markdown</h2>\n    <p>Write your pages in free form markdown and embed your <code>!&#x200B;{components}</code> wherever you want, as often as you want. No limits.</p>\n  </div>\n  <div class=\"features__item\">\n    <h2>The way you work</h2>\n    <p>Use your source code documentation, HTML comments or a web scraper to collect components. No need to write markup or code any different.</p>\n  </div>\n</div>\n</div>\n"
+	},
+	{
+		"meta": {
+			"name": "Text",
+			"description": ""
+		},
+		"output": "<div class='content'>\n  <h3 id=\"-method-2-use-html-comments\">&#x1F4AC; Method 2: Use HTML comments</h3>\n</div>\n\n<div class='content'>\n  <p>Second best method. If you&apos;re not using a static site renderer, or there is not documentation tool you can use, but do have control over the final HTML, use comments to point to the components and scrape them using <a href=\"https://www.npmjs.com/package/design-manual-scraper\">Design Manual Scraper</a>.</p>\n</div>\n"
+	}
+]

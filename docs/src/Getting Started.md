@@ -31,12 +31,15 @@ All of these methods output a json file containing HTML-snippets, which Design M
 ### 💎 Method 1: Documentation inside source code
 This is the preferred method, for when you have control over the source code that renders the HTML. The source code is where documentation of the components should live and be collected from. Using Pug? Use [Pug-doc](https://www.npmjs.com/package/pug-doc). Using some other renderer? Build you own and let us know. It might be as easy as transforming existing documentation JSON to match ours. As long it outputs a JSON file that looks like the example below you're good to go.
 
+
 ```pug
 //- @pugdoc
   name: Hello world
 
 div hello world
 ```
+
+If you can't use your source code to generate components, tag comments with `@component` and use [method 2, HTML comments](#-method-2-use-html-comments).
 
 ---
 

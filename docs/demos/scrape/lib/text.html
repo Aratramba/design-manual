@@ -1,0 +1,67 @@
+
+<!DOCTYPE html>
+  <html style="margin: 0; padding: 0px;">
+  <head>
+    <base target="_blank">
+    <title>Text - Demo - eightmedia.github.io/design-manual/</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/3.6.0/iframeResizer.contentWindow.min.js"></script>
+
+    <script>
+      (function templatePolyfill() {
+        if ('content' in document.createElement('template')) {
+          return false;
+        }
+
+        var templates = document.getElementsByTagName('template');
+        var plateLen = templates.length;
+
+        for (var x = 0; x < plateLen; ++x) {
+          var template = templates[x];
+          var content = template.childNodes;
+          var fragment = document.createDocumentFragment();
+
+          while (content[0]) {
+            fragment.appendChild(content[0]);
+          }
+
+          template.content = fragment;
+        }
+      })();
+    </script>
+    <style>
+      template {
+        display: none !important;
+      }
+    </style>
+    
+      <base href="http://eightmedia.github.io/design-manual/">
+      <link rel="stylesheet" href="all.min.css" />
+      <link rel="stylesheet" href="assets/style.css" />
+    
+  </head>
+  <body style="margin: 0px; padding: 0px;">
+    <div style="padding: 10px;">
+      <div class='content'>
+  <h3 id="-method-2-use-html-comments">&#x1F4AC; Method 2: Use HTML comments</h3>
+</div>
+
+<div class='content'>
+  <p>Second best method. If you&apos;re not using a static site renderer, or there is not documentation tool you can use, but do have control over the final HTML, use comments to point to the components and scrape them using <a href="https://www.npmjs.com/package/design-manual-scraper">Design Manual Scraper</a>.</p>
+</div>
+
+    </div>
+    
+<template class="dm-raw-source" type="design-manual/template">
+<div class='content'>
+  <h3 id="-method-2-use-html-comments">&#x1F4AC; Method 2: Use HTML comments</h3>
+</div>
+
+<div class='content'>
+  <p>Second best method. If you&apos;re not using a static site renderer, or there is not documentation tool you can use, but do have control over the final HTML, use comments to point to the components and scrape them using <a href="https://www.npmjs.com/package/design-manual-scraper">Design Manual Scraper</a>.</p>
+</div>
+
+</template>
+  </body>
+</html>
