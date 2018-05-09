@@ -1,0 +1,85 @@
+
+<!DOCTYPE html>
+  <html style="margin: 0; padding: 0px;">
+  <head>
+    <base target="_blank">
+    <title>Features - Demo - eightmedia.github.io/design-manual/</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/3.6.0/iframeResizer.contentWindow.min.js"></script>
+
+    <script>
+      (function templatePolyfill() {
+        if ('content' in document.createElement('template')) {
+          return false;
+        }
+
+        var templates = document.getElementsByTagName('template');
+        var plateLen = templates.length;
+
+        for (var x = 0; x < plateLen; ++x) {
+          var template = templates[x];
+          var content = template.childNodes;
+          var fragment = document.createDocumentFragment();
+
+          while (content[0]) {
+            fragment.appendChild(content[0]);
+          }
+
+          template.content = fragment;
+        }
+      })();
+    </script>
+    <style>
+      template {
+        display: none !important;
+      }
+    </style>
+    
+      <base href="http://eightmedia.github.io/design-manual/">
+      <link rel="stylesheet" href="all.min.css" />
+      <link rel="stylesheet" href="assets/style.css" />
+    
+  </head>
+  <body style="margin: 0px; padding: 0px;">
+    <div style="padding: 10px;">
+      <div class='content'>
+  <div class="features">
+  <div class="features__item">
+    <h2>Component library</h2>
+    <p>Mix documentation with real life components to get an active representation of your websites components.</p>
+  </div>
+  <div class="features__item">
+    <h2>Free form markdown</h2>
+    <p>Write your pages in free form markdown and embed your <code>!&#x200B;{components}</code> wherever you want, as often as you want. No limits.</p>
+  </div>
+  <div class="features__item">
+    <h2>The way you work</h2>
+    <p>Use your source code documentation, HTML comments or a web scraper to collect components. No need to write markup or code any different.</p>
+  </div>
+</div>
+</div>
+
+    </div>
+    
+<template class="dm-raw-source" type="design-manual/template">
+<div class='content'>
+  <div class="features">
+  <div class="features__item">
+    <h2>Component library</h2>
+    <p>Mix documentation with real life components to get an active representation of your websites components.</p>
+  </div>
+  <div class="features__item">
+    <h2>Free form markdown</h2>
+    <p>Write your pages in free form markdown and embed your <code>!&#x200B;{components}</code> wherever you want, as often as you want. No limits.</p>
+  </div>
+  <div class="features__item">
+    <h2>The way you work</h2>
+    <p>Use your source code documentation, HTML comments or a web scraper to collect components. No need to write markup or code any different.</p>
+  </div>
+</div>
+</div>
+
+</template>
+  </body>
+</html>

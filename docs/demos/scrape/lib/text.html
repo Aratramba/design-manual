@@ -1,0 +1,67 @@
+
+<!DOCTYPE html>
+  <html style="margin: 0; padding: 0px;">
+  <head>
+    <base target="_blank">
+    <title>Text - Demo - eightmedia.github.io/design-manual/</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/3.6.0/iframeResizer.contentWindow.min.js"></script>
+
+    <script>
+      (function templatePolyfill() {
+        if ('content' in document.createElement('template')) {
+          return false;
+        }
+
+        var templates = document.getElementsByTagName('template');
+        var plateLen = templates.length;
+
+        for (var x = 0; x < plateLen; ++x) {
+          var template = templates[x];
+          var content = template.childNodes;
+          var fragment = document.createDocumentFragment();
+
+          while (content[0]) {
+            fragment.appendChild(content[0]);
+          }
+
+          template.content = fragment;
+        }
+      })();
+    </script>
+    <style>
+      template {
+        display: none !important;
+      }
+    </style>
+    
+      <base href="http://eightmedia.github.io/design-manual/">
+      <link rel="stylesheet" href="all.min.css" />
+      <link rel="stylesheet" href="assets/style.css" />
+    
+  </head>
+  <body style="margin: 0px; padding: 0px;">
+    <div style="padding: 10px;">
+      <div class='content'>
+  <h3 id="-method-3-scrape-your-site">&#x1F52A; Method 3: Scrape your site</h3>
+</div>
+
+<div class='content'>
+  <p>If you have no control whatsoever over the HTML code, use a scraper based on queryselectors, like <a href="https://www.npmjs.com/package/gather-components">Gather Components</a>. You can use this to build a Design Manual for a website you don&apos;t maintain yourself.</p>
+</div>
+
+    </div>
+    
+<template class="dm-raw-source" type="design-manual/template">
+<div class='content'>
+  <h3 id="-method-3-scrape-your-site">&#x1F52A; Method 3: Scrape your site</h3>
+</div>
+
+<div class='content'>
+  <p>If you have no control whatsoever over the HTML code, use a scraper based on queryselectors, like <a href="https://www.npmjs.com/package/gather-components">Gather Components</a>. You can use this to build a Design Manual for a website you don&apos;t maintain yourself.</p>
+</div>
+
+</template>
+  </body>
+</html>
