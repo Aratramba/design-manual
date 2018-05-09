@@ -9,6 +9,10 @@
   text-align: center;
 }
 
+.lead img {
+  height: auto;
+}
+
 .lead::before {
   pointer-events: none;
   content: '';
