@@ -12,7 +12,7 @@
 First you need to install Design Manual.
 
 ```bash
-> npm i design-manual collect-components --save-dev
+> npm i design-manual --save-dev
 ```
 
 ---
@@ -20,8 +20,8 @@ First you need to install Design Manual.
 ## Collect website components
 Design Manual doesn't collect the components itself, it just displays them. You need another package to get the components. There are several ways to achieve this.
 
-* [Documentation inside source code](#-method-1-documentation-inside-source-code)
-* [Use HTML comments](#-method-2-use-html-comments)
+* [Documentation inside your source code](#-method-1-documentation-inside-source-code)
+* [Use tagged HTML comments](#-method-2-use-html-comments)
 * [Scrape your site](#-method-3-scrape-your-site)
 
 All of these methods output a json file containing HTML-snippets, which Design Manual imports. It's just a matter of where you want your component documentation to live.
@@ -44,7 +44,7 @@ If you can't use your source code to generate components, tag comments with `@co
 ---
 
 ### 💬 Method 2: Use HTML comments
-Second best method. If you're not using a static site renderer, or there is not documentation tool you can use, but do have control over the final HTML, use comments to point to the components and scrape them using [Collect Components](https://www.npmjs.com/package/collect-components).
+If you're not using a static site renderer, or there is not documentation tool you can use, but do have control over the final HTML, use comments to point to the components and scrape them using [Collect Components](https://www.npmjs.com/package/collect-components).
 
 ```html
 <!-- @component
