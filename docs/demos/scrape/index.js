@@ -29,7 +29,9 @@ gatherComponents({
       <link rel="stylesheet" href="all.min.css" />
       <link rel="stylesheet" href="assets/style.css" />
     `,
-    onComplete: () => { }
+    onComplete: () => {
+      process.exit();
+    }
   });
 
   rimraf.sync(__dirname + '/design-manual-config.json');

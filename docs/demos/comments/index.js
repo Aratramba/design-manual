@@ -3,8 +3,8 @@ const collectComponents = require('collect-components');
 const rimraf = require('rimraf');
 
 collectComponents({
-  url: 'http://eightmedia.github.io/design-manual/',
-  paths: ['index.html', 'getting-started.html'],
+  url: 'https://raw.githubusercontent.com/EightMedia/collect-components/master/test/fixtures/', // http://eightmedia.github.io/design-manual/
+  paths: ['capture.html'],
   output: __dirname + '/components.json',
   complete: () => {
     DesignManual.build({
@@ -28,7 +28,9 @@ collectComponents({
         <link rel="stylesheet" href="all.min.css" />
         <link rel="stylesheet" href="assets/style.css" />
       `,
-      onComplete: () => { }
+      onComplete: () => {
+        process.exit();
+      }
     });
 
     rimraf.sync(__dirname + '/design-manual-config.json');

@@ -1,5 +1,6 @@
 # Examples
 * [Demo using Gather Components](./demos/scrape)
+* [Demo using Collect Components](./demos/comments)
 
 ## Used by
 * [Rijkswaterstaat](https://rijkswaterstaat.eightmedia.nl/stijlgids)

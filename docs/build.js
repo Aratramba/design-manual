@@ -3,6 +3,7 @@ const DesignManual = require('../lib/index');
 const gatherComponents = require('gather-components');
 const serveStatic = require('serve-static');
 const http = require('http');
+const cp = require('child_process');
 
 const serve = serveStatic(__dirname);
 const server = http.createServer((req, res) => {
@@ -53,7 +54,13 @@ server.on('listening', () => {
         serveFolder: 'docs/',
       },
       onComplete: () => {
-        if (process.argv[2] === '-q') process.exit();
+        let scraper = cp.fork(`${__dirname}/demos/scrape/index.js`);
+        scraper.on('exit', () => {
+          let collector = cp.fork(`${__dirname}/demos/comments/index.js`);
+          collector.on('exit', () => {
+            if (process.argv[2] === '-q') process.exit();
+          });
+        })
       }
     });
   });
