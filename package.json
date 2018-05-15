@@ -23,7 +23,8 @@
     "test-prerender": "ava test/prerender/test.js --serial",
     "test-puppeteer": "ava test/puppeteer/test.js --serial",
     "test-render-css": "ava test/render-css/test.js --serial",
-    "test-render-pages": "ava test/render-pages/test.js --serial"
+    "test-render-pages": "ava test/render-pages/test.js --serial",
+    "test-autofill": "ava test/autofill/test.js --serial"
   },
   "author": "Eight Media",
   "license": "ISC",

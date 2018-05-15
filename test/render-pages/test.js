@@ -135,23 +135,3 @@ test.cb('render table of contents', t => {
     }
   }));
 });
-
-
-test.cb('render rest', t => {
-  t.plan(3);
-  rimraf.sync(__dirname + '/tmp/');
-
-  DM.build(Object.assign({}, config, {
-    renderComponents: true,
-    onLog: () => { },
-    onComplete: () => {
-      setTimeout(() => {
-        let componentsHtmlTmp = fs.readFileSync(config.output + 'rest.html', 'utf8');
-        t.truthy(componentsHtmlTmp.indexOf('<div class="component js-section is-loading" id="component1">') > -1);
-        t.truthy(componentsHtmlTmp.indexOf('<div class="component js-section is-loading" id="component2">') > -1);
-        t.truthy(componentsHtmlTmp.indexOf('<div class="component js-section is-loading" id="component3">') > -1);
-        t.end();
-      }, 1000);
-    }
-  }));
-});
