@@ -4,7 +4,6 @@
 
 ## Used by
 * [Rijkswaterstaat](https://rijkswaterstaat.eightmedia.nl/stijlgids)
-* [Hogeschool Utrecht](https://hu.eightmedia.nl)
 * [Saxion Hogeschool](https://saxion.eightmedia.nl)
 
 
