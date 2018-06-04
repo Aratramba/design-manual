@@ -18,7 +18,7 @@
 			"name": "Features",
 			"description": "Grid with three columns with heading and text"
 		},
-		"output": "<div class='content'>\n  <div class=\"features\">\n  <div class=\"features__item\">\n    <h2>Component library</h2>\n    <p>Mix documentation with real life components to get an active representation of your websites components.</p>\n  </div>\n  <div class=\"features__item\">\n    <h2>Free form markdown</h2>\n    <p>Write your pages in free form markdown and embed your <code>!&#x200B;{components}</code> wherever you want, as often as you want. No limits.</p>\n  </div>\n  <div class=\"features__item\">\n    <h2>The way you work</h2>\n    <p>Use your source code documentation, HTML comments or a web scraper to collect components. No need to write markup or code any different.</p>\n  </div>\n</div>\n</div>\n"
+		"output": "<div class='content'>\n  <div class=\"features\">\n  <div class=\"features__item\">\n    <h2>Component library</h2>\n    <p>Mix documentation with real life components to get an active representation of your websites components.</p>\n  </div>\n  <div class=\"features__item\">\n    <h2>Free form markdown</h2>\n    <p>Write your pages in free form markdown and embed your <code>!&#x200B;{components}</code> wherever you want, as often as you want. No limits.</p>\n  </div>\n  <div class=\"features__item\">\n    <h2>Fits the way you work</h2>\n    <p>Use your source code documentation, HTML comments or a web scraper to collect components. No need to write markup or code any different.</p>\n  </div>\n</div>\n</div>\n"
 	},
 	{
 		"meta": {
