@@ -19,4 +19,4 @@ const DM = require('../../lib/index');
 // rimraf.sync(__dirname + '/tmp/');
 // DM.build(config);
 
-scan(__dirname).then(console.log);
+scan(__dirname + '/../').then(console.log);
