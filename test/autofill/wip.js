@@ -1,8 +1,9 @@
 
 const rimraf = require('rimraf');
 const fs = require('fs');
-const scan = require('../../lib/static-analysis');
+const analyzer = require('../../lib/static-analysis');
 const DM = require('../../lib/index');
+const util = require('util')
 
 // const config = {
 //   output: __dirname + '/tmp/',
@@ -19,4 +20,8 @@ const DM = require('../../lib/index');
 // rimraf.sync(__dirname + '/tmp/');
 // DM.build(config);
 
-scan(__dirname + '/../').then(console.log);
+analyzer.scan(__dirname + '/../').then((results) => {
+  console.log(util.inspect(results, false, null));
+
+  console.log(analyzer.getUsedComponentIds(results));
+});
