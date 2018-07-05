@@ -1,27 +1,18 @@
+// const rimraf = require('rimr̦af');
+// const fs = require('fs');
+const analyzer = require("../../lib/static-analysis");
+// const DM = require('../../lib/index');
+const util = require("util");
 
-const rimraf = require('rimraf');
-const fs = require('fs');
-const analyzer = require('../../lib/static-analysis');
-const DM = require('../../lib/index');
-const util = require('util')
-
-// const config = {
-//   output: __dirname + '/tmp/',
-//   pages: __dirname + '/',
-//   components: './test/components.json',
-//   renderComponents: true,
-//   renderCSS: false,
-//   meta: {
-//     domain: 'website.com',
-//     title: 'Design Manual'
-//   }
-// }
-
-// rimraf.sync(__dirname + '/tmp/');
-// DM.build(config);
-
-analyzer.scan(__dirname + '/../').then((results) => {
+analyzer.scan(__dirname + "/").then(results => {
   console.log(util.inspect(results, false, null));
 
-  console.log(analyzer.getUsedComponentIds(results));
+  const usedComponents = analyzer.getScanUsedComponents(results);
+  console.log("used", usedComponents);
+
+  const unusedComponents = analyzer.getScanUnusedComponents(
+    results,
+    require("../components.json")
+  );
+  console.log("unused", unusedComponents);
 });
