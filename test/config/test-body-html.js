@@ -1,28 +1,27 @@
-const test = require('ava');
-const rimraf = require('rimraf');
-const fs = require('fs');
-const path = require('path');
-const utils = require('../utils');
+const test = require("ava");
+const rimraf = require("rimraf");
+const fs = require("fs");
+const path = require("path");
+const utils = require("../utils");
 const buildAndMatchLogs = utils.buildAndMatchLogs;
 
 const config = {
-  output: __dirname + '/tmp/',
-  pages: __dirname + '/',
-  components: './test/components.json',
+  output: __dirname + "/tmp/",
+  pages: __dirname + "/",
+  components: "./test/components.json",
   meta: {
-    domain: 'website.com',
-    title: 'Design Manual'
+    domain: "website.com",
+    title: "Design Manual"
   },
   renderComponents: true,
   renderCSS: false
-}
-
+};
 
 /**
  * Test body html change
  */
 
-test.cb('config: body html change', t => {
+test.cb("config: body html change", t => {
   t.plan(1);
   rimraf.sync(config.output);
 
@@ -41,6 +40,10 @@ test.cb('config: body html change', t => {
     Design manual complete
   `;
   buildAndMatchLogs(null, config, null, () => {
-    buildAndMatchLogs(t, Object.assign(config, { bodyHtml: '<script></script>' }), expected);
+    buildAndMatchLogs(
+      t,
+      Object.assign(config, { bodyHtml: "<script></script>" }),
+      expected
+    );
   });
 });

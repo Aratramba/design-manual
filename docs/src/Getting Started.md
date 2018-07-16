@@ -107,7 +107,7 @@ This is section 2
 ---
 
 ### Embed components
-You can embed a component in any page (multiple times) by wrapping the components name in `!​{}`.
+You can embed a component in any page (even multiple times if you wish) by wrapping the components name in `!​{}`.
 The tag should be an exact match of a components `meta.name` in your json file. Use double exclamation marks for a simpler view of the component  `!!​{}`, with buttons only visible on mouse over and without the description. For a code-first view of the component use `$​{}` or `$$​{}`
 
 
@@ -151,3 +151,13 @@ This is what the json file containing all components should look like.
 ```
 
 The `meta.description` part is optional and, if present, will be parsed using markdown.
+
+---
+
+### Autofill
+For dev purposes it might be nice to let the pages be filled with all components automatically.
+
+```markdown
+# This page contains all components
+!​{...autofill}
+```
