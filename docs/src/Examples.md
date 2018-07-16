@@ -4,8 +4,8 @@
 
 ## Used by
 * [Rijkswaterstaat, Ministry of Infrastructure and Water Management](https://rijkswaterstaat.eightmedia.nl/stijlgids)
-* [HU University of Applied Sciences Utrecht](https://hu.eightmedia.nl)
-* [Saxion University of Applied Sciences](https://saxion.eightmedia.nl)
+* [HU - University of Applied Sciences Utrecht](https://hu.eightmedia.nl)
+* [Saxion - University of Applied Sciences](https://saxion.eightmedia.nl)
 
 
 ## Implementation

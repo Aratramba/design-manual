@@ -18,7 +18,7 @@
     <p>Write your pages in free form markdown and embed your `!​{components}` wherever you want, as often as you want. No limits.</p>
   </div>
   <div class="features__item">
-    <h2>The way you work</h2>
+    <h2>Fits the way you work</h2>
     <p>Use your source code documentation, HTML comments or a web scraper to collect components. No need to write markup or code any different.</p>
   </div>
 </div>

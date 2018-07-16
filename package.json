@@ -1,7 +1,7 @@
 {
   "name": "design-manual",
-  "version": "1.0.2",
-  "description": "JAMstack Design System Generator",
+  "version": "1.0.3",
+  "description": "Lightweight Design System Generator",
   "main": "lib/index.js",
   "directories": {
     "test": "test"
