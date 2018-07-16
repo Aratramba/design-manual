@@ -1,6 +1,6 @@
 {
   "name": "design-manual",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Lightweight Design System Generator",
   "main": "lib/index.js",
   "directories": {
@@ -30,7 +30,7 @@
   },
   "author": "Eight Media",
   "license": "ISC",
-  "dependencies": {
+  "devDependencies": {
     "ava": "^0.25.0",
     "collect-components": "^1.1.0",
     "eslint": "^5.1.0",
@@ -42,7 +42,7 @@
     "is-there": "^4.4.3",
     "rimraf": "^2.6.2"
   },
-  "devDependencies": {
+  "dependencies": {
     "async": "^2.6.1",
     "autoprefixer": "^8.6.5",
     "clean-css": "^4.1.11",
