@@ -1,22 +1,21 @@
-const test = require('ava');
-const rimraf = require('rimraf');
-const fs = require('fs');
-const path = require('path');
-const utils = require('../utils');
+const test = require("ava");
+const rimraf = require("rimraf");
+const fs = require("fs");
+const path = require("path");
+const utils = require("../utils");
 const buildAndMatchLogs = utils.buildAndMatchLogs;
 
 const config = {
-  output: __dirname + '/tmp/',
-  pages: __dirname + '/',
-  components: './test/components.json',
+  output: __dirname + "/tmp/",
+  pages: __dirname + "/",
+  components: "./test/components.json",
   meta: {
-    domain: 'website.com',
-    title: 'Design Manual'
+    domain: "website.com",
+    title: "Design Manual"
   },
   renderComponents: true,
   renderCSS: false
-}
-
+};
 
 /**
  * Test meta change
@@ -37,29 +36,59 @@ const expectedMetaChange = `
   Design manual complete
 `;
 
-test.cb('config: meta change', t => {
+test.cb("config: meta change", t => {
   t.plan(1);
   buildAndMatchLogs(null, config, null, () => {
-    buildAndMatchLogs(t, Object.assign(config, { meta: { domain: '0', title: '0', avatar: '0', version: '0' } }), expectedMetaChange);
+    buildAndMatchLogs(
+      t,
+      Object.assign(config, {
+        meta: { domain: "0", title: "0", avatar: "0", version: "0" }
+      }),
+      expectedMetaChange
+    );
   });
 });
 
-test.cb('config: meta change (domain)', t => {
+test.cb("config: meta change (domain)", t => {
   t.plan(1);
-  buildAndMatchLogs(t, Object.assign(config, { meta: { domain: '1', title: '0', avatar: '0', version: '0' } }), expectedMetaChange);
+  buildAndMatchLogs(
+    t,
+    Object.assign(config, {
+      meta: { domain: "1", title: "0", avatar: "0", version: "0" }
+    }),
+    expectedMetaChange
+  );
 });
 
-test.cb('config: meta change (title)', t => {
+test.cb("config: meta change (title)", t => {
   t.plan(1);
-  buildAndMatchLogs(t, Object.assign(config, { meta: { domain: '1', title: '1', avatar: '0', version: '0' } }), expectedMetaChange);
+  buildAndMatchLogs(
+    t,
+    Object.assign(config, {
+      meta: { domain: "1", title: "1", avatar: "0", version: "0" }
+    }),
+    expectedMetaChange
+  );
 });
 
-test.cb('config: meta change (avatar)', t => {
+test.cb("config: meta change (avatar)", t => {
   t.plan(1);
-  buildAndMatchLogs(t, Object.assign(config, { meta: { domain: '1', title: '1', avatar: '1', version: '0' } }), expectedMetaChange);
+  buildAndMatchLogs(
+    t,
+    Object.assign(config, {
+      meta: { domain: "1", title: "1", avatar: "1", version: "0" }
+    }),
+    expectedMetaChange
+  );
 });
 
-test.cb('config: meta change (version)', t => {
+test.cb("config: meta change (version)", t => {
   t.plan(1);
-  buildAndMatchLogs(t, Object.assign(config, { meta: { domain: '1', title: '1', avatar: '1', version: '1' } }), expectedMetaChange);
+  buildAndMatchLogs(
+    t,
+    Object.assign(config, {
+      meta: { domain: "1", title: "1", avatar: "1", version: "1" }
+    }),
+    expectedMetaChange
+  );
 });

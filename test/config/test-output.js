@@ -1,31 +1,29 @@
-const test = require('ava');
-const rimraf = require('rimraf');
-const fs = require('fs');
-const path = require('path');
-const utils = require('../utils');
+const test = require("ava");
+const rimraf = require("rimraf");
+const fs = require("fs");
+const path = require("path");
+const utils = require("../utils");
 const buildAndMatchLogs = utils.buildAndMatchLogs;
 
 const config = {
-  output: __dirname + '/tmp/',
-  pages: __dirname + '/',
-  components: './test/components.json',
+  output: __dirname + "/tmp/",
+  pages: __dirname + "/",
+  components: "./test/components.json",
   meta: {
-    domain: 'website.com',
-    title: 'Design Manual'
+    domain: "website.com",
+    title: "Design Manual"
   },
   renderComponents: true,
   renderCSS: false
-}
-
-
+};
 
 /**
  * Test output change, rebuild all
  */
 
-test.cb('config: output change', t => {
+test.cb("config: output change", t => {
   t.plan(1);
-  rimraf.sync(__dirname + '/tmp2/');
+  rimraf.sync(__dirname + "/tmp2/");
 
   const expected = `
     Starting design manual
@@ -47,11 +45,15 @@ test.cb('config: output change', t => {
   `;
 
   buildAndMatchLogs(null, config, null, () => {
-    buildAndMatchLogs(t, Object.assign(config, { output: __dirname + '/tmp2/' }), expected);
+    buildAndMatchLogs(
+      t,
+      Object.assign(config, { output: __dirname + "/tmp2/" }),
+      expected
+    );
   });
 });
 
 test.after.cb(t => {
-  rimraf.sync(__dirname + '/tmp2/');
+  rimraf.sync(__dirname + "/tmp2/");
   t.end();
-})
+});

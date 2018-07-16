@@ -1,28 +1,27 @@
-const test = require('ava');
-const rimraf = require('rimraf');
-const fs = require('fs');
-const path = require('path');
-const utils = require('../utils');
+const test = require("ava");
+const rimraf = require("rimraf");
+const fs = require("fs");
+const path = require("path");
+const utils = require("../utils");
 const buildAndMatchLogs = utils.buildAndMatchLogs;
 
 const config = {
-  output: __dirname + '/tmp/',
-  pages: __dirname + '/',
-  components: './test/components.json',
+  output: __dirname + "/tmp/",
+  pages: __dirname + "/",
+  components: "./test/components.json",
   meta: {
-    domain: 'website.com',
-    title: 'Design Manual'
+    domain: "website.com",
+    title: "Design Manual"
   },
   renderComponents: true,
   renderCSS: false
-}
-
+};
 
 /**
  * Test error in config file
  */
 
-test.cb('config: error in config', t => {
+test.cb("config: error in config", t => {
   t.plan(1);
   rimraf.sync(config.output);
 
@@ -46,7 +45,10 @@ test.cb('config: error in config', t => {
   `;
 
   buildAndMatchLogs(null, config, null, () => {
-    fs.writeFileSync(path.resolve(config.output, 'design-manual-config.json'), 'foo');
+    fs.writeFileSync(
+      path.resolve(config.output, "design-manual-config.json"),
+      "foo"
+    );
     buildAndMatchLogs(t, config, expected);
   });
 });

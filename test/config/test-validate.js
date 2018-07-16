@@ -1,28 +1,27 @@
-const test = require('ava');
-const rimraf = require('rimraf');
-const fs = require('fs');
-const path = require('path');
-const utils = require('../utils');
+const test = require("ava");
+const rimraf = require("rimraf");
+const fs = require("fs");
+const path = require("path");
+const utils = require("../utils");
 const buildAndMatchLogs = utils.buildAndMatchLogs;
 
 const config = {
-  output: __dirname + '/tmp/',
-  pages: __dirname + '/',
-  components: './test/components.json',
+  output: __dirname + "/tmp/",
+  pages: __dirname + "/",
+  components: "./test/components.json",
   meta: {
-    domain: 'website.com',
-    title: 'Design Manual'
+    domain: "website.com",
+    title: "Design Manual"
   },
   renderComponents: true,
   renderCSS: false
-}
-
+};
 
 /**
  * Test mandatory options
  */
 
-test.cb('config: validate output', t => {
+test.cb("config: validate output", t => {
   t.plan(1);
 
   const options = Object.assign({}, config, { output: null });
@@ -35,7 +34,7 @@ test.cb('config: validate output', t => {
   buildAndMatchLogs(t, options, expected);
 });
 
-test.cb('config: validate pages', t => {
+test.cb("config: validate pages", t => {
   t.plan(1);
 
   const options = Object.assign({}, config, { pages: null });
@@ -48,7 +47,7 @@ test.cb('config: validate pages', t => {
   buildAndMatchLogs(t, options, expected);
 });
 
-test.cb('config: validate components', t => {
+test.cb("config: validate components", t => {
   t.plan(1);
 
   const options = Object.assign({}, config, { components: null });
@@ -61,7 +60,7 @@ test.cb('config: validate components', t => {
   buildAndMatchLogs(t, options, expected);
 });
 
-test.cb('config: validate meta', t => {
+test.cb("config: validate meta", t => {
   t.plan(1);
 
   const options = Object.assign({}, config, { meta: null });
@@ -74,10 +73,12 @@ test.cb('config: validate meta', t => {
   buildAndMatchLogs(t, options, expected);
 });
 
-test.cb('config: validate meta.title', t => {
+test.cb("config: validate meta.title", t => {
   t.plan(1);
 
-  const options = Object.assign({}, config, { meta: { title: null, domain: 'foo' } });
+  const options = Object.assign({}, config, {
+    meta: { title: null, domain: "foo" }
+  });
 
   const expected = `
     Design Manual error: options.meta.title is required
@@ -87,10 +88,12 @@ test.cb('config: validate meta.title', t => {
   buildAndMatchLogs(t, options, expected);
 });
 
-test.cb('config: validate meta.domain', t => {
+test.cb("config: validate meta.domain", t => {
   t.plan(1);
 
-  const options = Object.assign({}, config, { meta: { title: 'foo', domain: null } });
+  const options = Object.assign({}, config, {
+    meta: { title: "foo", domain: null }
+  });
 
   const expected = `
     Design Manual error: options.meta.domain is required
