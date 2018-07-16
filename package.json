@@ -14,6 +14,7 @@
     "template-css": "npm run template-css-sass -- -o httpdocs/all.min.css",
     "template-html": "jade template/templates/components.pug -o httpdocs",
     "watch-js": "watchify template/scripts/index.js -o examples/httpdocs/app.min.js",
+    "docs": "node docs/build.js -q",
     "test": "ava test/**/*/test*.js --serial --verbose",
     "test-config": "ava test/config/*.js --serial",
     "test-validate": "ava test/config/test-validate.js --serial",

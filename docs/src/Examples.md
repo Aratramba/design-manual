@@ -3,9 +3,9 @@
 * [Demo using Collect Components](./demos/comments)
 
 ## Used by
-* [Rijkswaterstaat](https://rijkswaterstaat.eightmedia.nl/stijlgids)
-* [Hogeschool Utrecht](https://hu.eightmedia.nl)
-* [Saxion Hogeschool](https://saxion.eightmedia.nl)
+* [Rijkswaterstaat, Ministry of Infrastructure and Water Management](https://rijkswaterstaat.eightmedia.nl/stijlgids)
+* [HU University of Applied Sciences Utrecht](https://hu.eightmedia.nl)
+* [Saxion University of Applied Sciences](https://saxion.eightmedia.nl)
 
 
 ## Implementation

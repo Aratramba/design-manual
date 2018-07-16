@@ -16,7 +16,6 @@ const config = {
   }
 }
 
-
 test.cb('autofill', t => {
   t.plan(3);
   rimraf.sync(__dirname + '/tmp/');
