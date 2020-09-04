@@ -56,7 +56,7 @@
     "husky": "^0.14.3",
     "interactjs": "^1.3.4",
     "killable": "^1.0.0",
-    "marked": "^0.4.0",
+    "marked": "^0.7.0",
     "minimist": "^1.2.0",
     "mkdirp": "^0.5.1",
     "node-sass": "^4.9.2",
