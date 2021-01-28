@@ -31,16 +31,16 @@
   "author": "Eight Media",
   "license": "ISC",
   "devDependencies": {
-    "ava": "^0.25.0",
-    "collect-components": "^1.1.0",
-    "eslint": "^5.1.0",
-    "eslint-config-airbnb": "^17.0.0",
-    "eslint-config-airbnb-base": "^13.0.0",
-    "eslint-plugin-import": "^2.13.0",
+    "ava": "^3.15.0",
+    "collect-components": "^1.2.2",
+    "eslint": "^7.18.0",
+    "eslint-config-airbnb": "^18.2.1",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.22.1",
     "gather-components": "^0.2.0",
-    "gulp": "^4.0.0",
-    "is-there": "^4.4.3",
-    "rimraf": "^2.6.2"
+    "gulp": "^4.0.2",
+    "is-there": "^4.5.1",
+    "rimraf": "^3.0.2"
   },
   "dependencies": {
     "async": "^2.6.1",
