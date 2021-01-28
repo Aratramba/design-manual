@@ -32,7 +32,7 @@ test.cb("gulp", t => {
       t.pass();
       t.end();
     });
-  }, 400);
+  }, 800);
 
   setTimeout(() => {
     gulp.task("design-manual")(() => {
@@ -40,7 +40,7 @@ test.cb("gulp", t => {
       t.fail();
       t.end();
     });
-  }, 200);
+  }, 400);
 });
 
 gulp.task("design-manual", done => {
