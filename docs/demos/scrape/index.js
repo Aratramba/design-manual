@@ -3,7 +3,7 @@ const gatherComponents = require('gather-components');
 const rimraf = require('rimraf');
 
 gatherComponents({
-  url: 'http://eightmedia.github.io/design-manual/',
+  url: 'https://eightmedia.github.io/design-manual/',
   paths: ['index.html', 'getting-started.html'],
   components: __dirname + '/components.yaml',
   output: __dirname + '/components.json'
@@ -25,7 +25,7 @@ gatherComponents({
       serveFolder: 'docs/'
     },
     componentHeadHtml: `
-      <base href="http://eightmedia.github.io/design-manual/">
+      <base href="https://eightmedia.github.io/design-manual/">
       <link rel="stylesheet" href="all.min.css" />
       <link rel="stylesheet" href="assets/style.css" />
     `,

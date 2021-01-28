@@ -3,7 +3,7 @@ const collectComponents = require('collect-components');
 const rimraf = require('rimraf');
 
 collectComponents({
-  url: 'https://raw.githubusercontent.com/EightMedia/collect-components/master/test/fixtures/', // http://eightmedia.github.io/design-manual/
+  url: 'https://raw.githubusercontent.com/EightMedia/collect-components/master/test/fixtures/', // https://eightmedia.github.io/design-manual/
   paths: ['capture.html'],
   output: __dirname + '/components.json',
   complete: () => {
@@ -24,7 +24,7 @@ collectComponents({
         serveFolder: 'docs/'
       },
       componentHeadHtml: `
-        <base href="http://eightmedia.github.io/design-manual/">
+        <base href="https://eightmedia.github.io/design-manual/">
         <link rel="stylesheet" href="all.min.css" />
         <link rel="stylesheet" href="assets/style.css" />
       `,
