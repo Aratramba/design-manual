@@ -37,7 +37,7 @@ test.cb("interrupt", t => {
         }
       })
     );
-  }, 800);
+  }, 250);
 
   setTimeout(() => {
     DM.build(
@@ -49,5 +49,5 @@ test.cb("interrupt", t => {
         }
       })
     );
-  }, 400);
+  }, 200);
 });
