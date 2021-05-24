@@ -2,11 +2,11 @@
 
 Design Manual is a Design System Generator that can be used for documentation of your websites components and design decisions. It combines free format Markdown files with a json file containing your components and creates a beautiful design manual.
 
-https://eightmedia.github.io/design-manual
+https://aratramba.github.io/design-manual/
 
-* [Getting Started](https://eightmedia.github.io/design-manual/getting-started.html)
-* [Configuration](https://eightmedia.github.io/design-manual/configuration.html)
-* [Examples](https://eightmedia.github.io/design-manual/examples.html)
+* [Getting Started](https://aratramba.github.io/design-manual/getting-started.html)
+* [Configuration](https://aratramba.github.io/design-manual/configuration.html)
+* [Examples](https://aratramba.github.io/design-manual/examples.html)
 
 ---
 
