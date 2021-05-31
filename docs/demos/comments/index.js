@@ -3,7 +3,7 @@ const collectComponents = require('collect-components');
 const rimraf = require('rimraf');
 
 collectComponents({
-  url: 'https://raw.githubusercontent.com/EightMedia/collect-components/master/test/fixtures/', // https://eightmedia.github.io/design-manual/
+  url: 'https://raw.githubusercontent.com/aratramba/collect-components/master/test/fixtures/', // https://aratramba.github.io/design-manual/
   paths: ['capture.html'],
   output: __dirname + '/components.json',
   complete: () => {
@@ -15,7 +15,7 @@ collectComponents({
         { label: 'Homepage', href: 'index.html' }
       ],
       meta: {
-        domain: 'eightmedia.github.io/design-manual/',
+        domain: 'aratramba.github.io/design-manual/',
         title: 'Demo'
       },
       prerender: {
@@ -24,7 +24,7 @@ collectComponents({
         serveFolder: 'docs/'
       },
       componentHeadHtml: `
-        <base href="https://eightmedia.github.io/design-manual/">
+        <base href="https://aratramba.github.io/design-manual/">
         <link rel="stylesheet" href="all.min.css" />
         <link rel="stylesheet" href="assets/style.css" />
       `,

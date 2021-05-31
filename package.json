@@ -1,6 +1,6 @@
 {
   "name": "design-manual",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "Lightweight Design System Generator",
   "main": "lib/index.js",
   "directories": {
@@ -73,7 +73,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/EightMedia/design-manual.git"
+    "url": "git+https://github.com/aratramba/design-manual.git"
   },
   "keywords": [
     "styleguide",
@@ -82,7 +82,7 @@
     "pattern library"
   ],
   "bugs": {
-    "url": "https://github.com/EightMedia/design-manual/issues"
+    "url": "https://github.com/aratramba/design-manual/issues"
   },
-  "homepage": "https://github.com/EightMedia/design-manual#readme"
+  "homepage": "https://github.com/aratramba/design-manual#readme"
 }

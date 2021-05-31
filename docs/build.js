@@ -31,10 +31,10 @@ server.on('listening', () => {
         { label: 'Getting started', href: 'getting-started.html' },
         { label: 'Configuration', href: 'configuration.html' },
         { label: 'Examples', href: 'examples.html' },
-        { label: 'Github ↗', href: 'https://github.com/EightMedia/design-manual', target: '_blank' },
+        { label: 'Github ↗', href: 'https://github.com/aratramba/design-manual', target: '_blank' },
       ],
       meta: {
-        domain: 'eightmedia.github.io/design-manual/',
+        domain: 'aratramba.github.io/design-manual/',
         title: 'Design Manual',
         avatar: './assets/avatar.png',
         version: 'v' + require('../package.json').version
