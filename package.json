@@ -59,7 +59,7 @@
     "marked": "^1.2.8",
     "minimist": "^1.2.5",
     "mkdirp": "^0.5.1",
-    "node-sass": "^5.0.0",
+    "node-sass": "^7.0.0",
     "postcss": "^8.2.4",
     "prettier": "^2.2.1",
     "pretty-quick": "^3.1.0",
